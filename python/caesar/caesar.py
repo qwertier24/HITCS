@@ -20,9 +20,10 @@ def check_input(str_input):
         return False
     try:
         str_input.decode('utf-8')
+        print str_input.decode('utf-8')
     except:
         return False
-    return True
+    return len(str_input.decode('utf-8')) == len(str_input)
 def check_key(str_key):
     # check if the key is a integer
     try:
@@ -39,7 +40,7 @@ def check_k(str_k):
     if int(str_k) <= 0:
         return False
     return True
-    
+
 #---------------------------string shifting-------------------------#
 def shifted(str_in,dis):
     str_out = str()
@@ -91,10 +92,8 @@ def crack(cipher, k):
     f = [0.0 for i in range(26)]
     for i in range(26):
         plain = shifted(cipher, i)
-        cnt = [0 for j in range(26)]
-        for c in plain:
-            if c.isalpha():
-                cnt[ord(c) - ord('A')] +=1
+        cnt = [plain.count(chr(j + ord('A'))) for j in range(26)]
+        print cnt
         tot = sum(cnt)
         for j in range(26):
             f[i] += (float(cnt[j])/float(tot)*100 - freq[j])**2
