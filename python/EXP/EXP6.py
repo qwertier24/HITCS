@@ -1,8 +1,4 @@
 # -*- coding:utf-8 -*-
-DBG = 1
-import sys
-if DBG:
-    sys.stdin = open("in.txt","r")
 M = 6  # the size of list scores
 
 class Stu:
