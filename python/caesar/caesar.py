@@ -60,7 +60,7 @@ def in_encode_out():
     cipher = get_input()
     key = etrKey.get()
     if not check_input(cipher):
-        set_output("输入密码不合法")
+        set_output("输入密文不合法")
     elif not check_key(key):
         set_output("输入密钥不合法")
     else:
@@ -109,7 +109,7 @@ def in_crack_out():
     cipher = get_input()
     k = etrKey.get()
     if not check_input(cipher):
-        set_output("输入密码不合法")
+        set_output("输入密文不合法")
         return
     elif not check_k(k):
         set_output("输入的破解可选明文条数不合法")

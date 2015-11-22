@@ -38,7 +38,8 @@ def get_scores():
 
 def sort_by_tot():
 # Sort the students by total scores    
-# Insertion Sort
+
+    # Insertion Sort
     for i in range(1,n):
         tmp = stu[i]
         j = i-1

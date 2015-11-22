@@ -25,6 +25,7 @@ mark=[0 for i in range(n)]
 vis=[False for i in range(n)]
 
 def dfs(u):
+    # Make sure
     vis[u]=True
     for i in range(n):
         if edge[u][i]<INF and not vis[i]:
@@ -46,14 +47,14 @@ def init_graph():
             for j in range(i+1):
                 if j == i:
                     continue
-                r = random.randint(0,3)
+                r = random.randint(0,1)
                 if r==0:
                     r = random.randint(0,1)
                     if r:
-                        edge[i][j] = random.randint(1,n)
+                        edge[i][j] = random.randint(1,20)
                         edge[j][i] = INF
                     else:
-                        edge[j][i] = random.randint(1,n)
+                        edge[j][i] = random.randint(1,20)
                         edge[i][j] = INF
                 else:
                     edge[i][j] = edge[j][i] = INF
