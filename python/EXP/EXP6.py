@@ -49,7 +49,7 @@ def sort_by_tot():
 
 def sort_by_sub(j):
 # Sort by the score of some subjectwhile True:
-        # Bubble Sort
+# Bubble Sort
     for i in range(n):
         for j in range(1,n-i):
             if not cmp(stu[j-1], stu[j], sub_id[line]):
