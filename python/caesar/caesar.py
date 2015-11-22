@@ -93,10 +93,9 @@ def crack(cipher, k):
     for i in range(26):
         plain = shifted(cipher, i)
         cnt = [plain.count(chr(j + ord('A'))) for j in range(26)]
-        print cnt
         tot = sum(cnt)
         for j in range(26):
-            f[i] += (float(cnt[j])/float(tot)*100 - freq[j])**2
+            f[i] += (float(cnt[j])/float(max(1,tot))*100 - freq[j])**2
     plain_k=''
     c = 1
     for i in sorted(range(26), key = lambda x: f[x])[:k]:
