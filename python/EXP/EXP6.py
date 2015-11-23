@@ -22,7 +22,6 @@ def cmp(stu1, stu2, j):
 stu = list()
 n = 0  # the nubmer of students
 sub_id = {"语文":1, "数学":2, "英语":3,  "物理":4, "化学":5}
-
 #-----------------------------------------------------------------------#
 
 def get_scores():
@@ -38,22 +37,24 @@ def get_scores():
 
 def sort_by_tot():
 # Sort the students by total scores    
-
-    # Insertion Sort
-    for i in range(1,n):
+# Selection Sort
+    for i in range(n):
+        max_stu = stu[i]
+        max_stu_id = i
+        for j in range(i+1,n):
+            if cmp(stu[j], max_stu, 0):
+                max_stu = stu[j]
+                max_stu_id = j
         tmp = stu[i]
-        j = i-1
-        while j >= 0 and cmp(tmp, stu[j], 0):
-            stu[j+1] = stu[j]
-            j -= 1
-        stu[j+1] = tmp
+        stu[i] = stu[max_stu_id]
+        stu[max_stu_id] = tmp
 
-def sort_by_sub(j):
+def sort_by_sub(k):
 # Sort by the score of some subjectwhile True:
 # Bubble Sort
     for i in range(n):
         for j in range(1,n-i):
-            if not cmp(stu[j-1], stu[j], sub_id[line]):
+            if not cmp(stu[j-1], stu[j], k):
                 tmp = stu[j-1]
                 stu[j-1] = stu[j]
                 stu[j] = tmp
