@@ -1,9 +1,6 @@
 # -*- coding:utf-8 -*-
 M = 6  # the size of list scores
 
-import sys
-sys.stdin = open("in.txt","r")
-sys.stdout = open("ans.txt","w")
 class Stu:
     def __init__(self, num, name, scores):
         self.num = num  # the student number
@@ -48,7 +45,7 @@ def sort_by_tot():
             if cmp(stu[j], max_stu, 0):
                 max_stu = stu[j]
                 max_stu_id = j
-        tmp = stu[i]
+        tmpx = stu[i]
         stu[i] = stu[max_stu_id]
         stu[max_stu_id] = tmp
 
