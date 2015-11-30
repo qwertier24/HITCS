@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>首页-学生信息管理系统</title>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>导入记录</title>
     
     <link href="/static/css/metro.min.css" rel="stylesheet">
     <link href="/static/css/metro-icons.min.css" rel="stylesheet">
@@ -16,8 +15,8 @@
     <script src="/static/js/jquery.dataTables.min.js"></script>
     <script src="/static/js/metro.min.js"></script>
     <script src="/static/js/select2.min.js"></script>
-
   </head>
+  
   <body>
     <div class="app-bar" data-role="appbar">
       <div class="container page-content">
@@ -41,10 +40,18 @@
     </div>
     
     <div class="container page-content">
-      <h1>欢迎来到学生管理系统</h1>
-      <h4>你可以在在此对成绩表进行修改、查询<br/>
-        也可以对成绩进行统计分析<br/>
-        如有问题，详见<a href="/grades/help/">帮助</a></h4>
+      <h1>导入学生记录</h1>
+      <center>
+        <form method="post" enctype="multipart/form-data" action="/grades/upload/">
+          {% csrf_token %}
+          <div class="input-control file" data-role="input">
+            <input type="file" name="csv">
+            <button class="button"><span class="mif-folder"></span></button>
+          </div>
+          <br/>
+          <button type="submit" class="button primary">提交</button>
+        </form>
+      </center>
     </div>
   </body>
 </html>

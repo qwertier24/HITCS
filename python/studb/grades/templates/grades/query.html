@@ -19,23 +19,22 @@
   <body>
     <div class="app-bar" data-role="appbar">
       <div class="container page-content">
-      <ul class="app-bar-menu">
-        <li><a href="index">首页</a></li>
-        <li>
-          <a href="" class="dropdown-toggle">成绩表</a>
-          <ul class="d-menu" data-role="dropdown">
-            <li><a href="/grades/query_all/">查询</a></li>
-            <li><a href="">导出</a></li>
-            <li class="divider"></li>
-            <li><a href="/grades/add/">添加
-            <li><a href="/grades/mod">修改/删除</a></li>
-            <li><a href="">导入</a></li>
-          </ul>        
-        </li>
-        <li><a href="stat">统计分析</a></li>
-        <li><a href="about">关于</a></li>
-        <li><a href="help">帮助</a></li>
-      </ul>
+        <ul class="app-bar-menu">
+          <li><a href="/grades/index">首页</a></li>
+          <li>
+            <a href="" class="dropdown-toggle">成绩表</a>
+            <ul class="d-menu" data-role="dropdown">
+              <li><a href="/grades/query_all/">查询</a></li>
+              <li><a href="/grades/download">导出</a></li>
+              <li class="divider"></li>
+              <li><a href="/grades/modify0/">修改</a></li>
+              <li><a href="/grades/upload">导入</a></li>
+            </ul>        
+          </li>
+          <li><a href="/grades/stat/">统计分析</a></li>
+          <li><a href="/grades/about/">关于</a></li>
+          <li><a href="/grades/help/">帮助</a></li>
+        </ul>
       </div>
     </div>
     
@@ -53,24 +52,18 @@
               <option value="5">化学</option>
             </select>
           </div>
-          <div class="input-control text required" style="float:left">
+          <div class="input-control text" style="float:left">
             <input
-               data-validate-func="number"
-               data-validate-hint="请输入合法分数段"
                type="text"
-               data-validate-hint-position="top"
-               placeholder="下限"
+               placeholder="下限（默认为0）"
                name="low">
             <span class="input-state-error mif-warning"></span>
             <span class="input-state-success mif-checkmark"></span>
           </div>
-          <div class="input-control text required" style="float:left">
+          <div class="input-control text" style="float:left">
             <input
-               data-validate-func="number"
-               data-validate-hint="请输入合法分数段"
                type="text"
-               data-validate-hint-position="top"
-               placeholder="上限"
+               placeholder="上限（默认为10000）"
                name="high">
             <span class="input-state-error mif-warning"></span>
             <span class="input-state-success mif-checkmark"></span>
@@ -111,7 +104,7 @@
           </thead>
           <tbody>
             {% for stu in stus %}
-            <tr id="stu{{forloop.counter0}}">
+            <tr id="stu{{forloop.counter0}}" style="display:none">
               <th>{{stu.num}}</th>
               <th>{{stu.name}}</th>
               <th>{{stu.chi}}</th>
@@ -125,12 +118,34 @@
             {% endfor %}
           </tbody>
         </table>
-        <div data-role="group" data-group-type="one-state">
-          <button class="button">1</button>
-          <button class="button">2</button>
-          <button class="button">3</button>
+        <div data-role="group" data-group-type="one-state" id="paginator">
         </div>
       </center>
     </div>
+    
+    <script LANGUAGE= "JavaScript">
+var stun = {{stus|length}} ;
+var cur = 0;
+var stu_page = 15;
+$(function(){
+    function hide_and_show(event){
+      var i = event.data.key;
+      for(var j=cur*stu_page; j<Math.min(stun,(cur+1)*stu_page); j++){
+        $("#stu"+j).css("display","none");
+      }
+      for(var j=i*stu_page; j<Math.min(stun,(i+1)*stu_page); j++){
+        $("#stu"+j).css("display","");
+      }
+      $("#btn"+cur).attr("class","button");
+      cur = i;
+    }
+    for(var i=0;i<stun/stu_page;i++){
+      var btn=$("<button class='button' value='Test'>" + (i+1) + "</button>");
+      $("#paginator").append("<button class='button' value='Test' id='btn" + i + "' value='" + i + "'>" + (i+1) + "</button>");
+      $("#btn"+i).bind("click",{key:i},hide_and_show);
+    }
+    $("#btn0").click();
+  });
+    </script>
   </body>
 </html>

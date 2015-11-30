@@ -1,6 +1,5 @@
 from django.db import models
 
-SBJ_N = 5
 # Create your models here.
 class Student(models.Model):
     num = models.IntegerField(primary_key=True)

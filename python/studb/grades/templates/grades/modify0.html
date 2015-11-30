@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>成绩查询</title>
+    <title>信息修改</title>
     
     <link href="/static/css/metro.min.css" rel="stylesheet">
     <link href="/static/css/metro-icons.min.css" rel="stylesheet">
@@ -20,21 +20,20 @@
     <div class="app-bar" data-role="appbar">
       <div class="container page-content">
         <ul class="app-bar-menu">
-          <li><a href="index">首页</a></li>
+          <li><a href="/grades/index">首页</a></li>
           <li>
             <a href="" class="dropdown-toggle">成绩表</a>
             <ul class="d-menu" data-role="dropdown">
               <li><a href="/grades/query_all/">查询</a></li>
-              <li><a href="">导出</a></li>
+              <li><a href="/grades/download">导出</a></li>
               <li class="divider"></li>
-              <li><a href="/grades/add/">添加
-                  <li><a href="/grades/mod">修改/删除</a></li>
-                  <li><a href="">导入</a></li>
+              <li><a href="/grades/modify0/">修改</a></li>
+              <li><a href="/grades/upload">导入</a></li>
             </ul>        
           </li>
-          <li><a href="stat">统计分析</a></li>
-          <li><a href="about">关于</a></li>
-          <li><a href="help">帮助</a></li>
+          <li><a href="/grades/stat/">统计分析</a></li>
+          <li><a href="/grades/about/">关于</a></li>
+          <li><a href="/grades/help/">帮助</a></li>
         </ul>
       </div>
     </div>
@@ -42,7 +41,8 @@
     <div class="container page-content">
       <h1>添加、删除或修改学生记录</h1>
       <center>
-      <form action="/grades/modify0/" method="get" data-role="validator">
+      <form action="/grades/modify0/" method="post" data-role="validator">
+        {% csrf_token %}
         <div class="input-control text required">
           <input
              data-validate-func="required"
