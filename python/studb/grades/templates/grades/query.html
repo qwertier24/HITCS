@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>成绩查询</title>
+    
+    <link href="/static/css/metro.min.css" rel="stylesheet">
+    <link href="/static/css/metro-icons.min.css" rel="stylesheet">
+    <link href="/static/css/metro-responsive.min.css" rel="stylesheet">
+    <link href="/static/css/metro-schemes.min.css" rel="stylesheet">
+    <link href="/static/cs/metro-rtl.min.css" ref="stylesheet">
+    
+    <script src="/static/js/jquery-2.1.3.min.js"></script>
+    <script src="/static/js/jquery.dataTables.min.js"></script>
+    <script src="/static/js/metro.min.js"></script>
+    <script src="/static/js/select2.min.js"></script>
+  </head>
+  <body>
+    <div class="app-bar" data-role="appbar">
+      <div class="container page-content">
+      <ul class="app-bar-menu">
+        <li><a href="index">首页</a></li>
+        <li>
+          <a href="" class="dropdown-toggle">成绩表</a>
+          <ul class="d-menu" data-role="dropdown">
+            <li><a href="/grades/query_all/">查询</a></li>
+            <li><a href="">导出</a></li>
+            <li class="divider"></li>
+            <li><a href="/grades/add/">添加
+            <li><a href="/grades/mod">修改/删除</a></li>
+            <li><a href="">导入</a></li>
+          </ul>        
+        </li>
+        <li><a href="stat">统计分析</a></li>
+        <li><a href="about">关于</a></li>
+        <li><a href="help">帮助</a></li>
+      </ul>
+      </div>
+    </div>
+    
+    <div class="container page-content">
+      <h1>成绩表</h1>
+      <center>
+        <form action="/grades/query_all/" method="get" data-role="validator" style="float:left">
+          <div class="input-control select" style="float:left">
+            <select name="order">
+              <option value="0">总分</option>
+              <option value="1">语文</option>
+              <option value="2">数学</option>
+              <option value="3">英语</option>
+              <option value="4">物理</option>
+              <option value="5">化学</option>
+            </select>
+          </div>
+          <div class="input-control text required" style="float:left">
+            <input
+               data-validate-func="number"
+               data-validate-hint="请输入合法分数段"
+               type="text"
+               data-validate-hint-position="top"
+               placeholder="下限"
+               name="low">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <div class="input-control text required" style="float:left">
+            <input
+               data-validate-func="number"
+               data-validate-hint="请输入合法分数段"
+               type="text"
+               data-validate-hint-position="top"
+               placeholder="上限"
+               name="high">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <div styel="float:left">
+            <button class="button primary">查询</button>
+          </div>
+        </form>
+        <form action="/grades/query_stu/" method="get" data-role="validator" style="float:right">
+          <div class="input-control text required">
+            <input
+               data-validate-func="required"
+               data-validate-hint="请输入学号或姓名"
+               type="text"
+               data-validate-hint-position="top"
+               placeholder="在此输入学号或姓名"
+               name="num_name">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <div>
+            <button class="button primary">查询学生成绩</button>
+          </div>
+        </form>
+        <table class="table striped hovered border bordered">
+          <thead>
+            <tr>
+              <th>学号</th>
+              <th>姓名</th>
+              <th>语文</th>
+              <th>数学</th>
+              <th>英语</th>
+              <th>物理</th>
+              <th>化学</th>
+              <th>总分</th>
+              <th>名次</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for stu in stus %}
+            <tr id="stu{{forloop.counter0}}">
+              <th>{{stu.num}}</th>
+              <th>{{stu.name}}</th>
+              <th>{{stu.chi}}</th>
+              <th>{{stu.mat}}</th>
+              <th>{{stu.eng}}</th>
+              <th>{{stu.phy}}</th>
+              <th>{{stu.che}}</th>
+              <th>{{stu.tot}}</th>
+              <th>{{forloop.counter}}</th>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div data-role="group" data-group-type="one-state">
+          <button class="button">1</button>
+          <button class="button">2</button>
+          <button class="button">3</button>
+        </div>
+      </center>
+    </div>
+  </body>
+</html>

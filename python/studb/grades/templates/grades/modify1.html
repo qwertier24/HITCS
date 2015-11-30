@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>添加学生</title>
+    
+    <link href="/static/css/metro.min.css" rel="stylesheet">
+    <link href="/static/css/metro-icons.min.css" rel="stylesheet">
+    <link href="/static/css/metro-responsive.min.css" rel="stylesheet">
+    <link href="/static/css/metro-schemes.min.css" rel="stylesheet">
+    <link href="/static/cs/metro-rtl.min.css" ref="stylesheet">
+    
+    <script src="/static/js/jquery-2.1.3.min.js"></script>
+    <script src="/static/js/jquery.dataTables.min.js"></script>
+    <script src="/static/js/metro.min.js"></script>
+    <script src="/static/js/select2.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="app-bar" data-role="appbar">
+      <div class="container page-content">
+        <ul class="app-bar-menu">
+          <li><a href="index">首页</a></li>
+          <li>
+            <a href="" class="dropdown-toggle">成绩表</a>
+            <ul class="d-menu" data-role="dropdown">
+              <li><a href="/grades/query/all/0/">查询</a></li>
+              <li><a href="">导出</a></li>
+              <li class="divider"></li>
+              <li><a href="">修改</a></li>
+              <li><a href="">导入</a></li>
+            </ul>        
+          </li>
+          <li><a href="stat">统计分析</a></li>
+          <li><a href="about">关于</a></li>
+          <li><a href="help">帮助</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container page-content">
+      <h1>添加、删除或修改学生记录</h1>
+      <center>
+        <h4>您正在修改学号为{{stu.num}}的同学的信息</h4>
+        <form action="/grades/modify1/" method="get" data-role="validator">
+          <label>学号</label>
+          <div class="input-control text">
+            <input
+               type="text"
+               readonly
+               name="num"
+               value="{{stu.num}}">
+          </div>
+          <br/>
+          <label>姓名</label>
+          <div class="input-control text required">
+            <input
+               data-validate-func="required"
+               data-validate-hint="请输入姓名"
+               type="text"
+               data-validate-hint-position="top"
+               name="name"
+               value="{{stu.name}}">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <br/>
+          <label>语文</label>
+          <div class="input-control text required">
+            <input
+               data-validate-func="number"
+               data-validate-hint="请输入合法分数"
+               type="text"
+               data-validate-hint-position="top"
+               name="chi"
+               value="{{stu.chi}}">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <br/>
+          <label>数学</label>
+          <div class="input-control text required">
+            <input
+               data-validate-func="number"
+               data-validate-hint="请输入合法分数"
+               type="text"
+               data-validate-hint-position="top"
+               name="mat"
+               value="{{stu.mat}}">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <br/>
+          <label>英语</label>
+          <div class="input-control text required">
+            <input
+               data-validate-func="number"
+               data-validate-hint="请输入合法分数"
+               type="text"
+               data-validate-hint-position="top"
+               name="eng"
+               value="{{stu.eng}}">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <br/>
+          <label>物理</label>
+          <div class="input-control text required">
+            <input
+               data-validate-func="number"
+               data-validate-hint="请输入合法分数"
+               type="text"
+               data-validate-hint-position="top"
+               name="phy"
+               value="{{stu.phy}}">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <br/>
+          <label>化学</label>
+          <div class="input-control text required">
+            <input
+               data-validate-func="number"
+               data-validate-hint="请输入合法分数"
+               type="text"
+               data-validate-hint-position="top"
+               name="che"
+               value="{{stu.che}}">
+            <span class="input-state-error mif-warning"></span>
+            <span class="input-state-success mif-checkmark"></span>
+          </div>
+          <br/>
+          <div>
+            <button class="button primary" name="cmd" value="edit">添加/修改</button>
+            <button class="button primary" name="cmd" value="delete">删除</button>
+          </div>
+        </form>
+      </center>
+    </div>
+  </body>
+</html>

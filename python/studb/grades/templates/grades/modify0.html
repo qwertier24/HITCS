@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>成绩查询</title>
     
     <link href="/static/css/metro.min.css" rel="stylesheet">
     <link href="/static/css/metro-icons.min.css" rel="stylesheet">
@@ -23,11 +24,12 @@
           <li>
             <a href="" class="dropdown-toggle">成绩表</a>
             <ul class="d-menu" data-role="dropdown">
-              <li><a href="/grades/query/all/0/">查询</a></li>
+              <li><a href="/grades/query_all/">查询</a></li>
               <li><a href="">导出</a></li>
               <li class="divider"></li>
-              <li><a href="">修改</a></li>
-              <li><a href="">导入</a></li>
+              <li><a href="/grades/add/">添加
+                  <li><a href="/grades/mod">修改/删除</a></li>
+                  <li><a href="">导入</a></li>
             </ul>        
           </li>
           <li><a href="stat">统计分析</a></li>
@@ -38,6 +40,25 @@
     </div>
     
     <div class="container page-content">
+      <h1>添加、删除或修改学生记录</h1>
+      <center>
+      <form action="/grades/modify0/" method="get" data-role="validator">
+        <div class="input-control text required">
+          <input
+             data-validate-func="required"
+             data-validate-hint="请输入要添加/删除/修改的学生的学号"
+             type="text"
+             data-validate-hint-position="top"
+             placeholder="在此输入学号"
+             name="num">
+          <span class="input-state-error mif-warning"></span>
+          <span class="input-state-success mif-checkmark"></span>
+        </div>
+        <div>
+          <button class="button primary">提交</button>
+        </div>
+      </form>
+      </center>
     </div>
   </body>
 </html>
