@@ -108,12 +108,12 @@
             <tr id="stu{{forloop.counter0}}" style="display:none">
               <th>{{stu.num}}</th>
               <th>{{stu.name}}</th>
-              <th>{{stu.chi}}</th>
-              <th>{{stu.mat}}</th>
-              <th>{{stu.eng}}</th>
-              <th>{{stu.phy}}</th>
-              <th>{{stu.che}}</th>
-              <th>{{stu.tot}}</th>
+              <th id="sub1">{{stu.chi}}</th>
+              <th id="sub2">{{stu.mat}}</th>
+              <th id="sub3">{{stu.eng}}</th>
+              <th id="sub4">{{stu.phy}}</th>
+              <th id="sub5">{{stu.che}}</th>
+              <th id="sub0">{{stu.tot}}</th>
               <th>{{forloop.counter}}</th>
             </tr>
             {% endfor %}
@@ -129,6 +129,9 @@ var stun = {{stus|length}} ;
 var cur = 0;
 var stu_page = 15;
 $(function(){
+    $('[id=sub{{subid}}]').each(function(){
+      $(this).css("color","red");
+    })
     function hide_and_show(event){
       var i = event.data.key;
       for(var j=cur*stu_page; j<Math.min(stun,(cur+1)*stu_page); j++){

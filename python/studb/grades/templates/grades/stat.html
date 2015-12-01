@@ -45,14 +45,36 @@
         <h2>{{sub}}成绩分析</h2>
         <div class="grid">
           <div class="row cells5">
-            <div class="cell colspan2">
-              <canvas class="backgroud-color:black" id="chart0">
+            <div class="cell colspan3">
+              <canvas class="backgroud-color:black" id="chart0" style="height:300px">
               </canvas>
               <br/>
               <label>{{sub}}成绩分析图</label>
             </div>
-            <div class="cell colspan3">
+            <div class="cell colspan2">
               <table>
+              </table>
+            </div>
+            <div class="cell colspan2">
+              <table class="table striped hovered">
+                <tbody>
+                  <tr>
+                    <th>学生总数</th>
+                    <th>{{stun}}</th>
+                  </tr>
+                  <tr>
+                    <th>平均分</th>
+                    <th>{{avg}}</th>
+                  </tr>
+                  <tr>
+                    <th>最高分</th>
+                    <th>{{top}}</th>
+                  </tr>
+                  <tr>
+                    <th>中位数</th>
+                    <th>{{mid}}</th>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
