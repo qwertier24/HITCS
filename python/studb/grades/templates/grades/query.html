@@ -44,12 +44,12 @@
           <div style="float:left">
             <div class="input-control select">
               <select name="order">
-                <option value="0">总分</option>
-                <option value="1">语文</option>
-                <option value="2">数学</option>
-                <option value="3">英语</option>
-                <option value="4">物理</option>
-                <option value="5">化学</option>
+                <option value="0" id="sub_sel0">总分</option>
+                <option value="1" id="sub_sel1">语文</option>
+                <option value="2" id="sub_sel2">数学</option>
+                <option value="3" id="sub_sel3">英语</option>
+                <option value="4" id="sub_sel4">物理</option>
+                <option value="5" id="sub_sel5">化学</option>
               </select>
             </div>
             <div class="input-control text">
@@ -132,6 +132,7 @@ $(function(){
     $('[id=sub{{subid}}]').each(function(){
       $(this).css("color","red");
     })
+    $('[id=sub_sel{{subid}}]').attr("selected","selected");
     function hide_and_show(event){
       var i = event.data.key;
       for(var j=cur*stu_page; j<Math.min(stun,(cur+1)*stu_page); j++){
