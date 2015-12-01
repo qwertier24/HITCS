@@ -61,11 +61,10 @@ def modify1(request):
             for subject in subjects[1:]:
                 paras[subject] = int(request.POST.get(subject))
                 paras['tot'] += paras[subject]
-                #return HttpResponse("aa")
             Student.objects.filter(num=paras['num']).update(**paras)
             return render(request, 'grades/query.html', {"stus":Student.objects.filter(num=paras['num'])})
         else:
-            Student.objects.filter(num=num).delete()
+            Student.objects.filter(num=paras['num']).delete()
             return render(request, 'grades/notify.html', {"str":"学生信息成功删除"})
     except:
         return render(request, 'grades/error.html', {"str":"学生信息错误，请重试"});
@@ -136,4 +135,6 @@ def stat(request):
     avg = Student.objects.aggregate(Avg(subjects[order]))[subjects[order]+'__avg']
     stun = Student.objects.all().count()
     mid = Student.objects.all().order_by(subjects[order]).values(subjects[order])[stun/2][subjects[order]]
-    return render(request, 'grades/stat.html', {'cnt_A':cnt_A, 'cnt_B':cnt_B, 'cnt_C':cnt_C, 'cnt_D':cnt_D, 'sub':subjects_ch[order], 'top':top, 'avg':avg, 'mid':mid, 'stun':stun})
+    return render(request, 'grades/stat.html', {'cnt_A':cnt_A, 'cnt_B':cnt_B, 'cnt_C':cnt_C,\
+                                                'cnt_D':cnt_D, 'sub':subjects_ch[order], 'top':top,\
+                                                'avg':avg, 'mid':mid, 'stun':stun})
