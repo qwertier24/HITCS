@@ -28,7 +28,7 @@
               <li><a href="/grades/query_all/">查询</a></li>
               <li><a href="/grades/download">导出</a></li>
               <li class="divider"></li>
-              <li><a href="/grades/modify0/">修改</a></li>
+              <li><a href="/grades/modify0/">添加/删除/修改</a></li>
               <li><a href="/grades/upload">导入</a></li>
             </ul>        
           </li>
@@ -40,7 +40,7 @@
     </div>
     
     <div class="container page-content">
-      <h1>导入学生记录</h1>
+      <h1><b>导入学生记录</b></h1>
       <center>
         <form method="post" enctype="multipart/form-data" action="/grades/upload/">
           {% csrf_token %}

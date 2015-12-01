@@ -125,5 +125,43 @@ def help(request):
 def about(request):
     return render(request, 'grades/about.html')
 
+sub = ["总","语文","数学","英语","物理","化学"]
 def stat(request):
-    return render(request, 'grades/stat.html')
+    order = int(request.GET.get('order',0))
+    if order == '':
+        order = 0
+        cnt_A=0
+        cnt_B=0
+        cnt_C=0
+        cnt_D=0
+    if order == 0:
+        cnt_A = len(Student.objects.filter(tot__gte=65*9))
+        cnt_B = len(Student.objects.filter(tot__gte=65*8).filter(tot__lt=65*9))
+        cnt_C = len(Student.objects.filter(tot__gte=65*6).filter(tot__lt=65*8))
+        cnt_D = len(Student.objects.filter(tot__lt=65*6))
+    elif order == 1:
+        cnt_A = len(Student.objects.filter(chi__gte=10*9))
+        cnt_B = len(Student.objects.filter(chi__gte=10*8).filter(chi__lt=10*9))
+        cnt_C = len(Student.objects.filter(chi__gte=10*6).filter(chi__lt=10*8))
+        cnt_D = len(Student.objects.filter(chi__lt=10*6))
+    elif order == 2:
+        cnt_A = len(Student.objects.filter(mat__gte=10*9))
+        cnt_B = len(Student.objects.filter(mat__gte=10*8).filter(mat__lt=10*9))
+        cnt_C = len(Student.objects.filter(mat__gte=10*6).filter(mat__lt=10*8))
+        cnt_D = len(Student.objects.filter(mat__lt=10*6))
+    elif order == 3:
+        cnt_A = len(Student.objects.filter(eng__gte=10*9))
+        cnt_B = len(Student.objects.filter(eng__gte=10*8).filter(eng__lt=10*9))
+        cnt_C = len(Student.objects.filter(eng__gte=10*6).filter(eng__lt=10*8))
+        cnt_D = len(Student.objects.filter(eng__lt=10*6))
+    elif order == 4:
+        cnt_A = len(Student.objects.filter(phy__gte=10*9))
+        cnt_B = len(Student.objects.filter(phy__gte=10*8).filter(phy__lt=10*9))
+        cnt_C = len(Student.objects.filter(phy__gte=10*6).filter(phy__lt=10*8))
+        cnt_D = len(Student.objects.filter(phy__lt=10*6))
+    elif order == 5:
+        cnt_A = len(Student.objects.filter(che__gte=10*9))
+        cnt_B = len(Student.objects.filter(che__gte=10*8).filter(che__lt=10*9))
+        cnt_C = len(Student.objects.filter(che__gte=10*6).filter(che__lt=10*8))
+        cnt_D = len(Student.objects.filter(che__lt=10*6))
+    return render(request, 'grades/stat.html', {'cnt_A':cnt_A, 'cnt_B':cnt_B, 'cnt_C':cnt_C, 'cnt_D':cnt_D, 'sub':sub[order]})

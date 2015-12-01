@@ -15,6 +15,7 @@
     <script src="/static/js/jquery.dataTables.min.js"></script>
     <script src="/static/js/metro.min.js"></script>
     <script src="/static/js/select2.min.js"></script>
+    <script src="/static/js/chart.min.js"></script>
   </head>
   <body>
     <div class="app-bar" data-role="appbar">
@@ -27,7 +28,7 @@
               <li><a href="/grades/query_all/">查询</a></li>
               <li><a href="/grades/download">导出</a></li>
               <li class="divider"></li>
-              <li><a href="/grades/modify0/">修改</a></li>
+              <li><a href="/grades/modify0/">添加/删除/修改</a></li>
               <li><a href="/grades/upload">导入</a></li>
             </ul>        
           </li>
@@ -39,7 +40,73 @@
     </div>
     
     <div class="container page-content">
-      <h1>成绩统计</h1>
+      <h1><b>统计和分析</b></h1>
+      <center>
+        <h2>{{sub}}成绩分析</h2>
+        <div class="grid">
+          <div class="row cells5">
+            <div class="cell colspan2">
+              <canvas class="backgroud-color:black" id="chart0">
+              </canvas>
+              <br/>
+              <label>{{sub}}成绩分析图</label>
+            </div>
+            <div class="cell colspan3">
+              <table>
+              </table>
+            </div>
+          </div>
+        </div>
+        <form method="get" action="/grades/stat/">
+          <div class="input-control select">
+            <label>请选择总分或学科</label>
+            <select name="order">
+              <option value="0">总分</option>
+              <option value="1">语文</option>
+              <option value="2">数学</option>
+              <option value="3">英语</option>
+              <option value="4">物理</option>
+              <option value="5">化学</option>
+            </select>
+          </div>
+          
+          <div>
+            <button class="button primary">查询</button>
+          </div>
+        </form>
+      </center>
     </div>
+    <script language="JavaScript">
+// Get context with jQuery - using jQuery's .get() method.
+var ctx = $("#chart0").get(0).getContext("2d");
+// This will get the first returned node in the jQuery collection.
+var data = [
+    {
+        value: {{cnt_A}},
+        color: "#F7464A",
+        highlight: "#FF5A5E",
+        label: "{{sub}}成绩达总分90%及以上"
+    },
+    {
+        value: {{cnt_B}},
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "{{sub}}成绩达总分80%~89%"
+    },
+    {
+        value: {{cnt_C}},
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "{{sub}}成绩达总分60%~79%"
+    },
+    {
+        value: {{cnt_D}},
+        color: "#949FB1",
+        highlight: "#A8B3C5",
+        label: "{{sub}}成绩达总分60%以下"
+    }
+]
+var myNewChart = new Chart(ctx).Pie(data);
+    </script>
   </body>
 </html>
