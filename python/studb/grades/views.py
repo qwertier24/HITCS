@@ -27,13 +27,15 @@ def query_stu(request):
 
 def query_all(request):
     order = int(request.GET.get('order', 0))
-    low = request.GET.get('low', 0)
-    high = request.GET.get('high', 10000)
-    if low == '':
+    low = request.GET.get('low','0')
+    high = request.GET.get('high','10000')
+    if not low.isdigit():
         low = 0
-    if high == '':
+    if not high.isdigit():
         high = 10000
-    stus = Student.objects.order_by('-'+subjects[order]).filter(**{subjects[order]+'__gte':low}).filter(**{subjects[order]+'__lte':high})
+    low = int(low)
+    high = int(high)
+    stus = Student.objects.order_by(*(['-'+subjects[order]]+['-'+sub for sub in subjects])).filter(**{subjects[order]+'__gte':low}).filter(**{subjects[order]+'__lte':high})
     return render(request, 'grades/query.html', {"stus":stus, "subid":order})
 
 def modify0(request):
