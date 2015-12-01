@@ -52,17 +52,18 @@ def modify0(request):
 
 def modify1(request):
     try:
-        cmd = request.REQUEST.get('cmd')
-        num = int(request.POST.get('num'))
+        cmd = request.POST.get('cmd')
+        paras = dict()
+        paras['num'] = int(request.POST.get('num'))
         if cmd == 'edit':
-            paras = dict()
             paras['name'] = request.POST.get('name')
             paras['tot'] = 0
             for subject in subjects[1:]:
-                para[subject] = request.POST.get(subject)
-                paras['tot'] += para[subject]
-            Student.objects.filter(num=num).update(**paras)
-            return render(request, 'grades/query.html', {"stus":Student.objects.filter(num=num)})
+                paras[subject] = int(request.POST.get(subject))
+                paras['tot'] += paras[subject]
+                #return HttpResponse("aa")
+            Student.objects.filter(num=paras['num']).update(**paras)
+            return render(request, 'grades/query.html', {"stus":Student.objects.filter(num=paras['num'])})
         else:
             Student.objects.filter(num=num).delete()
             return render(request, 'grades/notify.html', {"str":"学生信息成功删除"})
