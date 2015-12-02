@@ -84,6 +84,7 @@ def upload(request):
                     if len(Student.objects.filter(num=int(words[0]))) == 0:
                         Student.objects.create(num=int(words[0]))
                     paras = dict()
+                    paras['tot'] = 0
                     for i in xrange(1,6):
                         paras[subjects[i]] = int(words[i+1])
                         paras['tot'] += paras[subjects[i]]
