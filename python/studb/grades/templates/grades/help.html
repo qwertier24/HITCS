@@ -1,57 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link href="/static/css/metro.min.css" rel="stylesheet">
-    <link href="/static/css/metro-icons.min.css" rel="stylesheet">
-    <link href="/static/css/metro-responsive.min.css" rel="stylesheet">
-    <link href="/static/css/metro-schemes.min.css" rel="stylesheet">
-    <link href="/static/cs/metro-rtl.min.css" ref="stylesheet">
-    
-    <script src="/static/js/jquery-2.1.3.min.js"></script>
-    <script src="/static/js/jquery.dataTables.min.js"></script>
-    <script src="/static/js/metro.min.js"></script>
-    <script src="/static/js/select2.min.js"></script>
-  </head>
-  <body>
-    <div class="app-bar" data-role="appbar">
-      <div class="container page-content">
-        <ul class="app-bar-menu">
-          <li><a href="/grades/index">首页</a></li>
-          <li>
-            <a href="" class="dropdown-toggle">成绩表</a>
-            <ul class="d-menu" data-role="dropdown">
-              <li><a href="/grades/query_all/">查询</a></li>
-              <li><a href="/grades/download">导出</a></li>
-              <li class="divider"></li>
-              <li><a href="/grades/modify0/">添加/删除/修改</a></li>
-              <li><a href="/grades/upload">导入</a></li>
-            </ul>        
-          </li>
-          <li><a href="/grades/stat/">统计分析</a></li>
-          <li><a href="/grades/about/">关于</a></li>
-          <li><a href="/grades/help/">帮助</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="container page-content">
-      <h1><b>帮助</b></h1>
-      <h3>修改/添加/删除学生信息</h3>
-      <p>
-        在本系统，如果需要修改添加、删除或修改学生信息，请打开“成绩表”——“修改”页面，然后输入要添加、删除或修改的学生的学号。<br/>
-        如果要添加或修改学生信息，请在表单中编辑学生信息，点击“添加/修改”，否则点击“删除”<br/>
-      </p>
-      <h3>导入文件</h3>
-      <p>
-        导入文件必须为csv格式，每行描述一个学生的信息，各项信息之间以半角逗号隔开，例如：
-        <blockquote>
-          19020090040,秦心芯,123,131,100,95,100<br/>
-          19020090006,李磊,99,92,100,90,100
-        </blockquote>
-      </p>
-    </div>
-  </body>
-</html>
+{% extends "grades/template.html" %}
+
+{% block head_title %}帮助{% endblock %}
+
+{% block body_title %}帮助{% endblock %}
+{% block content_left %}
+<h3>修改/添加/删除学生信息</h3>
+<p>
+在本系统，如果需要修改添加、删除或修改学生信息，请打开“成绩表”——“修改”页面，然后输入要添加、删除或修改的学生的学号。<br/>
+如果要添加或修改学生信息，请在表单中编辑学生信息，点击“添加/修改”，否则点击“删除”<br/>
+</p>
+<h3>导入文件</h3>
+<p>
+  批量导入成绩时,导入文件必须为csv格式，且csv文件大小不得超过4KB，每行描述一个学生的信息，各项信息之间以半角逗号隔开，例如：
+  <blockquote>
+    19020090040,秦心芯,123,131,100,95,100<br/>
+    19020090006,李磊,99,92,100,90,100
+  </blockquote>
+</p>
+<h3>统计分析</h3>
+<p>
+  在"统计与分析"页面的下端，你可以选择不同的科目来进行统计，统计结果仅供参考。
+{% endblock %}
+
+{% block content %}
+{% endblock %}

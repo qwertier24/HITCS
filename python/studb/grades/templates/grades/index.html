@@ -1,50 +1,34 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>首页-学生信息管理系统</title>
+{% extends "grades/template.html" %}
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link href="/static/css/metro.min.css" rel="stylesheet">
-    <link href="/static/css/metro-icons.min.css" rel="stylesheet">
-    <link href="/static/css/metro-responsive.min.css" rel="stylesheet">
-    <link href="/static/css/metro-schemes.min.css" rel="stylesheet">
-    <link href="/static/cs/metro-rtl.min.css" ref="stylesheet">
-    
-    <script src="/static/js/jquery-2.1.3.min.js"></script>
-    <script src="/static/js/jquery.dataTables.min.js"></script>
-    <script src="/static/js/metro.min.js"></script>
-    <script src="/static/js/select2.min.js"></script>
+{% block head_title %}首页-学生成绩管理系统{% endblock %}
 
-  </head>
-  <body>
-    <div class="app-bar" data-role="appbar">
-      <div class="container page-content">
-        <ul class="app-bar-menu">
-          <li><a href="/grades/index">首页</a></li>
-          <li>
-            <a href="" class="dropdown-toggle">成绩表</a>
-            <ul class="d-menu" data-role="dropdown">
-              <li><a href="/grades/query_all/">查询</a></li>
-              <li><a href="/grades/download">导出</a></li>
-              <li class="divider"></li>
-              <li><a href="/grades/modify0/">添加/删除/修改</a></li>
-              <li><a href="/grades/upload">导入</a></li>
-            </ul>        
-          </li>
-          <li><a href="/grades/stat/">统计分析</a></li>
-          <li><a href="/grades/about/">关于</a></li>
-          <li><a href="/grades/help/">帮助</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="container page-content">
-      <h1><b>欢迎来到学生管理系统</b></h1>
-      <h4>你可以在在此对成绩表进行修改、查询<br/>
-        也可以对成绩进行统计分析<br/>
-        如有问题，详见<a href="/grades/help/">帮助</a></h4>
-    </div>
-  </body>
-</html>
+{% block body_title %}欢迎来到学生成绩管理系统{% endblock %}
+{% block content_left %}
+<h4>在这里,你可以……</h4>
+
+<h2><a href="/grades/query_all/">查询学生成绩</a></h2>
+<ul class="simple-list">
+  <li>各科成绩详细呈现，可以按照各科成绩或总分排名。</li>
+  <li>根据学号或者姓名查询学生成绩</li>
+  <li>提供批量导出功能，导出学生成绩表到csv文件</li>
+</ul>
+
+<h2><a href="/grades/modify0/">修改成绩表</a></h2>
+<ul class="simple-list">
+  <li>根据学号修改学生信息，精确快捷。</li>
+  <li>提供批量导入功能，可从csv文件中批量获取学生成绩。</li>
+</ul>
+
+<h2><a href="/grades/stat/">分析学生成绩</a></h2>
+<ul class="simple-list">
+  <li>精美的图表帮助你快速了解学生的学习状况。</li>
+</ul>
+<br/>
+<h4>
+  如有问题,详见<a href="/grades/help/">帮助</a>
+</h4>
+
+{% endblock %}
+
+{% block content %}
+{% endblock %}

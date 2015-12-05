@@ -1,156 +1,126 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>成绩查询</title>
-    
-    <link href="/static/css/metro.min.css" rel="stylesheet">
-    <link href="/static/css/metro-icons.min.css" rel="stylesheet">
-    <link href="/static/css/metro-responsive.min.css" rel="stylesheet">
-    <link href="/static/css/metro-schemes.min.css" rel="stylesheet">
-    <link href="/static/cs/metro-rtl.min.css" ref="stylesheet">
-    
-    <script src="/static/js/jquery-2.1.3.min.js"></script>
-    <script src="/static/js/jquery.dataTables.min.js"></script>
-    <script src="/static/js/metro.min.js"></script>
-    <script src="/static/js/select2.min.js"></script>
-  </head>
-  <body>
-    <div class="app-bar" data-role="appbar">
-      <div class="container page-content">
-        <ul class="app-bar-menu">
-          <li><a href="/grades/index">首页</a></li>
-          <li>
-            <a href="" class="dropdown-toggle">成绩表</a>
-            <ul class="d-menu" data-role="dropdown">
-              <li><a href="/grades/query_all/">查询</a></li>
-              <li><a href="/grades/download">导出</a></li>
-              <li class="divider"></li>
-              <li><a href="/grades/modify0/">添加/删除/修改</a></li>
-              <li><a href="/grades/upload">导入</a></li>
-            </ul>        
-          </li>
-          <li><a href="/grades/stat/">统计分析</a></li>
-          <li><a href="/grades/about/">关于</a></li>
-          <li><a href="/grades/help/">帮助</a></li>
-        </ul>
-      </div>
+{% extends "grades/template.html" %}
+
+{% block head_title %}查询{% endblock %}
+
+{% block body_title %}查询{% endblock %}
+
+{% block content %}
+<form action="/grades/query_all/" method="get" data-role="validator" style="float:left">
+  <div style="float:left">
+    <div class="input-control select">
+      <select name="order">
+        <option value="0" id="sub_sel0">总分</option>
+        <option value="1" id="sub_sel1">语文</option>
+        <option value="2" id="sub_sel2">数学</option>
+        <option value="3" id="sub_sel3">英语</option>
+        <option value="4" id="sub_sel4">物理</option>
+        <option value="5" id="sub_sel5">化学</option>
+      </select>
     </div>
-    
-    <div class="container page-content">
-      <h1><b>成绩表</b></h1>
-      <center>
-        <form action="/grades/query_all/" method="get" data-role="validator" style="float:left">
-          <div style="float:left">
-            <div class="input-control select">
-              <select name="order">
-                <option value="0" id="sub_sel0">总分</option>
-                <option value="1" id="sub_sel1">语文</option>
-                <option value="2" id="sub_sel2">数学</option>
-                <option value="3" id="sub_sel3">英语</option>
-                <option value="4" id="sub_sel4">物理</option>
-                <option value="5" id="sub_sel5">化学</option>
-              </select>
-            </div>
-            <div class="input-control text">
-              <input
-                 type="text"
-                 placeholder="下限（默认为0）"
-                 name="low">
-              <span class="input-state-error mif-warning"></span>
-              <span class="input-state-success mif-checkmark"></span>
-            </div>
-            <div class="input-control text">
-              <input
-                 type="text"
-                 placeholder="上限（默认为10000）"
-                 name="high">
-              <span class="input-state-error mif-warning"></span>
-              <span class="input-state-success mif-checkmark"></span>
-            </div>
-            <div>
-              <button class="button primary">查询</button>
-            </div>
-          </div>
-        </form>
-        <form action="/grades/query_stu/" method="get" data-role="validator" style="float:right">
-          <div class="input-control text required">
-            <input
-               data-validate-func="required"
-               data-validate-hint="请输入学号或姓名"
-               type="text"
-               data-validate-hint-position="top"
-               placeholder="在此输入学号或姓名"
-               name="num_name">
-            <span class="input-state-error mif-warning"></span>
-            <span class="input-state-success mif-checkmark"></span>
-          </div>
-          <div>
-            <button class="button primary">查询学生成绩</button>
-          </div>
-        </form>
-        <table class="table striped hovered border bordered">
-          <thead>
-            <tr>
-              <th>学号</th>
-              <th>姓名</th>
-              <th>语文</th>
-              <th>数学</th>
-              <th>英语</th>
-              <th>物理</th>
-              <th>化学</th>
-              <th>总分</th>
-              <th>名次</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for stu in stus %}
-            <tr id="stu{{forloop.counter0}}" style="display:none">
-              <th>{{stu.num}}</th>
-              <th>{{stu.name}}</th>
-              <th id="sub1">{{stu.chi}}</th>
-              <th id="sub2">{{stu.mat}}</th>
-              <th id="sub3">{{stu.eng}}</th>
-              <th id="sub4">{{stu.phy}}</th>
-              <th id="sub5">{{stu.che}}</th>
-              <th id="sub0">{{stu.tot}}</th>
-              <th>{{forloop.counter}}</th>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-        <div data-role="group" data-group-type="one-state" id="paginator">
-        </div>
-      </center>
+    <div class="input-control text">
+      <input
+         type="text"
+         placeholder="下限（默认为0）"
+         name="low">
+      <span class="input-state-error mif-warning"></span>
+      <span class="input-state-success mif-checkmark"></span>
     </div>
+    <div class="input-control text">
+      <input
+         type="text"
+         placeholder="上限（默认为10000）"
+         name="high">
+      <span class="input-state-error mif-warning"></span>
+      <span class="input-state-success mif-checkmark"></span>
+    </div>
+    <div>
+      <button class="button primary">查询</button>
+    </div>
+  </div>
+</form>
+<form action="/grades/query_stu/" method="get" data-role="validator" style="float:right">
+  <div class="input-control text required">
+    <input
+       data-validate-func="required"
+       data-validate-hint="请输入学号或姓名"
+       type="text"
+       data-validate-hint-position="top"
+       placeholder="在此输入学号或姓名"
+       name="num_name">
+    <span class="input-state-error mif-warning"></span>
+    <span class="input-state-success mif-checkmark"></span>
+  </div>
+  <div>
+    <button class="button primary">查询学生成绩</button>
+  </div>
+</form>
+<table class="table striped hovered border bordered">
+  <thead>
+    <tr>
+      <th>学号</th>
+      <th>姓名</th>
+      <th>语文</th>
+      <th>数学</th>
+      <th>英语</th>
+      <th>物理</th>
+      <th>化学</th>
+      <th>总分</th>
+      <th>名次</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stu,rank in table %}
+    <tr id="stu{{forloop.counter0}}" style="display:none">
+      <th>{{stu.num}}</th>
+      <th>{{stu.name}}</th>
+      <th id="sub1">{{stu.chi}}</th>
+      <th id="sub2">{{stu.mat}}</th>
+      <th id="sub3">{{stu.eng}}</th>
+      <th id="sub4">{{stu.phy}}</th>
+      <th id="sub5">{{stu.che}}</th>
+      <th id="sub0">{{stu.tot}}</th>
+      <th>{{rank}}</th>
+    </tr>
+    {% endfor %}
     
-    <script LANGUAGE= "JavaScript">
-var stun = {{stus|length}} ;
+  </tbody>
+</table>
+<div data-role="group" data-group-type="one-state" id="paginator">
+</div>
+<div>
+  <h4 id="nostu" style="display:none">查询结果为空</h4>
+</div>
+{% endblock %}
+
+{% block script %}
+var stun = {{table|length}};
 var cur = 0;
 var stu_page = 15;
 $(function(){
-    $('[id=sub{{subid}}]').each(function(){
-      $(this).css("color","red");
-    })
-    $('[id=sub_sel{{subid}}]').attr("selected","selected");
+    $('[id=sub{{subid|default:0}}]').each(function(){
+        $(this).css("color","red");
+    });
+    $('[id=sub_sel{{subid|default:0}}]').attr("selected","selected");
     function hide_and_show(event){
-      var i = event.data.key;
-      for(var j=cur*stu_page; j<Math.min(stun,(cur+1)*stu_page); j++){
-        $("#stu"+j).css("display","none");
-      }
-      for(var j=i*stu_page; j<Math.min(stun,(i+1)*stu_page); j++){
-        $("#stu"+j).css("display","");
-      }
-      $("#btn"+cur).attr("class","button");
-      cur = i;
+        var i = event.data.key;
+        for(var j=cur*stu_page; j<Math.min(stun,(cur+1)*stu_page); j++){
+            $("#stu"+j).css("display","none");
+        }
+        for(var j=i*stu_page; j<Math.min(stun,(i+1)*stu_page); j++){
+            $("#stu"+j).css("display","");
+        }
+        $("#btn"+cur).attr("class","button");
+        cur = i;
     }
-    for(var i=0;i<stun/stu_page;i++){
-      var btn=$("<button class='button' value='Test'>" + (i+1) + "</button>");
-      $("#paginator").append("<button class='button' value='Test' id='btn" + i + "' value='" + i + "'>" + (i+1) + "</button>");
-      $("#btn"+i).bind("click",{key:i},hide_and_show);
+    if(stun){
+        for(var i=0; i<(stun+stu_page-1)/stu_page; i++){
+            var btn=$("<button class='button' value='Test'>" + (i+1) + "</button>");
+            $("#paginator").append("<button class='button' value='Test' id='btn" + i + "' value='" + i + "'>" + (i+1) + "</button>");
+            $("#btn"+i).bind("click",{key:i},hide_and_show);
+        }
+        $("#btn0").click();
+    }else{
+        $("#nostu").css("display","")
     }
-    $("#btn0").click();
-  });
-    </script>
-  </body>
-</html>
+});
+{% endblock %}

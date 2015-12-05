@@ -1,104 +1,69 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>统计分析</title>
-    
-    <link href="/static/css/metro.min.css" rel="stylesheet">
-    <link href="/static/css/metro-icons.min.css" rel="stylesheet">
-    <link href="/static/css/metro-responsive.min.css" rel="stylesheet">
-    <link href="/static/css/metro-schemes.min.css" rel="stylesheet">
-    <link href="/static/cs/metro-rtl.min.css" ref="stylesheet">
-    
-    <script src="/static/js/jquery-2.1.3.min.js"></script>
-    <script src="/static/js/jquery.dataTables.min.js"></script>
-    <script src="/static/js/metro.min.js"></script>
-    <script src="/static/js/select2.min.js"></script>
-    <script src="/static/js/chart.min.js"></script>
-  </head>
-  <body>
-    <div class="app-bar" data-role="appbar">
-      <div class="container page-content">
-        <ul class="app-bar-menu">
-          <li><a href="/grades/index/">首页</a></li>
-          <li>
-            <a href="" class="dropdown-toggle">成绩表</a>
-            <ul class="d-menu" data-role="dropdown">
-              <li><a href="/grades/query_all/">查询</a></li>
-              <li><a href="/grades/download">导出</a></li>
-              <li class="divider"></li>
-              <li><a href="/grades/modify0/">添加/删除/修改</a></li>
-              <li><a href="/grades/upload">导入</a></li>
-            </ul>        
-          </li>
-          <li><a href="/grades/stat/">统计分析</a></li>
-          <li><a href="/grades/about/">关于</a></li>
-          <li><a href="/grades/help/">帮助</a></li>
-        </ul>
-      </div>
+{% extends "grades/template.html" %}
+
+{% block head_title %}统计分析{% endblock %}
+
+{% block body_title %}统计和分析{% endblock %}
+{% block content_left %}{% endblock %}
+
+{% block content %}
+<h2>{{sub}}成绩分析</h2>
+<div class="grid">
+  <div class="row cells5">
+    <div class="cell colspan3">
+      <canvas class="backgroud-color:black" id="chart0" style="height:300px">
+      </canvas>
+      <br/>
+      <label>{{sub}}成绩分析图</label>
     </div>
-    
-    <div class="container page-content">
-      <h1><b>统计和分析</b></h1>
-      <center>
-        <h2>{{sub}}成绩分析</h2>
-        <div class="grid">
-          <div class="row cells5">
-            <div class="cell colspan3">
-              <canvas class="backgroud-color:black" id="chart0" style="height:300px">
-              </canvas>
-              <br/>
-              <label>{{sub}}成绩分析图</label>
-            </div>
-            <div class="cell colspan2">
-              <table>
-              </table>
-            </div>
-            <div class="cell colspan2">
-              <table class="table striped hovered">
-                <tbody>
-                  <tr>
-                    <th>学生总数</th>
-                    <th>{{stun}}</th>
-                  </tr>
-                  <tr>
-                    <th>平均分</th>
-                    <th>{{avg}}</th>
-                  </tr>
-                  <tr>
-                    <th>最高分</th>
-                    <th>{{top}}</th>
-                  </tr>
-                  <tr>
-                    <th>中位数</th>
-                    <th>{{mid}}</th>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <form method="get" action="/grades/stat/">
-          <div class="input-control select">
-            <label>请选择总分或学科</label>
-            <select name="order">
-              <option value="0">总分</option>
-              <option value="1">语文</option>
-              <option value="2">数学</option>
-              <option value="3">英语</option>
-              <option value="4">物理</option>
-              <option value="5">化学</option>
-            </select>
-          </div>
-          
-          <div>
-            <button class="button primary">查询</button>
-          </div>
-        </form>
-      </center>
+    <div class="cell colspan2">
+      <table>
+      </table>
     </div>
-    <script language="JavaScript">
+    <div class="cell colspan2">
+      <table class="table striped hovered">
+        <tbody>
+          <tr>
+            <th>学生总数</th>
+            <th>{{stun}}</th>
+          </tr>
+          <tr>
+            <th>平均分</th>
+            <th>{{avg}}</th>
+          </tr>
+          <tr>
+            <th>最高分</th>
+            <th>{{top}}</th>
+          </tr>
+          <tr>
+            <th>中位数</th>
+            <th>{{mid}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<form method="get" action="/grades/stat/">
+  <div class="input-control select">
+    <label>请选择总分或学科</label>
+    <select name="order">
+      <option value="0">总分</option>
+      <option value="1">语文</option>
+      <option value="2">数学</option>
+      <option value="3">英语</option>
+      <option value="4">物理</option>
+      <option value="5">化学</option>
+    </select>
+  </div>
+  
+  <div>
+    <button class="button primary">查询</button>
+  </div>
+</form>
+
+{% endblock %}
+
+{% block script %}
 // Get context with jQuery - using jQuery's .get() method.
 var ctx = $("#chart0").get(0).getContext("2d");
 // This will get the first returned node in the jQuery collection.
@@ -129,6 +94,4 @@ var data = [
     }
 ]
 var myNewChart = new Chart(ctx).Pie(data);
-    </script>
-  </body>
-</html>
+{% endblock %}

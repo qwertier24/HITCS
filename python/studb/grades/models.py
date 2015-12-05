@@ -4,7 +4,7 @@ from django.db import models
 class Student(models.Model):
     num = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=10)
-    tot = models.IntegerField(default=0)
+    tot = models.IntegerField(default=0)  # total score
     chi = models.IntegerField(default=0)
     mat = models.IntegerField(default=0)
     eng = models.IntegerField(default=0)
