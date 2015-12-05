@@ -1,1 +1,1 @@
-python manage.py runserver 2333
+python manage.py runserver

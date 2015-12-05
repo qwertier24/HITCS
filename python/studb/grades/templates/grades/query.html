@@ -113,7 +113,7 @@ $(function(){
         cur = i;
     }
     if(stun){
-        for(var i=0; i<(stun+stu_page-1)/stu_page; i++){
+        for(var i=0; i<stun/stu_page; i++){
             var btn=$("<button class='button' value='Test'>" + (i+1) + "</button>");
             $("#paginator").append("<button class='button' value='Test' id='btn" + i + "' value='" + i + "'>" + (i+1) + "</button>");
             $("#btn"+i).bind("click",{key:i},hide_and_show);
