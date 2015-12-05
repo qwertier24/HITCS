@@ -4,30 +4,30 @@
 
 {% block body_title %}欢迎来到学生成绩管理系统{% endblock %}
 {% block content_left %}
-<h4>在这里,你可以……</h4>
+  <h4>在这里,你可以……</h4>
+<div style="margin:20px">
+  <h3><a href="/grades/query_all/">查询学生成绩</a></h2>
+  <ul class="simple-list">
+    <li>各科成绩详细呈现，可以按照各科成绩或总分排名。</li>
+    <li>根据学号或者姓名查询学生成绩</li>
+    <li>提供批量导出功能，导出学生成绩表到csv文件</li>
+  </ul>
 
-<h2><a href="/grades/query_all/">查询学生成绩</a></h2>
-<ul class="simple-list">
-  <li>各科成绩详细呈现，可以按照各科成绩或总分排名。</li>
-  <li>根据学号或者姓名查询学生成绩</li>
-  <li>提供批量导出功能，导出学生成绩表到csv文件</li>
-</ul>
+  <h3><a href="/grades/modify0/">修改成绩表</a></h2>
+  <ul class="simple-list">
+    <li>根据学号修改学生信息，精确快捷。</li>
+    <li>提供批量导入功能，可从csv文件中批量获取学生成绩。</li>
+  </ul>
 
-<h2><a href="/grades/modify0/">修改成绩表</a></h2>
-<ul class="simple-list">
-  <li>根据学号修改学生信息，精确快捷。</li>
-  <li>提供批量导入功能，可从csv文件中批量获取学生成绩。</li>
-</ul>
-
-<h2><a href="/grades/stat/">分析学生成绩</a></h2>
-<ul class="simple-list">
-  <li>精美的图表帮助你快速了解学生的学习状况。</li>
-</ul>
-<br/>
+  <h3><a href="/grades/stat/">分析学生成绩</a></h2>
+  <ul class="simple-list">
+    <li>精美的图表帮助你快速了解学生的学习状况。</li>
+  </ul>
+  <br/>
+</div>
 <h4>
   如有问题,详见<a href="/grades/help/">帮助</a>
 </h4>
-
 {% endblock %}
 
 {% block content %}
