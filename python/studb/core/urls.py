@@ -1,6 +1,5 @@
 from django.conf.urls import url
-
-from . import views
+from . import views, settings
 
 urlpatterns = [
     url(r'^index/$', views.index),
@@ -14,4 +13,5 @@ urlpatterns = [
     url(r'^stat/$', views.stat),
     url(r'^download/$', views.download),
     url(r'^$', views.redirect_to_index),  # when coming up with illegal url, redirect to /grades/index
+    url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATICFILES_DIRS, 'show_indexes': True}),
 ]

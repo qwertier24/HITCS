@@ -1,4 +1,4 @@
-{% extends "grades/template.html" %}
+{% extends "template.html" %}
 
 {% block head_title %}导入{% endblock %}
 
@@ -6,7 +6,7 @@
 {% block content_left %}{% endblock %}
 
 {% block content %}
-<form method="post" enctype="multipart/form-data" action="/grades/upload/">
+<form method="post" enctype="multipart/form-data" action="/upload/">
   {% csrf_token %}
   <div class="input-control file" data-role="input">
     <input type="file" name="csv">

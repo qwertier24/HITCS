@@ -1,4 +1,4 @@
-{% extends "grades/template.html" %}
+{% extends "template.html" %}
 
 {% block head_title %}统计分析{% endblock %}
 
@@ -43,7 +43,7 @@
     </div>
   </div>
 </div>
-<form method="get" action="/grades/stat/">
+<form method="get" action="/stat/">
   <div class="input-control select">
     <label>请选择总分或学科</label>
     <select name="order">

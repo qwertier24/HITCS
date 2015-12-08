@@ -1,11 +1,11 @@
-{% extends "grades/template.html" %}
+{% extends "template.html" %}
 
 {% block head_title %}查询{% endblock %}
 
 {% block body_title %}查询{% endblock %}
 
 {% block content %}
-<form action="/grades/query_all/" method="get" data-role="validator" style="float:left">
+<form action="/query_all/" method="get" data-role="validator" style="float:left">
   <div style="float:left">
     <div class="input-control select">
       <select name="order">
@@ -38,7 +38,7 @@
     </div>
   </div>
 </form>
-<form action="/grades/query_stu/" method="get" data-role="validator" style="float:right">
+<form action="/query_stu/" method="get" data-role="validator" style="float:right">
   <div class="input-control text required">
     <input
        data-validate-func="required"

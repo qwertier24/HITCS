@@ -1,4 +1,4 @@
-{% extends "grades/template.html" %}
+{% extends "template.html" %}
 
 {% block head_title %}{% endblock %}
 
@@ -7,7 +7,7 @@
 
 {% block content %}
 <h4>您正在修改学号为{{stu.num}}的同学的信息</h4>
-<form action="/grades/modify1/" method="post" data-role="validator">
+<form action="/modify1/" method="post" data-role="validator">
   {% csrf_token %}
   <label>学号</label>
   <div class="input-control text">

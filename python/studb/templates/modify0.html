@@ -1,4 +1,4 @@
-{% extends "grades/template.html" %}
+{% extends "template.html" %}
 
 {% block head_title %}修改成绩表{% endblock %}
 
@@ -6,7 +6,7 @@
 {% block content_left %}{% endblock %}
 
 {% block content %}
-<form action="/grades/modify0/" method="post" data-role="validator">
+<form action="/modify0/" method="post" data-role="validator">
   {% csrf_token %}
   <div class="input-control text required">
     <input

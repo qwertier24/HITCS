@@ -10,10 +10,10 @@ subjects = ['tot','chi','mat','eng','phy','che']
 subjects_ch = ["总","语文","数学","英语","物理","化学"]
 
 def index(request):
-    return render(request, 'grades/index.html')
+    return render(request, 'index.html')
 
 def redirect_to_index(request):
-    return HttpResponseRedirect('/grades/index/')
+    return HttpResponseRedirect('/index/')
 
 def query_stu(request):
     '''
@@ -29,9 +29,9 @@ def query_stu(request):
         rank = list()
         for i in xrange(len(stus)):  # get the students' ranks
             rank.append(Student.objects.filter(tot__gt=stus[i].tot).count()+1)
-        return render(request, 'grades/query.html', {"table":[[stus[i],rank[i]] for i in xrange(stus.count())]})
+        return render(request, 'query.html', {"table":[[stus[i],rank[i]] for i in xrange(stus.count())]})
     except:
-        return render(request, 'grades/error.html', {"str":"学生信息输入错误，请重试"});
+        return render(request, 'error.html', {"str":"学生信息输入错误，请重试"});
 
 def query_all(request):
     '''
@@ -44,9 +44,9 @@ def query_all(request):
         low = int(low)
         high = int(high)
         stus = Student.objects.order_by(*(['-'+subjects[order]]+['-'+sub for sub in subjects])).filter(**{subjects[order]+'__gte':low}).filter(**{subjects[order]+'__lte':high})
-        return render(request, 'grades/query.html', {"table":[[stus[i],i+1] for i in xrange(stus.count())], "subid":order})
+        return render(request, 'query.html', {"table":[[stus[i],i+1] for i in xrange(stus.count())], "subid":order})
     except:
-        return render(request, 'grades/error.html', {"str":"输入信息错误,请重试"})
+        return render(request, 'error.html', {"str":"输入信息错误,请重试"})
 
 def modify0(request):
     '''
@@ -58,11 +58,11 @@ def modify0(request):
             num = int(request.POST.get('num'))
             if len(Student.objects.filter(num=num)) == 0:
                 Student.objects.create(num=num)
-            return render(request, 'grades/modify1.html',{'stu':Student.objects.get(num=num)})
+            return render(request, 'modify1.html',{'stu':Student.objects.get(num=num)})
         except:
-            return render(request, 'grades/error.html')
+            return render(request, 'error.html')
     else:
-        return render(request, 'grades/modify0.html')
+        return render(request, 'modify0.html')
 
 def modify1(request):
     '''
@@ -83,12 +83,12 @@ def modify1(request):
                 
             Student.objects.filter(num=paras['num']).update(**paras)
                 
-            return render(request, 'grades/query.html', {"stus":Student.objects.filter(num=paras['num'])})
+            return render(request, 'query.html', {"table":[[Student.objects.get(num=paras['num']), Student.objects.filter(tot__gt=paras['tot']).count()+1]]})
         else:  # delete the student from the database
             Student.objects.filter(num=paras['num']).delete()
-            return render(request, 'grades/notify.html', {"str":"学生信息成功删除"})
+            return render(request, 'notify.html', {"str":"学生信息成功删除"})
     except:
-        return render(request, 'grades/error.html', {"str":"学生信息错误，请重试"});
+        return render(request, 'error.html', {"str":"学生信息错误，请重试"});
 
 def upload(request):
     '''
@@ -98,7 +98,7 @@ def upload(request):
         try:
             csv = request.FILES['csv']
             if csv.size > 4096:
-                return render(request, 'grades/error.html', {'str':'文件尺寸过大'})
+                return render(request, 'error.html', {'str':'文件尺寸过大'})
             else:
                 for line in csv:
                     line = line.strip('\r\n\xef\xbb\xbf')  # delete the useless characters
@@ -114,11 +114,11 @@ def upload(request):
                         paras['tot'] += paras[subjects[i]]
                     paras['name']=words[1]
                     Student.objects.filter(num=int(words[0])).update(**paras)
-                return render(request, 'grades/notify.html', {"str":"导入csv文件成功"})  # upload succeeded
+                return render(request, 'notify.html', {"str":"导入csv文件成功"})  # upload succeeded
         except:
-            return render(request, 'grades/error.html', {'str':'您没有上传文件或文件格式错误，具体文件格式详见帮助'})
+            return render(request, 'error.html', {'str':'您没有上传文件或文件格式错误，具体文件格式详见帮助'})
     else:
-        return render(request, 'grades/upload.html')
+        return render(request, 'upload.html')
 
 def download(request):
     '''
@@ -135,10 +135,10 @@ def download(request):
     return response
 
 def help(request):
-    return render(request, 'grades/help.html')
+    return render(request, 'help.html')
     
 def about(request):
-    return render(request, 'grades/about.html')
+    return render(request, 'about.html')
 
 def stat(request):
     '''
@@ -170,6 +170,6 @@ def stat(request):
     stun = Student.objects.all().count()  # the total number of students
     mid = Student.objects.all().order_by(subjects[order]).values(subjects[order])[stun/2][subjects[order]]  # the median score
 
-    return render(request, 'grades/stat.html', {'cnt_A':cnt_A, 'cnt_B':cnt_B, 'cnt_C':cnt_C,\
+    return render(request, 'stat.html', {'cnt_A':cnt_A, 'cnt_B':cnt_B, 'cnt_C':cnt_C,\
                                                 'cnt_D':cnt_D, 'sub':subjects_ch[order], 'top':top,\
                                                 'avg':avg, 'mid':mid, 'stun':stun})
