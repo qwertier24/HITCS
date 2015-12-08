@@ -37,16 +37,17 @@ def query_all(request):
     '''
     Return a page containing all the student's grades sorted by subjects[order].
     '''
+    order = int(request.GET.get('order', '0'))
     try:
-        order = int(request.GET.get('order', 0))
-        low = request.GET.get('low','0')
-        high = request.GET.get('high','10000')
-        low = int(low)
-        high = int(high)
-        stus = Student.objects.order_by(*(['-'+subjects[order]]+['-'+sub for sub in subjects])).filter(**{subjects[order]+'__gte':low}).filter(**{subjects[order]+'__lte':high})
-        return render(request, 'query.html', {"table":[[stus[i],i+1] for i in xrange(stus.count())], "subid":order})
+        low = int(request.GET.get('low'))
     except:
-        return render(request, 'error.html', {"str":"输入信息错误,请重试"})
+        low = 0
+    try:
+        high = int(request.GET.get('high'))
+    except:
+        high = 2147483647
+    stus = Student.objects.order_by(*(['-'+subjects[order]]+['-'+sub for sub in subjects])).filter(**{subjects[order]+'__gte':low}).filter(**{subjects[order]+'__lte':high})
+    return render(request, 'query.html', {"table":[[stus[i],i+1] for i in xrange(stus.count())], "subid":order})
 
 def modify0(request):
     '''
