@@ -5,6 +5,7 @@ from django.template import RequestContext, loader
 from models import Student
 from django.db.models import Max,Sum,Avg
 import csv
+from django.core.exceptions import ValidationError
 
 subjects = ['tot','chi','mat','eng','phy','che']
 subjects_ch = ["总","语文","数学","英语","物理","化学"]
@@ -45,7 +46,7 @@ def query_all(request):
     try:
         high = int(request.GET.get('high'))
     except:
-        high = 2147483647
+        high = 650
     stus = Student.objects.order_by(*(['-'+subjects[order]]+['-'+sub for sub in subjects])).filter(**{subjects[order]+'__gte':low}).filter(**{subjects[order]+'__lte':high})
     return render(request, 'query.html', {"table":[[stus[i],i+1] for i in xrange(stus.count())], "subid":order})
 
@@ -82,14 +83,16 @@ def modify1(request):
                 paras[subject] = int(request.POST.get(subject))
                 paras['tot'] += paras[subject]
                 
-            Student.objects.filter(num=paras['num']).update(**paras)
-                
+            stu=Student(**paras)
+            stu.clean_fields()  # validate the fields of the students, if not, an error will be raised
+            stu.save()
+
             return render(request, 'query.html', {"table":[[Student.objects.get(num=paras['num']), Student.objects.filter(tot__gt=paras['tot']).count()+1]]})
         else:  # delete the student from the database
             Student.objects.filter(num=paras['num']).delete()
             return render(request, 'notify.html', {"str":"学生信息成功删除"})
     except:
-        return render(request, 'error.html', {"str":"学生信息错误，请重试"});
+        return render(request, 'error.html', {"str":"学生信息错误，请正确填写"});
 
 def upload(request):
     '''
@@ -106,15 +109,21 @@ def upload(request):
                     words = line.split(',')
                     if len(words) == 0:
                         continue
-                    if len(Student.objects.filter(num=int(words[0]))) == 0:
-                        Student.objects.create(num=int(words[0]))
+                        
                     paras = dict()
+                    paras['num'] = int(words[0])
                     paras['tot'] = 0  # total score
                     for i in xrange(1,6):
                         paras[subjects[i]] = int(words[i+1])  # scores of the subjects
                         paras['tot'] += paras[subjects[i]]
                     paras['name']=words[1]
-                    Student.objects.filter(num=int(words[0])).update(**paras)
+                    
+                    stu = Student(**paras)
+                    try:
+                        stu.clean_fields()  # check the scores of the students 
+                    except:
+                        return render(request, 'error.html', {'str':'学生信息错误'})
+                    stu.save()
                 return render(request, 'notify.html', {"str":"导入csv文件成功"})  # upload succeeded
         except:
             return render(request, 'error.html', {'str':'您没有上传文件或文件格式错误，具体文件格式详见帮助'})
@@ -132,14 +141,8 @@ def download(request):
     writer.writerow(["\xef\xbb\xbf学号", "姓名", "语文成绩", "数学成绩", "英语成绩", "物理成绩", "化学成绩", "总分"])
     for stu in Student.objects.order_by("-tot"):
         writer.writerow([stu.num, stu.name.encode('utf-8'), stu.chi, stu.mat, stu.eng, stu.phy, stu.che, stu.tot])
-
-    return response
-
-def help(request):
-    return render(request, 'help.html')
     
-def about(request):
-    return render(request, 'about.html')
+    return response
 
 def stat(request):
     '''
@@ -162,8 +165,8 @@ def stat(request):
         max_score = 100
 
     cnt_A = Student.objects.filter(**{subjects[order]+'__gte':max_score/10*9}).count()
-    cnt_B = Student.objects.filter(**{subjects[order]+'__gte':max_score/10*8}).filter(**{subjects[order]+'__lt':max_score/10*9}).count()
-    cnt_C = Student.objects.filter(**{subjects[order]+'__gte':max_score/10*6}).filter(**{subjects[order]+'__lt':max_score/10*8}).count()
+    cnt_B = Student.objects.filter(**{subjects[order]+'__gte':max_score/10*8, subjects[order]+'__lt':max_score/10*9}).count()
+    cnt_C = Student.objects.filter(**{subjects[order]+'__gte':max_score/10*6, subjects[order]+'__lt':max_score/10*8}).count()
     cnt_D = Student.objects.filter(**{subjects[order]+'__lt':max_score/10*6}).count()
 
     top = Student.objects.aggregate(Max(subjects[order]))[subjects[order]+'__max']  # the highest score
@@ -174,3 +177,9 @@ def stat(request):
     return render(request, 'stat.html', {'cnt_A':cnt_A, 'cnt_B':cnt_B, 'cnt_C':cnt_C,\
                                                 'cnt_D':cnt_D, 'sub':subjects_ch[order], 'top':top,\
                                                 'avg':avg, 'mid':mid, 'stun':stun})
+
+def help(request):
+    return render(request, 'help.html')
+    
+def about(request):
+    return render(request, 'about.html')
