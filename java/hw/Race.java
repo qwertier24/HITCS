@@ -9,63 +9,119 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.event.*;
 
+class Runner extends JLabel {
+  private int when_to_stop,
+    stop_time_length,
+    px_in_one_step,
+    clocks,
+    yc;
+  private ImageIcon img_run, img_stop;
+  public Runner(int _when_to_stop,
+                int _stop_time_length,
+                int _px_in_one_step,
+                int _yc,
+                ImageIcon _img_run,
+                ImageIcon _img_stop) {
+    when_to_stop = _when_to_stop;
+    stop_time_length = _stop_time_length;
+    px_in_one_step = _px_in_one_step;
+    yc = _yc;
+    img_run = _img_run;
+    img_stop = _img_stop;
+  }
+  public void init() {
+    setSize(50, 50);
+    setLocation(0, yc);
+    setIcon(img_run);
+    clocks = 0;
+  }
+  public void go() {
+    clocks++;
+    if (clocks < when_to_stop || clocks > when_to_stop + stop_time_length) {
+      setLocation(getX() + px_in_one_step, yc);
+      setIcon(img_run);
+    } else {
+      setIcon(img_stop);
+    }
+  }
+}
 class RaceThread implements Runnable {
   
-  Thread hare, tortoise;
+  Thread hare, tortoise, thread_draw_line;
 
   JFrame frame;
   Container pane;
-  JLabel lbl_hare, lbl_tortoise;
-
-  int x_hare, x_tortoise;
+  Runner runner_hare, runner_tortoise;
   
   public void init() {
     hare = new Thread(this);
     tortoise = new Thread(this);
+    thread_draw_line = new Thread(this);
 
     frame = new JFrame("The Race Between The Hare and The Tortoise");
     pane = frame.getContentPane();
-    
-    lbl_hare = new JLabel("hare");
-    lbl_tortoise = new JLabel("tortoise");
-    
-    x_hare = 0;
-    x_tortoise = 0;
 
-    
+    runner_hare = new Runner(50, 300, 3, 50,
+                             new ImageIcon(
+                                 new ImageIcon("run_hare.jpg")
+                                 .getImage()
+                                 .getScaledInstance(50, 50, Image.SCALE_DEFAULT)),
+                             new ImageIcon(
+                                 new ImageIcon("stop_hare.jpg")
+                                 .getImage()
+                                 .getScaledInstance(50, 50, Image.SCALE_DEFAULT)));
+    runner_tortoise = new Runner(50, 4, 1, 200,
+                             new ImageIcon(
+                                 new ImageIcon("run_tortoise.jpg")
+                                 .getImage()
+                                 .getScaledInstance(50, 50, Image.SCALE_DEFAULT)),
+                             new ImageIcon(
+                                 new ImageIcon("stop_tortoise.jpg")
+                                 .getImage()
+                                 .getScaledInstance(50, 50, Image.SCALE_DEFAULT)));
+
   }
   
   public void start() {
-    pane.setLayout(null);
-    pane.add(lbl_hare);
-    pane.add(lbl_tortoise);
-
-    lbl_hare.setSize(50,50);
-    lbl_tortoise.setSize(50,50);
     
-    lbl_hare.setLocation(0,50);
-    lbl_tortoise.setLocation(0,100);
+    frame.setSize(500,350);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    pane.setLayout(null);
+    pane.add(runner_hare);
+    pane.add(runner_tortoise);
+
+    runner_hare.init();
+    runner_tortoise.init();
+    
+    frame.setVisible(true);
     
     hare.start();
     tortoise.start();
+    thread_draw_line.start();
 
-    frame.setSize(500,500);
-    frame.setVisible(true);
-
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
 
   public void run() {
     while (true) {
-      if (Thread.currentThread() == hare) {
-        lbl_hare.setLocation(x_hare++, 50);
+      if (Thread.currentThread() == thread_draw_line) {
+        Graphics g = frame.getGraphics();
+        g.setColor(Color.RED);
+        g.drawLine(450, 5, 450, 345);
+        try {
+          Thread.sleep(20);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      } else if (Thread.currentThread() == hare) {
+        runner_hare.go();
         try {
           Thread.sleep(50);
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
       } else {
-        lbl_tortoise.setLocation(x_tortoise++, 100);
+        runner_tortoise.go();
         try {
           Thread.sleep(50);
         } catch (InterruptedException e) {
@@ -74,7 +130,6 @@ class RaceThread implements Runnable {
       }
     }
   }
-  
 }
 
 public class Race {
