@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}前言}{2}{section.1}
+\contentsline {section}{\numberline {2}主要设计}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}必须要说的}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}FileSet}{2}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}属性}{2}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}方法}{2}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}SetHeader}{3}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}属性}{3}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}方法}{4}{subsubsection.2.3.2}
+\contentsline {subsection}{\numberline {2.4}FileBlock}{4}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}属性}{4}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}方法}{4}{subsubsection.2.4.2}
+\contentsline {subsection}{\numberline {2.5}FileTag}{4}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}属性}{4}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}方法}{5}{subsubsection.2.5.2}

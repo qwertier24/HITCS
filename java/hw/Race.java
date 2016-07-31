@@ -10,12 +10,13 @@ import javax.swing.JFrame;
 import java.awt.event.*;
 
 class Runner extends JLabel {
-  private int when_to_stop,
-    stop_time_length,
-    px_in_one_step,
-    clocks,
-    yc;
-  private ImageIcon img_run, img_stop;
+  private int when_to_stop,  // 停止时的clocks值
+    stop_time_length,        // 停止的时间长度
+    px_in_one_step,          // 每50ms，x坐标的增量（像素）
+    clocks,                  // 记录自线程运行开始的时间（t / 50ms)
+    yc;                      // 该label的y坐标
+  private ImageIcon img_run, // 奔跑时的ImageIcon
+    img_stop;                // 停下休息时的ImageIcon
   public Runner(int _when_to_stop,
                 int _stop_time_length,
                 int _px_in_one_step,
@@ -30,21 +31,24 @@ class Runner extends JLabel {
     img_stop = _img_stop;
   }
   public void init() {
-    setSize(50, 50);
-    setLocation(0, yc);
-    setIcon(img_run);
-    clocks = 0;
+    setSize(70, 70);    // 设置label大小
+    setLocation(0, yc); // 设置初始位置
+    setIcon(img_run);   // 设置图片
+    clocks = 0;          
   }
   public void go() {
     clocks++;
-    if (clocks < when_to_stop || clocks > when_to_stop + stop_time_length) {
+    if (clocks <= 400 / px_in_one_step + stop_time_length  // 没有越过终点线
+        && (clocks < when_to_stop                          
+            || clocks > when_to_stop + stop_time_length)) {  // 没到休息的时间
       setLocation(getX() + px_in_one_step, yc);
       setIcon(img_run);
     } else {
       setIcon(img_stop);
-    }
+    } 
   }
 }
+
 class RaceThread implements Runnable {
   
   Thread hare, tortoise, thread_draw_line;
@@ -58,27 +62,31 @@ class RaceThread implements Runnable {
     tortoise = new Thread(this);
     thread_draw_line = new Thread(this);
 
+    // 对frame进行基本设置
     frame = new JFrame("The Race Between The Hare and The Tortoise");
     pane = frame.getContentPane();
+    pane.setBackground(Color.white);
 
-    runner_hare = new Runner(50, 300, 3, 50,
+    // 初始化兔子label
+    runner_hare = new Runner(50, 300, 3, 50, 
                              new ImageIcon(
                                  new ImageIcon("run_hare.jpg")
                                  .getImage()
-                                 .getScaledInstance(50, 50, Image.SCALE_DEFAULT)),
+                                 .getScaledInstance(70, 70, Image.SCALE_SMOOTH)),
                              new ImageIcon(
                                  new ImageIcon("stop_hare.jpg")
                                  .getImage()
-                                 .getScaledInstance(50, 50, Image.SCALE_DEFAULT)));
-    runner_tortoise = new Runner(50, 4, 1, 200,
+                                 .getScaledInstance(70, 70, Image.SCALE_SMOOTH)));
+    // 初始化乌龟label
+    runner_tortoise = new Runner(50, 4, 1, 200, 
                              new ImageIcon(
                                  new ImageIcon("run_tortoise.jpg")
                                  .getImage()
-                                 .getScaledInstance(50, 50, Image.SCALE_DEFAULT)),
+                                 .getScaledInstance(70, 70, Image.SCALE_SMOOTH)),
                              new ImageIcon(
                                  new ImageIcon("stop_tortoise.jpg")
                                  .getImage()
-                                 .getScaledInstance(50, 50, Image.SCALE_DEFAULT)));
+                                 .getScaledInstance(70, 70, Image.SCALE_SMOOTH)));
 
   }
   
@@ -95,25 +103,25 @@ class RaceThread implements Runnable {
     runner_tortoise.init();
     
     frame.setVisible(true);
-    
+
+    // 线程开始运行
     hare.start();
     tortoise.start();
     thread_draw_line.start();
-
   }
 
   public void run() {
     while (true) {
-      if (Thread.currentThread() == thread_draw_line) {
+      if (Thread.currentThread() == thread_draw_line) {  // 绘终点线
         Graphics g = frame.getGraphics();
-        g.setColor(Color.RED);
+        g.setColor(Color.BLACK);
         g.drawLine(450, 5, 450, 345);
         try {
           Thread.sleep(20);
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
-      } else if (Thread.currentThread() == hare) {
+      } else if (Thread.currentThread() == hare) {  // 绘兔子
         runner_hare.go();
         try {
           Thread.sleep(50);
@@ -124,7 +132,7 @@ class RaceThread implements Runnable {
         runner_tortoise.go();
         try {
           Thread.sleep(50);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e) {  // 绘乌龟
           e.printStackTrace();
         }
       }

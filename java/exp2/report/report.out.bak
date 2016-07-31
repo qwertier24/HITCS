@@ -1,0 +1,8 @@
+\BOOKMARK [1][-]{section.1}{题目描述}{}% 1
+\BOOKMARK [1][-]{section.2}{总体设计思想}{}% 2
+\BOOKMARK [1][-]{section.3}{详细设计}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{底层容器设计}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{中间容器设计}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{事件监听}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{单词数目统计方法}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{具体实现}{}% 8

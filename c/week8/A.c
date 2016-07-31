@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<string.h>
+
+int max(int a, int b){return a>b?a:b;}
+int min(int a, int b){return a<b?a:b;}
+
+typedef long long LL;
+
+/*
+qsort(a, n, sizeof(int), tmp);
+bsearch(&key, a, n, sizeof(int), cmp);
+*/
+
+#define N 30
+
+typedef struct{
+  int s,t,w;
+}Edge;
+
+Edge e[N*N];
+
+int pa[N];
+int findset(int u){
+  if(pa[u]!=u)
+    pa[u] = findset(pa[u]);
+  return pa[u];
+}
+
+int cmp(const void *i,const void *j){
+  return ((Edge*)i) -> w - ((Edge*)j) -> w;
+}
+int main(){
+#ifdef QWERTIER
+  freopen("in.txt","r",stdin);
+#endif 
+  int n, i, j;
+  while(scanf("%d",&n) && n){
+    int ans = 0, m = 0;
+    for(i = 0; i < 26; i++)
+      pa[i] = i;
+    for(i = 0; i < n - 1; i++){
+      char s;
+      int nk;
+      scanf(" %c %d", &s, &nk);
+      for(j = 0; j < nk; j++){
+        char t;
+        int w;
+        scanf(" %c %d", &t, &w);
+        e[m].s = s-'A';
+        e[m].t = t-'A';
+        e[m++].w = w;
+      }
+    }
+    qsort(e, m, sizeof(Edge), cmp);
+    for(i = 0 ; i < m; i++){
+      int u = e[i].s, v = e[i].t;
+      if(findset(u) != findset(v)){
+        ans += e[i].w;
+        pa[pa[u]] = pa[v];
+      }
+    }
+    printf("%d\n",ans);
+  }
+  return 0;
+}

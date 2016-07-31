@@ -1,0 +1,210 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{CJKutf8}
+\usepackage{amsthm}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{courier}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{indentfirst}
+%\usepackage{float}
+\usepackage[perpage,stable]{footmisc} 
+\geometry{left=2.7cm, right=2.7cm, top=3cm, bottom=3cm}
+
+
+\usepackage{graphics}
+
+\usepackage[colorlinks,linkcolor=black,anchorcolor=blue,citecolor=green,
+  %	CJKbookmarks=true,
+]{hyperref}
+\hypersetup{unicode}
+
+\linespread{1.4}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\hypersetup{hidelinks}
+
+\usepackage{listings}
+\lstset{
+  numbers=left,
+  texcl=true,
+  escapechar=`,
+  backgroundcolor=\color{lightgray!40!white}, 
+  commentstyle=\rm\color{green!30!black},
+  basicstyle=\footnotesize\tt,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  extendedchars=false,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  language=C++,                 % the language of the code
+  keywordstyle=\color{blue!70}\bfseries,
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  tabsize=2                       % sets default tabsize to 2 spaces
+}
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+  \title{\bf 2016夏季学期C++课程大作业报告}
+  \author{马玉坤-1150310618}
+  \date{2016年7月30日}
+  \maketitle
+  \renewcommand{\contentsname}{\textbf{目录}}
+  \tableofcontents
+  \newpage
+  \newpage
+
+  \section{前言}
+
+  五门夏季选修课加其他的琐事，现在才写完大作业。非常感谢又萌又强的三位助教，让我在C++课上甚至课下都学到了很多东西。尽管之前用C++写过不少代码，但是就编程知识，特别是面向对象的思想和方法来讲，这三个星期学到的新东西非常非常多。另外，由于代码逻辑很直（一点都不绕），所以加的注释并不多（其实是因为懒），求助教谅解。
+
+
+  \section{主要设计}
+
+  \subsection{必须要说的}
+
+  为了节约空间（删除一大堆大小为1M的文件后，添加一大堆2M的文件时，无法充分利用之前删除的文件所占的数据空间），我仿照文件系统中的“单元空间”，将数据区域分成若干个64KB大小的“格子”。每个“格子”中，有8B的空间存储下一个“格子”的位置，这样就形成了一个链表。从数据区域读某个文件时，实际上就是将一个链表读入内存。写文件类似。同时，setHeader还要记录空白区域的首地址，这样当添加文件时也更为方便。
+
+  其余的实现与段艺学长的指导书中的实现大致相同。
+
+
+  \subsection{FileSet}
+  
+  \subsubsection{属性}
+  
+  \begin{lstlisting}
+    // 归档文件的文件指针
+    FILE* archive;
+
+    // 指向SetHeader的指针
+    SetHeader* header;
+
+    // 存储FileTag数组
+    FileTag** fileTags;
+
+    // 支持的最大文件数量
+    unsigned int maxFileNumber;
+  \end{lstlisting}
+
+  \subsubsection{方法}
+  \begin{lstlisting}
+
+    // 指定大小和位置，将data写入归档文件
+    inline void writeToArchive(byte* data, unsigned int len, long long pos);
+
+    // 将data写入归档文件的文件区中空闲的区域
+    inline long long writeFileToArchive(byte* data, unsigned int len);
+
+    // 从归档文件的文件区中删除起始位置为pos的文件
+    inline void deleteFileFromArchive(long long pos);
+
+    // 从归档文件的文件区中读入起始位置为pos，大小为len的文件
+    inline byte* readFileFromArchive(long long pos, unsigned int len);
+
+    // 计算整个checkSum的md5值
+    inline byte* calcCheckSum();
+
+    // 添加文件
+    bool addFile(char* filePath);
+
+    // 删除文件
+    bool deleteFile(char* fileName);
+
+    // 获取文件
+    bool fetchFile(char* fileName, char* filePath);
+
+    // 打印文件
+    void printFileList(); 
+
+  \end{lstlisting}
+
+  \subsection{SetHeader}
+
+  \subsubsection{属性}
+
+  \begin{lstlisting}
+    
+    // 文件的md5值
+    byte checkSum[16];
+
+    // 最大文件数量
+    unsigned int maxFileNumber;
+
+    // 当前文件数量
+    unsigned int currentFileNumber;
+
+    // 数据区域中空白区域的首地址
+    long long emptyPosition;
+
+    // 文件标记
+    char setMark[9];
+  \end{lstlisting}
+
+  \subsubsection{方法}
+
+  \begin{lstlisting}
+    // 返回一个SetHeader序列化为unsigned char数组后的结果
+    byte* toBytes();
+  \end{lstlisting}
+
+  \subsection{FileBlock}
+
+  FileBlock的作用是存储数据区域中一个“小格”表示的链表结点。
+
+  \subsubsection{属性}
+
+  \begin{lstlisting}
+    // 所在链表中下一个“小格”的位置
+    long long nextPosition;
+
+    // 当前小格中，存储的数据的大小，最大为64 * 1024 - 12
+    unsigned int size;
+
+    // 当前小格存储的数据
+    byte data[64*1024 - 12];
+  \end{lstlisting}
+
+  \subsubsection{方法}
+
+  \begin{lstlisting}
+    // 返回将一个FileBlock对象序列化为byte数组后的结果
+    byte* toBytes();
+  \end{lstlisting}
+
+  \subsection{FileTag}
+
+  \subsubsection{属性}
+  
+  \begin{lstlisting}
+    // 小文件数据链表中第一项的地址
+    long long filePosition;
+
+    // 小文件的大小
+    unsigned int fileSize;
+
+    // 当前小文件是否被删除（0代表未删除）
+    byte deleted;
+
+    // 文件名
+    char fileName[256];
+  \end{lstlisting}
+
+  \subsubsection{方法}
+  
+  \begin{lstlisting}
+    // 返回将一个FileTag对象序列化后的结果
+    byte* toBytes();
+  \end{lstlisting}
+
+  \newpage
+
+\end{CJK*}
+\end{document}
