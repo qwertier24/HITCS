@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Wed Dec 21 16:31:24 2016
+# Process ID: 9828
+# Current directory: D:/light
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8344 D:\light\light.xpr
+# Log file: D:/light/vivado.log
+# Journal file: D:/light\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/light/light.xpr
+INFO: [Project 1-313] Project file moved from 'E:/HITCS/other/light' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IP Output Repository Path: Could not find the directory 'D:/light/light.cache/ip', nor could it be found using path 'E:/HITCS/other/light/light.cache/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.3/data/ip'.
+reset_run impl_1
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Process appears to be on host 'DESKTOP-3F16N34' and cannot be killed from host 'DESKTOP-IQ9RCDV'
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 21 16:33:01 2016...

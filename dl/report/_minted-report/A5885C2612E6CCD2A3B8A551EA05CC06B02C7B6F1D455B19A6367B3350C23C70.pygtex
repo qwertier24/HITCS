@@ -1,0 +1,51 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{}时钟信号}
+\PYG{n+nv}{set\PYGZus{}property} PACKAGE\PYGZus{}PIN E3 \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} clk\PYG{k}{]}
+\PYG{n+nv}{set\PYGZus{}property} IOSTANDARD LVCMOS33 \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} clk\PYG{k}{]}
+\PYG{n+nv}{create\PYGZus{}clock} \PYG{o}{\PYGZhy{}}add \PYG{o}{\PYGZhy{}}name sys\PYGZus{}clk\PYGZus{}pin \PYG{o}{\PYGZhy{}}period \PYG{l+m+mf}{10.00} \PYG{err}{\PYGZbs{}}
+             \PYG{n+nv}{\PYGZhy{}waveform} \PYG{k}{\PYGZob{}}\PYG{n+nv}{0} \PYG{l+m+mi}{5}\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} clk\PYG{k}{]}
+
+\PYG{c}{\PYGZsh{}led灯}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} H17 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{0}\PYG{k}{]\PYGZcb{}]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} K15 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{1}\PYG{k}{]\PYGZcb{}]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} J13 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{2}\PYG{k}{]\PYGZcb{}]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} N14 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{3}\PYG{k}{]\PYGZcb{}]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} R18 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{4}\PYG{k}{]\PYGZcb{}]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} V17 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{5}\PYG{k}{]\PYGZcb{}]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} U17 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{6}\PYG{k}{]\PYGZcb{}]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} U16 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{7}\PYG{k}{]\PYGZcb{}]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} V16 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{8}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} T15 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{9}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} U14 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{10}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} T16 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{11}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} V15 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{12}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} V14 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{13}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} V12 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{14}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} V11 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{led}\PYG{k}{[}\PYG{n+nv}{15}\PYG{k}{]\PYGZcb{}];}
+
+\PYG{c}{\PYGZsh{}七段数码管各臂使能}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} T10 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{seg}\PYG{k}{[}\PYG{n+nv}{0}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} R10 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{seg}\PYG{k}{[}\PYG{n+nv}{1}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} K16 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{seg}\PYG{k}{[}\PYG{n+nv}{2}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} K13 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{seg}\PYG{k}{[}\PYG{n+nv}{3}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} P15 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{seg}\PYG{k}{[}\PYG{n+nv}{4}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} T11 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{seg}\PYG{k}{[}\PYG{n+nv}{5}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} L18 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{seg}\PYG{k}{[}\PYG{n+nv}{6}\PYG{k}{]\PYGZcb{}];}
+
+\PYG{c}{\PYGZsh{}七段数码管各位使能}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} J17 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{AN}\PYG{k}{[}\PYG{n+nv}{0}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} J18 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{AN}\PYG{k}{[}\PYG{n+nv}{1}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} T9  IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{AN}\PYG{k}{[}\PYG{n+nv}{2}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} J14 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{AN}\PYG{k}{[}\PYG{n+nv}{3}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} P14 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{AN}\PYG{k}{[}\PYG{n+nv}{4}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} T14 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{AN}\PYG{k}{[}\PYG{n+nv}{5}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} K2  IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{AN}\PYG{k}{[}\PYG{n+nv}{6}\PYG{k}{]\PYGZcb{}];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} U13 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} \PYG{k}{\PYGZob{}}\PYG{n+nv}{AN}\PYG{k}{[}\PYG{n+nv}{7}\PYG{k}{]\PYGZcb{}];}
+
+\PYG{c}{\PYGZsh{}按钮}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} N17 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} btn\PYG{k}{[}\PYG{n+nv}{0}\PYG{k}{]]}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} M18 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} btn\PYG{k}{[}\PYG{n+nv}{1}\PYG{k}{]];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} P17 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} btn\PYG{k}{[}\PYG{n+nv}{2}\PYG{k}{]];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} M17 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} btn\PYG{k}{[}\PYG{n+nv}{3}\PYG{k}{]];}
+\PYG{n+nv}{set\PYGZus{}property} \PYG{o}{\PYGZhy{}}dict \PYG{k}{\PYGZob{}}\PYG{n+nv}{PACKAGE\PYGZus{}PIN} P18 IOSTANDARD LVCMOS33\PYG{k}{\PYGZcb{}} \PYG{k}{[}\PYG{n+nv}{get\PYGZus{}ports} btn\PYG{k}{[}\PYG{n+nv}{4}\PYG{k}{]];}
+\end{Verbatim}

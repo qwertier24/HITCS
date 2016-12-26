@@ -1,0 +1,4 @@
+﻿cpp.obj : error LNK2019: 无法解析的外部符号 _fasm，该符号在函数 _main 中被引用
+cpp.obj : error LNK2001: 无法解析的外部符号 _vasm
+cpp.obj : error LNK2001: 无法解析的外部符号 _aaaa
+E:\HITCS\asm\ex2\test\Debug\test.exe : fatal error LNK1120: 3 个无法解析的外部命令

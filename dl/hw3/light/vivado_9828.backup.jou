@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Wed Dec 21 16:31:24 2016
+# Process ID: 9828
+# Current directory: D:/light
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8344 D:\light\light.xpr
+# Log file: D:/light/vivado.log
+# Journal file: D:/light\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/light/light.xpr
+reset_run impl_1
+reset_run synth_1

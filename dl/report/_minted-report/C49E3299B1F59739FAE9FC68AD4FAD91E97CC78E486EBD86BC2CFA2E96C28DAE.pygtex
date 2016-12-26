@@ -1,0 +1,234 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Module Name: light}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{k}{library} \PYG{n+nn}{IEEE}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{IEEE.STD\PYGZus{}LOGIC\PYGZus{}1164.}\PYG{k}{ALL}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{IEEE.STD\PYGZus{}LOGIC\PYGZus{}UNSIGNED.}\PYG{k}{ALL}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{IEEE.numeric\PYGZus{}std.}\PYG{k}{all}\PYG{p}{;}
+
+\PYG{k}{library} \PYG{n+nn}{UNISIM}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{UNISIM.VComponents.}\PYG{k}{all}\PYG{p}{;}
+
+\PYG{k}{Entity} \PYG{n+nc}{light} \PYG{k}{Is}
+\PYG{k}{port} \PYG{p}{(}
+		\PYG{n}{btn} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{4} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+		\PYG{n}{led} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+		\PYG{n}{clk} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC}\PYG{p}{;}
+		\PYG{n}{seg} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{6} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+		\PYG{n}{AN} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}
+	\PYG{p}{);}
+\PYG{k}{end} \PYG{n+nc}{light}\PYG{p}{;}
+
+\PYG{k}{Architecture} \PYG{n+nc}{behavior} \PYG{k}{of} \PYG{n+nc}{light} \PYG{k}{Is}
+
+\PYG{k}{Signal} \PYG{n}{led\PYGZus{}int} \PYG{o}{:} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{k}{signal} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{:} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:=} \PYG{p}{(}\PYG{k}{others}\PYG{o}{=\PYGZgt{}}\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+
+\PYG{k}{signal} \PYG{n}{clk4hz} \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic} \PYG{o}{:=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{signal} \PYG{n}{clk4hz\PYGZus{}n}\PYG{o}{:} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{23} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:=} \PYG{l+s}{\PYGZdq{}100110001001011010000000\PYGZdq{}}\PYG{p}{;}
+\PYG{k}{signal} \PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{:} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{23} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+
+\PYG{k}{signal} \PYG{n}{clk1khz} \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic} \PYG{o}{:=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{signal} \PYG{n}{clk1khz\PYGZus{}n} \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{16} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:=} \PYG{l+s}{\PYGZdq{}11000011010100000\PYGZdq{}}\PYG{p}{;}
+\PYG{k}{signal} \PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{16} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:=} \PYG{l+s}{\PYGZdq{}11000011010100000\PYGZdq{}}\PYG{p}{;}
+
+\PYG{k}{procedure} \PYG{n}{go\PYGZus{}straight} \PYG{p}{(}\PYG{k}{signal} \PYG{n}{va} \PYG{o}{:} \PYG{k}{inout} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{k}{is}
+\PYG{k}{begin}
+    \PYG{n}{va} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{k}{end}\PYG{p}{;}
+
+\PYG{k}{procedure} \PYG{n}{turn\PYGZus{}left} \PYG{p}{(}\PYG{k}{signal} \PYG{n}{va} \PYG{o}{:} \PYG{k}{inout} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                     \PYG{k}{signal} \PYG{n}{an} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                     \PYG{k}{signal} \PYG{n}{seg} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{6} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                     \PYG{k}{signal} \PYG{n}{clk4hz} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC}\PYG{p}{;}
+                     \PYG{k}{signal} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{k}{is}
+\PYG{k}{begin}
+    \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{12} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+    \PYG{k}{case} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{is}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}01111111\PYGZdq{}} \PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}1000111\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}10111111\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0000110\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}010\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11011111\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0001110\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}011\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11101111\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}1111000\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{k}{others} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111111\PYGZdq{}}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+
+    \PYG{k}{if} \PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk4hz}\PYG{p}{)} \PYG{k}{then}
+        \PYG{k}{case} \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{k}{is}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}100\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}010\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}100\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}010\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{k}{others} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}100\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+\PYG{k}{end}\PYG{p}{;}
+
+\PYG{k}{procedure} \PYG{n}{turn\PYGZus{}right} \PYG{p}{(}\PYG{k}{signal} \PYG{n}{va} \PYG{o}{:} \PYG{k}{inout} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                     \PYG{k}{signal} \PYG{n}{an} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                     \PYG{k}{signal} \PYG{n}{seg} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{6} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                     \PYG{k}{signal} \PYG{n}{clk4hz} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC}\PYG{p}{;}
+                     \PYG{k}{signal} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{k}{is}
+\PYG{k}{begin}
+    \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+    \PYG{k}{case} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{is}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11110111\PYGZdq{}} \PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0001000\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111011\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}1111001\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}010\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111101\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}1000010\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}011\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111110\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0001001\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{k}{others} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111111\PYGZdq{}}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+    \PYG{k}{if} \PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk4hz}\PYG{p}{)} \PYG{k}{then}
+        \PYG{k}{case} \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{is}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}100\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}010\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}100\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}010\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{k}{others} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+\PYG{k}{end}\PYG{p}{;}
+
+\PYG{k}{procedure} \PYG{n}{go\PYGZus{}back} \PYG{p}{(}\PYG{k}{signal} \PYG{n}{va} \PYG{o}{:} \PYG{k}{inout} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                   \PYG{k}{signal} \PYG{n}{an} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                   \PYG{k}{signal} \PYG{n}{seg} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{6} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                   \PYG{k}{signal} \PYG{n}{new\PYGZus{}clk} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC}\PYG{p}{;}
+                   \PYG{k}{signal} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{k}{is}
+\PYG{k}{begin}
+    \PYG{k}{case} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{is}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}01111111\PYGZdq{}} \PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0010010\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}10111111\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}1111000\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}010\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11011111\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}1000000\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{l+s}{\PYGZdq{}011\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11101111\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0001100\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{when} \PYG{k}{others} \PYG{o}{=\PYGZgt{}}
+            \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111111\PYGZdq{}}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+    \PYG{k}{if} \PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{new\PYGZus{}clk}\PYG{p}{)} \PYG{k}{then}
+        \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{12} \PYG{k}{downto} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+        \PYG{k}{case} \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{k}{is}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}111\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}111\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{k}{others} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{13}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}}\PYG{p}{;}
+         \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+         \PYG{k}{case} \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{is}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}111\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}111\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{when} \PYG{k}{others} \PYG{o}{=\PYGZgt{}}
+                \PYG{n}{va}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}}\PYG{p}{;}
+          \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+      \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+\PYG{k}{end}\PYG{p}{;}
+
+\PYG{k}{procedure} \PYG{n}{output\PYGZus{}error}\PYG{p}{(}\PYG{k}{signal} \PYG{n}{an} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                       \PYG{k}{signal} \PYG{n}{seg} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{6} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+                       \PYG{k}{signal} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{k}{is}
+\PYG{k}{begin}
+    \PYG{k}{case} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{is}
+       \PYG{k}{when} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+           \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}01111111\PYGZdq{}} \PYG{p}{;}
+           \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0000110\PYGZdq{}}\PYG{p}{;}
+       \PYG{k}{when} \PYG{l+s}{\PYGZdq{}001\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+           \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}10111111\PYGZdq{}}\PYG{p}{;}
+           \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0001000\PYGZdq{}}\PYG{p}{;}
+       \PYG{k}{when} \PYG{l+s}{\PYGZdq{}010\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+           \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11011111\PYGZdq{}}\PYG{p}{;}
+           \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0001000\PYGZdq{}}\PYG{p}{;}
+       \PYG{k}{when} \PYG{l+s}{\PYGZdq{}011\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+           \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11101111\PYGZdq{}}\PYG{p}{;}
+           \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}1000000\PYGZdq{}}\PYG{p}{;}
+       \PYG{k}{when} \PYG{l+s}{\PYGZdq{}100\PYGZdq{}} \PYG{o}{=\PYGZgt{}}
+           \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11110111\PYGZdq{}}\PYG{p}{;}
+           \PYG{n}{seg} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}0001000\PYGZdq{}}\PYG{p}{;}
+       \PYG{k}{when} \PYG{k}{others} \PYG{o}{=\PYGZgt{}}
+           \PYG{n}{an} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111111\PYGZdq{}}\PYG{p}{;}
+
+   \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+\PYG{k}{end}\PYG{p}{;}
+
+\PYG{k}{begin}
+        \PYG{n}{led} \PYG{o}{\PYGZlt{}=} \PYG{n}{led\PYGZus{}int}\PYG{p}{;}
+
+        \PYG{k}{process}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{,} \PYG{n}{clk4hz}\PYG{p}{)} \PYG{k}{begin}
+        \PYG{k}{if} \PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{)} \PYG{k}{then}
+            \PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{\PYGZgt{}=} \PYG{n}{clk4hz\PYGZus{}n}\PYG{p}{)} \PYG{k}{then}
+                \PYG{n}{clk4hz} \PYG{o}{\PYGZlt{}=} \PYG{k}{not} \PYG{n}{clk4hz}\PYG{p}{;}
+                \PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+
+            \PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{\PYGZgt{}=} \PYG{n}{clk1khz\PYGZus{}n}\PYG{p}{)} \PYG{k}{then}
+                \PYG{n}{clk1khz} \PYG{o}{\PYGZlt{}=} \PYG{k}{not} \PYG{n}{clk1khz}\PYG{p}{;}
+                \PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+        \PYG{k}{process}\PYG{p}{(}\PYG{n}{clk1khz}\PYG{p}{)} \PYG{k}{begin}
+        \PYG{k}{if} \PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk1khz}\PYG{p}{)} \PYG{k}{then}
+            \PYG{n}{sseg\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{k}{if} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}101\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{sseg\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+
+        \PYG{k}{process} \PYG{p}{(}\PYG{n}{btn}\PYG{p}{)} \PYG{k}{begin}
+            \PYG{k}{if} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00010\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{AN} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111111\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{go\PYGZus{}straight}\PYG{p}{(}\PYG{n}{led\PYGZus{}int}\PYG{p}{);}
+            \PYG{k}{elsif} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00100\PYGZdq{}} \PYG{k}{or} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00110\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{turn\PYGZus{}left}\PYG{p}{(}\PYG{n}{led\PYGZus{}int}\PYG{p}{,} \PYG{n}{AN}\PYG{p}{,} \PYG{n}{seg}\PYG{p}{,} \PYG{n}{clk4hz}\PYG{p}{,} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{);}
+            \PYG{k}{elsif} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}01000\PYGZdq{}} \PYG{k}{or} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}01010\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{turn\PYGZus{}right}\PYG{p}{(}\PYG{n}{led\PYGZus{}int}\PYG{p}{,} \PYG{n}{AN}\PYG{p}{,} \PYG{n}{seg}\PYG{p}{,} \PYG{n}{clk4hz}\PYG{p}{,} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{);}
+            \PYG{k}{elsif} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}10000\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{go\PYGZus{}back}\PYG{p}{(}\PYG{n}{led\PYGZus{}int}\PYG{p}{,} \PYG{n}{AN}\PYG{p}{,} \PYG{n}{seg}\PYG{p}{,} \PYG{n}{clk4hz}\PYG{p}{,} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{);}
+            \PYG{k}{elsif} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00000\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{AN} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111111\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{led\PYGZus{}int} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{else}
+                \PYG{n}{output\PYGZus{}error}\PYG{p}{(}\PYG{n}{AN}\PYG{p}{,} \PYG{n}{seg}\PYG{p}{,} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{);}
+            \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+\PYG{k}{end} \PYG{n+nc}{behavior}\PYG{p}{;}
+\end{Verbatim}

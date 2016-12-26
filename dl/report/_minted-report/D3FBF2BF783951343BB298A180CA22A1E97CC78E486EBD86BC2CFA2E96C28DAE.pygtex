@@ -1,0 +1,53 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{begin}
+        \PYG{n}{led} \PYG{o}{\PYGZlt{}=} \PYG{n}{led\PYGZus{}int}\PYG{p}{;}
+
+        \PYG{c+c1}{\PYGZhy{}\PYGZhy{}分频}
+        \PYG{k}{process}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{,} \PYG{n}{clk4hz}\PYG{p}{)} \PYG{k}{begin}
+        \PYG{k}{if} \PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk}\PYG{p}{)} \PYG{k}{then}
+            \PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{\PYGZgt{}=} \PYG{n}{clk4hz\PYGZus{}n}\PYG{p}{)} \PYG{k}{then}
+                \PYG{n}{clk4hz} \PYG{o}{\PYGZlt{}=} \PYG{k}{not} \PYG{n}{clk4hz}\PYG{p}{;}
+                \PYG{n}{clk4hz\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+
+            \PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{\PYGZgt{}=} \PYG{n}{clk1khz\PYGZus{}n}\PYG{p}{)} \PYG{k}{then}
+                \PYG{n}{clk1khz} \PYG{o}{\PYGZlt{}=} \PYG{k}{not} \PYG{n}{clk1khz}\PYG{p}{;}
+                \PYG{n}{clk1khz\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+        \PYG{c+c1}{\PYGZhy{}\PYGZhy{}设置计数器，调整数码管点亮的位（一次显示一位）}
+        \PYG{k}{process}\PYG{p}{(}\PYG{n}{clk1khz}\PYG{p}{)} \PYG{k}{begin}
+        \PYG{k}{if} \PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk1khz}\PYG{p}{)} \PYG{k}{then}
+            \PYG{n}{sseg\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{k}{if} \PYG{n}{sseg\PYGZus{}i} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}101\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{sseg\PYGZus{}i} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}000\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+
+        \PYG{c+c1}{\PYGZhy{}\PYGZhy{}检查按钮的按下情况，进行不同操作}
+        \PYG{k}{process} \PYG{p}{(}\PYG{n}{btn}\PYG{p}{)} \PYG{k}{begin}
+            \PYG{k}{if} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00010\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{AN} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111111\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{go\PYGZus{}straight}\PYG{p}{(}\PYG{n}{led\PYGZus{}int}\PYG{p}{);}
+            \PYG{k}{elsif} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00100\PYGZdq{}} \PYG{k}{or} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00110\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{turn\PYGZus{}left}\PYG{p}{(}\PYG{n}{led\PYGZus{}int}\PYG{p}{,} \PYG{n}{AN}\PYG{p}{,} \PYG{n}{seg}\PYG{p}{,} \PYG{n}{clk4hz}\PYG{p}{,} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{);}
+            \PYG{k}{elsif} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}01000\PYGZdq{}} \PYG{k}{or} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}01010\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{turn\PYGZus{}right}\PYG{p}{(}\PYG{n}{led\PYGZus{}int}\PYG{p}{,} \PYG{n}{AN}\PYG{p}{,} \PYG{n}{seg}\PYG{p}{,} \PYG{n}{clk4hz}\PYG{p}{,} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{);}
+            \PYG{k}{elsif} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}10000\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{go\PYGZus{}back}\PYG{p}{(}\PYG{n}{led\PYGZus{}int}\PYG{p}{,} \PYG{n}{AN}\PYG{p}{,} \PYG{n}{seg}\PYG{p}{,} \PYG{n}{clk4hz}\PYG{p}{,} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{);}
+            \PYG{k}{elsif} \PYG{n}{btn} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00000\PYGZdq{}} \PYG{k}{then}
+                \PYG{n}{AN} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}11111111\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{led\PYGZus{}int} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{else}
+                \PYG{n}{output\PYGZus{}error}\PYG{p}{(}\PYG{n}{AN}\PYG{p}{,} \PYG{n}{seg}\PYG{p}{,} \PYG{n}{sseg\PYGZus{}i}\PYG{p}{);}
+            \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+\PYG{k}{end} \PYG{n+nc}{behavior}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,4 @@
+﻿cl : 命令行 warning D9025: 正在重写“/sdl”(用“/GS-”)
+  源.cpp
+  test.vcxproj -> E:\HITCS\asm\hw2\test\Debug\test.exe
+  test.vcxproj -> E:\HITCS\asm\hw2\test\Debug\test.pdb (Partial PDB)

@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}引言}{3}{section.1}
+\contentsline {section}{\numberline {2}设计目的及要求}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}基础任务}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}附加任务}{4}{subsection.2.2}
+\contentsline {section}{\numberline {3}工作原理}{4}{section.3}
+\contentsline {section}{\numberline {4}实现}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}实体与端口}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}信号定义}{5}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}主过程}{5}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}左转}{7}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}右转}{8}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}前进}{9}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}刹车}{9}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}错误处理}{10}{subsection.4.8}
+\contentsline {section}{\numberline {5}调试过程}{11}{section.5}
+\contentsline {section}{\numberline {6}设计结论}{12}{section.6}
+\contentsline {section}{\numberline {7}设计心得与总结}{12}{section.7}
+\contentsline {section}{参考文献}{13}{section*.2}
+\contentsline {section}{附录}{13}{section*.3}
+\contentsline {subsection}{附录一 \ 约束文件（管脚设置,Nexys4DDR\_Master.xdc）}{14}{section*.4}
+\contentsline {subsection}{附录二 \ 模块文件（light.vhd）}{21}{section*.5}
+\contentsline {subsection}{附录三 \ 运行结果}{21}{section*.6}
+\contentsline {subsection}{附录四 \ 小组分工与合作}{26}{section*.12}
+\contentsline {section}{致谢}{26}{section*.13}

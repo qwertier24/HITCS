@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{Entity} \PYG{n+nc}{light} \PYG{k}{Is}
+\PYG{k}{port} \PYG{p}{(}
+		\PYG{n}{btn} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{4} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}   \PYG{c+c1}{\PYGZhy{}\PYGZhy{}五个方向按钮}
+		\PYG{n}{led} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);} \PYG{c+c1}{\PYGZhy{}\PYGZhy{}led控制}
+		\PYG{n}{clk} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{STD\PYGZus{}LOGIC}\PYG{p}{;}                      \PYG{c+c1}{\PYGZhy{}\PYGZhy{}1MHz信号}
+		\PYG{n}{seg} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{6} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}  \PYG{c+c1}{\PYGZhy{}\PYGZhy{}数码管的七臂}
+		\PYG{n}{AN} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}    \PYG{c+c1}{\PYGZhy{}\PYGZhy{}八位数字使能}
+	\PYG{p}{);}
+\PYG{k}{end} \PYG{n+nc}{light}\PYG{p}{;}
+\end{Verbatim}

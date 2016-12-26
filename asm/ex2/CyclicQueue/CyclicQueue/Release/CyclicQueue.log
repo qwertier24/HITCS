@@ -1,0 +1,4 @@
+﻿  源.cpp
+源.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+LINK : error LNK2001: 无法解析的外部符号 _mainCRTStartup
+E:\HITCS\asm\ex2\CyclicQueue\Release\CyclicQueue.exe : fatal error LNK1120: 2 个无法解析的外部命令

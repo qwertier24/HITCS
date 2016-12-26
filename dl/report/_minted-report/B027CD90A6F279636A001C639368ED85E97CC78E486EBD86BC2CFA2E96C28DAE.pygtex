@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{procedure} \PYG{n}{go\PYGZus{}straight} \PYG{p}{(}\PYG{k}{signal} \PYG{n}{va} \PYG{o}{:} \PYG{k}{inout} \PYG{k+kt}{STD\PYGZus{}LOGIC\PYGZus{}VECTOR}\PYG{p}{(}\PYG{l+m+mi}{15} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{k}{is}
+\PYG{k}{begin}
+    \PYG{n}{va} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{k}{end}\PYG{p}{;}
+\end{Verbatim}
