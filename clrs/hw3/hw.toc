@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}背景介绍}{1}
+\contentsline {subsection}{\numberline {1.1}位图索引}{1}
+\contentsline {subsection}{\numberline {1.2}Upbit}{1}
+\contentsline {subsubsection}{\numberline {1.2.1}定时维护更新向量}{2}
+\contentsline {subsubsection}{\numberline {1.2.2}维护向量的分块指针}{2}
+\contentsline {section}{\numberline {2}若干位图索引的不足（从对位图索引进行修改操作的角度）}{2}
+\contentsline {subsection}{\numberline {2.1}UpBit的效率瓶颈}{2}
+\contentsline {subsubsection}{\numberline {2.1.1}找到某一行的当前值}{2}
+\contentsline {subsubsection}{\numberline {2.1.2}范围查询}{3}
+\contentsline {subsection}{\numberline {2.2}其他位图索引的效率瓶颈}{3}
+\contentsline {subsubsection}{\numberline {2.2.1}单值编码位图索引}{3}
+\contentsline {subsubsection}{\numberline {2.2.2}范围编码位图索引}{3}
+\contentsline {subsubsection}{\numberline {2.2.3}分段位图索引}{3}

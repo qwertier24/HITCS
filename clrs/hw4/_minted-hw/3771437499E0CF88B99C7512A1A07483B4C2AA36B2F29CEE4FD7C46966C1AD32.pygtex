@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{while} \PYG{p}{(}\PYG{n}{k} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n}{res} \PYG{o}{|=} \PYG{n}{val}\PYG{p}{[}\PYG{n}{k}\PYG{p}{];}
+  \PYG{n}{k} \PYG{o}{\PYGZhy{}=} \PYG{n}{lowbit}\PYG{p}{(}\PYG{n}{k}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}位图索引}{2}
+\contentsline {section}{\numberline {2}位图索引领域的相关问题}{2}
+\contentsline {subsection}{\numberline {2.1}对于单个位向量的压缩}{2}
+\contentsline {subsection}{\numberline {2.2}位图索引的压缩}{2}
+\contentsline {subsection}{\numberline {2.3}位图索引的快速修改}{2}
+\contentsline {section}{\numberline {3}对单个位向量的压缩}{2}
+\contentsline {subsection}{\numberline {3.1}BBC (Byte-aligned Bitmap Code)}{3}
+\contentsline {subsection}{\numberline {3.2}WAH (Word-Alignment Hybrid Code)}{3}
+\contentsline {subsection}{\numberline {3.3}BBC与WAH的比较}{4}
+\contentsline {section}{\numberline {4}对整个位图索引的优化}{4}
+\contentsline {subsection}{\numberline {4.1}基于编码 (Encoding) 的方法}{4}
+\contentsline {subsubsection}{\numberline {4.1.1}等值编码位图索引}{4}
+\contentsline {subsubsection}{\numberline {4.1.2}范围编码位图索引}{5}
+\contentsline {subsubsection}{\numberline {4.1.3}分段位图索引}{6}
+\contentsline {subsection}{\numberline {4.2}基于分箱 (Binning) 的方法}{8}
+\contentsline {subsection}{\numberline {4.3}各种方法的比较}{9}
+\contentsline {section}{\numberline {5}位图索引的快速修改}{9}
+\contentsline {subsection}{\numberline {5.1}Update Conscious Bitvector}{9}
+\contentsline {subsection}{\numberline {5.2}Upbit}{10}
+\contentsline {subsubsection}{\numberline {5.2.1}定时维护更新向量}{11}
+\contentsline {subsubsection}{\numberline {5.2.2}维护向量的分块指针}{11}
+\contentsline {subsection}{\numberline {5.3}两种方法的比较}{11}
+\contentsline {section}{\numberline {6}总结}{11}
