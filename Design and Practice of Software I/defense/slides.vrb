@@ -1,0 +1,20 @@
+\frametitle{对UpBit优化的方法 (Cont'd)}
+  \begin{block}{使用树状数组作为UpBit的组织形式}
+    \begin{itemize}
+    \item 对行查询：\\
+      \begin{enumerate}[1.]
+      \item 找到最大的i，使得前i个值的位向量或操作后第k位为0。val[k]即为i+1。
+      \item 从值的二进制表示中，由最高位到最低位依次确定。
+      \end{enumerate}
+    \item 范围查询：\\
+      \begin{enumerate}[1.]
+      \item 树状数组求前缀和
+      \item \begin{minted}{C++}
+while (k > 0) {
+  res |= val[k];
+  k -= lowbit(k);
+}
+      \end{minted}
+      \end{enumerate}
+    \end{itemize}
+  \end{block}

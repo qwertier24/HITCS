@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT} \PYG{o}{*} \PYG{k}{FROM} \PYG{n}{Persons} \PYG{k}{WHERE} \PYG{k}{Year}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{1965}
+\end{Verbatim}

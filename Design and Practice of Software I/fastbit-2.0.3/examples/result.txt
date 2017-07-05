@@ -1,0 +1,19 @@
+n_row: 100 n_column: 100 Q0: 100
+sumUpdate1: 342 sumUpdate2: 157
+sumRead1: 139 sumRead2: 25
+sumGetValue1: 55 sumGetValue2: 16
+
+n_row: 1000 n_column: 100 Q0: 100
+sumUpdate1: 173 sumUpdate2: 141
+sumRead1: 220 sumRead2: 20
+sumGetValue1: 44 sumGetValue2: 19
+
+n_row: 1000 n_column: 1000 Q0: 100
+sumUpdate1: 846 sumUpdate2: 213
+sumRead1: 1093 sumRead2: 42
+sumGetValue1: 280 sumGetValue2: 31
+
+n_row: 10000 n_column: 1000 Q0: 100
+sumUpdate1: 476 sumUpdate2: 870
+sumRead1: 13155 sumRead2: 162
+sumGetValue1: 67 sumGetValue2: 21

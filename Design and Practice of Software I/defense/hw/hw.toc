@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}背景知识}{4}
+\contentsline {subsection}{\numberline {1.1}位图索引}{4}
+\contentsline {subsection}{\numberline {1.2}对单个位向量的压缩}{4}
+\contentsline {subsubsection}{\numberline {1.2.1}BBC (Byte-aligned Bitmap Code)}{4}
+\contentsline {subsubsection}{\numberline {1.2.2}WAH (Word-Alignment Hybrid Code)}{5}
+\contentsline {section}{\numberline {2}UpBit思想}{5}
+\contentsline {subsection}{\numberline {2.1}Update Conscious Bitvector}{5}
+\contentsline {subsection}{\numberline {2.2}Upbit}{6}
+\contentsline {subsubsection}{\numberline {2.2.1}定时维护更新向量}{7}
+\contentsline {subsubsection}{\numberline {2.2.2}维护向量的分块指针}{7}
+\contentsline {section}{\numberline {3}基本算法}{7}
+\contentsline {subsection}{\numberline {3.1}获取某一行的值}{7}
+\contentsline {subsection}{\numberline {3.2}更新某一行的值}{8}
+\contentsline {subsection}{\numberline {3.3}合并UB与VB}{8}
+\contentsline {section}{\numberline {4}算法分析}{8}
+\contentsline {subsection}{\numberline {4.1}空间复杂度分析}{8}
+\contentsline {subsection}{\numberline {4.2}时间复杂度分析}{9}
+\contentsline {section}{\numberline {5}对UpBit优化的动机}{9}
+\contentsline {subsection}{\numberline {5.1}时间效率}{9}
+\contentsline {subsubsection}{\numberline {5.1.1}对行查询}{9}
+\contentsline {subsubsection}{\numberline {5.1.2}范围查询}{9}
+\contentsline {subsection}{\numberline {5.2}空间效率}{9}
+\contentsline {subsubsection}{\numberline {5.2.1}对Update BitVectors的正确认识}{9}
+\contentsline {section}{\numberline {6}对UpBit优化的方法}{10}
+\contentsline {subsection}{\numberline {6.1}树状数组}{10}
+\contentsline {subsection}{\numberline {6.2}使用树状数组作为UpBit的组织形式}{10}
+\contentsline {section}{\numberline {7}实验结果}{11}
+\contentsline {subsection}{\numberline {7.1}对行查询效率对比}{11}
+\contentsline {subsection}{\numberline {7.2}范围查询效率对比}{11}
+\contentsline {subsection}{\numberline {7.3}单值修改效率对比}{12}
+\contentsline {section}{\numberline {8}结论}{12}
