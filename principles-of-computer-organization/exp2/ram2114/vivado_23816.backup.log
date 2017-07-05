@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Wed May 10 17:53:12 2017
+# Process ID: 23816
+# Current directory: E:/HITCS/principles-of-computer-organization/exp2/ram2114
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22172 E:\HITCS\principles-of-computer-organization\exp2\ram2114\ram2114.xpr
+# Log file: E:/HITCS/principles-of-computer-organization/exp2/ram2114/vivado.log
+# Journal file: E:/HITCS/principles-of-computer-organization/exp2/ram2114\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/HITCS/principles-of-computer-organization/exp2/ram2114/ram2114.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory 'E:/HITCS/principles-of-computer-organization/exp2/ram2114/ram2114.cache/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.3/data/ip'.
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May 10 20:06:18 2017...

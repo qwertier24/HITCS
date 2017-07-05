@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Thu Apr 13 23:11:02 2017
+# Process ID: 220
+# Current directory: E:/HITCS/principles-of-computer-organization/exp1/bus_controller/bus_controller.runs/impl_1
+# Command line: vivado.exe -log bus_controller.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bus_controller.tcl -notrace
+# Log file: E:/HITCS/principles-of-computer-organization/exp1/bus_controller/bus_controller.runs/impl_1/bus_controller.vdi
+# Journal file: E:/HITCS/principles-of-computer-organization/exp1/bus_controller/bus_controller.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source bus_controller.tcl -notrace

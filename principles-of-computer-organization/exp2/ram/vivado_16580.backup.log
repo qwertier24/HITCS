@@ -1,0 +1,1165 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Wed May 03 19:31:51 2017
+# Process ID: 16580
+# Current directory: E:/HITCS/principles-of-computer-organization/exp2/ram
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13428 E:\HITCS\principles-of-computer-organization\exp2\ram\ram.xpr
+# Log file: E:/HITCS/principles-of-computer-organization/exp2/ram/vivado.log
+# Journal file: E:/HITCS/principles-of-computer-organization/exp2/ram\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/HITCS/principles-of-computer-organization/exp2/ram/ram.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.cache/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.3/data/ip'.
+set_property top sim_ram [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 19:32:19 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 19:32:19 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 813.887 ; gain = 8.258
+add_wave {{/sim_ram/uu/m_ram}} 
+run all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 863.516 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+add_wave {{/sim_ram/uu}} 
+add_bp {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd} 134
+remove_bps -file {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd} -line 134
+add_wave {{/sim_ram/uu/m_ram/matrix[0][0]}} 
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 866.289 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 19:52:27 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 19:52:27 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 866.289 ; gain = 0.000
+add_wave {{/sim_ram/uu/m_ram/WE}} 
+add_wave {{/sim_ram/uu/m_ram/CS}} 
+add_wave {{/sim_ram/uu/m_ram/cur_c}} 
+add_wave {{/sim_ram/uu/tWE}} 
+add_wave {{/sim_ram/uu/tCS}} 
+run 10 us
+add_wave {{/sim_ram/uu/m_ram/matrix[0][0]}} 
+run 10 us
+run 10 us
+run 10 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+add_wave {{/sim_ram/uu/m_ram/IO}} 
+run 10 us
+run 10 us
+run 10 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 895.387 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 20:04:06 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 20:04:06 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 895.387 ; gain = 0.000
+add_wave {{/sim_ram/uu/m_ram/WE}} 
+add_wave {{/sim_ram/uu/m_ram/CS}} 
+add_wave {{/sim_ram/uu/m_ram/IO}} 
+add_wave {{/sim_ram/uu/m_ram/matrix[0][0]}} 
+add_wave {{/sim_ram/uu/m_ram/matrix[0][16]}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+add_wave {{/sim_ram/uu/m_ram/cur_c}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+add_wave {{/sim_ram/uu/m_ram/row_address}} 
+add_wave {{/sim_ram/uu/m_ram/col_address}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+add_wave {{/sim_ram/uu/m_ram/matrix}} 
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+add_files -fileset sim_1 -norecurse E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+set_property xsim.view E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 973.902 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 20:51:23 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 20:51:23 2017...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 973.902 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 973.902 ; gain = 0.000
+run 10 us
+run 10 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 973.902 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:01:05 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:01:05 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 973.902 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 973.902 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:18:24 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 973.902 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 973.902 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 973.902 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:30:37 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:30:37 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 973.902 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:31:40 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:31:40 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 973.902 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 973.902 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:34:22 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:34:22 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 973.902 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 973.902 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:35:38 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:35:38 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 973.902 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:40:27 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:40:27 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 973.902 ; gain = 0.000
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/synth_1
+
+launch_runs synth_1
+[Wed May 03 21:42:03 2017] Launched synth_1...
+Run output will be captured here: E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/synth_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 973.902 ; gain = 0.000
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/sim_ram_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xelab.pb
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:42:29 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:42:29 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 973.902 ; gain = 0.000
+add_wave {{/sim_ram/uu/m_ram/A}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 973.902 ; gain = 0.000
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:46:23 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:46:23 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 973.902 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 03 21:47:13 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 03 21:47:13 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_ram_behav -key {Behavioral:sim_1:Functional:sim_ram} -tclbatch {sim_ram.tcl} -view {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_ram_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 973.902 ; gain = 0.000
+run 10 us
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 973.902 ; gain = 0.000
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sim_ram' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj sim_ram_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav'
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 691a3a2640fb4ee1b71a08a6717d3221 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sim_ram_behav xil_defaultlib.sim_ram -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.ram [ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.sim_ram
+Built simulation snapshot sim_ram_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 973.902 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May 03 21:47:49 2017...

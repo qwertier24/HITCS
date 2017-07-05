@@ -1,0 +1,3 @@
+tb_cu.vhd是testbench文件
+control_unit.vhd的内容是cu核心
+perform.vhd的内容是与开发板交互相关

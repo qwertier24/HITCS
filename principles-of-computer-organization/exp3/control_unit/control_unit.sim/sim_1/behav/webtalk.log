@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Webtalk v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Jun 24 11:59:55 2017
+# Process ID: 13780
+# Current directory: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav
+# Command line: wbtcv.exe -mode batch -source C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav/xsim.dir/tb_cu_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav/webtalk.log
+# Journal file: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/Yukun -notrace
+invalid command name "[1F34:2490][2017-03-27T18:54:20]i001:"
+    while executing
+"[1F34:2490][2017-03-27T18:54:20]i001: Burn v3.10.2.2516, Windows v10.0 (Build 14393: Service Pack 0), path: C:\Users\YUKUNM~1\AppData\Local\Temp\{018B..."
+    (file "C:/Users/Yukun" line 1)
+INFO: [Common 17-206] Exiting Webtalk at Sat Jun 24 11:59:55 2017...

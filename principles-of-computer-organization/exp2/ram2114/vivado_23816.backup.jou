@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Wed May 10 17:53:12 2017
+# Process ID: 23816
+# Current directory: E:/HITCS/principles-of-computer-organization/exp2/ram2114
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22172 E:\HITCS\principles-of-computer-organization\exp2\ram2114\ram2114.xpr
+# Log file: E:/HITCS/principles-of-computer-organization/exp2/ram2114/vivado.log
+# Journal file: E:/HITCS/principles-of-computer-organization/exp2/ram2114\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/HITCS/principles-of-computer-organization/exp2/ram2114/ram2114.xpr

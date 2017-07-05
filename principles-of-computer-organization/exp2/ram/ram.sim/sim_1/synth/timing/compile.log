@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/synth/timing/ram_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module perform
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sim_1/new/sim_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sim_ram

@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Sun May 07 16:29:50 2017
+# Process ID: 9392
+# Current directory: E:/HITCS/principles-of-computer-organization/exp2/ram2114
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7720 E:\HITCS\principles-of-computer-organization\exp2\ram2114\ram2114.xpr
+# Log file: E:/HITCS/principles-of-computer-organization/exp2/ram2114/vivado.log
+# Journal file: E:/HITCS/principles-of-computer-organization/exp2/ram2114\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/HITCS/principles-of-computer-organization/exp2/ram2114/ram2114.xpr
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram2114/ram2114.runs/impl_1/ram2114.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram2114/ram2114.runs/impl_1/ram2114.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

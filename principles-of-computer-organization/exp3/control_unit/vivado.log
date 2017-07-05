@@ -1,0 +1,460 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Jun 24 10:52:19 2017
+# Process ID: 18576
+# Current directory: C:/Users/Yukun Ma/Desktop/exp3/control_unit
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13408 C:\Users\Yukun Ma\Desktop\exp3\control_unit\control_unit.xpr
+# Log file: C:/Users/Yukun Ma/Desktop/exp3/control_unit/vivado.log
+# Journal file: C:/Users/Yukun Ma/Desktop/exp3/control_unit\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.1/data/ip'.
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Sat Jun 24 10:52:32 2017] Launched synth_1...
+Run output will be captured here: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Sat Jun 24 10:53:14 2017] Launched synth_1...
+Run output will be captured here: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Sat Jun 24 10:53:54 2017] Launched impl_1...
+Run output will be captured here: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/impl_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:09 . Memory (MB): peak = 1159.285 ; gain = 290.824
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sat Jun 24 10:55:04 2017] Launched impl_1...
+Run output will be captured here: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/impl_1/runme.log
+close_design
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/.Xil/Vivado-18576-DESKTOP-IQ9RCDV/dcp7/perform.xdc]
+Finished Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/.Xil/Vivado-18576-DESKTOP-IQ9RCDV/dcp7/perform.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1558.648 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 1558.648 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_drc -name drc_1 -ruledecks {default}
+Command: report_drc -name drc_1 -ruledecks default
+INFO: [DRC 23-27] Running DRC with 2 threads
+report_drc completed successfully
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 1714.414 ; gain = 0.000
+report_drc -name drc_2 -ruledecks {default}
+Command: report_drc -name drc_2 -ruledecks default
+INFO: [DRC 23-27] Running DRC with 2 threads
+report_drc completed successfully
+report_methodology -name ultrafast_methodology_1 -checks {PDRC-204 PDRC-190 TIMING-39 TIMING-38 TIMING-37 TIMING-36 TIMING-35 TIMING-34 TIMING-33 TIMING-32 TIMING-31 TIMING-30 TIMING-29 TIMING-28 TIMING-27 TIMING-26 TIMING-25 TIMING-24 TIMING-23 TIMING-22 TIMING-21 TIMING-20 TIMING-19 TIMING-18 TIMING-17 TIMING-16 TIMING-15 TIMING-14 TIMING-13 TIMING-12 TIMING-11 TIMING-10 TIMING-9 TIMING-8 TIMING-7 TIMING-6 TIMING-5 TIMING-4 TIMING-3 TIMING-2 TIMING-1 XDCV-2 XDCV-1 XDCH-2 XDCH-1 XDCC-8 XDCC-7 XDCC-6 XDCC-5 XDCC-4 XDCC-3 XDCC-2 XDCC-1 XDCB-5 XDCB-4 XDCB-3 XDCB-2 XDCB-1 CLKC-53 CLKC-9 CLKC-5 CLKC-38 CLKC-37 CLKC-36 CLKC-35 CLKC-4 CLKC-18 CLKC-3 CLKC-2 CLKC-1 HPDR-1 CKLD-2 CKLD-1 CKBF-1 SYNTH-14 SYNTH-13 SYNTH-12 SYNTH-11 SYNTH-10 SYNTH-9 SYNTH-16 SYNTH-15 SYNTH-6 SYNTH-5 SYNTH-4}
+Command: report_methodology -name ultrafast_methodology_1 -checks {PDRC-204 PDRC-190 TIMING-39 TIMING-38 TIMING-37 TIMING-36 TIMING-35 TIMING-34 TIMING-33 TIMING-32 TIMING-31 TIMING-30 TIMING-29 TIMING-28 TIMING-27 TIMING-26 TIMING-25 TIMING-24 TIMING-23 TIMING-22 TIMING-21 TIMING-20 TIMING-19 TIMING-18 TIMING-17 TIMING-16 TIMING-15 TIMING-14 TIMING-13 TIMING-12 TIMING-11 TIMING-10 TIMING-9 TIMING-8 TIMING-7 TIMING-6 TIMING-5 TIMING-4 TIMING-3 TIMING-2 TIMING-1 XDCV-2 XDCV-1 XDCH-2 XDCH-1 XDCC-8 XDCC-7 XDCC-6 XDCC-5 XDCC-4 XDCC-3 XDCC-2 XDCC-1 XDCB-5 XDCB-4 XDCB-3 XDCB-2 XDCB-1 CLKC-53 CLKC-9 CLKC-5 CLKC-38 CLKC-37 CLKC-36 CLKC-35 CLKC-4 CLKC-18 CLKC-3 CLKC-2 CLKC-1 HPDR-1 CKLD-2 CKLD-1 CKBF-1 SYNTH-14 SYNTH-13 SYNTH-12 SYNTH-11 SYNTH-10 SYNTH-9 SYNTH-16 SYNTH-15 SYNTH-6 SYNTH-5 SYNTH-4}
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+report_methodology completed successfully
+report_clock_networks -name {network_1}
+report_clock_interaction -delay_type min_max -significant_digits 3 -name timing_1
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj tb_cu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity control_unit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cu
+ERROR: [VRFC 10-724] found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+" [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd:78]
+ERROR: [VRFC 10-1504] unit behavioral ignored due to previous errors [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd:38]
+INFO: [VRFC 10-240] VHDL file C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj tb_cu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity control_unit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cu
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 3e440e62e3c14a2ea3ff4d04cf401099 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cu_behav xil_defaultlib.tb_cu -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cu
+Built simulation snapshot tb_cu_behav
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Yukun -notrace
+invalid command name "[1F34:2490][2017-03-27T18:54:20]i001:"
+    while executing
+"[1F34:2490][2017-03-27T18:54:20]i001: Burn v3.10.2.2516, Windows v10.0 (Build 14393: Service Pack 0), path: C:\Users\YUKUNM~1\AppData\Local\Temp\{018B..."
+    (file "C:/Users/Yukun" line 1)
+INFO: [Common 17-206] Exiting Webtalk at Sat Jun 24 11:17:34 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cu_behav -key {Behavioral:sim_1:Functional:tb_cu} -tclbatch {tb_cu.tcl} -view {C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config C:/Users/Yukun
+ERROR: [Wavedata 42-2] Error while reading WCFG file 'C:/Users/Yukun.wcfg'.
+open_wave_config Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg
+ERROR: [Wavedata 42-2] Error while reading WCFG file 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav/Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg'.
+source tb_cu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cu_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1830.324 ; gain = 0.000
+add_wave {{/tb_cu/m_perform/M0}} 
+add_wave {{/tb_cu/m_perform/M1}} 
+add_wave {{/tb_cu/m_perform/M2}} 
+add_wave {{/tb_cu/m_perform/T0}} 
+add_wave {{/tb_cu/m_perform/T1}} 
+add_wave {{/tb_cu/m_perform/T2}} 
+add_wave {{/tb_cu/m_perform/MI}} 
+add_wave {{/tb_cu/m_perform/INS}} 
+remove_forces { {/tb_cu/an} {/tb_cu/seg} {/tb_cu/led} {/tb_cu/clk} }
+add_wave {{/tb_cu/m_perform/manual_clk}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1830.324 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+add_wave {{/tb_cu/m_perform/T}} 
+run 10 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'run' was cancelled
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'run' was cancelled
+save_wave_config {C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav1.wcfg}
+add_files -fileset sim_1 -norecurse {{C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav1.wcfg}}
+set_property xsim.view {{C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg} {C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav1.wcfg}} [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj tb_cu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity control_unit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cu
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 3e440e62e3c14a2ea3ff4d04cf401099 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cu_behav xil_defaultlib.tb_cu -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cu
+Built simulation snapshot tb_cu_behav
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Yukun -notrace
+invalid command name "[1F34:2490][2017-03-27T18:54:20]i001:"
+    while executing
+"[1F34:2490][2017-03-27T18:54:20]i001: Burn v3.10.2.2516, Windows v10.0 (Build 14393: Service Pack 0), path: C:\Users\YUKUNM~1\AppData\Local\Temp\{018B..."
+    (file "C:/Users/Yukun" line 1)
+INFO: [Common 17-206] Exiting Webtalk at Sat Jun 24 11:59:05 2017...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cu_behav -key {Behavioral:sim_1:Functional:tb_cu} -tclbatch {tb_cu.tcl} -view {C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg} -view {C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav1.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config C:/Users/Yukun
+ERROR: [Wavedata 42-2] Error while reading WCFG file 'C:/Users/Yukun.wcfg'.
+open_wave_config Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg
+ERROR: [Wavedata 42-2] Error while reading WCFG file 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav/Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg'.
+open_wave_config C:/Users/Yukun
+ERROR: [Wavedata 42-2] Error while reading WCFG file 'C:/Users/Yukun.wcfg'.
+open_wave_config Ma/Desktop/exp3/control_unit/tb_cu_behav1.wcfg
+ERROR: [Wavedata 42-2] Error while reading WCFG file 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav/Ma/Desktop/exp3/control_unit/tb_cu_behav1.wcfg'.
+source tb_cu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cu_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1830.324 ; gain = 0.000
+add_wave {{/tb_cu/m_perform/manual_clk}} 
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj tb_cu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity control_unit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cu
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 3e440e62e3c14a2ea3ff4d04cf401099 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cu_behav xil_defaultlib.tb_cu -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cu
+Built simulation snapshot tb_cu_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1830.324 ; gain = 0.000
+add_wave {{/tb_cu/m_perform/M1}} 
+add_wave {{/tb_cu/m_perform/M2}} 
+add_wave {{/tb_cu/m_perform/T0}} 
+add_wave {{/tb_cu/m_perform/T1}} 
+add_wave {{/tb_cu/m_perform/T2}} 
+add_wave {{/tb_cu/m_perform/M0}} 
+add_wave {{/tb_cu/m_perform/I}} 
+add_wave {{/tb_cu/m_perform/IND}} 
+add_wave {{/tb_cu/m_perform/INS}} 
+add_wave {{/tb_cu/m_perform/MI}} 
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj tb_cu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity control_unit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cu
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 3e440e62e3c14a2ea3ff4d04cf401099 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cu_behav xil_defaultlib.tb_cu -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cu
+Built simulation snapshot tb_cu_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1830.324 ; gain = 0.000
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+"xvhdl -m64 --relax -prj tb_cu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity control_unit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cu
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 3e440e62e3c14a2ea3ff4d04cf401099 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cu_behav xil_defaultlib.tb_cu -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.perform [perform_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cu
+Built simulation snapshot tb_cu_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1830.324 ; gain = 0.000
+save_wave_config {C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg}
+add_files -fileset sim_1 -norecurse {{C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg}}
+WARNING: [filemgmt 56-12] File 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg' cannot be added to the project because it already exists in the project, skipping this file
+set_property xsim.view {{C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg} {C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav1.wcfg} {C:/Users/Yukun Ma/Desktop/exp3/control_unit/tb_cu_behav.wcfg}} [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 24 12:17:46 2017...

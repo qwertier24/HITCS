@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1493887467">
+  <File Type="PWROPT-DRC" Name="perform_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="perform_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="perform_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="perform_power_routed.rpx"/>
+  <File Type="PA-TCL" Name="perform.tcl"/>
+  <File Type="OPT-HWDEF" Name="perform.hwdef"/>
+  <File Type="RDI-RDI" Name="perform.vdi"/>
+  <File Type="OPT-DCP" Name="perform_opt.dcp"/>
+  <File Type="OPT-DRC" Name="perform_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="perform_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="perform_pwropt.dcp"/>
+  <File Type="PWROPT-TIMING" Name="perform_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="perform_placed.dcp"/>
+  <File Type="PLACE-IO" Name="perform_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="perform_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="perform_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="perform_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="perform_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="perform_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="perform_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="perform_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="perform_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="perform_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="perform_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="perform_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="perform_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="perform_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="perform_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="perform_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="perform_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="perform_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="perform.bin"/>
+  <File Type="ROUTE-DRC-RPX" Name="perform_drc_routed.rpx"/>
+  <File Type="BG-DRC" Name="perform.drc"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="perform_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="perform.msk"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="perform_methodology_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="perform.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="perform_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="perform_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="perform_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="perform_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="perform_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="perform_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="perform_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="perform_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="perform_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="perform_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="perform_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="perform_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="perform_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="perform_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="perform_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="perform.bit"/>
+  <File Type="BITSTR-RBT" Name="perform.rbt"/>
+  <File Type="BITSTR-NKY" Name="perform.nky"/>
+  <File Type="BITSTR-BMM" Name="perform_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="perform.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="perform.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/perform.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ram.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="perform"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/other/Nexys4DDR_Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../exp1/bus_controller/bus_controller.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc"/>
+        <Attr Name="ImportTime" Val="1492075032"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

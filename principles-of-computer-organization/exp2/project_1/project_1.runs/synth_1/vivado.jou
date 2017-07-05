@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Thu May 11 00:54:36 2017
+# Process ID: 25660
+# Current directory: E:/HITCS/principles-of-computer-organization/exp2/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log ram2114.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ram2114.tcl
+# Log file: E:/HITCS/principles-of-computer-organization/exp2/project_1/project_1.runs/synth_1/ram2114.vds
+# Journal file: E:/HITCS/principles-of-computer-organization/exp2/project_1/project_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ram2114.tcl -notrace

@@ -1,0 +1,27 @@
+MI(0) :PC->MAR
+MI(1) :I->R
+MI(2) :M(MAR)->MDR
+MI(3) :(PC)+1->PC
+MI(4) :MDR->IR
+MI(5) :OP(IR)->ID
+MI(6) :I->IND
+MI(7) :I->EX
+MI(8) :Ad(IR)->MAR
+MI(9): MDR->Ad(IR)
+MI(10):I->W
+MI(11):AC->MDR
+MI(12):(AC)+(MDR)->AC
+MI(13):MDR->M(MAR)
+MI(14):MDR->AC
+MI(15):0->AC
+MI(16):not AC->AC
+MI(17):L(AC)->R(AC),AC_0不变
+MI(18):p^-1(AC)
+MI(19):Ad(IR)->PC
+MI(20):0->G
+
+IND: swt(15)
+I: swt(14)
+A0: swt(13)
+
+instruction: swt(3 downto 0)

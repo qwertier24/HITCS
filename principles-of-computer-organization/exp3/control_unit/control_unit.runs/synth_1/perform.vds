@@ -1,0 +1,378 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Jun 24 10:53:15 2017
+# Process ID: 17640
+# Current directory: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1
+# Command line: vivado.exe -log perform.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source perform.tcl
+# Log file: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1/perform.vds
+# Journal file: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source perform.tcl -notrace
+Command: synth_design -top perform -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2996 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 298.441 ; gain = 78.094
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'perform' [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:45]
+INFO: [Synth 8-3491] module 'control_unit' declared at 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd:31' bound to instance 'm_cu' of component 'control_unit' [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:130]
+INFO: [Synth 8-638] synthesizing module 'control_unit' [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd:47]
+WARNING: [Synth 8-614] signal 'INS' is read in the process but is not in the sensitivity list [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element pre5_reg was removed.  [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd:55]
+WARNING: [Synth 8-6014] Unused sequential element suf5_reg was removed.  [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'control_unit' (1#1) [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd:47]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000000100 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000000101 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000000110 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000000111 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001000 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001001 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001010 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001011 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001100 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001101 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001110 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001111 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+INFO: [Synth 8-226] default block is never used [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000000100 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000000101 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000000110 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000000111 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001000 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001001 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001010 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001011 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001100 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001101 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001110 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-153] case item 31'b0000000000000000000000000001111 will never be executed [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+INFO: [Synth 8-226] default block is never used [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:66]
+WARNING: [Synth 8-614] signal 'first16' is read in the process but is not in the sensitivity list [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:235]
+WARNING: [Synth 8-6014] Unused sequential element x_reg was removed.  [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:152]
+INFO: [Synth 8-256] done synthesizing module 'perform' (2#1) [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:45]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[12]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[11]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[10]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[9]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[8]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[7]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[6]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[5]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[4]
+WARNING: [Synth 8-3331] design perform has unconnected port btnc
+WARNING: [Synth 8-3331] design perform has unconnected port btnd
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 337.766 ; gain = 117.418
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 337.766 ; gain = 117.418
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-507] No nets matched 'btnu_IBUF'. [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/perform_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/perform_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 653.156 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "M" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element clk1khz_i_reg was removed.  [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:201]
+WARNING: [Synth 8-327] inferring latch for variable 'first16_reg' [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:238]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 12    
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module perform 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 12    
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INS" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element clk1khz_i_reg was removed.  [C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd:201]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[12]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[11]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[10]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[9]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[8]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[7]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[6]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[5]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[4]
+WARNING: [Synth 8-3331] design perform has unconnected port btnc
+WARNING: [Synth 8-3331] design perform has unconnected port btnd
+INFO: [Synth 8-3886] merging instance 'an_reg[1]' (FDS) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[2]' (FDS) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[3]' (FDS) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[5]' (FDS) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[6]' (FDS) to 'an_reg[7]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\an_reg[7] )
+INFO: [Synth 8-3886] merging instance 'seg_reg[0]' (FD) to 'seg_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\seg_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (seg_reg[1]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (an_reg[7]) is unused and will be removed from module perform.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |     5|
+|3     |LUT1   |    19|
+|4     |LUT2   |     6|
+|5     |LUT3   |     7|
+|6     |LUT4   |     3|
+|7     |LUT5   |    10|
+|8     |LUT6   |    17|
+|9     |FDRE   |    30|
+|10    |LD     |     1|
+|11    |IBUF   |    11|
+|12    |OBUF   |    31|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   142|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.156 ; gain = 432.809
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 653.156 ; gain = 117.418
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.156 ; gain = 432.809
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  LD => LDCE: 1 instances
+
+47 Infos, 57 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 653.156 ; gain = 432.809
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1/perform.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 653.156 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 24 10:53:43 2017...

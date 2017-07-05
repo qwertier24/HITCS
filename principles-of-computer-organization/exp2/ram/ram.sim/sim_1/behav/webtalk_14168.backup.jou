@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Thu May 04 15:23:01 2017
+# Process ID: 14168
+# Current directory: E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav
+# Command line: wbtcv.exe -mode batch -source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/webtalk.log
+# Journal file: E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source E:/HITCS/principles-of-computer-organization/exp2/ram/ram.sim/sim_1/behav/xsim.dir/sim_ram_behav/webtalk/xsim_webtalk.tcl -notrace

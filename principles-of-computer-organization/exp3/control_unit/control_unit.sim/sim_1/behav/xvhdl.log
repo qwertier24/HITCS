@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity control_unit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sources_1/new/perform.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity perform
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.srcs/sim_1/new/tb_cu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cu

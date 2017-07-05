@@ -1,0 +1,468 @@
+
+*** Running vivado
+    with args -log perform.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source perform.tcl
+
+
+****** Vivado v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source perform.tcl -notrace
+Command: synth_design -top perform -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17956 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 277.121 ; gain = 67.082
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'perform' [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd:47]
+INFO: [Synth 8-3491] module 'ram' declared at 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd:36' bound to instance 'm_ram' of component 'ram' [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'ram' [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd:46]
+WARNING: [Synth 8-614] signal 'cur_c' is read in the process but is not in the sensitivity list [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd:59]
+WARNING: [Synth 8-614] signal 'cur_r' is read in the process but is not in the sensitivity list [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd:59]
+WARNING: [Synth 8-614] signal 'row_address' is read in the process but is not in the sensitivity list [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd:59]
+WARNING: [Synth 8-614] signal 'col_address' is read in the process but is not in the sensitivity list [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'ram' (1#1) [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd:46]
+WARNING: [Synth 8-614] signal 'cur_t' is read in the process but is not in the sensitivity list [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd:156]
+WARNING: [Synth 8-614] signal 'tCS' is read in the process but is not in the sensitivity list [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd:156]
+WARNING: [Synth 8-614] signal 'tWE' is read in the process but is not in the sensitivity list [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd:156]
+INFO: [Synth 8-256] done synthesizing module 'perform' (2#1) [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd:47]
+WARNING: [Synth 8-3331] design perform has unconnected port led[15]
+WARNING: [Synth 8-3331] design perform has unconnected port led[14]
+WARNING: [Synth 8-3331] design perform has unconnected port led[13]
+WARNING: [Synth 8-3331] design perform has unconnected port led[12]
+WARNING: [Synth 8-3331] design perform has unconnected port led[11]
+WARNING: [Synth 8-3331] design perform has unconnected port led[10]
+WARNING: [Synth 8-3331] design perform has unconnected port led[9]
+WARNING: [Synth 8-3331] design perform has unconnected port led[8]
+WARNING: [Synth 8-3331] design perform has unconnected port led[7]
+WARNING: [Synth 8-3331] design perform has unconnected port led[6]
+WARNING: [Synth 8-3331] design perform has unconnected port led[5]
+WARNING: [Synth 8-3331] design perform has unconnected port led[4]
+WARNING: [Synth 8-3331] design perform has unconnected port led[3]
+WARNING: [Synth 8-3331] design perform has unconnected port led[2]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[11]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[10]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 314.395 ; gain = 104.355
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 314.395 ; gain = 104.355
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/perform_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/perform_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 627.094 ; gain = 0.008
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'IO_reg' [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/ram.vhd:73]
+WARNING: [Synth 8-327] inferring latch for variable 'tWE_reg' [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd:117]
+WARNING: [Synth 8-327] inferring latch for variable 'tIO_reg' [E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd:120]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 3     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 5     
+	                5 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module perform 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 1     
+Module ram 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
++---Registers : 
+	                7 Bit    Registers := 3     
++---RAMs : 
+	               4K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design perform has unconnected port led[15]
+WARNING: [Synth 8-3331] design perform has unconnected port led[14]
+WARNING: [Synth 8-3331] design perform has unconnected port led[13]
+WARNING: [Synth 8-3331] design perform has unconnected port led[12]
+WARNING: [Synth 8-3331] design perform has unconnected port led[11]
+WARNING: [Synth 8-3331] design perform has unconnected port led[10]
+WARNING: [Synth 8-3331] design perform has unconnected port led[9]
+WARNING: [Synth 8-3331] design perform has unconnected port led[8]
+WARNING: [Synth 8-3331] design perform has unconnected port led[7]
+WARNING: [Synth 8-3331] design perform has unconnected port led[6]
+WARNING: [Synth 8-3331] design perform has unconnected port led[5]
+WARNING: [Synth 8-3331] design perform has unconnected port led[4]
+WARNING: [Synth 8-3331] design perform has unconnected port led[3]
+WARNING: [Synth 8-3331] design perform has unconnected port led[2]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[11]
+WARNING: [Synth 8-3331] design perform has unconnected port swt[10]
+INFO: [Synth 8-3886] merging instance 'm_ram/cur_c_reg[4]' (FDR) to 'm_ram/cur_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'm_ram/cur_c_reg[6]' (FDR) to 'm_ram/cur_c_reg[5]'
+INFO: [Synth 8-3886] merging instance 'm_ram/cur_c_reg[5]' (FDR) to 'm_ram/cur_c_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\m_ram/cur_c_reg[2] )
+INFO: [Synth 8-3886] merging instance 'm_ram/cur_c_reg[0]' (FDS) to 'm_ram/cur_c_reg[3]'
+INFO: [Synth 8-3886] merging instance 'm_ram/cur_c_reg[1]' (FDS) to 'm_ram/cur_c_reg[3]'
+INFO: [Synth 8-3886] merging instance 'tIO_reg__0i_9' (LD) to 'tIO_reg__0i_10'
+INFO: [Synth 8-3886] merging instance 'IO_reg__0i_14' (LD) to 'IO_reg__0i_16'
+INFO: [Synth 8-3886] merging instance 'tIO_reg__0i_10' (LD) to 'tIO_reg__0i_12'
+INFO: [Synth 8-3886] merging instance 'IO_reg__0i_16' (LD) to 'IO_reg__0i_18'
+INFO: [Synth 8-3886] merging instance 'tIO_reg__0i_12' (LD) to 'tIO_reg__0i_11'
+INFO: [Synth 8-3886] merging instance 'IO_reg__0i_18' (LD) to 'IO_reg__0i_17'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\an_reg[0] )
+INFO: [Synth 8-3886] merging instance 'an_reg[1]' (FD) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[2]' (FD) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[3]' (FD) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[4]' (FD) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[5]' (FD) to 'an_reg[7]'
+INFO: [Synth 8-3886] merging instance 'an_reg[6]' (FD) to 'an_reg[7]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\an_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_c_reg[2]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (an_reg[7]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (an_reg[0]) is unused and will be removed from module perform.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_18/\m_ram/cur_r_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_18/\m_ram/cur_r_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_18/\m_ram/cur_r_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_18/\m_ram/cur_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_18/\m_ram/cur_r_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_18/\m_ram/cur_r_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_18/\m_ram/cur_r_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\num_reg[4] )
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\m_ram/cur_c_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_17)
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-3332] Sequential element (i_17) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_c_reg[3]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (num_reg[4]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_r_reg[6]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_r_reg[5]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_r_reg[4]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_r_reg[3]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_r_reg[2]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_r_reg[1]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_r_reg[0]) is unused and will be removed from module perform.
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_c_reg[3]__0_P) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_c_reg[1]__0_P) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_c_reg[0]__0_P) is unused and will be removed from module perform.
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|perform     | seg        | 32x7          | LUT            | 
+|perform     | seg        | 32x7          | LUT            | 
++------------+------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+------------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object       | Inference | Size (Depth x Width) | Primitives      | 
++------------+------------------+-----------+----------------------+-----------------+
+|perform     | m_ram/matrix_reg | Implied   | 64 x 64              | RAM64X1S x 64   | 
++------------+------------------+-----------+----------------------+-----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \m_ram/IO_reg[3]  is always disabled
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (m_ram/IO_reg[3]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/IO_reg[2]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/IO_reg[1]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/IO_reg[0]) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_c_reg[3]__0_C) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_c_reg[1]__0_C) is unused and will be removed from module perform.
+WARNING: [Synth 8-3332] Sequential element (m_ram/cur_c_reg[0]__0_C) is unused and will be removed from module perform.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT2  |     7|
+|3     |LUT3  |     2|
+|4     |LUT4  |     9|
+|5     |LUT5  |     7|
+|6     |LUT6  |     5|
+|7     |FDCE  |     7|
+|8     |FDRE  |    11|
+|9     |LD    |     5|
+|10    |LDP   |     1|
+|11    |IBUF  |    10|
+|12    |OBUF  |    17|
+|13    |OBUFT |    14|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    96|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 90 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 627.094 ; gain = 104.355
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 627.094 ; gain = 417.055
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  LD => LDCE: 5 instances
+  LDP => LDPE: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+49 Infos, 113 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 627.094 ; gain = 417.055
+INFO: [Common 17-1381] The checkpoint 'E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/synth_1/perform.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 627.094 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu May 04 16:44:54 2017...

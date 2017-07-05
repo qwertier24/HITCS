@@ -1,0 +1,349 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Wed May 03 21:47:52 2017
+# Process ID: 1160
+# Current directory: E:/HITCS/principles-of-computer-organization/exp2/ram
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6040 E:\HITCS\principles-of-computer-organization\exp2\ram\ram.xpr
+# Log file: E:/HITCS/principles-of-computer-organization/exp2/ram/vivado.log
+# Journal file: E:/HITCS/principles-of-computer-organization/exp2/ram\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/HITCS/principles-of-computer-organization/exp2/ram/ram.xpr
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+add_bp {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd} 163
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+add_wave {{/sim_ram/uu/m_ram/IO_reg1}} 
+restart
+run 10 us
+current_sim simulation_9
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+add_bp {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.srcs/sources_1/new/perform.vhd} 162
+restart
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+add_wave {{/sim_ram/uu/m_ram/matrix[0][1]}} 
+add_wave {{/sim_ram/uu/m_ram/cur_r}} 
+restart
+run 10 us
+restart
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+add_wave {{/sim_ram/m_ram}} 
+restart
+run 10 us
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim
+close_sim
+refresh_design
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+refresh_design
+close_design
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+current_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+launch_simulation -mode post-synthesis -type functional
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+run 30 us
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+restart
+run 30 us
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+add_wave {{/sim_ram/uu/m_ram/IO}} 
+add_wave {{/sim_ram/uu/cur_t}} 
+restart
+run 30 us
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+step
+run 30 us
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+run 30 us
+add_wave {{/sim_ram/uu/clk1mhz}} 
+run 30 us
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+restart
+run 30 us
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+run 30 us
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg
+source sim_ram.tcl
+run 30 us
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROGRAM.FILE {E:/HITCS/principles-of-computer-organization/exp2/ram/ram.runs/impl_1/perform.bit} [lindex [get_hw_devices xc7a100t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a100t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+save_wave_config {E:/HITCS/principles-of-computer-organization/exp2/ram/sim_ram_behav.wcfg}
+close_sim

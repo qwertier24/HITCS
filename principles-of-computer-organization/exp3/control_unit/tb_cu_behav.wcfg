@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_cu_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_cu" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1273000001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/tb_cu/m_perform/manual_clk" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">manual_clk</obj_property>
+      <obj_property name="ObjectShortName">manual_clk</obj_property>
+      <obj_property name="label">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/swt" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">swt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">swt[15:0]</obj_property>
+      <obj_property name="label">instruction</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/btnu" type="logic">
+      <obj_property name="ElementShortName">btnu</obj_property>
+      <obj_property name="ObjectShortName">btnu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/I" type="logic">
+      <obj_property name="ElementShortName">I</obj_property>
+      <obj_property name="ObjectShortName">I</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/IND" type="logic">
+      <obj_property name="ElementShortName">IND</obj_property>
+      <obj_property name="ObjectShortName">IND</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/M0" type="logic">
+      <obj_property name="ElementShortName">M0</obj_property>
+      <obj_property name="ObjectShortName">M0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/M1" type="logic">
+      <obj_property name="ElementShortName">M1</obj_property>
+      <obj_property name="ObjectShortName">M1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/M2" type="logic">
+      <obj_property name="ElementShortName">M2</obj_property>
+      <obj_property name="ObjectShortName">M2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/T0" type="logic">
+      <obj_property name="ElementShortName">T0</obj_property>
+      <obj_property name="ObjectShortName">T0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/T1" type="logic">
+      <obj_property name="ElementShortName">T1</obj_property>
+      <obj_property name="ObjectShortName">T1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/T2" type="logic">
+      <obj_property name="ElementShortName">T2</obj_property>
+      <obj_property name="ObjectShortName">T2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/INS" type="array">
+      <obj_property name="ElementShortName">INS[9:0]</obj_property>
+      <obj_property name="ObjectShortName">INS[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cu/m_perform/MI" type="array">
+      <obj_property name="ElementShortName">MI[20:0]</obj_property>
+      <obj_property name="ObjectShortName">MI[20:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

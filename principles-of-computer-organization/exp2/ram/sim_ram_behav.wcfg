@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sim_ram_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="sim_ram" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1448000001fs"></ZoomEndTime>
+      <Cursor1Time time="568000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="1762"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/sim_ram/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/seg" type="array">
+      <obj_property name="ElementShortName">seg[6:0]</obj_property>
+      <obj_property name="ObjectShortName">seg[6:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/an" type="array">
+      <obj_property name="ElementShortName">an[7:0]</obj_property>
+      <obj_property name="ObjectShortName">an[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/swt" type="array">
+      <obj_property name="ElementShortName">swt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">swt[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/btn" type="array">
+      <obj_property name="ElementShortName">btn[4:0]</obj_property>
+      <obj_property name="ObjectShortName">btn[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/WE" type="logic">
+      <obj_property name="ElementShortName">WE</obj_property>
+      <obj_property name="ObjectShortName">WE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/CS" type="logic">
+      <obj_property name="ElementShortName">CS</obj_property>
+      <obj_property name="ObjectShortName">CS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/IO" type="array">
+      <obj_property name="ElementShortName">IO[3:0]</obj_property>
+      <obj_property name="ObjectShortName">IO[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/matrix[0][0]" type="logic">
+      <obj_property name="ElementShortName">[0]</obj_property>
+      <obj_property name="ObjectShortName">[0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/matrix[0][1]" type="logic">
+      <obj_property name="ElementShortName">[1]</obj_property>
+      <obj_property name="ObjectShortName">[1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/matrix[0][16]" type="logic">
+      <obj_property name="ElementShortName">[16]</obj_property>
+      <obj_property name="ObjectShortName">[16]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/cur_c" type="array">
+      <obj_property name="ElementShortName">cur_c[6:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_c[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/row_address" type="other">
+      <obj_property name="ElementShortName">row_address</obj_property>
+      <obj_property name="ObjectShortName">row_address</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/col_address" type="other">
+      <obj_property name="ElementShortName">col_address</obj_property>
+      <obj_property name="ObjectShortName">col_address</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/matrix" type="array">
+      <obj_property name="ElementShortName">matrix[63:0][63:0]</obj_property>
+      <obj_property name="ObjectShortName">matrix[63:0][63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/A" type="array">
+      <obj_property name="ElementShortName">A[9:0]</obj_property>
+      <obj_property name="ObjectShortName">A[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/m_ram/cur_r" type="array">
+      <obj_property name="ElementShortName">cur_r[6:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_r[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_ram/uu/cur_t" type="other">
+      <obj_property name="ElementShortName">cur_t</obj_property>
+      <obj_property name="ObjectShortName">cur_t</obj_property>
+   </wvobject>
+</wave_config>

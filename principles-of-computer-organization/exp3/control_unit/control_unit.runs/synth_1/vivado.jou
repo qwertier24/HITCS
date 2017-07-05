@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Jun 24 10:53:15 2017
+# Process ID: 17640
+# Current directory: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1
+# Command line: vivado.exe -log perform.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source perform.tcl
+# Log file: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1/perform.vds
+# Journal file: C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source perform.tcl -notrace

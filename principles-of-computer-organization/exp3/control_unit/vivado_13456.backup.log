@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Jun 24 10:29:25 2017
+# Process ID: 13456
+# Current directory: C:/Users/Yukun Ma/Desktop/exp3/control_unit
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8464 C:\Users\Yukun Ma\Desktop\exp3\control_unit\control_unit.xpr
+# Log file: C:/Users/Yukun Ma/Desktop/exp3/control_unit/vivado.log
+# Journal file: C:/Users/Yukun Ma/Desktop/exp3/control_unit\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Yukun Ma/Desktop/exp3/control_unit/control_unit.xpr}
+INFO: [Project 1-313] Project file moved from 'E:/principles-of-computer-organization/exp3/control_unit' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.1/data/ip'.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 24 10:30:46 2017...
