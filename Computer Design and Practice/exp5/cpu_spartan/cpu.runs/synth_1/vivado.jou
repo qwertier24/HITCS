@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Jul 22 20:57:09 2017
+# Process ID: 2780
+# Current directory: E:/HITCS/exp5/cpu/cpu.runs/synth_1
+# Command line: vivado.exe -log cpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu.tcl
+# Log file: E:/HITCS/exp5/cpu/cpu.runs/synth_1/cpu.vds
+# Journal file: E:/HITCS/exp5/cpu/cpu.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source cpu.tcl -notrace

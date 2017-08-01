@@ -1,0 +1,746 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Jul 22 20:55:50 2017
+# Process ID: 8584
+# Current directory: E:/HITCS/exp5/cpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6924 E:\HITCS\exp5\cpu\cpu.xpr
+# Log file: E:/HITCS/exp5/cpu/vivado.log
+# Journal file: E:/HITCS/exp5/cpu\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/HITCS/exp5/cpu/cpu.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.1/data/ip'.
+launch_runs impl_1 -jobs 8
+[Sat Jul 22 20:57:03 2017] Launched synth_1...
+Run output will be captured here: E:/HITCS/exp5/cpu/cpu.runs/synth_1/runme.log
+[Sat Jul 22 20:57:04 2017] Launched impl_1...
+Run output will be captured here: E:/HITCS/exp5/cpu/cpu.runs/impl_1/runme.log
+launch_simulation -mode post-implementation -type timing
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/HITCS/exp5/cpu/.Xil/Vivado-8584-DESKTOP-IQ9RCDV/dcp1/cpu.xdc]
+Finished Parsing XDC File [E:/HITCS/exp5/cpu/.Xil/Vivado-8584-DESKTOP-IQ9RCDV/dcp1/cpu.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1024.043 ; gain = 4.070
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1024.043 ; gain = 4.070
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1168.449 ; gain = 332.668
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_write_back_time_impl.v"
+write_verilog: Time (s): cpu = 00:00:25 ; elapsed = 00:00:12 . Memory (MB): peak = 1239.762 ; gain = 71.313
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_write_back_time_impl.sdf"
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[10\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[11\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[12\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[14\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[15\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[8\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[9\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[0\]\[5\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[0\]\[6\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[1\]\[1\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[1\]\[4\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[1\]\[5\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[1\]\[6\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+INFO: [SIM-utils-36] Netlist generated:E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_write_back_time_impl.v
+INFO: [SIM-utils-37] SDF generated:E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_write_back_time_impl.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_write_back' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing'
+"xvlog -m64 --relax -prj tb_write_back_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_write_back_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IOBUF_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module IOBUF_HD1
+INFO: [VRFC 10-311] analyzing module IOBUF_HD2
+INFO: [VRFC 10-311] analyzing module IOBUF_HD3
+INFO: [VRFC 10-311] analyzing module IOBUF_HD4
+INFO: [VRFC 10-311] analyzing module IOBUF_HD5
+INFO: [VRFC 10-311] analyzing module IOBUF_HD6
+INFO: [VRFC 10-311] analyzing module IOBUF_HD7
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-311] analyzing module fetch
+INFO: [VRFC 10-311] analyzing module mod4
+INFO: [VRFC 10-311] analyzing module ram_ctrl
+INFO: [VRFC 10-311] analyzing module refer
+INFO: [VRFC 10-311] analyzing module write_back
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl -m64 --relax -prj tb_write_back_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fetch
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_fetch
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/mod4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mod4
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_mod4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_mod4
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_alu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity alu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_ram_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_ram_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/ram_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_io_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_io_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/io_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity io_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_refer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_refer
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/refer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity refer
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_write_back.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_write_back
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/write_back.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity write_back
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_cpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cpu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/cpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cpu
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 9716ed82fff442898a6e4980f8bf1f8b --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot tb_write_back_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.tb_write_back xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.write_back [write_back_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_write_back
+Built simulation snapshot tb_write_back_time_impl
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/xsim.dir/tb_write_back_time_impl/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/xsim.dir/tb_write_back_time_impl/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Jul 22 21:01:14 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Jul 22 21:01:14 2017...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1592.016 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_write_back_time_impl -key {Post-Implementation:sim_1:Timing:tb_write_back} -tclbatch {tb_write_back.tcl} -view {E:/HITCS/exp5/cpu/tb_write_back_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config E:/HITCS/exp5/cpu/tb_write_back_behav.wcfg
+WARNING: Simulation object /tb_write_back/uut_write_back/I_t3 was not found in the design.
+source tb_write_back.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_write_back_time_impl' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:48 ; elapsed = 00:00:35 . Memory (MB): peak = 1630.215 ; gain = 794.434
+set_property top tb_cpu [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+set_property is_enabled false [get_files  E:/HITCS/exp5/cpu/tb_write_back_behav.wcfg]
+set_property is_enabled true [get_files  E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg]
+launch_simulation -mode post-implementation -type timing
+WARNING: [Vivado 12-3661] Failed to remove file:E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_write_back_time_impl.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/xelab.pb
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_cpu_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_cpu_time_impl.sdf"
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[10\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[11\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[12\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[14\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[15\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[8\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/O_ADDR_reg\[9\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[0\]\[5\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[0\]\[6\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[1\]\[1\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[1\]\[4\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[1\]\[5\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+WARNING: [Timing 38-5] [SDFWriter-1] Zero Delays will be used for arc D -> Q on instance 'uut_alu/R_reg\[1\]\[6\]' as a valid location was not found for one of the pins. Please check the part and placement setup to ensure placement completes successfully
+INFO: [SIM-utils-36] Netlist generated:E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_cpu_time_impl.v
+INFO: [SIM-utils-37] SDF generated:E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_cpu_time_impl.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cpu' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing'
+"xvlog -m64 --relax -prj tb_cpu_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_cpu_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IOBUF_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module IOBUF_HD1
+INFO: [VRFC 10-311] analyzing module IOBUF_HD2
+INFO: [VRFC 10-311] analyzing module IOBUF_HD3
+INFO: [VRFC 10-311] analyzing module IOBUF_HD4
+INFO: [VRFC 10-311] analyzing module IOBUF_HD5
+INFO: [VRFC 10-311] analyzing module IOBUF_HD6
+INFO: [VRFC 10-311] analyzing module IOBUF_HD7
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-311] analyzing module fetch
+INFO: [VRFC 10-311] analyzing module mod4
+INFO: [VRFC 10-311] analyzing module ram_ctrl
+INFO: [VRFC 10-311] analyzing module refer
+INFO: [VRFC 10-311] analyzing module write_back
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl -m64 --relax -prj tb_cpu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fetch
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_fetch
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/mod4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mod4
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_mod4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_mod4
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_alu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity alu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_ram_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_ram_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/ram_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_io_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_io_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/io_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity io_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_refer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_refer
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/refer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity refer
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_write_back.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_write_back
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/write_back.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity write_back
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_cpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cpu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/cpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cpu
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 9716ed82fff442898a6e4980f8bf1f8b --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot tb_cpu_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.tb_cpu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.mod4 [mod4_default]
+Compiling architecture behavioral of entity xil_defaultlib.fetch [fetch_default]
+Compiling architecture behavioral of entity xil_defaultlib.ram_ctrl [ram_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.alu [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.refer [refer_default]
+Compiling architecture behavioral of entity xil_defaultlib.io_ctrl [io_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.write_back [write_back_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu [cpu_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cpu
+Built simulation snapshot tb_cpu_time_impl
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/xsim.dir/tb_cpu_time_impl/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 62.012 ; gain = 1.254
+INFO: [Common 17-206] Exiting Webtalk at Sat Jul 22 21:01:56 2017...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1653.113 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cpu_time_impl -key {Post-Implementation:sim_1:Timing:tb_cpu} -tclbatch {tb_cpu.tcl} -view {E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg
+source tb_cpu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cpu_time_impl' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 1655.543 ; gain = 2.430
+current_sim simulation_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -mode post-implementation -type functional
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-33] write_vhdl -mode funcsim -nolib -force -file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/func/tb_cpu_func_impl.vhd"
+INFO: [SIM-utils-36] Netlist generated:E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/func/tb_cpu_func_impl.vhd
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cpu' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/func'
+"xvhdl -m64 --relax -prj tb_cpu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/func/tb_cpu_func_impl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity alu
+INFO: [VRFC 10-307] analyzing entity fetch
+INFO: [VRFC 10-307] analyzing entity mod4
+INFO: [VRFC 10-307] analyzing entity ram_ctrl
+INFO: [VRFC 10-307] analyzing entity refer
+INFO: [VRFC 10-307] analyzing entity write_back
+INFO: [VRFC 10-307] analyzing entity cpu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fetch
+WARNING: [VRFC 10-1193] overwriting existing primary unit fetch [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/fetch.vhd:8]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_fetch
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/mod4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mod4
+WARNING: [VRFC 10-1193] overwriting existing primary unit mod4 [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/mod4.vhd:8]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_mod4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_mod4
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_alu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity alu
+WARNING: [VRFC 10-1193] overwriting existing primary unit alu [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/alu.vhd:8]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_ram_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_ram_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/ram_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram_ctrl
+WARNING: [VRFC 10-1193] overwriting existing primary unit ram_ctrl [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/ram_ctrl.vhd:8]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_io_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_io_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/io_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity io_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_refer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_refer
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/refer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity refer
+WARNING: [VRFC 10-1193] overwriting existing primary unit refer [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/refer.vhd:7]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_write_back.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_write_back
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/write_back.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity write_back
+WARNING: [VRFC 10-1193] overwriting existing primary unit write_back [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/write_back.vhd:7]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_cpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cpu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/cpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cpu
+WARNING: [VRFC 10-1193] overwriting existing primary unit cpu [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/cpu.vhd:7]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/func'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 9716ed82fff442898a6e4980f8bf1f8b --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cpu_func_impl xil_defaultlib.tb_cpu -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mod4 [mod4_default]
+Compiling architecture behavioral of entity xil_defaultlib.fetch [fetch_default]
+Compiling architecture behavioral of entity xil_defaultlib.ram_ctrl [ram_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.alu [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.refer [refer_default]
+Compiling architecture behavioral of entity xil_defaultlib.io_ctrl [io_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.write_back [write_back_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu [cpu_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cpu
+Built simulation snapshot tb_cpu_func_impl
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/func/xsim.dir/tb_cpu_func_impl/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/func/xsim.dir/tb_cpu_func_impl/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Jul 22 21:02:32 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Jul 22 21:02:32 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1675.297 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/func'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cpu_func_impl -key {Post-Implementation:sim_1:Functional:tb_cpu} -tclbatch {tb_cpu.tcl} -view {E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg
+source tb_cpu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cpu_func_impl' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1675.297 ; gain = 0.000
+launch_simulation -mode post-synthesis -type functional
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:10]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:10]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'btnu_IBUF'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[0]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[1]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[2]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[3]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[4]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[5]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[6]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[7]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[8]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[9]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[10]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[11]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[12]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[13]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[14]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'swt[15]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[8]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[9]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[10]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[11]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[12]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[13]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[14]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[15]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[4]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[5]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[6]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[7]'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:80]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:80]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnc'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnu'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnl'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnr'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnd'. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [E:/HITCS/exp5/cpu/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-26] write_vhdl -mode funcsim -nolib -force -file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/synth/func/tb_cpu_func_synth.vhd"
+INFO: [SIM-utils-36] Netlist generated:E:/HITCS/exp5/cpu/cpu.sim/sim_1/synth/func/tb_cpu_func_synth.vhd
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cpu' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/synth/func'
+"xvhdl -m64 --relax -prj tb_cpu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/synth/func/tb_cpu_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity alu
+INFO: [VRFC 10-307] analyzing entity fetch
+INFO: [VRFC 10-307] analyzing entity mod4
+INFO: [VRFC 10-307] analyzing entity ram_ctrl
+INFO: [VRFC 10-307] analyzing entity refer
+INFO: [VRFC 10-307] analyzing entity write_back
+INFO: [VRFC 10-307] analyzing entity cpu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fetch
+WARNING: [VRFC 10-1193] overwriting existing primary unit fetch [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/fetch.vhd:8]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_fetch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_fetch
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/mod4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mod4
+WARNING: [VRFC 10-1193] overwriting existing primary unit mod4 [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/mod4.vhd:8]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_mod4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_mod4
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_alu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity alu
+WARNING: [VRFC 10-1193] overwriting existing primary unit alu [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/alu.vhd:8]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_ram_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_ram_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/ram_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ram_ctrl
+WARNING: [VRFC 10-1193] overwriting existing primary unit ram_ctrl [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/ram_ctrl.vhd:8]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_io_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_io_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/io_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity io_ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_refer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_refer
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/refer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity refer
+WARNING: [VRFC 10-1193] overwriting existing primary unit refer [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/refer.vhd:7]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_write_back.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_write_back
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/write_back.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity write_back
+WARNING: [VRFC 10-1193] overwriting existing primary unit write_back [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/write_back.vhd:7]
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_cpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_cpu
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/cpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cpu
+WARNING: [VRFC 10-1193] overwriting existing primary unit cpu [E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/cpu.vhd:7]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/synth/func'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 9716ed82fff442898a6e4980f8bf1f8b --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cpu_func_synth xil_defaultlib.tb_cpu -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.mod4 [mod4_default]
+Compiling architecture behavioral of entity xil_defaultlib.fetch [fetch_default]
+Compiling architecture behavioral of entity xil_defaultlib.ram_ctrl [ram_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.alu [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.refer [refer_default]
+Compiling architecture behavioral of entity xil_defaultlib.io_ctrl [io_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.write_back [write_back_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu [cpu_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cpu
+Built simulation snapshot tb_cpu_func_synth
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source E:/HITCS/exp5/cpu/cpu.sim/sim_1/synth/func/xsim.dir/tb_cpu_func_synth/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 61.492 ; gain = 0.242
+INFO: [Common 17-206] Exiting Webtalk at Sat Jul 22 21:03:14 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1765.203 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/HITCS/exp5/cpu/cpu.sim/sim_1/synth/func'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cpu_func_synth -key {Post-Synthesis:sim_1:Functional:tb_cpu} -tclbatch {tb_cpu.tcl} -view {E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg
+source tb_cpu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cpu_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1765.203 ; gain = 89.906
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1850.027 ; gain = 0.000
+current_sim simulation_3
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim

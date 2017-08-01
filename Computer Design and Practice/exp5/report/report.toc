@@ -1,0 +1,57 @@
+\contentsline {chapter}{摘要}{I}{chapter*.1}
+\contentsline {chapter}{\numberline {\zihao {-2}1\hspace {.3em}}CPU的顶端结构}{1}{chapter.1}
+\contentsline {chapter}{\numberline {\zihao {-2}2\hspace {.3em}}各模块接口框图及定义}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}顶端模块(cpu)}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}节拍管理(mod4)}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}取指管理(fetch)}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}运算管理(alu)}{6}{section.2.4}
+\contentsline {section}{\numberline {2.5}访存管理(refer)}{7}{section.2.5}
+\contentsline {section}{\numberline {2.6}回写管理(write\_back)}{9}{section.2.6}
+\contentsline {section}{\numberline {2.7}内存控制(ram\_ctrl)}{10}{section.2.7}
+\contentsline {section}{\numberline {2.8}I/O控制(io\_ctrl)}{12}{section.2.8}
+\contentsline {section}{\numberline {2.9}ram/DDR2端口转换模块(ram2ddr)\footnote {此模块使用的代码为Digilent公司的开源代码，可将DDR2 RAM的端口转化为Cecullar RAM的端口，以方便使用。}}{13}{section.2.9}
+\contentsline {chapter}{\numberline {\zihao {-2}3\hspace {.3em}}软件仿真测试}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}顶端模块仿真测试}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}测试方案}{15}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}测试波形}{15}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}节拍管理模块}{18}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}测试波形}{18}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}取指管理模块}{18}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}测试方案}{18}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}测试波形}{18}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}运算管理模块}{20}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}测试方案}{20}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}测试波形}{20}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}访存管理模块}{20}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}测试方案}{20}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}测试波形}{21}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}回写管理模块}{21}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}测试方案}{21}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}测试波形}{22}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}内存控制模块}{22}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}测试方案}{22}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}测试波形}{22}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}I/O控制模块}{23}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}测试方案}{23}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}测试波形}{23}{subsection.3.8.2}
+\contentsline {chapter}{\numberline {\zihao {-2}4\hspace {.3em}}CPU下载测试（使用Nexys 4 DDR FPGA）}{24}{chapter.4}
+\contentsline {section}{\numberline {4.1}指令1：JMP 0x01（地址0x0000）}{24}{section.4.1}
+\contentsline {section}{\numberline {4.2}指令2：JZ R0, 0x03（地址0x0001）}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}指令3：MVI R0, 0x01（地址0x0003）}{26}{section.4.3}
+\contentsline {section}{\numberline {4.4}指令4：JZ R0, 0x02（地址0x0004）}{27}{section.4.4}
+\contentsline {section}{\numberline {4.5}指令5：MVI R7, 0x07（地址0x0005）}{28}{section.4.5}
+\contentsline {section}{\numberline {4.6}指令6：ADD R0, R7(地址0x0006)}{29}{section.4.6}
+\contentsline {section}{\numberline {4.7}指令7：OUT R0, 0x1(地址0x007)}{31}{section.4.7}
+\contentsline {section}{\numberline {4.8}指令8：STA R7, 0x0c(地址0x008)}{32}{section.4.8}
+\contentsline {section}{\numberline {4.9}指令9：LDA R1, 0x0c(地址0x009)}{34}{section.4.9}
+\contentsline {section}{\numberline {4.10}指令10：SUB R1, R0(地址0x00a)}{35}{section.4.10}
+\contentsline {section}{\numberline {4.11}指令11：OUT R1, 0x1(地址0x00b)}{36}{section.4.11}
+\contentsline {section}{\numberline {4.12}指令12：IN R2, 0x1(地址0x00c)}{37}{section.4.12}
+\contentsline {section}{\numberline {4.13}指令13：OUT R2, 0x1(地址0x00d)}{38}{section.4.13}
+\contentsline {chapter}{\numberline {\zihao {-2}5\hspace {.3em}}实验中遇到的问题}{40}{chapter.5}
+\contentsline {section}{\numberline {5.1}关于PC何时自加}{40}{section.5.1}
+\contentsline {section}{\numberline {5.2}关于when...else...语句}{40}{section.5.2}
+\contentsline {section}{\numberline {5.3}产生200MHz的信号供DDR2内存使用}{40}{section.5.3}
+\contentsline {section}{\numberline {5.4}DDR2内存读写结果不正确}{40}{section.5.4}
+\contentsline {chapter}{参考文献}{41}{section*.51}
+\contentsline {chapter}{致谢}{42}{chapter*.53}

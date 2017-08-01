@@ -1,0 +1,27 @@
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 9716ed82fff442898a6e4980f8bf1f8b --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot tb_cpu_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.tb_cpu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.mod4 [mod4_default]
+Compiling architecture behavioral of entity xil_defaultlib.fetch [fetch_default]
+Compiling architecture behavioral of entity xil_defaultlib.ram_ctrl [ram_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.alu [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.refer [refer_default]
+Compiling architecture behavioral of entity xil_defaultlib.io_ctrl [io_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.write_back [write_back_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu [cpu_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cpu
+Built simulation snapshot tb_cpu_time_impl

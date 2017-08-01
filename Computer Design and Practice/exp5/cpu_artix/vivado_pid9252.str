@@ -1,0 +1,304 @@
+/*
+
+Vivado v2017.1 (64-bit)
+SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+
+Process ID: 9252
+License: Customer
+
+Current time: 	7/24/17 2:32:35 PM CST
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 45 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.1/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.1/tps/win64/jre/bin/java.exe
+Java library paths: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o;C:/WINDOWS/Sun/Java/bin;C:/WINDOWS/system32;C:/WINDOWS;C:/Xilinx/Vivado/2017.1/bin;C:/Xilinx/Vivado/2017.1/lib/win64.o;C:/Xilinx/Vivado/2017.1/tps/win64/jre/bin/server;C:/Xilinx/Vivado/2017.1/tps/win64/jre/bin;C:/Xilinx/Vivado/2017.1/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2017.1/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado_HLS/2017.1/bin;C:/Python35/Scripts/;C:/Python35/;D:/Intel/Compiler/11.1/072/lib/Intel64;D:/Intel/Compiler/11.1/072/lib/ia32;C:/Program Files (x86)/VNI/imsl/fnl600/Intel64/lib;C:/Program files/MPICH2/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/libnvvp;C:/ProgramData/Oracle/Java/javapath;C:/Python27/;C:/Python27/Scripts;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common;C:/Program Files/Git/cmd;C:/Users/Yukun Ma/.dnx/bin;C:/Program Files/Microsoft DNX/Dnvm/;C:/Program Files/Microsoft SQL Server/130/Tools/Binn/;D:/MATLAB/R2016b/runtime/win64;D:/MATLAB/R2016b/bin;D:/MATLAB/R2016b/polyspace/bin;C:/Program Files/Calibre2/;C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/;C:/Program Files/CUDNN/bin;C:/Program Files/Microsoft/Web Platform Installer/;C:/Program Files (x86)/Microsoft SQL Server/100/Tools/Binn/;C:/Program Files/Microsoft SQL Server/100/Tools/Binn/;C:/Program Files/Microsoft SQL Server/100/DTS/Binn/;C:/Program Files (x86)/Microsoft SQL Server/100/Tools/Binn/VSShell/Common7/IDE/;C:/Program Files (x86)/Microsoft SQL Server/100/DTS/Binn/;C:/Program Files (x86)/Microsoft Visual Studio 9.0/Common7/IDE/PrivateAssemblies/;C:/Program Files/dotnet/;C:/Users/Yukun Ma/AppData/Local/Microsoft/WindowsApps;D:/texlive/2016/bin/win32;C:/MinGW/bin;C:/Users/Yukun Ma/AppData/Local/Pandoc/;;C:/Xilinx/Vivado/2017.1/tps/mingw/6.2.0/win64.o/nt/bin;C:/Xilinx/Vivado/2017.1/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.
+
+User name: 	Yukun Ma
+User home directory: C:/Users/Yukun Ma
+User working directory: E:/HITCS/exp5/cpu_artix
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.1
+RDI_DATADIR: C:/Xilinx/Vivado/2017.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.1/bin
+
+User preferences location: C:/Users/Yukun Ma/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/Yukun Ma/AppData/Roaming/Xilinx/Vivado/2017.1/vivado.xml
+Vivado layouts directory: C:/Users/Yukun Ma/AppData/Roaming/Xilinx/Vivado/2017.1/layouts
+PlanAhead jar location: 	C:/Xilinx/Vivado/2017.1/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	E:/HITCS/exp5/cpu_artix/.Xil/Vivado-9252-DESKTOP-IQ9RCDV
+
+GUI allocated memory:	188 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 543 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: E:\HITCS\exp5\cpu_artix\cpu.xpr. Version: Vivado v2017.1 
+// bs:g (cg:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 60 MB (+60118kb) [00:00:11]
+// [Engine Memory]: 521 MB (+395057kb) [00:00:11]
+// HMemoryUtils.trashcanNow. Engine heap size: 566 MB. GUI used memory: 35 MB. Current time: 7/24/17 2:32:37 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 566 MB (+19861kb) [00:00:15]
+// [GUI Memory]: 70 MB (+7832kb) [00:00:15]
+// Tcl Message: open_project E:/HITCS/exp5/cpu_artix/cpu.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.1/data/ip'. 
+// Project name: cpu; location: E:/HITCS/exp5/cpu_artix; part: xc7a100tcsg324-1
+// [Engine Memory]: 600 MB (+6069kb) [00:00:20]
+// Tcl Message: open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 825.785 ; gain = 67.426 
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 18 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Disabled Sources]", 2); // B:i (D:JPanel, cg:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Disabled Sources]", 2); // B:i (D:JPanel, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu(Behavioral) (cpu.vhd)]", 1); // B:i (D:JPanel, cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu(Behavioral) (cpu.vhd)]", 1, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu(Behavioral) (cpu.vhd)]", 1, true, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click - Node
+// [GUI Memory]: 74 MB (+629kb) [00:00:41]
+selectCodeEditor("cpu.vhd", 376, 205); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 80 MB (+2184kb) [00:00:49]
+// Elapsed time: 48 seconds
+selectCodeEditor("cpu.vhd", 402, 270); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 19 seconds
+selectCodeEditor("cpu.vhd", 447, 270); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("cpu.vhd", 314, 384); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("cpu.vhd", 403, 276); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 275 seconds
+selectCodeEditor("cpu.vhd", 214, 380); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 99 seconds
+selectCodeEditor("cpu.vhd", 415, 280); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 49 seconds
+selectTab((HResource) null, (HResource) null, "Log", 2); // aF:FrameContainer (ContainerContainer:JideSplitPane, cg:JFrame)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aF:FrameContainer (ContainerContainer:JideSplitPane, cg:JFrame)
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // g:JCheckBox (JPanel:JComponent, cg:JFrame): FALSE
+selectCheckBox(PAResourceItoN.MsgView_STATUS_MESSAGES, (String) null, false); // g:JCheckBox (JPanel:JComponent, cg:JFrame): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Constraints 18-948] create_clock: can't define clock 'sys_clk_pin' with period '5' which is less than or equal to the delta '5' between waveform edges (0,5) [E:/HITCS/exp5/cpu_artix/cpu.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc:10]. ]", 2, false); // ah:i (JViewport:JComponent, cg:JFrame)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;E:\HITCS\exp5\cpu_artix\cpu.srcs\constrs_1\imports\other\Nexys4DDR_Master.xdc;-;;-;16;-;line;-;10;-;;-;16;-;"); // ah:i (JViewport:JComponent, cg:JFrame)
+selectCodeEditor("Nexys4DDR_Master.xdc", 232, 214); // bI:J (JPanel:JComponent, cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation]", 2); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// x:aN (cg:JFrame): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, x:aN)
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // x:aN (cg:JFrame)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// [GUI Memory]: 87 MB (+3289kb) [00:09:20]
+// Tcl Message: reset_run synth_1 
+// [GUI Memory]: 92 MB (+49kb) [00:09:20]
+dismissDialog("Resetting Runs"); // bs:g (cg:JFrame)
+// TclEventType: RUN_LAUNCH
+// bs:g (cg:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'E:/HITCS/exp5/cpu_artix/ipcore_dir/ddr.xci' is already up-to-date 
+// Tcl Message: [Mon Jul 24 14:41:44 2017] Launched synth_1... Run output will be captured here: E:/HITCS/exp5/cpu_artix/cpu.runs/synth_1/runme.log [Mon Jul 24 14:41:44 2017] Launched impl_1... Run output will be captured here: E:/HITCS/exp5/cpu_artix/cpu.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bs:g (cg:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cg:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DDR_Master.xdc", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cg:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cg:JFrame)
+// Elapsed time: 25 seconds
+selectCodeEditor("cpu.vhd", 406, 358); // bI:J (JPanel:JComponent, cg:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah:x (cg:JFrame): Bitstream Generation Completed: addNotify
+// [GUI Memory]: 96 MB (+99kb) [00:14:45]
+// Elapsed time: 313 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a:JRadioButton (JPanel:JComponent, ah:x)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:x)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+// [Engine Memory]: 644 MB (+13954kb) [00:15:07]
+dismissDialog("Bitstream Generation Completed"); // ah:x (cg:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 654 MB. GUI used memory: 49 MB. Current time: 7/24/17 2:47:32 PM CST
+selectButton(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Hardware_auto_connect_target"); // B:JideButton (f:CommandBar, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292744510A 
+// bs:g (cg:JFrame):  Auto Connect : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {E:/HITCS/exp5/cpu_artix/cpu.runs/impl_1/cpu.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 755 MB (+83132kb) [00:15:11]
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_CFGMEM_CREATE
+// TclEventType: HW_CFGMEM_PART_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Tcl Message: create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {28f00am29ew-bpi-x16}] 0] 
+dismissDialog("Auto Connect"); // bs:g (cg:JFrame)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "28f00am29ew-bpi-x16 ;   ", 4, "28f00am29ew-bpi-x16", 0, false); // t:af (JViewport:JComponent, cg:JFrame)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "28f00am29ew-bpi-x16 ;   ", 4, "28f00am29ew-bpi-x16", 0, false, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger
+selectMenuItem((HResource) null, "Remove Configuration Memory Device"); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// TclEventType: HW_CFGMEM_DELETE
+// Tcl Message: delete_hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [get_hw_devices xc7a100t_0 ]] 
+// HMemoryUtils.trashcanNow. Engine heap size: 777 MB. GUI used memory: 49 MB. Current time: 7/24/17 3:17:32 PM CST
+// Elapsed time: 2109 seconds
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xilinx_tcf/Digilent/210292744510A (1) ; Open", 1, "xilinx_tcf/Digilent/210292744510A (1)", 0, true, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a100t_0 (1) ; Programmed", 2, "xc7a100t_0 (1)", 0, true, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_FPGA, "Program Device..."); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// bs:g (cg:JFrame):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {E:/HITCS/exp5/cpu_artix/cpu.runs/impl_1/cpu.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: HW_CFGMEM_CREATE
+// TclEventType: HW_CFGMEM_PART_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Tcl Message: create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {28f00am29ew-bpi-x16}] 0] 
+// 'I' command handler elapsed time: 5 seconds
+dismissDialog("Program Device"); // bs:g (cg:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DDR_Master.xdc", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cg:JFrame)
+selectCodeEditor("Nexys4DDR_Master.xdc", 518, 217); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("Nexys4DDR_Master.xdc", 553, 231); // bI:J (JPanel:JComponent, cg:JFrame)
+selectCodeEditor("Nexys4DDR_Master.xdc", 555, 236); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 185 seconds
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a100t_0 (2) ; Programmed", 2, "xc7a100t_0 (2)", 0, true, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "28f00am29ew-bpi-x16 ;   ", 4, "28f00am29ew-bpi-x16", 0, false); // t:af (JViewport:JComponent, cg:JFrame)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "28f00am29ew-bpi-x16 ;   ", 4, "28f00am29ew-bpi-x16", 0, false, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger
+selectMenuItem((HResource) null, "Remove Configuration Memory Device"); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// TclEventType: HW_CFGMEM_DELETE
+// Tcl Message: delete_hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [get_hw_devices xc7a100t_0 ]] 
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a100t_0 (1) ; Programmed", 2, "xc7a100t_0 (1)", 0, true, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_FPGA, "Program Device..."); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bz:aD (cg:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, bz:aD)
+// bs:g (cg:JFrame):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bz:aD (cg:JFrame)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {E:/HITCS/exp5/cpu_artix/cpu.runs/impl_1/cpu.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: HW_CFGMEM_CREATE
+// TclEventType: HW_CFGMEM_PART_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Tcl Message: create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {28f00am29ew-bpi-x16}] 0] 
+// 'I' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // bs:g (cg:JFrame)
+// Elapsed time: 38 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.vhd", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 26 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cg:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u:M (JViewport:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator]", 1); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// x:aN (cg:JFrame): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, x:aN)
+// bs:g (cg:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // x:aN (cg:JFrame)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bs:g (cg:JFrame)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'E:/HITCS/exp5/cpu_artix/ipcore_dir/ddr.xci' is already up-to-date 
+// Tcl Message: [Mon Jul 24 15:27:44 2017] Launched synth_1... Run output will be captured here: E:/HITCS/exp5/cpu_artix/cpu.runs/synth_1/runme.log [Mon Jul 24 15:27:44 2017] Launched impl_1... Run output will be captured here: E:/HITCS/exp5/cpu_artix/cpu.runs/impl_1/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 103 MB (+1634kb) [00:56:53]
+// Elapsed time: 96 seconds
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a100t_0 (2) ; Programmed", 2, "xc7a100t_0 (2)", 0, true, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_BOOT_DEVICE, "Boot from Configuration Memory Device"); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_BOOT_DEVICE
+// Tcl Message: boot_hw_device  [lindex [get_hw_devices xc7a100t_0] 0] 
+// bs:g (cg:JFrame):  Boot from Configuration Memory Device : addNotify
+// Elapsed time: 43 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bs:g)
+// Tcl Message: INFO: [Common 17-41] Interrupt caught. Command should exit soon. 
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 82 seconds
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, bs:g)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "28f00am29ew-bpi-x16 ;   ", 4, "28f00am29ew-bpi-x16", 0, false, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a100t_0 (2) ; Programmed", 2, "xc7a100t_0 (2)", 0, true, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xilinx_tcf/Digilent/210292744510A (1) ; Open", 1, "xilinx_tcf/Digilent/210292744510A (1)", 0, true, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger - Node
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a100t_0 (2) ; Programmed", 2, "xc7a100t_0 (2)", 0, true, false, false, false, true, false); // t:af (JViewport:JComponent, cg:JFrame) - Popup Trigger - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "28f00am29ew-bpi-x16 ;   ", 4, "28f00am29ew-bpi-x16", 0, false); // t:af (JViewport:JComponent, cg:JFrame)
+// Elapsed time: 10 seconds
+closeMainWindow("cpu - [E:/HITCS/exp5/cpu_artix/cpu.xpr] - Vivado 2017.1"); // cg:JFrame
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'

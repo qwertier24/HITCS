@@ -1,0 +1,73 @@
+Unable to capture context for thread 11804 in process 11100, can not generate back trace
+Unable to capture context for thread 18420 in process 11100, can not generate back trace
+Unable to capture context for thread 13688 in process 11100, can not generate back trace
+Unable to capture context for thread 12788 in process 11100, can not generate back trace
+Unable to capture context for thread 6256 in process 11100, can not generate back trace
+Unable to capture context for thread 4772 in process 11100, can not generate back trace
+Unable to capture context for thread 4672 in process 11100, can not generate back trace
+Unable to capture context for thread 16128 in process 11100, can not generate back trace
+Unable to capture context for thread 7952 in process 11100, can not generate back trace
+Unable to capture context for thread 12136 in process 11100, can not generate back trace
+Exception at PC 0x00007FFBCE74BB93
+Printing stacktrace...
+
+Unable to capture context for thread 14220 in process 11100, can not generate back trace
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+[0]  [0x00007FFBCE74BB93]
+[1]  [0x00007FFBCE74BB93]
+[2]  [0x00007FFBCE74B4A1]
+[3]  [0x00007FFBCE74B459]
+[4]  [0x00007FFBCE7319FE]
+[5]  [0x00007FFBCE730ED1]
+[6]  [0x00007FFBCE730D76]
+[7]  [0x00007FFBCE6D79F6]
+[8]  [0x00007FFBCE6C7AFB]
+[9]  [0x00007FFBCE7EE90A]
+[10]  [0x00007FFBCE809F87]
+[11]  [0x00007FFBCE80A05F]
+[12] (BaseThreadInitThunk+0x14) [0x00007FFC55602774]
+[13] (RtlUserThreadStart+0x21) [0x00007FFC55B80D51]
+Done
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFC523D9E08
+Exception at PC 0x00007FFBCE451A52
+Attemped to write at address 0x00007FFBFBDB9BA4
+Printing stacktrace...
+
+[0]  [0x00007FFBCE451A52]
+[1]  [0x00007FFBCE451A52]
+[2]  [0x00007FFBCE451AD4]
+[3]  [0x00007FFBCE593FF7]
+[4]  [0x00007FFBCE479128]
+[5]  [0x00007FFBCE72DFB9]
+[6]  [0x00007FFBCE8FEF23]
+[7]  [0x00007FFBCE80B06B]
+[8]  [0x00007FFBCE8008AF]
+[9]  [0x00007FFBCE800A32]
+[10] (RtlDeactivateActivationContextUnsafeFast+0x1af) [0x00007FFC55B3485F]
+[11] (LdrShutdownProcess+0x12c) [0x00007FFC55B5D43C]
+[12] (RtlExitUserProcess+0xb4) [0x00007FFC55B5D2F4]
+[13] (FatalExit+0xa) [0x00007FFC5560C0DA]
+[14] (exit+0x75) [0x00007FFC5571A045]
+[15] (initterm_e+0x21d) [0x00007FFC5571A68D]
+[16]  [0x00000000004014CD]
+[17]  [0x000000000040151B]
+[18] (BaseThreadInitThunk+0x14) [0x00007FFC55602774]
+[19] (RtlUserThreadStart+0x21) [0x00007FFC55B80D51]
+Done

@@ -1,0 +1,79 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
+| Date         : Sat Jul 22 20:58:13 2017
+| Host         : DESKTOP-IQ9RCDV running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file cpu_control_sets_placed.rpt
+| Design       : cpu
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    17 |
+| Unused register locations in slices containing registers |     6 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             174 |           59 |
+| No           | No                    | Yes                    |               4 |            2 |
+| No           | Yes                   | No                     |              16 |            6 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------+---------------+------------------+------------------+----------------+
+|          Clock Signal         | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
++-------------------------------+---------------+------------------+------------------+----------------+
+|  I_CLK_IBUF_BUFG              |               | I_RST_IBUF       |                2 |              4 |
+|  uut_fetch/E[0]               |               |                  |                2 |              8 |
+|  uut_fetch/O_ram_ADDR[0][0]   |               |                  |                4 |              8 |
+|  uut_fetch/O_ram_ADDR[0]_0[0] |               |                  |                2 |              8 |
+|  uut_fetch/O_ram_ADDR[0]_2[0] |               |                  |                3 |              8 |
+|  uut_fetch/O_ram_ADDR[0]_3[0] |               |                  |                3 |              8 |
+|  uut_fetch/O_ram_ADDR[4][0]   |               |                  |                2 |              8 |
+|  uut_fetch/O_ram_ADDR[4]_0[0] |               |                  |                3 |              8 |
+|  uut_fetch/O_ram_ADDR[4]_1[0] |               |                  |                4 |              8 |
+|  uut_fetch/O_ram_ADDR[4]_2[0] |               |                  |                5 |              8 |
+|  uut_fetch/O_ram_ADDR[4]_3[0] |               |                  |                4 |              8 |
+|  uut_fetch/O_ram_ADDR[4]_4[0] |               |                  |                3 |              8 |
+|  uut_fetch/O_ram_ADDR[4]_5[0] |               |                  |                2 |              8 |
+|  uut_fetch/PC_reg[15]_i_2_n_0 |               | I_RST_IBUF       |                6 |             16 |
+|  uut_fetch/O_ram_ADDR[0]_4[0] |               |                  |                5 |             16 |
+|  uut_fetch/O_ram_ADDR[0]_5[0] |               |                  |                4 |             16 |
+|  O_t1_BUFG                    |               |                  |               13 |             46 |
++-------------------------------+---------------+------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 4      |                     1 |
+| 8      |                    12 |
+| 16+    |                     4 |
++--------+-----------------------+
+
+

@@ -1,0 +1,37 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
+| Date         : Sun Jul 23 11:05:05 2017
+| Host         : DESKTOP-IQ9RCDV running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ddr'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ddr from xilinx.com:ip:mig_7series:1.9 to xilinx.com:ip:mig_7series:4.0 (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
+| Date         : Sun Jul 23 10:56:16 2017
+| Host         : DESKTOP-IQ9RCDV running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ddr'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ddr from xilinx.com:ip:mig_7series:1.9 to xilinx.com:ip:mig_7series:4.0 (Rev. 3)
+

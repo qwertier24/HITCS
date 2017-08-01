@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_cpu_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_cpu" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="334080000fs"></ZoomStartTime>
+      <ZoomEndTime time="503880001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="155"></NameColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="25" />
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_mod4/I_rst" type="logic">
+      <obj_property name="ElementShortName">I_rst</obj_property>
+      <obj_property name="ObjectShortName">I_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_mod4/O_t1" type="logic">
+      <obj_property name="ElementShortName">O_t1</obj_property>
+      <obj_property name="ObjectShortName">O_t1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_mod4/O_t2" type="logic">
+      <obj_property name="ElementShortName">O_t2</obj_property>
+      <obj_property name="ObjectShortName">O_t2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_mod4/O_t3" type="logic">
+      <obj_property name="ElementShortName">O_t3</obj_property>
+      <obj_property name="ObjectShortName">O_t3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_mod4/O_t4" type="logic">
+      <obj_property name="ElementShortName">O_t4</obj_property>
+      <obj_property name="ObjectShortName">O_t4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/ram_IR" type="array">
+      <obj_property name="ElementShortName">ram_IR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_IR[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/global_IR" type="array">
+      <obj_property name="ElementShortName">global_IR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">global_IR[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/O_ram_ADDR" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">O_ram_ADDR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">O_ram_ADDR[15:0]</obj_property>
+      <obj_property name="label">O_ram_ADDR/tb_cpu/uut_cpu/O_ram_ADDR[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/IO_ram_DATA" type="array">
+      <obj_property name="ElementShortName">IO_ram_DATA[15:0]</obj_property>
+      <obj_property name="ObjectShortName">IO_ram_DATA[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_fetch/PC" type="array">
+      <obj_property name="ElementShortName">PC[15:0]</obj_property>
+      <obj_property name="ObjectShortName">PC[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_alu/R" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">R[0:7][7:0]</obj_property>
+      <obj_property name="ObjectShortName">R[0:7][7:0]</obj_property>
+      <obj_property name="label">reg[0:7][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_fetch/I_PC_update" type="logic">
+      <obj_property name="ElementShortName">I_PC_update</obj_property>
+      <obj_property name="ObjectShortName">I_PC_update</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_fetch/I_PC_new" type="array">
+      <obj_property name="ElementShortName">I_PC_new[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_PC_new[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_alu/I_REG_addr" type="array">
+      <obj_property name="ElementShortName">I_REG_addr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">I_REG_addr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_alu/I_REG_new" type="array">
+      <obj_property name="ElementShortName">I_REG_new[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_REG_new[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_alu/O_ALU" type="array">
+      <obj_property name="ElementShortName">O_ALU[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_ALU[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/uut_alu/O_ADDR" type="array">
+      <obj_property name="ElementShortName">O_ADDR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">O_ADDR[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/O_S0" type="array">
+      <obj_property name="ElementShortName">O_S0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_S0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/O_S1" type="array">
+      <obj_property name="ElementShortName">O_S1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_S1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/O_S2" type="array">
+      <obj_property name="ElementShortName">O_S2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_S2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/O_S3" type="array">
+      <obj_property name="ElementShortName">O_S3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_S3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/I_K0" type="array">
+      <obj_property name="ElementShortName">I_K0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_K0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/I_K1" type="array">
+      <obj_property name="ElementShortName">I_K1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_K1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/I_K2" type="array">
+      <obj_property name="ElementShortName">I_K2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_K2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/uut_cpu/I_K3" type="array">
+      <obj_property name="ElementShortName">I_K3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_K3[7:0]</obj_property>
+   </wvobject>
+</wave_config>
