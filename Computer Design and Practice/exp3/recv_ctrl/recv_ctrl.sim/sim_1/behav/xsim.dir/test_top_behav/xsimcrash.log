@@ -1,0 +1,86 @@
+Unable to capture context for thread 13468 in process 9004, can not generate back trace
+Unable to capture context for thread 1244 in process 9004, can not generate back trace
+Unable to capture context for thread 12080 in process 9004, can not generate back trace
+Unable to capture context for thread 15580 in process 9004, can not generate back trace
+Unable to capture context for thread 14436 in process 9004, can not generate back trace
+Unable to capture context for thread 19412 in process 9004, can not generate back trace
+Unable to capture context for thread 7536 in process 9004, can not generate back trace
+Unable to capture context for thread 1800 in process 9004, can not generate back trace
+Unable to capture context for thread 18912 in process 9004, can not generate back trace
+Unable to capture context for thread 15340 in process 9004, can not generate back trace
+Unable to capture context for thread 14068 in process 9004, can not generate back trace
+Unable to capture context for thread 12900 in process 9004, can not generate back trace
+Exception at PC 0x00007FFA540E9E08
+Unable to capture context for thread 13468 in process 9004, can not generate back trace
+Unable to capture context for thread 1244 in process 9004, can not generate back trace
+Unable to capture context for thread 12080 in process 9004, can not generate back trace
+Unable to capture context for thread 15580 in process 9004, can not generate back trace
+Unable to capture context for thread 14436 in process 9004, can not generate back trace
+Unable to capture context for thread 19412 in process 9004, can not generate back trace
+Unable to capture context for thread 7536 in process 9004, can not generate back trace
+Unable to capture context for thread 1800 in process 9004, can not generate back trace
+Unable to capture context for thread 18912 in process 9004, can not generate back trace
+Unable to capture context for thread 15340 in process 9004, can not generate back trace
+Unable to capture context for thread 14068 in process 9004, can not generate back trace
+Unable to capture context for thread 12900 in process 9004, can not generate back trace
+Exception at PC 0x00007FFA1C96BB93
+Printing stacktrace...
+
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+[0]  [0x00007FFA1C96BB93]
+[1]  [0x00007FFA1C96BB93]
+[2]  [0x00007FFA1C96B4A1]
+[3]  [0x00007FFA1C96B459]
+[4]  [0x00007FFA1C9519FE]
+[5]  [0x00007FFA1C950ED1]
+[6]  [0x00007FFA1C950D76]
+[7]  [0x00007FFA1C8F79F6]
+[8]  [0x00007FFA1C8E7AFB]
+[9]  [0x00007FFA1CA0E90A]
+[10]  [0x00007FFA1CA29F87]
+[11]  [0x00007FFA1CA2A05F]
+[12] (BaseThreadInitThunk+0x14) [0x00007FFA54FD2774]
+[13] (RtlUserThreadStart+0x21) [0x00007FFA573D0D51]
+Done
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA540E9E08
+Exception at PC 0x00007FFA1C671A52
+Attemped to write at address 0x00007FFA02489BA4
+Printing stacktrace...
+
+[0]  [0x00007FFA1C671A52]
+[1]  [0x00007FFA1C671A52]
+[2]  [0x00007FFA1C671AD4]
+[3]  [0x00007FFA1C7B3FF7]
+[4]  [0x00007FFA1C699128]
+[5]  [0x00007FFA1C94DFB9]
+[6]  [0x00007FFA1CB1EF23]
+[7]  [0x00007FFA1CA2B06B]
+[8]  [0x00007FFA1CA208AF]
+[9]  [0x00007FFA1CA20A32]
+[10] (RtlDeactivateActivationContextUnsafeFast+0x1af) [0x00007FFA5738485F]
+[11] (LdrShutdownProcess+0x12c) [0x00007FFA573AD43C]
+[12] (RtlExitUserProcess+0xb4) [0x00007FFA573AD2F4]
+[13] (FatalExit+0xa) [0x00007FFA54FDC0DA]
+[14] (exit+0x75) [0x00007FFA56C9A045]
+[15] (initterm_e+0x21d) [0x00007FFA56C9A68D]
+[16]  [0x00000000004014CD]
+[17]  [0x000000000040151B]
+[18] (BaseThreadInitThunk+0x14) [0x00007FFA54FD2774]
+[19] (RtlUserThreadStart+0x21) [0x00007FFA573D0D51]
+Done

@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Wed Jul  5 22:36:38 2017
+# Process ID: 3384
+# Current directory: E:/HITCS/Computer Design and Practice/exp1/shift_rgt
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8572 E:\HITCS\Computer Design and Practice\exp1\shift_rgt\shift_rgt.xpr
+# Log file: E:/HITCS/Computer Design and Practice/exp1/shift_rgt/vivado.log
+# Journal file: E:/HITCS/Computer Design and Practice/exp1/shift_rgt\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/HITCS/Computer Design and Practice/exp1/shift_rgt/shift_rgt.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_shift_rgt.tcl
+relaunch_sim
+relaunch_sim
+add_wave {{/tb_shift_rgt/u_shift_rgt/x}} 
+relaunch_sim
+save_wave_config {E:/HITCS/Computer Design and Practice/exp1/shift_rgt/tb_shift_rgt_behav.wcfg}
+add_files -fileset sim_1 -norecurse {{E:/HITCS/Computer Design and Practice/exp1/shift_rgt/tb_shift_rgt_behav.wcfg}}
+set_property xsim.view {{E:/HITCS/Computer Design and Practice/exp1/shift_rgt/tb_shift_rgt_behav.wcfg}} [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config E:/HITCS/Computer
+open_wave_config Design
+open_wave_config and
+open_wave_config Practice/exp1/shift_rgt/tb_shift_rgt_behav.wcfg
+source tb_shift_rgt.tcl
+relaunch_sim
+update_compile_order -fileset sources_1
+add_wave {{/tb_shift_rgt/u_shift_rgt/x}} 
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sources_1
+relaunch_sim
+close_sim

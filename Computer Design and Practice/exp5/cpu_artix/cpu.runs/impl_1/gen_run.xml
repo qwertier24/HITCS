@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1501040735">
+  <File Type="ROUTE-PWR-RPX" Name="cpu_power_routed.rpx"/>
+  <File Type="PA-TCL" Name="cpu.tcl"/>
+  <File Type="INIT-TIMING" Name="cpu_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="cpu_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="cpu_drc_pwropted.rpt"/>
+  <File Type="RDI-RDI" Name="cpu.vdi"/>
+  <File Type="OPT-DCP" Name="cpu_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="cpu.hwdef"/>
+  <File Type="OPT-DRC" Name="cpu_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="cpu_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="cpu_pwropt.dcp"/>
+  <File Type="PWROPT-TIMING" Name="cpu_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="cpu_placed.dcp"/>
+  <File Type="PLACE-IO" Name="cpu_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="cpu_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="cpu_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="cpu_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="cpu_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="cpu_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="cpu_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="cpu_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="cpu_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="cpu_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="cpu_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="cpu_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="cpu_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="cpu_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="cpu_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="cpu_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="cpu_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="cpu_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="cpu_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="cpu.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="cpu_methodology_drc_routed.rpt"/>
+  <File Type="BG-DRC" Name="cpu.drc"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="cpu_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-MSK" Name="cpu.msk"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="cpu_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="cpu.bgn"/>
+  <File Type="ROUTE-PWR" Name="cpu_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="cpu_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="cpu_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="cpu_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="cpu_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="cpu_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="cpu_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="cpu_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="cpu_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="cpu_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="cpu_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="cpu_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="cpu_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="cpu_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="cpu.bit"/>
+  <File Type="BITSTR-RBT" Name="cpu.rbt"/>
+  <File Type="BITSTR-NKY" Name="cpu.nky"/>
+  <File Type="BITSTR-BMM" Name="cpu_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="cpu.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="cpu.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/alu.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fetch.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mod4.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ram_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/io_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/refer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/write_back.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/cpu.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/ipcore_dir/ddr.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/ipcore_dir/ddr/mig.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="ddr"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ram2Ddr_RefComp/ram2ddr.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ram2ddr.vhd"/>
+        <Attr Name="ImportTime" Val="1393250082"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Netlist/ram2ddr.ngc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="C:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Netlist/ram2ddr.ngc"/>
+        <Attr Name="ImportTime" Val="1393250159"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="cpu"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/other/Nexys4DDR_Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Principles of Computer Organization/exp3/control_unit/control_unit.srcs/constrs_1/imports/other/Nexys4DDR_Master.xdc"/>
+        <Attr Name="ImportTime" Val="1497678004"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+</GenRun>

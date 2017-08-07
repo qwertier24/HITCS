@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp1/shift_rgt/shift_rgt.srcs/sources_1/new/dff.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity dff
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp1/shift_rgt/shift_rgt.srcs/sources_1/new/shift_rgt.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity shift_rgt
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp1/shift_rgt/shift_rgt.srcs/sim_1/new/tb_shift_rgt.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_shift_rgt

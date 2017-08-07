@@ -1,0 +1,51 @@
+Unable to capture context for thread 11232 in process 11736, can not generate back trace
+Unable to capture context for thread 16812 in process 11736, can not generate back trace
+Unable to capture context for thread 18008 in process 11736, can not generate back trace
+Unable to capture context for thread 16092 in process 11736, can not generate back trace
+Unable to capture context for thread 11960 in process 11736, can not generate back trace
+Unable to capture context for thread 17072 in process 11736, can not generate back trace
+Unable to capture context for thread 7572 in process 11736, can not generate back trace
+Unable to capture context for thread 14684 in process 11736, can not generate back trace
+Unable to capture context for thread 1880 in process 11736, can not generate back trace
+Unable to capture context for thread 9328 in process 11736, can not generate back trace
+Unable to capture context for thread 9984 in process 11736, can not generate back trace
+Exception at PC 0x00007FFFCFA1BB93
+Printing stacktrace...
+
+Unable to capture context for thread 16092 in process 11736, can not generate back trace
+Unable to capture context for thread 11960 in process 11736, can not generate back trace
+Unable to capture context for thread 14684 in process 11736, can not generate back trace
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+[0]  [0x00007FFFCFA1BB93]
+[1]  [0x00007FFFCFA1BB93]
+[2]  [0x00007FFFCFA1B4A1]
+[3]  [0x00007FFFCFA1B459]
+[4]  [0x00007FFFCFA019FE]
+[5]  [0x00007FFFCFA00ED1]
+[6]  [0x00007FFFCFA00D76]
+[7]  [0x00007FFFCF9A79F6]
+[8]  [0x00007FFFCF997AFB]
+[9]  [0x00007FFFCFABE90A]
+[10]  [0x00007FFFCFAD9F87]
+[11]  [0x00007FFFCFADA05F]
+[12] (BaseThreadInitThunk+0x14) [0x00007FF844EC2774]
+[13] (RtlUserThreadStart+0x21) [0x00007FF8478E0D51]
+Done
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08
+Exception at PC 0x00007FF844489E08

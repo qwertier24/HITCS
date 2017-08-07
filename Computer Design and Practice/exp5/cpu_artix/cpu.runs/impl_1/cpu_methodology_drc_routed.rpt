@@ -1,0 +1,1540 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
+| Date         : Wed Jul 26 11:48:46 2017
+| Host         : DESKTOP-3F16N34 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file cpu_methodology_drc_routed.rpt -rpx cpu_methodology_drc_routed.rpx
+| Design       : cpu
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 300
++-----------+----------+----------------------------------------------------+------------+
+| Rule      | Severity | Description                                        | Violations |
++-----------+----------+----------------------------------------------------+------------+
+| TIMING-4  | Warning  | Invalid primary clock redefinition on a clock tree | 1          |
+| TIMING-17 | Warning  | Non-clocked sequential cell                        | 92         |
+| TIMING-20 | Warning  | Non-clocked latch                                  | 205        |
+| TIMING-27 | Warning  | Invalid primary clock on hierarchical pin          | 1          |
+| XDCB-5    | Warning  | Runtime inefficient way to find pin objects        | 1          |
++-----------+----------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock uut_clk_wiz_0/inst/clk_in1 is defined downstream of clock sys_clk_pin and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-17#1 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[0]_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[1]_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[2]_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[3]_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[4]_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[5]_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[6]_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Warning
+Non-clocked sequential cell  
+The clock pin an_t_reg[7]_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#21 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#22 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#23 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#24 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[16]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#25 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#26 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#27 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#28 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#29 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#30 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#31 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#32 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#33 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#34 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[25]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#35 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[26]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#36 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[27]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#37 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[28]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#38 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[29]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#39 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#40 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[30]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#41 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[31]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#42 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#43 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#44 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#45 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#46 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#47 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#48 Warning
+Non-clocked sequential cell  
+The clock pin cur_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#49 Warning
+Non-clocked sequential cell  
+The clock pin seg_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#50 Warning
+Non-clocked sequential cell  
+The clock pin seg_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#51 Warning
+Non-clocked sequential cell  
+The clock pin seg_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#52 Warning
+Non-clocked sequential cell  
+The clock pin seg_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#53 Warning
+Non-clocked sequential cell  
+The clock pin seg_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#54 Warning
+Non-clocked sequential cell  
+The clock pin seg_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#55 Warning
+Non-clocked sequential cell  
+The clock pin seg_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#56 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[0]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#57 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[0]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#58 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[10]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#59 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[10]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#60 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[11]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#61 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[11]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#62 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[12]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#63 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[12]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#64 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[13]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#65 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[13]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#66 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[14]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#67 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[14]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#68 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[15]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#69 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[15]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#70 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[1]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#71 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[1]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#72 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[2]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#73 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[2]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#74 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[3]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#75 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[3]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#76 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[4]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#77 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[4]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#78 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[5]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#79 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[5]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#80 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[6]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#81 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[6]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#82 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[7]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#83 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[7]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#84 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[8]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#85 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[8]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#86 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[9]_C/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#87 Warning
+Non-clocked sequential cell  
+The clock pin uut_fetch/PC_reg[9]_P/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#88 Warning
+Non-clocked sequential cell  
+The clock pin uut_mod4/tt1_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#89 Warning
+Non-clocked sequential cell  
+The clock pin uut_mod4/tt2_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#90 Warning
+Non-clocked sequential cell  
+The clock pin uut_mod4/tt3_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#91 Warning
+Non-clocked sequential cell  
+The clock pin uut_mod4/tt4_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#92 Warning
+Non-clocked sequential cell  
+The clock pin uut_mod4/tt4_reg_lopt_replica/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch digits_reg[1][0] cannot be properly analyzed as its control pin digits_reg[1][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch digits_reg[1][1] cannot be properly analyzed as its control pin digits_reg[1][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch digits_reg[1][2] cannot be properly analyzed as its control pin digits_reg[1][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch digits_reg[1][3] cannot be properly analyzed as its control pin digits_reg[1][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[0] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[10] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[11] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[12] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[13] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[14] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[15] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[1] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[2] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[3] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[4] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[5] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[6] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[7] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[8] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch uut_alu/O_ADDR_reg[9] cannot be properly analyzed as its control pin uut_alu/O_ADDR_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch uut_alu/O_ALU_reg[0] cannot be properly analyzed as its control pin uut_alu/O_ALU_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch uut_alu/O_ALU_reg[1] cannot be properly analyzed as its control pin uut_alu/O_ALU_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch uut_alu/O_ALU_reg[2] cannot be properly analyzed as its control pin uut_alu/O_ALU_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch uut_alu/O_ALU_reg[3] cannot be properly analyzed as its control pin uut_alu/O_ALU_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch uut_alu/O_ALU_reg[4] cannot be properly analyzed as its control pin uut_alu/O_ALU_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch uut_alu/O_ALU_reg[5] cannot be properly analyzed as its control pin uut_alu/O_ALU_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch uut_alu/O_ALU_reg[6] cannot be properly analyzed as its control pin uut_alu/O_ALU_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch uut_alu/O_ALU_reg[7] cannot be properly analyzed as its control pin uut_alu/O_ALU_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[0][0] cannot be properly analyzed as its control pin uut_alu/R_reg[0][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[0][1] cannot be properly analyzed as its control pin uut_alu/R_reg[0][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[0][2] cannot be properly analyzed as its control pin uut_alu/R_reg[0][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[0][3] cannot be properly analyzed as its control pin uut_alu/R_reg[0][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[0][4] cannot be properly analyzed as its control pin uut_alu/R_reg[0][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[0][5] cannot be properly analyzed as its control pin uut_alu/R_reg[0][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[0][6] cannot be properly analyzed as its control pin uut_alu/R_reg[0][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[0][7] cannot be properly analyzed as its control pin uut_alu/R_reg[0][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#37 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[1][0] cannot be properly analyzed as its control pin uut_alu/R_reg[1][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#38 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[1][1] cannot be properly analyzed as its control pin uut_alu/R_reg[1][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#39 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[1][2] cannot be properly analyzed as its control pin uut_alu/R_reg[1][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[1][3] cannot be properly analyzed as its control pin uut_alu/R_reg[1][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[1][4] cannot be properly analyzed as its control pin uut_alu/R_reg[1][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#42 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[1][5] cannot be properly analyzed as its control pin uut_alu/R_reg[1][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#43 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[1][6] cannot be properly analyzed as its control pin uut_alu/R_reg[1][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#44 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[1][7] cannot be properly analyzed as its control pin uut_alu/R_reg[1][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#45 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[2][0] cannot be properly analyzed as its control pin uut_alu/R_reg[2][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#46 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[2][1] cannot be properly analyzed as its control pin uut_alu/R_reg[2][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#47 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[2][2] cannot be properly analyzed as its control pin uut_alu/R_reg[2][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#48 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[2][3] cannot be properly analyzed as its control pin uut_alu/R_reg[2][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#49 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[2][4] cannot be properly analyzed as its control pin uut_alu/R_reg[2][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#50 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[2][5] cannot be properly analyzed as its control pin uut_alu/R_reg[2][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#51 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[2][6] cannot be properly analyzed as its control pin uut_alu/R_reg[2][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#52 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[2][7] cannot be properly analyzed as its control pin uut_alu/R_reg[2][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#53 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[3][0] cannot be properly analyzed as its control pin uut_alu/R_reg[3][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#54 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[3][1] cannot be properly analyzed as its control pin uut_alu/R_reg[3][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#55 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[3][2] cannot be properly analyzed as its control pin uut_alu/R_reg[3][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#56 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[3][3] cannot be properly analyzed as its control pin uut_alu/R_reg[3][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#57 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[3][4] cannot be properly analyzed as its control pin uut_alu/R_reg[3][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#58 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[3][5] cannot be properly analyzed as its control pin uut_alu/R_reg[3][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#59 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[3][6] cannot be properly analyzed as its control pin uut_alu/R_reg[3][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#60 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[3][7] cannot be properly analyzed as its control pin uut_alu/R_reg[3][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#61 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[4][0] cannot be properly analyzed as its control pin uut_alu/R_reg[4][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#62 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[4][1] cannot be properly analyzed as its control pin uut_alu/R_reg[4][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#63 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[4][2] cannot be properly analyzed as its control pin uut_alu/R_reg[4][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#64 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[4][3] cannot be properly analyzed as its control pin uut_alu/R_reg[4][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#65 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[4][4] cannot be properly analyzed as its control pin uut_alu/R_reg[4][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#66 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[4][5] cannot be properly analyzed as its control pin uut_alu/R_reg[4][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#67 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[4][6] cannot be properly analyzed as its control pin uut_alu/R_reg[4][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#68 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[4][7] cannot be properly analyzed as its control pin uut_alu/R_reg[4][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#69 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[5][0] cannot be properly analyzed as its control pin uut_alu/R_reg[5][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#70 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[5][1] cannot be properly analyzed as its control pin uut_alu/R_reg[5][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#71 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[5][2] cannot be properly analyzed as its control pin uut_alu/R_reg[5][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#72 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[5][3] cannot be properly analyzed as its control pin uut_alu/R_reg[5][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#73 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[5][4] cannot be properly analyzed as its control pin uut_alu/R_reg[5][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#74 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[5][5] cannot be properly analyzed as its control pin uut_alu/R_reg[5][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#75 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[5][6] cannot be properly analyzed as its control pin uut_alu/R_reg[5][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#76 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[5][7] cannot be properly analyzed as its control pin uut_alu/R_reg[5][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#77 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[6][0] cannot be properly analyzed as its control pin uut_alu/R_reg[6][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#78 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[6][1] cannot be properly analyzed as its control pin uut_alu/R_reg[6][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#79 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[6][2] cannot be properly analyzed as its control pin uut_alu/R_reg[6][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#80 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[6][3] cannot be properly analyzed as its control pin uut_alu/R_reg[6][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#81 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[6][4] cannot be properly analyzed as its control pin uut_alu/R_reg[6][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#82 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[6][5] cannot be properly analyzed as its control pin uut_alu/R_reg[6][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#83 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[6][6] cannot be properly analyzed as its control pin uut_alu/R_reg[6][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#84 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[6][7] cannot be properly analyzed as its control pin uut_alu/R_reg[6][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#85 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[7][0] cannot be properly analyzed as its control pin uut_alu/R_reg[7][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#86 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[7][1] cannot be properly analyzed as its control pin uut_alu/R_reg[7][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#87 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[7][2] cannot be properly analyzed as its control pin uut_alu/R_reg[7][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#88 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[7][3] cannot be properly analyzed as its control pin uut_alu/R_reg[7][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#89 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[7][4] cannot be properly analyzed as its control pin uut_alu/R_reg[7][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#90 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[7][5] cannot be properly analyzed as its control pin uut_alu/R_reg[7][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#91 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[7][6] cannot be properly analyzed as its control pin uut_alu/R_reg[7][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#92 Warning
+Non-clocked latch  
+The latch uut_alu/R_reg[7][7] cannot be properly analyzed as its control pin uut_alu/R_reg[7][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#93 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[0] cannot be properly analyzed as its control pin uut_fetch/IR_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#94 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[10] cannot be properly analyzed as its control pin uut_fetch/IR_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#95 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[11] cannot be properly analyzed as its control pin uut_fetch/IR_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#96 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[12] cannot be properly analyzed as its control pin uut_fetch/IR_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#97 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[13] cannot be properly analyzed as its control pin uut_fetch/IR_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#98 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[14] cannot be properly analyzed as its control pin uut_fetch/IR_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#99 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[15] cannot be properly analyzed as its control pin uut_fetch/IR_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#100 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[1] cannot be properly analyzed as its control pin uut_fetch/IR_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#101 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[2] cannot be properly analyzed as its control pin uut_fetch/IR_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#102 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[3] cannot be properly analyzed as its control pin uut_fetch/IR_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#103 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[4] cannot be properly analyzed as its control pin uut_fetch/IR_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#104 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[5] cannot be properly analyzed as its control pin uut_fetch/IR_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#105 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[6] cannot be properly analyzed as its control pin uut_fetch/IR_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#106 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[7] cannot be properly analyzed as its control pin uut_fetch/IR_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#107 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[8] cannot be properly analyzed as its control pin uut_fetch/IR_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#108 Warning
+Non-clocked latch  
+The latch uut_fetch/IR_reg[9] cannot be properly analyzed as its control pin uut_fetch/IR_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#109 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[0]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[0]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#110 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[10]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[10]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#111 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[11]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[11]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#112 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[12]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[12]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#113 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[13]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[13]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#114 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[14]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[14]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#115 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[15]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[15]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#116 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[1]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[1]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#117 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[2]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[2]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#118 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[3]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[3]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#119 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[4]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[4]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#120 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[5]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[5]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#121 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[6]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[6]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#122 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[7]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[7]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#123 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[8]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[8]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#124 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_reg[9]_LDC cannot be properly analyzed as its control pin uut_fetch/PC_reg[9]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#125 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[0] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#126 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[10] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#127 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[11] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#128 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[12] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#129 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[13] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#130 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[14] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#131 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[15] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#132 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[1] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#133 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[2] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#134 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[3] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#135 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[4] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#136 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[5] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#137 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[6] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#138 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[7] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#139 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[8] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#140 Warning
+Non-clocked latch  
+The latch uut_fetch/PC_t_reg[9] cannot be properly analyzed as its control pin uut_fetch/PC_t_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#141 Warning
+Non-clocked latch  
+The latch uut_io_ctrl/O_RTEMP_reg[0] cannot be properly analyzed as its control pin uut_io_ctrl/O_RTEMP_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#142 Warning
+Non-clocked latch  
+The latch uut_io_ctrl/O_RTEMP_reg[1] cannot be properly analyzed as its control pin uut_io_ctrl/O_RTEMP_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#143 Warning
+Non-clocked latch  
+The latch uut_io_ctrl/O_RTEMP_reg[2] cannot be properly analyzed as its control pin uut_io_ctrl/O_RTEMP_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#144 Warning
+Non-clocked latch  
+The latch uut_io_ctrl/O_RTEMP_reg[3] cannot be properly analyzed as its control pin uut_io_ctrl/O_RTEMP_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#145 Warning
+Non-clocked latch  
+The latch uut_io_ctrl/O_RTEMP_reg[4] cannot be properly analyzed as its control pin uut_io_ctrl/O_RTEMP_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#146 Warning
+Non-clocked latch  
+The latch uut_io_ctrl/O_RTEMP_reg[5] cannot be properly analyzed as its control pin uut_io_ctrl/O_RTEMP_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#147 Warning
+Non-clocked latch  
+The latch uut_io_ctrl/O_RTEMP_reg[6] cannot be properly analyzed as its control pin uut_io_ctrl/O_RTEMP_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#148 Warning
+Non-clocked latch  
+The latch uut_io_ctrl/O_RTEMP_reg[7] cannot be properly analyzed as its control pin uut_io_ctrl/O_RTEMP_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#149 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[0] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#150 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[10] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#151 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[11] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#152 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[12] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#153 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[13] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#154 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[14] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#155 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[15] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#156 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[1] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#157 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[2] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#158 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[3] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#159 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[4] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#160 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[5] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#161 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[6] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#162 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[7] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#163 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[8] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#164 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_ABUS_reg[9] cannot be properly analyzed as its control pin uut_ram_ctrl/O_ABUS_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#165 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[0] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#166 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[10] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#167 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[11] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#168 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[12] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#169 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[13] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#170 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[14] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#171 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[15] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#172 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[1] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#173 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[2] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#174 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[3] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#175 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[4] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#176 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[5] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#177 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[6] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#178 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[7] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#179 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[8] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#180 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_IR_reg[9] cannot be properly analyzed as its control pin uut_ram_ctrl/O_IR_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#181 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_NBH_reg cannot be properly analyzed as its control pin uut_ram_ctrl/O_NBH_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#182 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_RTEMP_reg[0] cannot be properly analyzed as its control pin uut_ram_ctrl/O_RTEMP_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#183 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_RTEMP_reg[1] cannot be properly analyzed as its control pin uut_ram_ctrl/O_RTEMP_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#184 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_RTEMP_reg[2] cannot be properly analyzed as its control pin uut_ram_ctrl/O_RTEMP_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#185 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_RTEMP_reg[3] cannot be properly analyzed as its control pin uut_ram_ctrl/O_RTEMP_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#186 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_RTEMP_reg[4] cannot be properly analyzed as its control pin uut_ram_ctrl/O_RTEMP_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#187 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_RTEMP_reg[5] cannot be properly analyzed as its control pin uut_ram_ctrl/O_RTEMP_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#188 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_RTEMP_reg[6] cannot be properly analyzed as its control pin uut_ram_ctrl/O_RTEMP_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#189 Warning
+Non-clocked latch  
+The latch uut_ram_ctrl/O_RTEMP_reg[7] cannot be properly analyzed as its control pin uut_ram_ctrl/O_RTEMP_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#190 Warning
+Non-clocked latch  
+The latch uut_refer/O_RTEMP_reg[0] cannot be properly analyzed as its control pin uut_refer/O_RTEMP_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#191 Warning
+Non-clocked latch  
+The latch uut_refer/O_RTEMP_reg[1] cannot be properly analyzed as its control pin uut_refer/O_RTEMP_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#192 Warning
+Non-clocked latch  
+The latch uut_refer/O_RTEMP_reg[2] cannot be properly analyzed as its control pin uut_refer/O_RTEMP_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#193 Warning
+Non-clocked latch  
+The latch uut_refer/O_RTEMP_reg[3] cannot be properly analyzed as its control pin uut_refer/O_RTEMP_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#194 Warning
+Non-clocked latch  
+The latch uut_refer/O_RTEMP_reg[4] cannot be properly analyzed as its control pin uut_refer/O_RTEMP_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#195 Warning
+Non-clocked latch  
+The latch uut_refer/O_RTEMP_reg[5] cannot be properly analyzed as its control pin uut_refer/O_RTEMP_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#196 Warning
+Non-clocked latch  
+The latch uut_refer/O_RTEMP_reg[6] cannot be properly analyzed as its control pin uut_refer/O_RTEMP_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#197 Warning
+Non-clocked latch  
+The latch uut_refer/O_RTEMP_reg[7] cannot be properly analyzed as its control pin uut_refer/O_RTEMP_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#198 Warning
+Non-clocked latch  
+The latch uut_write_back/O_REG_new_reg[0] cannot be properly analyzed as its control pin uut_write_back/O_REG_new_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#199 Warning
+Non-clocked latch  
+The latch uut_write_back/O_REG_new_reg[1] cannot be properly analyzed as its control pin uut_write_back/O_REG_new_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#200 Warning
+Non-clocked latch  
+The latch uut_write_back/O_REG_new_reg[2] cannot be properly analyzed as its control pin uut_write_back/O_REG_new_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#201 Warning
+Non-clocked latch  
+The latch uut_write_back/O_REG_new_reg[3] cannot be properly analyzed as its control pin uut_write_back/O_REG_new_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#202 Warning
+Non-clocked latch  
+The latch uut_write_back/O_REG_new_reg[4] cannot be properly analyzed as its control pin uut_write_back/O_REG_new_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#203 Warning
+Non-clocked latch  
+The latch uut_write_back/O_REG_new_reg[5] cannot be properly analyzed as its control pin uut_write_back/O_REG_new_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#204 Warning
+Non-clocked latch  
+The latch uut_write_back/O_REG_new_reg[6] cannot be properly analyzed as its control pin uut_write_back/O_REG_new_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#205 Warning
+Non-clocked latch  
+The latch uut_write_back/O_REG_new_reg[7] cannot be properly analyzed as its control pin uut_write_back/O_REG_new_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-27#1 Warning
+Invalid primary clock on hierarchical pin  
+A primary clock uut_clk_wiz_0/inst/clk_in1 is created on an inappropriate internal pin uut_clk_wiz_0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hier -filter {NAME =~ */u_iodelay_ctrl/sys_rst}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '8' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: e:/HITCS/exp5/cpu_artix/ipcore_dir/ddr/user_design/constraints/ddr.xdc (Line: 330)
+Related violations: <none>
+
+

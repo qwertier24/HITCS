@@ -1,0 +1,17 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/HITCS/exp5/cpu/cpu.sim/sim_1/impl/timing/tb_cpu_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IOBUF_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module IOBUF_HD1
+INFO: [VRFC 10-311] analyzing module IOBUF_HD2
+INFO: [VRFC 10-311] analyzing module IOBUF_HD3
+INFO: [VRFC 10-311] analyzing module IOBUF_HD4
+INFO: [VRFC 10-311] analyzing module IOBUF_HD5
+INFO: [VRFC 10-311] analyzing module IOBUF_HD6
+INFO: [VRFC 10-311] analyzing module IOBUF_HD7
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-311] analyzing module fetch
+INFO: [VRFC 10-311] analyzing module mod4
+INFO: [VRFC 10-311] analyzing module ram_ctrl
+INFO: [VRFC 10-311] analyzing module refer
+INFO: [VRFC 10-311] analyzing module write_back
+INFO: [VRFC 10-311] analyzing module glbl

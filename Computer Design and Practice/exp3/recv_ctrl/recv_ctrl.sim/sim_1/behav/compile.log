@@ -1,0 +1,14 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/recv_ctrl.srcs/sources_1/new/count4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity count4
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/recv_ctrl.srcs/sources_1/new/ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ctrl
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/recv_ctrl.srcs/sources_1/new/decode4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity decode4
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/recv_ctrl.srcs/sources_1/new/reg8.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity reg8
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/recv_ctrl.srcs/sources_1/new/serial.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity serial
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/recv_ctrl.srcs/sources_1/new/sreg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sreg
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/recv_ctrl.srcs/sim_1/new/tb_serial.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test_top

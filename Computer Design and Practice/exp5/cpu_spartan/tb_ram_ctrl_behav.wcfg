@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_ram_ctrl_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_ram_ctrl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="66800001fs"></ZoomEndTime>
+      <Cursor1Time time="25200000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/I_PC" type="array">
+      <obj_property name="ElementShortName">I_PC[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_PC[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/I_PC_read" type="logic">
+      <obj_property name="ElementShortName">I_PC_read</obj_property>
+      <obj_property name="ObjectShortName">I_PC_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/O_IR" type="array">
+      <obj_property name="ElementShortName">O_IR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">O_IR[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/I_CS" type="logic">
+      <obj_property name="ElementShortName">I_CS</obj_property>
+      <obj_property name="ObjectShortName">I_CS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/I_WR" type="logic">
+      <obj_property name="ElementShortName">I_WR</obj_property>
+      <obj_property name="ObjectShortName">I_WR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/I_RD" type="logic">
+      <obj_property name="ElementShortName">I_RD</obj_property>
+      <obj_property name="ObjectShortName">I_RD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/I_ADDR" type="array">
+      <obj_property name="ElementShortName">I_ADDR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_ADDR[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/I_DATA" type="array">
+      <obj_property name="ElementShortName">I_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/O_RTEMP" type="array">
+      <obj_property name="ElementShortName">O_RTEMP[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_RTEMP[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/O_ADDR" type="array">
+      <obj_property name="ElementShortName">O_ADDR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">O_ADDR[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/IO_DATA" type="array">
+      <obj_property name="ElementShortName">IO_DATA[15:0]</obj_property>
+      <obj_property name="ObjectShortName">IO_DATA[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/O_NCS" type="logic">
+      <obj_property name="ElementShortName">O_NCS</obj_property>
+      <obj_property name="ObjectShortName">O_NCS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/O_NRD" type="logic">
+      <obj_property name="ElementShortName">O_NRD</obj_property>
+      <obj_property name="ObjectShortName">O_NRD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/O_NWR" type="logic">
+      <obj_property name="ElementShortName">O_NWR</obj_property>
+      <obj_property name="ObjectShortName">O_NWR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/O_NBH" type="logic">
+      <obj_property name="ElementShortName">O_NBH</obj_property>
+      <obj_property name="ObjectShortName">O_NBH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_ram_ctrl/uut_ram_ctrl/O_NBL" type="logic">
+      <obj_property name="ElementShortName">O_NBL</obj_property>
+      <obj_property name="ObjectShortName">O_NBL</obj_property>
+   </wvobject>
+</wave_config>

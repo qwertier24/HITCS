@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Mon Jul 31 06:01:08 2017
+# Process ID: 10752
+# Current directory: E:/HITCS/Computer Design and Practice/exp3/recv_ctrl
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18572 E:\HITCS\Computer Design and Practice\exp3\recv_ctrl\recv_ctrl.xpr
+# Log file: E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/vivado.log
+# Journal file: E:/HITCS/Computer Design and Practice/exp3/recv_ctrl\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/HITCS/Computer Design and Practice/exp3/recv_ctrl/recv_ctrl.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source test_top.tcl
+close_sim

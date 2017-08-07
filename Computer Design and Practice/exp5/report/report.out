@@ -1,0 +1,59 @@
+\BOOKMARK [0][-]{title.0}{封面}{}% 1
+\BOOKMARK [0][-]{chapter*.1}{摘要}{}% 2
+\BOOKMARK [0][-]{toc.0}{目录}{}% 3
+\BOOKMARK [0][-]{chapter.1}{CPU的顶端结构}{}% 4
+\BOOKMARK [0][-]{chapter.2}{各模块接口框图及定义}{}% 5
+\BOOKMARK [1][-]{section.2.1}{顶端模块\(cpu\)}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{节拍管理\(mod4\)}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{取指管理\(fetch\)}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.4}{运算管理\(alu\)}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.5}{访存管理\(refer\)}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.6}{回写管理\(write_back\)}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.7}{内存控制\(ram_ctrl\)}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.8}{I/O控制\(io_ctrl\)}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.9}{ram/DDR2端口转换模块\(ram2ddr\)此模块使用的代码为Digilent公司的开源代码，可将DDR2 RAM的端口转化为Cecullar RAM的端口，以方便使用。}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{软件仿真测试}{}% 15
+\BOOKMARK [1][-]{section.3.1}{顶端模块仿真测试}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{测试方案}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.2}{测试波形}{section.3.1}% 18
+\BOOKMARK [1][-]{section.3.2}{节拍管理模块}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{测试波形}{section.3.2}% 20
+\BOOKMARK [1][-]{section.3.3}{取指管理模块}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.1}{测试方案}{section.3.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.2}{测试波形}{section.3.3}% 23
+\BOOKMARK [1][-]{section.3.4}{运算管理模块}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.4.1}{测试方案}{section.3.4}% 25
+\BOOKMARK [2][-]{subsection.3.4.2}{测试波形}{section.3.4}% 26
+\BOOKMARK [1][-]{section.3.5}{访存管理模块}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.5.1}{测试方案}{section.3.5}% 28
+\BOOKMARK [2][-]{subsection.3.5.2}{测试波形}{section.3.5}% 29
+\BOOKMARK [1][-]{section.3.6}{回写管理模块}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.6.1}{测试方案}{section.3.6}% 31
+\BOOKMARK [2][-]{subsection.3.6.2}{测试波形}{section.3.6}% 32
+\BOOKMARK [1][-]{section.3.7}{内存控制模块}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.7.1}{测试方案}{section.3.7}% 34
+\BOOKMARK [2][-]{subsection.3.7.2}{测试波形}{section.3.7}% 35
+\BOOKMARK [1][-]{section.3.8}{I/O控制模块}{chapter.3}% 36
+\BOOKMARK [2][-]{subsection.3.8.1}{测试方案}{section.3.8}% 37
+\BOOKMARK [2][-]{subsection.3.8.2}{测试波形}{section.3.8}% 38
+\BOOKMARK [0][-]{chapter.4}{CPU下载测试（使用Nexys 4 DDR FPGA）}{}% 39
+\BOOKMARK [1][-]{section.4.1}{指令1：JMP 0x01（地址0x0000）}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.2}{指令2：JZ R0, 0x03（地址0x0001）}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.3}{指令3：MVI R0, 0x01（地址0x0003）}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.4}{指令4：JZ R0, 0x02（地址0x0004）}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.5}{指令5：MVI R7, 0x07（地址0x0005）}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.6}{指令6：ADD R0, R7\(地址0x0006\)}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.7}{指令7：OUT R0, 0x1\(地址0x007\)}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.8}{指令8：STA R7, 0x0c\(地址0x008\)}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.9}{指令9：LDA R1, 0x0c\(地址0x009\)}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.10}{指令10：SUB R1, R0\(地址0x00a\)}{chapter.4}% 49
+\BOOKMARK [1][-]{section.4.11}{指令11：OUT R1, 0x1\(地址0x00b\)}{chapter.4}% 50
+\BOOKMARK [1][-]{section.4.12}{指令12：IN R2, 0x1\(地址0x00c\)}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.13}{指令13：OUT R2, 0x1\(地址0x00d\)}{chapter.4}% 52
+\BOOKMARK [0][-]{chapter.5}{实验中遇到的问题}{}% 53
+\BOOKMARK [1][-]{section.5.1}{关于PC何时自加}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.2}{关于when...else...语句}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.3}{产生200MHz的信号供DDR2内存使用}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.4}{DDR2内存读写结果不正确}{chapter.5}% 57
+\BOOKMARK [0][-]{section*.51}{参考文献}{}% 58
+\BOOKMARK [0][-]{chapter*.53}{致谢}{}% 59

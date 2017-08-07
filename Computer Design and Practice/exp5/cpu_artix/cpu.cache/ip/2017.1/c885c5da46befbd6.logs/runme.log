@@ -1,0 +1,283 @@
+
+*** Running vivado
+    with args -log ddr.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ddr.tcl
+
+
+****** Vivado v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source ddr.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 344.027 ; gain = 75.238
+INFO: [Synth 8-638] synthesizing module 'ddr' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ddr.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'ddr_mig' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ddr_mig.vhd:522]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_iodelay_ctrl' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/clocking/mig_7series_v4_0_iodelay_ctrl.v:80]
+INFO: [Synth 8-638] synthesizing module 'IDELAYCTRL' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:16506]
+INFO: [Synth 8-256] done synthesizing module 'IDELAYCTRL' (1#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:16506]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_iodelay_ctrl' (2#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/clocking/mig_7series_v4_0_iodelay_ctrl.v:80]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_clk_ibuf' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/clocking/mig_7series_v4_0_clk_ibuf.v:68]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_clk_ibuf' (3#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/clocking/mig_7series_v4_0_clk_ibuf.v:68]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_tempmon' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/clocking/mig_7series_v4_0_tempmon.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_tempmon' (4#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/clocking/mig_7series_v4_0_tempmon.v:69]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_infrastructure' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/clocking/mig_7series_v4_0_infrastructure.v:78]
+INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:20759]
+INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (5#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:20759]
+INFO: [Synth 8-638] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (6#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-638] synthesizing module 'PLLE2_ADV' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:33019]
+INFO: [Synth 8-256] done synthesizing module 'PLLE2_ADV' (7#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:33019]
+INFO: [Synth 8-638] synthesizing module 'BUFH' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:806]
+INFO: [Synth 8-256] done synthesizing module 'BUFH' (8#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:806]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_infrastructure' (9#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/clocking/mig_7series_v4_0_infrastructure.v:78]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_memc_ui_top_std' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ip_top/mig_7series_v4_0_memc_ui_top_std.v:72]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_mem_intfc' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ip_top/mig_7series_v4_0_mem_intfc.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_mc' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_mc.v:73]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_rank_mach' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_rank_mach.v:71]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_rank_cntrl' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_rank_cntrl.v:79]
+INFO: [Synth 8-638] synthesizing module 'SRLC32E' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:43823]
+INFO: [Synth 8-256] done synthesizing module 'SRLC32E' (10#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:43823]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_rank_cntrl' (11#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_rank_cntrl.v:79]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_rank_common' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_rank_common.v:72]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_round_robin_arb' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_round_robin_arb.v:121]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_round_robin_arb' (12#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_round_robin_arb.v:121]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_round_robin_arb__parameterized0' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_round_robin_arb.v:121]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_round_robin_arb__parameterized0' (12#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_round_robin_arb.v:121]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_rank_common' (13#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_rank_common.v:72]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_rank_mach' (14#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_rank_mach.v:71]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_mach' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_mach.v:72]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_cntrl' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_compare' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_compare.v:74]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_compare' (15#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_compare.v:74]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_state' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_state.v:141]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_state' (16#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_state.v:141]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_queue' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v:174]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_queue' (17#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v:174]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_cntrl' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_cntrl__parameterized0' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_state__parameterized0' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_state.v:141]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_state__parameterized0' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_state.v:141]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_queue__parameterized0' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v:174]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_queue__parameterized0' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v:174]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_cntrl__parameterized0' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_cntrl__parameterized1' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_state__parameterized1' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_state.v:141]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_state__parameterized1' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_state.v:141]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_queue__parameterized1' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v:174]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_queue__parameterized1' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v:174]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_cntrl__parameterized1' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_cntrl__parameterized2' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_state__parameterized2' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_state.v:141]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_state__parameterized2' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_state.v:141]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_queue__parameterized2' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v:174]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_queue__parameterized2' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_queue.v:174]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_cntrl__parameterized2' (18#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_cntrl.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_bank_common' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_common.v:73]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_common' (19#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_common.v:73]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_arb_mux' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_arb_mux.v:69]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_arb_row_col' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_arb_row_col.v:83]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_round_robin_arb__parameterized1' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_round_robin_arb.v:121]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_round_robin_arb__parameterized1' (19#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_round_robin_arb.v:121]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_arb_row_col' (20#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_arb_row_col.v:83]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_arb_select' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_arb_select.v:75]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_arb_select' (21#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_arb_select.v:75]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_arb_mux' (22#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_arb_mux.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_bank_mach' (23#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_bank_mach.v:72]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_col_mach' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_col_mach.v:88]
+INFO: [Synth 8-638] synthesizing module 'RAM32M' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:37094]
+INFO: [Synth 8-256] done synthesizing module 'RAM32M' (24#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:37094]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_col_mach' (25#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_col_mach.v:88]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_mc' (26#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/controller/mig_7series_v4_0_mc.v:73]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_phy_top' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_top.vhd:371]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_mc_phy_wrapper' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_mc_phy_wrapper.v:71]
+INFO: [Synth 8-638] synthesizing module 'OBUF' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:22272]
+INFO: [Synth 8-256] done synthesizing module 'OBUF' (27#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:22272]
+INFO: [Synth 8-638] synthesizing module 'OBUFT' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:22488]
+INFO: [Synth 8-256] done synthesizing module 'OBUFT' (28#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:22488]
+INFO: [Synth 8-638] synthesizing module 'IOBUF_INTERMDISABLE' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:18271]
+INFO: [Synth 8-256] done synthesizing module 'IOBUF_INTERMDISABLE' (29#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:18271]
+INFO: [Synth 8-638] synthesizing module 'IOBUFDS_INTERMDISABLE' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:17848]
+INFO: [Synth 8-256] done synthesizing module 'IOBUFDS_INTERMDISABLE' (30#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:17848]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_of_pre_fifo' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_of_pre_fifo' (31#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_of_pre_fifo__parameterized0' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_of_pre_fifo__parameterized0' (31#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_mc_phy' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_mc_phy.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_phy_4lanes' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_4lanes.v:72]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_byte_lane' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_if_post_fifo' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_if_post_fifo.v:68]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_if_post_fifo' (32#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_if_post_fifo.v:68]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_of_pre_fifo__parameterized1' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_of_pre_fifo__parameterized1' (32#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-638] synthesizing module 'PHASER_IN_PHY' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32705]
+INFO: [Synth 8-256] done synthesizing module 'PHASER_IN_PHY' (33#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32705]
+INFO: [Synth 8-638] synthesizing module 'IN_FIFO' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:17589]
+INFO: [Synth 8-256] done synthesizing module 'IN_FIFO' (34#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:17589]
+INFO: [Synth 8-638] synthesizing module 'PHASER_OUT_PHY' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32842]
+INFO: [Synth 8-256] done synthesizing module 'PHASER_OUT_PHY' (35#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32842]
+INFO: [Synth 8-638] synthesizing module 'OUT_FIFO' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:26338]
+INFO: [Synth 8-256] done synthesizing module 'OUT_FIFO' (36#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:26338]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_byte_group_io' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v:69]
+INFO: [Synth 8-638] synthesizing module 'IDELAYE2' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:16519]
+INFO: [Synth 8-256] done synthesizing module 'IDELAYE2' (37#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:16519]
+INFO: [Synth 8-638] synthesizing module 'ISERDESE2' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:20009]
+INFO: [Synth 8-256] done synthesizing module 'ISERDESE2' (38#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:20009]
+INFO: [Synth 8-638] synthesizing module 'OSERDESE2' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:26223]
+INFO: [Synth 8-256] done synthesizing module 'OSERDESE2' (39#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:26223]
+INFO: [Synth 8-638] synthesizing module 'OSERDESE2__parameterized0' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:26223]
+INFO: [Synth 8-256] done synthesizing module 'OSERDESE2__parameterized0' (39#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:26223]
+INFO: [Synth 8-638] synthesizing module 'ODDR' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:25650]
+INFO: [Synth 8-256] done synthesizing module 'ODDR' (40#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:25650]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_byte_group_io' (41#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_byte_lane' (42#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_byte_lane__parameterized0' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v:70]
+INFO: [Synth 8-638] synthesizing module 'PHASER_OUT_PHY__parameterized0' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32842]
+INFO: [Synth 8-256] done synthesizing module 'PHASER_OUT_PHY__parameterized0' (42#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32842]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_byte_group_io__parameterized0' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v:69]
+INFO: [Synth 8-638] synthesizing module 'OSERDESE2__parameterized1' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:26223]
+INFO: [Synth 8-256] done synthesizing module 'OSERDESE2__parameterized1' (42#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:26223]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_byte_group_io__parameterized0' (42#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_byte_lane__parameterized0' (42#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_byte_lane__parameterized1' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_byte_group_io__parameterized1' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_byte_group_io__parameterized1' (42#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_byte_lane__parameterized1' (42#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_byte_lane__parameterized2' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v:70]
+INFO: [Synth 8-638] synthesizing module 'OBUFDS' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:22286]
+INFO: [Synth 8-256] done synthesizing module 'OBUFDS' (43#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:22286]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_byte_group_io__parameterized2' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_byte_group_io__parameterized2' (43#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_group_io.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_byte_lane__parameterized2' (43#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_byte_lane.v:70]
+INFO: [Synth 8-638] synthesizing module 'BUFIO' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:831]
+INFO: [Synth 8-256] done synthesizing module 'BUFIO' (44#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:831]
+INFO: [Synth 8-638] synthesizing module 'PHY_CONTROL' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32933]
+INFO: [Synth 8-256] done synthesizing module 'PHY_CONTROL' (45#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32933]
+INFO: [Synth 8-638] synthesizing module 'PHASER_REF' [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32917]
+INFO: [Synth 8-256] done synthesizing module 'PHASER_REF' (46#1) [C:/Xilinx/Vivado/2017.1/scripts/rt/data/unisim_comp.v:32917]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_phy_4lanes' (47#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_4lanes.v:72]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_mc_phy' (48#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_mc_phy.v:70]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_mc_phy_wrapper' (49#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_mc_phy_wrapper.v:71]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_calib_top' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_calib_top.v:82]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_phy_wrlvl_off_delay' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrlvl_off_delay.v:68]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_phy_wrlvl_off_delay' (50#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrlvl_off_delay.v:68]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_phy_dqs_found_cal_hr' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_dqs_found_cal_hr.v:79]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_phy_dqs_found_cal_hr' (51#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_dqs_found_cal_hr.v:79]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_phy_rdlvl' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_rdlvl.v:81]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_phy_rdlvl' (52#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_rdlvl.v:81]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_prbs_gen' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_prbs_gen.v:92]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_prbs_gen' (53#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_prbs_gen.v:92]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_phy_init' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_init.v:89]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_phy_init' (54#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_init.v:89]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_phy_wrcal' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrcal.v:77]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_phy_wrcal' (55#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_wrcal.v:77]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ddr_phy_tempmon' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_tempmon.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_phy_tempmon' (56#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_tempmon.v:69]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_calib_top' (57#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_calib_top.v:82]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ddr_phy_top' (58#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/phy/mig_7series_v4_0_ddr_phy_top.vhd:371]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_mem_intfc' (59#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ip_top/mig_7series_v4_0_mem_intfc.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ui_top' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ui/mig_7series_v4_0_ui_top.v:71]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ui_cmd' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ui/mig_7series_v4_0_ui_cmd.v:70]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ui_cmd' (60#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ui/mig_7series_v4_0_ui_cmd.v:70]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ui_wr_data' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ui/mig_7series_v4_0_ui_wr_data.v:131]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ui_wr_data' (61#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ui/mig_7series_v4_0_ui_wr_data.v:131]
+INFO: [Synth 8-638] synthesizing module 'mig_7series_v4_0_ui_rd_data' [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ui/mig_7series_v4_0_ui_rd_data.v:140]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ui_rd_data' (62#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ui/mig_7series_v4_0_ui_rd_data.v:140]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_ui_top' (63#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ui/mig_7series_v4_0_ui_top.v:71]
+INFO: [Synth 8-256] done synthesizing module 'mig_7series_v4_0_memc_ui_top_std' (64#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ip_top/mig_7series_v4_0_memc_ui_top_std.v:72]
+INFO: [Synth 8-256] done synthesizing module 'ddr_mig' (65#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ddr_mig.vhd:522]
+INFO: [Synth 8-256] done synthesizing module 'ddr' (66#1) [c:/Users/Yukun Ma/Desktop/Ram2Ddr_RefComp/Source/Ram2Ddr_RefComp/ipcore_dir/ddr/user_design/rtl/ddr.vhd:117]
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 499.961 ; gain = 231.172
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 499.961 ; gain = 231.172
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.226 . Memory (MB): peak = 803.586 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 803.586 ; gain = 534.797
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 803.586 ; gain = 534.797
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 803.586 ; gain = 534.797
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 803.586 ; gain = 534.797
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:16 . Memory (MB): peak = 874.316 ; gain = 605.527
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------------------------+------------+---------------+----------------+
+|Module Name                   | RTL Object | Depth x Width | Implemented As | 
++------------------------------+------------+---------------+----------------+
+|mig_7series_v4_0_ddr_prbs_gen | mem_out    | 256x18        | LUT            | 
+|mig_7series_v4_0_ddr_prbs_gen | mem_out    | 256x18        | LUT            | 
++------------------------------+------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+---------------------------------------------------------------------------------------+-----------+----------------------+---------------+
+|Module Name | RTL Object                                                                            | Inference | Size (Depth x Width) | Primitives    | 
++------------+---------------------------------------------------------------------------------------+-----------+----------------------+---------------+
+|ddr         | of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg                                             | Implied   | 16 x 80              | RAM32M x 14   | 
+|ddr         | ddr_byte_lane_A.ddr_byte_lane_A/dq_gen_40.if_post_fifo_gen.u_ddr_if_post_fifo/mem_reg | Implied   | 4 x 80               | RAM32M x 14   | 
+|ddr         | ddr_byte_lane_A.ddr_byte_lane_A/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14   | 
+|ddr         | ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14   | 
+|ddr         | ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.u_ddr_if_post_fifo/mem_reg | Implied   | 4 x 80               | RAM32M x 14   | 
+|ddr         | ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14   | 
++------------+---------------------------------------------------------------------------------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:22 ; elapsed = 00:01:26 . Memory (MB): peak = 940.254 ; gain = 671.465
+Finished Timing Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 944.262 ; gain = 675.473
+Finished Technology Mapping : Time (s): cpu = 00:01:28 ; elapsed = 00:01:32 . Memory (MB): peak = 946.266 ; gain = 677.477
+Finished IO Insertion : Time (s): cpu = 00:01:29 ; elapsed = 00:01:33 . Memory (MB): peak = 946.266 ; gain = 677.477
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:29 ; elapsed = 00:01:33 . Memory (MB): peak = 946.266 ; gain = 677.477
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 946.266 ; gain = 677.477
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 946.266 ; gain = 677.477
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 946.266 ; gain = 677.477
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 946.266 ; gain = 677.477
+
+Report Cell Usage: 
++------+----------------------+------+
+|      |Cell                  |Count |
++------+----------------------+------+
+|1     |BUFG                  |     3|
+|2     |BUFH                  |     1|
+|3     |BUFIO                 |     1|
+|4     |CARRY4                |   101|
+|5     |IDELAYCTRL            |     1|
+|6     |IDELAYE2              |    16|
+|7     |IN_FIFO               |     2|
+|8     |ISERDESE2             |    16|
+|9     |LUT1                  |   334|
+|10    |LUT2                  |   469|
+|11    |LUT3                  |   554|
+|12    |LUT4                  |   654|
+|13    |LUT5                  |   757|
+|14    |LUT6                  |   981|
+|15    |MMCME2_ADV            |     1|
+|16    |MUXF7                 |     6|
+|17    |ODDR                  |     5|
+|18    |OSERDESE2             |    22|
+|19    |OSERDESE2_1           |     2|
+|20    |OSERDESE2_2           |    18|
+|21    |OUT_FIFO              |     4|
+|22    |PHASER_IN_PHY         |     2|
+|23    |PHASER_OUT_PHY        |     2|
+|24    |PHASER_OUT_PHY_1      |     2|
+|25    |PHASER_REF            |     1|
+|26    |PHY_CONTROL           |     1|
+|27    |PLLE2_ADV             |     1|
+|28    |RAM32M                |    89|
+|29    |SRL16E                |    11|
+|30    |SRLC32E               |     1|
+|31    |XORCY                 |     6|
+|32    |FDCE                  |     1|
+|33    |FDPE                  |    68|
+|34    |FDRE                  |  2605|
+|35    |FDSE                  |    53|
+|36    |IOBUFDS_INTERMDISABLE |     2|
+|37    |IOBUF_INTERMDISABLE   |    16|
+|38    |OBUF                  |    22|
+|39    |OBUFDS                |     1|
+|40    |OBUFT                 |     2|
++------+----------------------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 946.266 ; gain = 677.477
+synth_design: Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 946.266 ; gain = 677.477

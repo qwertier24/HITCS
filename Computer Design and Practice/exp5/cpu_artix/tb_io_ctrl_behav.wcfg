@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_io_ctrl_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_io_ctrl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="134000001fs"></ZoomEndTime>
+      <Cursor1Time time="25600000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_CS" type="logic">
+      <obj_property name="ElementShortName">I_CS</obj_property>
+      <obj_property name="ObjectShortName">I_CS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_WR" type="logic">
+      <obj_property name="ElementShortName">I_WR</obj_property>
+      <obj_property name="ObjectShortName">I_WR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_RD" type="logic">
+      <obj_property name="ElementShortName">I_RD</obj_property>
+      <obj_property name="ObjectShortName">I_RD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_ADDR" type="array">
+      <obj_property name="ElementShortName">I_ADDR[1:0]</obj_property>
+      <obj_property name="ObjectShortName">I_ADDR[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_DATA" type="array">
+      <obj_property name="ElementShortName">I_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/O_RTEMP" type="array">
+      <obj_property name="ElementShortName">O_RTEMP[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_RTEMP[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/O_S0" type="array">
+      <obj_property name="ElementShortName">O_S0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_S0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/O_S1" type="array">
+      <obj_property name="ElementShortName">O_S1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_S1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/O_S2" type="array">
+      <obj_property name="ElementShortName">O_S2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_S2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/O_S3" type="array">
+      <obj_property name="ElementShortName">O_S3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">O_S3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_K0" type="array">
+      <obj_property name="ElementShortName">I_K0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_K0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_K1" type="array">
+      <obj_property name="ElementShortName">I_K1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_K1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_K2" type="array">
+      <obj_property name="ElementShortName">I_K2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_K2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_io_ctrl/uut_io_ctrl/I_K3" type="array">
+      <obj_property name="ElementShortName">I_K3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_K3[7:0]</obj_property>
+   </wvobject>
+</wave_config>

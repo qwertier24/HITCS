@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Jul 22 20:55:50 2017
+# Process ID: 8584
+# Current directory: E:/HITCS/exp5/cpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6924 E:\HITCS\exp5\cpu\cpu.xpr
+# Log file: E:/HITCS/exp5/cpu/vivado.log
+# Journal file: E:/HITCS/exp5/cpu\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/HITCS/exp5/cpu/cpu.xpr
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_simulation -mode post-implementation -type timing
+open_wave_config E:/HITCS/exp5/cpu/tb_write_back_behav.wcfg
+source tb_write_back.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_cpu [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+set_property is_enabled false [get_files  E:/HITCS/exp5/cpu/tb_write_back_behav.wcfg]
+set_property is_enabled true [get_files  E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg]
+launch_simulation -mode post-implementation -type timing
+open_wave_config E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg
+source tb_cpu.tcl
+current_sim simulation_1
+close_sim
+launch_simulation -mode post-implementation -type functional
+open_wave_config E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg
+source tb_cpu.tcl
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg
+source tb_cpu.tcl
+close_sim
+current_sim simulation_3
+close_sim
+close_sim

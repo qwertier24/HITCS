@@ -1,0 +1,141 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Thu Jul 20 23:02:44 2017
+# Process ID: 14536
+# Current directory: E:/HITCS/exp5/cpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12316 E:\HITCS\exp5\cpu\cpu.xpr
+# Log file: E:/HITCS/exp5/cpu/vivado.log
+# Journal file: E:/HITCS/exp5/cpu\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/HITCS/exp5/cpu/cpu.xpr
+set_property SOURCE_SET {} [get_filesets sim_1]
+close [ open E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_cpu.vhd w ]
+add_files -fileset sim_1 E:/HITCS/exp5/cpu/cpu.srcs/sim_1/new/tb_cpu.vhd
+set_property SOURCE_SET {} [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/io_ctrl.vhd E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/cpu.vhd E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/refer.vhd E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/ram_ctrl.vhd E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/alu.vhd E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/mod4.vhd E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/write_back.vhd E:/HITCS/exp5/cpu/cpu.srcs/sources_1/new/fetch.vhd}
+set_property is_enabled false [get_files  {E:/HITCS/exp5/cpu/tb_alu_behav.wcfg E:/HITCS/exp5/cpu/tb_write_back_behav.wcfg}]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_cpu [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source tb_cpu.tcl
+add_wave {{/tb_cpu/uut_cpu/uut_alu/R}} 
+add_wave {{/tb_cpu/uut_cpu/uut_fetch/I_IR}} 
+add_wave {{/tb_cpu/uut_cpu/uut_mod4/O_t1}} {{/tb_cpu/uut_cpu/uut_mod4/O_t2}} {{/tb_cpu/uut_cpu/uut_mod4/O_t3}} {{/tb_cpu/uut_cpu/uut_mod4/O_t4}} 
+add_wave {{/tb_cpu/uut_cpu/uut_mod4/I_rst}} 
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/uut_fetch/O_PC}} 
+add_wave {{/tb_cpu/uut_cpu/uut_fetch/PC}} 
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/uut_fetch/I_PC_update}} 
+add_wave {{/tb_cpu/uut_cpu/uut_fetch/I_PC_new}} 
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/uut_alu/O_ALU}} 
+add_wave {{/tb_cpu/uut_cpu/uut_alu/O_ADDR}} 
+restart
+run all
+add_wave {{/tb_cpu/uut_cpu/uut_ram_ctrl/IO_DATA}} 
+run all
+restart
+run 30 ns
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/uut_write_back/I_t4}} {{/tb_cpu/uut_cpu/uut_write_back/I_IR}} {{/tb_cpu/uut_cpu/uut_write_back/I_RTEMP}} {{/tb_cpu/uut_cpu/uut_write_back/I_ALU}} {{/tb_cpu/uut_cpu/uut_write_back/I_PC}} {{/tb_cpu/uut_cpu/uut_write_back/O_REG_addr}} {{/tb_cpu/uut_cpu/uut_write_back/O_REG_new}} {{/tb_cpu/uut_cpu/uut_write_back/O_PC_new}} {{/tb_cpu/uut_cpu/uut_write_back/O_PC_update}} 
+restart
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 30 ns
+run 30 ns
+add_wave {{/tb_cpu/uut_cpu/uut_alu/I_IR}} {{/tb_cpu/uut_cpu/uut_alu/I_t2}} {{/tb_cpu/uut_cpu/uut_alu/I_REG_addr}} {{/tb_cpu/uut_cpu/uut_alu/I_REG_new}} {{/tb_cpu/uut_cpu/uut_alu/O_ALU}} {{/tb_cpu/uut_cpu/uut_alu/O_ADDR}} {{/tb_cpu/uut_cpu/uut_alu/R}} {{/tb_cpu/uut_cpu/uut_alu/ri}} {{/tb_cpu/uut_cpu/uut_alu/rj}} 
+restart
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+add_wave {{/tb_cpu/uut_cpu/alu_data}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/uut_fetch/PC_t}} 
+restart
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+relaunch_sim
+save_wave_config {E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg}
+add_files -fileset sim_1 -norecurse E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg
+set_property xsim.view {E:/HITCS/exp5/cpu/tb_mod4_behav.wcfg E:/HITCS/exp5/cpu/tb_fetch_behav.wcfg E:/HITCS/exp5/cpu/tb_alu_behav.wcfg E:/HITCS/exp5/cpu/tb_ram_ctrl_behav.wcfg E:/HITCS/exp5/cpu/tb_io_ctrl_behav.wcfg E:/HITCS/exp5/cpu/tb_refer_behav.wcfg E:/HITCS/exp5/cpu/tb_write_back_behav.wcfg E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg} [get_filesets sim_1]
+relaunch_sim
+relaunch_sim
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/ram_IR}} 
+add_wave {{/tb_cpu/uut_cpu/global_IR}} 
+add_wave {{/tb_cpu/uut_cpu/IO_ram_DATA}} 
+add_wave {{/tb_cpu/uut_cpu/uut_refer/I_t3}} {{/tb_cpu/uut_cpu/uut_refer/I_IR}} {{/tb_cpu/uut_cpu/uut_refer/I_ALU}} {{/tb_cpu/uut_cpu/uut_refer/I_addr}} {{/tb_cpu/uut_cpu/uut_refer/O_CS_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_WR_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_RD_ram}} {{/tb_cpu/uut_cpu/uut_refer/I_data_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_data_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_addr_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_CS_io}} {{/tb_cpu/uut_cpu/uut_refer/O_WR_io}} {{/tb_cpu/uut_cpu/uut_refer/O_RD_io}} {{/tb_cpu/uut_cpu/uut_refer/I_data_io}} {{/tb_cpu/uut_cpu/uut_refer/O_data_io}} {{/tb_cpu/uut_cpu/uut_refer/O_addr_io}} {{/tb_cpu/uut_cpu/uut_refer/O_RTEMP}} 
+restart
+run 30 ns
+run 30 ns
+run 30 ns
+run 30 ns
+run 1000 ns
+add_wave {{/tb_cpu/uut_cpu/uut_ram_ctrl/I_PC}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/I_PC_read}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/O_IR}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/I_CS}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/I_WR}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/I_RD}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/I_ADDR}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/I_DATA}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/O_RTEMP}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/O_ADDR}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/IO_DATA}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/O_NCS}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/O_NRD}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/O_NWR}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/O_NBH}} {{/tb_cpu/uut_cpu/uut_ram_ctrl/O_NBL}} 
+restart
+run 1000 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/O_ram_ADDR}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/O_S0}} {{/tb_cpu/uut_cpu/O_S1}} {{/tb_cpu/uut_cpu/O_S2}} {{/tb_cpu/uut_cpu/O_S3}} 
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/uut_io_ctrl/I_CS}} {{/tb_cpu/uut_cpu/uut_io_ctrl/I_WR}} {{/tb_cpu/uut_cpu/uut_io_ctrl/I_RD}} {{/tb_cpu/uut_cpu/uut_io_ctrl/I_ADDR}} {{/tb_cpu/uut_cpu/uut_io_ctrl/I_DATA}} {{/tb_cpu/uut_cpu/uut_io_ctrl/O_RTEMP}} {{/tb_cpu/uut_cpu/uut_io_ctrl/O_S0}} {{/tb_cpu/uut_cpu/uut_io_ctrl/O_S1}} {{/tb_cpu/uut_cpu/uut_io_ctrl/O_S2}} {{/tb_cpu/uut_cpu/uut_io_ctrl/O_S3}} {{/tb_cpu/uut_cpu/uut_io_ctrl/I_K0}} {{/tb_cpu/uut_cpu/uut_io_ctrl/I_K1}} {{/tb_cpu/uut_cpu/uut_io_ctrl/I_K2}} {{/tb_cpu/uut_cpu/uut_io_ctrl/I_K3}} 
+restart
+run 1000 ns
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/uut_refer/I_t3}} {{/tb_cpu/uut_cpu/uut_refer/I_IR}} {{/tb_cpu/uut_cpu/uut_refer/I_ALU}} {{/tb_cpu/uut_cpu/uut_refer/I_addr}} {{/tb_cpu/uut_cpu/uut_refer/O_CS_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_WR_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_RD_ram}} {{/tb_cpu/uut_cpu/uut_refer/I_data_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_data_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_addr_ram}} {{/tb_cpu/uut_cpu/uut_refer/O_CS_io}} {{/tb_cpu/uut_cpu/uut_refer/O_WR_io}} {{/tb_cpu/uut_cpu/uut_refer/O_RD_io}} {{/tb_cpu/uut_cpu/uut_refer/I_data_io}} {{/tb_cpu/uut_cpu/uut_refer/O_data_io}} {{/tb_cpu/uut_cpu/uut_refer/O_addr_io}} {{/tb_cpu/uut_cpu/uut_refer/O_RTEMP}} 
+restart
+run 1000 ns
+relaunch_sim
+relaunch_sim
+save_wave_config {E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg}
+add_wave {{/tb_cpu/uut_cpu/I_K0}} {{/tb_cpu/uut_cpu/I_K1}} {{/tb_cpu/uut_cpu/I_K2}} {{/tb_cpu/uut_cpu/I_K3}} 
+relaunch_sim
+relaunch_sim
+add_wave {{/tb_cpu/uut_cpu/refer_RTEMP}} 
+restart
+run 1000 ns
+save_wave_config {E:/HITCS/exp5/cpu/tb_cpu_behav.wcfg}
+log_wave {/tb_cpu/uut_cpu/uut_write_back} 
+log_wave {/tb_cpu/uut_cpu/uut_write_back} 
+log_wave {/tb_cpu/uut_cpu/uut_write_back} 
+close_sim
