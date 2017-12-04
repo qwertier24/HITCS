@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/W32TeX)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: text.aux
+The style file: agsm.bst
+Database file #1: ref.bib
+Warning--I didn't find a database entry for "name"
+You've used 1 entry,
+            2909 wiz_defined-function locations,
+            647 strings with 4898 characters,
+and the built_in function-call counts, 3677 in all, are:
+= -- 590
+> -- 47
+< -- 0
++ -- 272
+- -- 14
+* -- 317
+:= -- 754
+add.period$ -- 1
+call.type$ -- 1
+change.case$ -- 14
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 16
+empty$ -- 37
+format.name$ -- 20
+if$ -- 656
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 6
+num.names$ -- 10
+pop$ -- 3
+preamble$ -- 1
+purify$ -- 15
+quote$ -- 0
+skip$ -- 14
+stack$ -- 0
+substring$ -- 823
+swap$ -- 3
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 23
+width$ -- 0
+write$ -- 14
+(There was 1 warning)
