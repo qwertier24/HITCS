@@ -5,4 +5,12 @@ Spiegler, I. \harvardand\ Maayan, R.  \harvardyearleft 1985\harvardyearright ,
   `Storage and retrieval considerations of binary data bases', {\em Information
   processing \& management} {\bf 21}(3),~233--254.
 
+\harvarditem[Wong et~al.]{Wong, Li, Olken, Rotem \harvardand\
+  Wong}{1986}{Wong1986}
+Wong, H. K.~T., Li, J.~Z., Olken, F., Rotem, D. \harvardand\ Wong, L.
+  \harvardyearleft 1986\harvardyearright , `Bit transposition for very large
+  scientific and statistical databases', {\em Algorithmica} {\bf
+  1}(1),~289--309.
+\newline\harvardurl{https://doi.org/10.1007/BF01840449}
+
 \end{thebibliography}

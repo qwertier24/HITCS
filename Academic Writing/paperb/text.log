@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/W32TeX) (preloaded format=xelatex 2016.3.22)  6 DEC 2017 12:47
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/W32TeX) (preloaded format=xelatex 2016.3.22)  7 DEC 2017 17:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1305,22 +1305,22 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 33.
 [1
 
-] [2] [3]
+] [2] [3] [4]
 
-Package natbib Warning: Citation `name' on page 4 undefined on input line 84.
+Package natbib Warning: Citation `name' on page 5 undefined on input line 104.
 
 (./text.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-[4] (./text.aux) ) 
+[5] (./text.aux) ) 
 Here is how much of TeX's memory you used:
- 21935 strings out of 493706
- 434385 string characters out of 6150878
- 507416 words of memory out of 5000000
- 25064 multiletter control sequences out of 15000+600000
- 8807 words of font info for 60 fonts, out of 8000000 for 9000
+ 21943 strings out of 493706
+ 434570 string characters out of 6150878
+ 507499 words of memory out of 5000000
+ 25071 multiletter control sequences out of 15000+600000
+ 8815 words of font info for 61 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  46i,8n,69p,10386b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on text.pdf (4 pages).
+Output written on text.pdf (5 pages).

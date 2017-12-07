@@ -4,45 +4,45 @@ The top-level auxiliary file: text.aux
 The style file: agsm.bst
 Database file #1: ref.bib
 Warning--I didn't find a database entry for "name"
-You've used 1 entry,
+You've used 2 entries,
             2909 wiz_defined-function locations,
-            647 strings with 4898 characters,
-and the built_in function-call counts, 3677 in all, are:
-= -- 590
-> -- 47
+            656 strings with 5125 characters,
+and the built_in function-call counts, 10000 in all, are:
+= -- 1615
+> -- 159
 < -- 0
-+ -- 272
-- -- 14
-* -- 317
-:= -- 754
-add.period$ -- 1
-call.type$ -- 1
-change.case$ -- 14
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 16
-empty$ -- 37
-format.name$ -- 20
-if$ -- 656
++ -- 783
+- -- 49
+* -- 895
+:= -- 1991
+add.period$ -- 2
+call.type$ -- 2
+change.case$ -- 28
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 32
+empty$ -- 73
+format.name$ -- 58
+if$ -- 1791
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 6
-num.names$ -- 10
-pop$ -- 3
+missing$ -- 2
+newline$ -- 10
+num.names$ -- 21
+pop$ -- 5
 preamble$ -- 1
-purify$ -- 15
+purify$ -- 30
 quote$ -- 0
-skip$ -- 14
+skip$ -- 27
 stack$ -- 0
-substring$ -- 823
-swap$ -- 3
-text.length$ -- 14
+substring$ -- 2300
+swap$ -- 6
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 8
 warning$ -- 0
-while$ -- 23
+while$ -- 46
 width$ -- 0
-write$ -- 14
+write$ -- 29
 (There was 1 warning)
