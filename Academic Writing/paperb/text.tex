@@ -13,6 +13,7 @@
 \setlength{\parindent}{2em}
 \usepackage{float}
 \usepackage{titling}
+\usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{natbib}
 \usepackage{booktabs}
@@ -22,7 +23,7 @@
 
 \pretitle{\begin{center}\LARGE}
 \posttitle{\par\end{center}\vskip 0.5em}
-\preauthor{\vspace{10cm}\begin{center}
+\preauthor{\vspace{8cm}\begin{center}
     \large \lineskip0.5em %
     \begin{tabular}[t]{c}}
 \postauthor{\end{tabular}\par\end{center}}
@@ -32,11 +33,12 @@
 \renewcommand{\baselinestretch}{2}
 \begin{document}
 
-\title{{\bf\Huge Scalable Bitmap Index}}
-\author{Department of Computer Science and Technology\\马玉坤\\1150310618}
+\title{{\bf\Huge Analysis of Different Implementations of Bitmap Index}}
+\author{\emph{Harbin Institute of Technology}\\\emph{Department of Computer Science and Technology}\\Ma Yukun\\1150310618}
+
 \date{2017/11/18}
-\maketitle
-\thispagestyle{empty}
+
+\maketitle\setcounter{page}{0}\thispagestyle{empty}
 \newpage
 %% \tableofcontents
 
@@ -50,12 +52,11 @@
 
 Bitmap Index is presented by P. O'Neil in 1987. It was first applied in a commercial database \citep{spiegler1985storage}. In the application of database, either for scientific purposes or for commercial purposes, bitmap indexes are widely used.
 
-The original bitmap indexes uses {\emph{Bit Vector}} to indicate the indexed attributes in the database. For example, in Table \ref{table:ordinary-table}, in the column named ``math score'', the Bit Vector for value ``A'' is {\emph{101}}, indicating that Alice has an \textbf{A}, Bob does not have an \textbf{A} and Dean has an \textbf{A}.
+The original bitmap indexes uses {\emph{Bit Vector}} to indicate the indexed attributes in the database. For example, in Table \ref{tab:ordinary-table}, in the column named ``math score'', the Bit Vector for value ``A'' is {\emph{101}}, indicating that Alice has an $A$, Bob does not have an $A$ and Dean has an $A$.
 
 \begin{table}[H]
 \centering
-\caption{An Ordinary Table}
-\label{table:ordinary-table}
+\caption{An Ordinary Table}\label{tab:ordinary-table}
 \begin{tabular}{ccc}
 \toprule
 name  & math score & Chinese score \\
@@ -67,7 +68,7 @@ Dean  & A          & D             \\
 \end{tabular}
 \end{table}
 
-When we use the Bit Vectors of different attributes to do logical math, we can get different results to get the answers for so many kinds of queries. Take this as another example: We want to know the students who has an \textbf{A} in math and a \textbf{C} in Chinese. Then we can use the result of the \emph{bitwise and} of the Bit Vector of ``math A'' (which is \textbf{101}) and the Bit Vector of ``Chinese C'' (which is \textbf{100}). As the calculation below, the result will be \textbf{100} which indicates that Alice is the only one who gets an \textbf{A} in math and a \textbf{C} in Chinese.
+When we use the Bit Vectors of different attributes to do logical math, we can get different results to get the answers for so many kinds of queries. Take this as another example: We want to know the students who has an $A$ in math and a $C$ in Chinese. Then we can use the result of the \emph{bitwise and} of the Bit Vector of ``math A'' (which is \textbf{101}) and the Bit Vector of ``Chinese C'' (which is \textbf{100}). As the calculation below, the result will be \textbf{100} which indicates that Alice is the only one who gets an $A$ in math and a $C$ in Chinese.
 
 \begin{align}
   &101\\
@@ -83,25 +84,92 @@ In the analysis of algorithms, time complexity and space complexity are two meth
 
 The time complexity can measure or estimate the time consumed for running one algorithm. Not specifically, a bigger time complexity usually means more time consumed for the same input. While the space complexity can measure or estimate the space consumed for running one algorithm. Similaryly and not specifically, a bigger space complexity usually means more space consumed for the same input.
 
-In section \ref{sec:implement} these implementations of Bitmap Indexes will be revealed. And in section \ref{sec:compare} these implementations will be discussed and compared with each other to show their differences in time complexity and space complexity. Finally we will give advice on how to choose the appropriate implementations of Bitmap Index in section \ref{sec:choose}.
+In section \ref{sec:implement} these implementations of Bitmap Indexes will be revealed. And in section \ref{sec:analyze} these implementations will be discussed analyzed to show their time complexity and space complexity. Finally we will give the comparison of these implementations of bitmap indexes in Section \ref{sec:conclude}.
 
 \section{Different Implementations of Bitmap Indexes}\label{sec:implement}
 
 Here, we focus on three kinds of bitmap indexes. They are value-based bitmap index, range-based bitmap index and bit-transposition bitmap index, respectively.
 
+For simplicity, let's have a table T (who has $n$ tuples), and $T={t_1,t_2,\ldots,t_n}$. Let A be a column of T, and there are $m$ different values in column $A$. We can assume the $m$ different values to be the integers ranged from $0$ to $m-1$. Let B be a bit vector $(b_1, b_2, \ldots, b_n)$ whose length is $n$. Any bit of B $b_i$ can also be referenced as $B[i]$.
+
 \subsection{Value-Based Bitmap Index}
+
+The value-based bitmap index is the most fundenmental bitmap index. It consists of $m$ Bit Vectors ${B_{m-1}, \ldots, B_j, \ldots, B_1, B_0}$, it can be regarded as a $n \times m$ matrix who has n rows and m columns, and $B_j$ is the Bit Vector corresponding to the j-th attribute. $B_j[i]=1$ iff $t_i.A = j$, $B_j[i]=0$ otherwise.
+
+Figure \ref{fig:bitmap:T_A} shows the values of different rows on column A of some table T. Figure \ref{fig:bitmap:BV_A_0} shows the $m$ ($m=9$) bitmap indexes for each value.
+
+It can be observed that the value-based bitmap index is very space-consuming since it will get each value for each column a bit vector whose length is $n$ (the number of rows).
+
+\begin{figure}
+\centering
+\subfigure[Column $A$ of $T$]{\label{fig:bitmap:T_A}
+\includegraphics[height=3in]{figures/T_A.png}}
+\hspace{0.01\linewidth}
+\subfigure[Bitmap Indexes of Column $A$]{\label{fig:bitmap:BV_A_0}
+\includegraphics[height=3in]{figures/BV_A_0.png}}
+\vfill
+\subfigure[Range-Based Bitmap Index]{\label{fig:bitmap:BV_A_RB}
+\includegraphics[height=3in]{figures/BV_A_RB.png}}
+\hspace{0.01\linewidth}
+\subfigure[Child Columns of Column $A$]{\label{fig:bitmap:CC_A}
+\includegraphics[height=3in]{figures/CC_A.png}}
+\hspace{0.01\linewidth}
+\subfigure[Bit-Transposition Bitmap Index]{\label{fig:bitmap:BV_A_BT}
+\includegraphics[height=3in]{figures/BV_A_BT.png}}
+\caption{Bitmap Indexes}
+\label{fig:bitmap}
+\end{figure}
 
 \subsection{Range-Based Bitmap Index}
 
-\subsection{Bit-Transposition Bitmap Index}\citep{Wong1986}
+Range-based bitmap index has $m-1$ Bit Vectors ${B_{m-2}, \ldots, B_j, \ldots, B_1, B_0}$. $B_j$ corresponds to the value j. $B_j[i]=1$ iff $t_i.A \le j$. Range-based bitmap index can be regarded as an accmulation of value-based bitmap index. In a value-based bitmap index, every bitmap index corresponds to a indexed value while in a range-based bitmap index every bit vector represents the the indexed values which are less than or equal to the corresponding value. Figure \ref{fig:bitmap:BV_A_RB} shows the range-based bitmap indexes on column $A$.
 
-\section{Comparisons of Implementations of Bitmap Indexes}\label{sec:compare}
+\subsection{Bit-Transposition Bitmap Index}
 
-\section{Choosing the Right Implementations}\label{sec:choose}
+Bit-transposition bitmap index is presented by Chan and Ioannidis \citep{Wong1986}. It represents each value by using the $r$ carry system. In the $r$ carry system, each integer x ranged from $0$ to $m-1$ can be represented by a integer sequence $(x_{e-1},\ldots,x_1,x_0)$, in which $e=|\log_r{m}|, 0 \leq x_e, \ldots, x_1, x_0 < r, x=x_{e-1} \times r^{e-1} + \ldots + x_1 \times r + x_0$. The integer sequence whose length is $e$ can be regarded as values from $e$ columns. Hence the column $A$ can be divided into $e$ child columns $A_{e-1}, \ldots, A_1, A_0$.
 
-\section{Conclusion}
+The main concept of bit-transposition bitmap index is to divide each column $A$ to some child columns by representing the values of column $A$ in $r$ carry system and then to build a bit vector for each child column of column $A$. The number $r$ can be called base of the bitmap index. For the data in Figure \ref{fig:bitmap:T_A}, the column $A$ can be divided into two child columns $A_0,A_1$ when $r=3$ as showed in Figure \ref{fig:bitmap:CC_A}. As in Figure \ref{fig:bitmap:BV_A_BT}, the (1) and (2) are the value-based bitmap indexes for $A_1$ and $A_0$ respectively. In Figure \ref{fig:bitmap:BV_A_BT}, the column $B_p^k$ indicates the bit vector corresponding to value p in the k-th child column.
 
-\citep{name}
+\section{Analysis of Implementations of Bitmap Indexes}\label{sec:analyze}
+
+The three different implementations of bitmap indexes, namely, value-based bitmap index, range-based bitmap index and the bit-transpositino bitmap index's main concepts are all described above. It can be seen that there are many differences between them in many ways such as the principle, the space needed for storing the index and the time needed to process queries.
+
+Let's analyze the time and space needed for each implementation of bitmap index. Rather than 3 types of bitmap indexes, we will inspect 4 types of bitmap indexes, namely, trivial value-based bitmap index, trivial range-based bitmap index, value-based bit-transposition bitmap index and range-based bit-transposition bitmap index.
+
+
+\subsection{Space Measurement}
+
+Due to the design of the value-based bitmap index and the range-based bitmap index, the two bitmap indexes will need $O(m)$ bit vectors to index a table in a database.
+
+And for the value-based bit-transposition bitmap index and range-based bit-transposition bitmap index, the required number of bit vectors is $O(e\times r)$ where $e$ equals to $\log_r|V|$ and $r$ is the base we choose.
+
+\subsection{Time Measurement}
+
+For a query, the number of bit vectors involved for a range-based bitmap index is $O(1)$ while the number for a value-based bitmap index is $O(m)$ where $m$ is the number of different values in one column. While the number of bit vectors involved for a bit-transposition bitmap index is much smaller which is in $O(e)$.
+
+\section{Conclusion}\label{sec:conclude}
+
+In general, the value-based bitmap index and the range-based bitmap index are better considering the query efficiency. For a equal-type query (a query in the form of $A=x$), the value-based bitmap index only needs one bit vector, and the range-based bitmap index needs only two bit vector. But in the contrast, when $m$ is large and $x$ is large, the range-based bitmap index and the value-based bitmap index has very poor performance in the query since the involved bit vector increases linearly as the range increases. In the other hand, as the number of kinds of different values of one column $A$ increases, the value-based bitmap index and range-based bitmap index will need more space. When the number $m$ gets larger than eight times as the the length of the tuple, the space needed to store the bitmap index is larger than the data space, which influences its application severely.
+
+The bit-transposition bitmap index has a very strong flexibility. By adjusting the value of the base $r$, we can easily get the equilibrium point of space the time. By increasing $r$ we can reduce the time needed in query while increase the space needed. In contrast, decreasing $r$ will lead to the increase of the time needed and decrease the space needed. When $r=m$, the bit-transposition bitmap index turns into a value-based bitmap index. Table \ref{tab:comp} shows the comparison of the four bitmap indexes.
+
+\begin{table}[H]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\centering
+\caption{Comparison of Four Kinds of Bitmap Indexes}\label{tab:comp}
+\begin{tabular}{cccc}
+\toprule
+Name  & \# of Bit Vectors & \tabincell{c}{Time Consumed \\for $A = x$}  & \tabincell{c}{Time Consumed \\for $A \leq x$}\\
+\midrule
+value-based bitmap index & $m$ & $1$ & $x$\\
+range-based bitmap index & $m-1$ & $2$ & $1$\\
+\tabincell{c}{r-based value-based \\bit-transposition \\bitmap index} & $e\times r$ & $e$ & $x_{e-1}+\ldots +x_1+x_0$\\
+\tabincell{c}{r-based range-based \\bit-transposition \\bitmap index} & $e\times (r-1)$ & $e\times2$ & $2\times(e-1)+1$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
 %% \renewcommand\refname{Reference}
 \bibliographystyle{agsm}
 \bibliography{ref}
