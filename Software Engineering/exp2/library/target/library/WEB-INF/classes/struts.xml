@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.excludePattern" value="/static/.*?" />
+	<package name="library" extends="struts-default, json-default">
+		<default-action-ref name="index" />
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+		<action name="logout">
+			<result>/index.jsp</result>
+		</action>
+		<action name="login">
+			<result>/queryBook.jsp</result>
+		</action>
+		<action name="queryBook">
+			<result>/queryBook.jsp</result>
+		</action>
+		<action name="tableBook" class="cn.qwertier.library.TableBookAction">
+			<result>/tableBook.jsp</result>
+		</action>
+		<action name="dataTableBook" class="cn.qwertier.library.DataTableBookAction">
+			<result type="json" />
+		</action>
+		<action name="addBook">
+			<result>/addBook.jsp</result>
+		</action>
+		<action name="getAuthorList" class="cn.qwertier.library.GetAuthorListAction">
+			<result type="json" />
+		</action>
+		<action name="getBook" class="cn.qwertier.library.GetBookAction">
+			<result type="json" />
+		</action>
+		<action name="modifyBook" class="cn.qwertier.library.ModifyBookAction">
+			<result type="json" />
+		</action>
+		<action name="addAuthor" class="cn.qwertier.library.AddAuthorAction">
+			<result type="json" />
+		</action>
+	</package>
+</struts>
