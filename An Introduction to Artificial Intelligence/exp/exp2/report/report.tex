@@ -1,0 +1,326 @@
+% !Mode:: "TeX:UTF-8"
+%% 请使用 XeLaTeX 编译本文.
+% \documentclass{WHUBachelor}% 选项 forprint: 交付打印时添加, 避免彩色链接字迹打印偏淡. 即使用下一行:
+\documentclass[forprint]{WHUBachelor}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{minted}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+
+\begin{document}
+%%%%%%% 下面的内容, 据实填空.
+
+\title{吃豆人程序的设计 \\ {\Large《人工智能导论》实验报告}}
+\author{马玉坤}                            % 作者名字
+\Cmajor{计算机科学与技术}                  % 专业中文名
+\Cschoolname{计算机科学与技术系}          % 学院名
+\Csupervisor{李钦策}        %指导教师中文名、职称
+\date{二〇一八年一月}                    % 日期, 要注意和英文日期一致!!
+\teammates{李伟枫,许浩禹,张宁}
+\StudentNumber{1150310618}
+
+%-----------------------------------------------------------------------------
+\pdfbookmark[0]{封面}{title}         % 封面页加到 pdf 书签
+\maketitle
+\frontmatter
+\pagenumbering{Roman}              % 正文之前的页码用大写罗马字母编号.
+%-----------------------------------------------------------------------------
+\include{includefile/frontmatter}    % 加入摘要, 申明.
+%==========================把目录加入到书签==============================%%%%%%
+\pdfbookmark[0]{目录}{toc}
+\tableofcontents
+\mainmatter %% 以下是正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%--------main matter-------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{简介}
+
+吃豆人项目是加州大学伯克利分校为入门级人工智能课程开发的项目。通过一系列的AI技术来玩吃豆人。但是吃豆人项目不专注于为视频游戏构建AI，恰恰相反这些项目教授使用者AI基础概念，如知情的状态空间搜索，概率推理和强化学习。这些概念是真实世界的应用领域，如自然语言处理，计算机视觉和机器人。
+
+这些项目允许学生可视化实现的技术的结果。它们还包含代码示例和明确的指示，但不要强迫学生趟过过多的脚手架。最后，吃豆人提供了一个具有挑战性的问题环境，需要创造性的解决方案; 真实世界的AI问题是具有挑战性的，吃豆人也是。
+
+吃豆人系列项目一共分为五个小项目：Search, Multiagent Search, Reinforcement Learning, Ghostbusters以及Classification。其中的项目一——Search就是我们本次的实验。在这个实验中，吃豆人将通过一系列构建的一系列的搜索算法实现达到特定位置并有效地吃到食物。包括深度优先搜索、广度优先搜索、一致代价搜索、A*搜索、启发式搜索等8个问题。
+
+这八个问题分别是：
+
+\begin{enumerate}
+\item 应用深度优先算法找到一个特定的位置的豆
+\item 宽度优先算法
+\item 代价一致算法
+\item A* 算法
+\item 找到所有的角落
+\item 角落问题（启发式）
+\item 吃掉所有的豆子
+\item 次最优搜索
+\end{enumerate}
+
+在这个实验的实现过程中需要编辑两个关键文件“search.py”和“searchAgents.py”，“search.py”中需要补充编写四个基本搜索算法，“searchAgents.py”中需要补充编写所有启发式算法的基本内容。除此之外还有三个比较重要的文件：“pacman.py”、“game.py”和“util.py”。“pacman.py”是游戏的主文件，描述了一个Pacman GameState类型。“game.py”说明了Pacman世界如何工作的逻辑并且描述了几种支持类型，如AgentState，Agent，Direction和Grid。“util.py”是对我们来说非常重要的文件，包括了实现搜索算法可以用到的几种数据结构。
+
+通过这个实验，我们可以更好的理解各种基本搜索算法，并且通过可视化的方法可以更加有成就感，激发学习兴趣。在人工智能的领域继续研究下去。
+
+\chapter{算法介绍}
+
+\section{编写通用搜索算法}
+
+\subsection{待解决问题的解释}
+
+编写一个通用的搜索算法，来解决“应用深度优先算法找到一个特定的位置的豆”，“应用深度优先算法找到一个特定的位置的豆”，“应用深度优先算法找到一个特定的位置的豆”，“应用深度优先算法找到一个特定的位置的豆”等四个问题。
+
+\subsection{问题的形式化描述}
+
+\textbf{输入：}problem(吃豆人游戏搜索问题),open(遍历所用的数据结构),heurisitic(启发式算法)
+
+\textbf{输出：}path[](由方向组成的数组，可以指示吃豆人从起始状态走到终止状态)
+
+\subsection{解决方案介绍}
+
+四种算法既有相似性也有相异性。相似性体现在四种算法的框架类似，相异性主要体现在两个方面。
+
+第一个方面便是启发式函数的问题。在四个问题中，最复杂的问题是A*搜索问题，因为A*搜索问题需要启发式函数。换个角度来看，其他三种算法（深度优先搜索，广度优先搜索以及代价一致搜索）可以看做是启发式函数恒为0。
+
+第二个方面数据结构的不同。
+
+因此四种问题只需分别定义好数据结构以及启发函数，调用通用搜索算法便可以获得解决方案。
+
+\subsection{所用方法的一般介绍}
+
+我们定义了一个函数unifiedSearch（意为通用搜索），unifiedSearch需要三个参数，首先是搜索问题，第二个是遍历所用的数据结构对象，最后一个是所用的启发式（估价）函数。
+
+函数执行的第一步便是初始化过程，将初始状态的$f,g,h$($f[state]=g[state]+h[state]$，其中$h$为启发式函数)三个函数定义好，然后将初始状态push到数据结构对象中。
+
+接下来便是遍历过程，每次从数据结构对象中pop元素，设为当前的状态，然后判断当前状态是否为结束状态，如果是结束状态就返回找到的路径，否则就扩展新的状态，放到数据结构对象中。每次扩展子状态都需要使用启发式函数计算状态的$f[childState]$函数值。
+
+\subsection{算法伪代码}
+
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+\begin{algorithm}[H]
+  \caption{通用搜索算法}
+  \begin{algorithmic}[1] %每行显示行号
+    \Require $problem$搜索问题，$open$遍历所需的数据结构对象，$heuristic$启发式函数
+    \Ensure 指示从起点到终点的路径的方向列表
+    \State $initialState \gets problem.getStartstate()$
+    \State 初始化$initialState$的$f,g,h$函数
+    \State $open.push(initialState)$
+    \While {$open$非空}
+    \State $state \gets open.pop()$
+    \State 将$state$加入$close$表
+    \If {$state$为结束状态}
+    \State \Return{\Call{getPath}{$state, initialState$}}
+    \EndIf
+    \For {$childState$ in $state$的子状态}
+    \State 更新$childState$的信息
+    \State 将$childState$加入$open$
+    \EndFor
+    \EndWhile
+
+    \Function {getPath}{$dest, src$}
+    \State $state \gets dest$
+    \State $path \gets []$
+    \While {$state \neq src$}
+    \State $path \gets path + state$ 的转移方向
+    \State $state \gets $ 父状态
+    \EndWhile
+    \State \Return{$path$}
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+\section{找到所有的角落}
+
+\subsection{待解决问题的解释}
+
+需要重新定义问题状态，使状态能够表示四个角落的访问状态，使得该问题使用之前的搜索算法解决时，能够遍历所有的角落（左上、左下、右上、右下四个角落）。
+
+\subsection{问题的形式化描述}
+
+修改searchAgents.py文件中的CornersProblem类。编写$\_\_init\_\_()$、$getStartState()$、$isGoalState()$以及$getSuccessors()$方法，使得CornersProblem能够成为一个自洽的问题，且当问题解决时，四个角落都会被访问到。
+
+\subsection{解决方案介绍}
+
+其实，定义好这样一个问题，只需要考虑清楚如何将四个角落的访问状态加入到状态中。因此我们在状态设计中新增维数，添加表示角落访问状态的维度，从而来表示状态。
+
+\subsection{所用方法的一般介绍}
+
+在之前的问题中，状态的表示为一个二元组$(x,y)$。在该问题中，我们设计了一个新的维度，用来存储四个角落的访问状态。新的状态形式为$((x,y),corners)$，是一个新的二元组，该二元组的第一维是一个坐标二元组，第二维是一个4位二进制数$corners$。
+
+当$corners$为$1111$时，表示四个角落都访问过，这也是终止状态的充分必要条件。当$corners$为$1000$时，表示仅仅访问过左上角落。而当$corners$为$0000$时，表示四个状态都没有访问过。初始状态即为$(startingPosition, 0000)$。
+
+\subsection{算法伪代码}
+
+
+\begin{algorithm}[H]
+  \caption{角落问题}
+  \begin{algorithmic}[1] %每行显示行号
+    \Function {getStartState} {$self$}
+    \State \Return {$(self.startingPosition, 0)$}
+    \EndFunction
+
+    \Function {isGoalState} {$self, state$}
+    \If {$state[1] = 15$}
+    \State \Return {True}
+    \Else
+    \State \Return {False}
+    \EndIf
+    \EndFunction
+
+    \Function {getSuccessors} {$self, state$}
+    \State $successors \gets []$
+    \For {$action \in Directions$}
+    \State 从action和当前位置获取新的位置
+    \State 从新位置和当前四个角落的访问情况获取新的四个角落的访问情况
+    \If {新位置可达}
+    \State $successors \gets successors + $新状态
+    \EndIf
+    \EndFor
+    \State \Return{$successors$}
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+\section{角落问题（启发式）}
+
+\subsection{待解决问题的解释}
+
+编写上一个问题（角落问题）对应的A*算法的启发式函数。
+
+\subsection{问题的形式化描述}
+
+\textbf{输入：}当前状态$state$，当前问题$problem$
+
+\textbf{输出：}当前状态对应的估价函数值
+
+\subsection{解决方案介绍}
+
+枚举访问顺序，通过曼哈顿距离测算最小的代价。
+
+\subsection{所用方法的一般介绍}
+
+由于没有访问的角落最多只有四个，所以我们可以枚举四个角落的访问顺序（最多$4!=24$种），找到代价最小的访问顺序，代价的计算是通过曼哈顿距离来测算的，这样效率比较高，拿到了满分。
+
+\subsection{算法伪代码}
+
+\begin{algorithm}[H]
+  \caption{角落问题启发式函数}
+  \begin{algorithmic}[1] %每行显示行号
+    \Require $state$当前状态，$problem$搜索问题
+    \Ensure 当前状态的启发式函数值
+    \State $minDist \gets \infty$
+    \For {$perm \in [0,1,2,3]$的四种排列}
+    \State $dist \gets $使用曼哈顿距离计算的按照排列顺序所需的最小代价
+    \State $minDist \gets min(minDist, dist)$
+    \EndFor
+    \State \Return{$minDist$}
+  \end{algorithmic}
+\end{algorithm}
+
+\section{吃掉所有的豆子}
+
+\subsection{待解决问题的解释}
+
+编写\emph{searchAgents.py}中的$foodHeuristic$函数，能够成为使用A*算法解决$FoodSearchProblem$的启发式函数。
+
+\subsection{问题的形式化描述}
+
+补充\emph{searchAgents.py}中的$foodHeuristic$函数，使得其是一个consistent且admissible的启发函数。
+
+\textbf{输入：}当前状态$state$，当前吃掉所有豆子的问题$problem$
+
+\textbf{输出：}一个数字，表示当前状态的估价函数值
+
+\subsection{解决方案介绍}
+
+在吃掉所有豆子的问题中，状态的定义为$((x,y), foodList)$。$foodList$表示所有豆子的位置列表。当豆子列表为空时，显然估计函数值应该为0。当豆子列表不为空的时候，我们只需要计算所有豆子中，与当前位置曼哈顿距离最大的豆子，距离当前位置的精确距离（使用\emph{searchAgents.py}中的$mazeDistance$）就能达到非常惊人的效果，获得了5/4的分数。
+
+\subsection{所用方法的一般介绍}
+
+当豆子列表为空时，显然估计函数值应该为0。当豆子列表不为空的时候，我们只需要计算所有豆子中，与当前位置曼哈顿距离最大的豆子，距离当前位置的精确距离（使用\emph{searchAgents.py}中的$mazeDistance$）。
+
+\subsection{算法伪代码}
+
+\begin{algorithm}[H]
+  \caption{吃掉所有豆子的启发式函数}
+  \begin{algorithmic}[1] %每行显示行号
+    \Require $state$当前状态，$problem$搜索问题
+    \Ensure 当前状态的启发式函数值
+    \State $position \gets $当前状态的位置
+    \State $foodList \gets $当前状态中所有没吃掉的豆子的位置列表
+    \If {$|foodList| = 0$}
+    \State \Return{$0$}
+    \Else
+    \State $farestFood \gets foodList$中距离$position$最近的豆子的位置
+    \State \Return{$farestFood$ 距离 $position$的精确位置($mazeDistance$)}
+    \EndIf
+  \end{algorithmic}
+\end{algorithm}
+
+\section{次最优搜索}
+
+\subsection{待解决问题的解释}
+
+定义一个优先吃最近的豆子函数是提高搜索速度的一个好的办法。补充完成searchAgents.py文件中的AnyFoodSearchProblem目标测试函数，并完成searchAgents.py文件中的ClosestDotSearchAgent部分，在此Agent当中缺少一个关键的函数：找到最近豆子的函数。
+
+\subsection{问题的形式化描述}
+
+补充\emph{searchAgents.py}中的$ClosetDotSearchAgent$类中的$findPathToClosetDot$函数。
+
+\textbf{输入：}gameState游戏状态
+
+\textbf{输出：}一条路径，能够从当前位置走到最近的豆子的位置
+
+\subsection{解决方案介绍}
+
+使用之前定义的$bfs$函数，来解决这个问题即可。
+
+\subsection{所用方法的一般介绍}
+
+使用$search.bfs(problem)$可以调用之前写好的bfs函数，返回值即为当前位置到最近的豆子的位置的路径。
+
+\subsection{算法伪代码}
+
+\begin{algorithm}[H]
+  \caption{找到到最近的豆子的路径}
+  \begin{algorithmic}[1] %每行显示行号
+    \Require $gameState$游戏状态
+    \Ensure 从当前吃豆人的位置到最近的豆子的路径
+    \State $problem \gets $ \Call{AnyFoodSearchProblem} {$gameState$}
+    \State $path \gets $ \Call{bfs} {$problem$}
+    \State \Return{$path$}
+  \end{algorithmic}
+\end{algorithm}
+
+\chapter{算法实现}
+
+\section{实验环境与问题规模}
+
+\section{数据结构}
+
+\section{实验结果}
+
+\section{系统中间及最终输出结果}
+
+\chapter{总结及讨论}
+
+
+%%%=== 参考文献 ========%%%
+\cleardoublepage\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{00}
+\end{thebibliography}
+
+%%\include{includefile/backmatter} %%%致谢
+
+%%%-------------- 附录. 不需要可以删除.-----------
+
+\appendix
+
+\chapter{测试}
+
+\section{第一个测试}
+
+\cleardoublepage
+
+\end{document}
