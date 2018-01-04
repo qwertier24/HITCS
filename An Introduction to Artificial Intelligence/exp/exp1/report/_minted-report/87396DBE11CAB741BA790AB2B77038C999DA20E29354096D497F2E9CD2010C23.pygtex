@@ -1,0 +1,93 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{CornersProblem}\PYG{p}{(}\PYG{n}{search}\PYG{o}{.}\PYG{n}{SearchProblem}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    This search problem finds paths through all four corners of a layout.}
+
+\PYG{l+s+sd}{    You must select a suitable state space and successor function}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{startingGameState}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Stores the walls, pacman\PYGZsq{}s starting position and corners.}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{walls} \PYG{o}{=} \PYG{n}{startingGameState}\PYG{o}{.}\PYG{n}{getWalls}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{startingPosition} \PYG{o}{=} \PYG{n}{startingGameState}\PYG{o}{.}\PYG{n}{getPacmanPosition}\PYG{p}{()}
+        \PYG{n}{top}\PYG{p}{,} \PYG{n}{right} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{walls}\PYG{o}{.}\PYG{n}{height}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{walls}\PYG{o}{.}\PYG{n}{width}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{corners} \PYG{o}{=} \PYG{p}{((}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{),} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{top}\PYG{p}{),} \PYG{p}{(}\PYG{n}{right}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{),} \PYG{p}{(}\PYG{n}{right}\PYG{p}{,} \PYG{n}{top}\PYG{p}{))}
+        \PYG{k}{for} \PYG{n}{corner} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{corners}\PYG{p}{:}
+            \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{startingGameState}\PYG{o}{.}\PYG{n}{hasFood}\PYG{p}{(}\PYG{o}{*}\PYG{n}{corner}\PYG{p}{):}
+                \PYG{k}{print} \PYG{l+s+s1}{\PYGZsq{}Warning: no food in corner \PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{corner}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}expanded} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{c+c1}{\PYGZsh{} DO NOT CHANGE; Number of search nodes expanded}
+        \PYG{c+c1}{\PYGZsh{} Please add any code here which you would like to use}
+        \PYG{c+c1}{\PYGZsh{} in initializing the problem}
+
+    \PYG{k}{def} \PYG{n+nf}{getStartState}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Returns the start state (in your state space, not the full Pacman state}
+\PYG{l+s+sd}{        space)}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{l+s+s2}{\PYGZdq{}*** YOUR CODE HERE ***\PYGZdq{}}
+        \PYG{k}{return} \PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{startingPosition}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{isGoalState}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{state}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Returns whether this search state is a goal state of the problem.}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{l+s+s2}{\PYGZdq{}*** YOUR CODE HERE ***\PYGZdq{}}
+        \PYG{k}{if} \PYG{n}{state}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mi}{15}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n+nb+bp}{True}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n+nb+bp}{False}
+
+    \PYG{k}{def} \PYG{n+nf}{getSuccessors}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{state}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Returns successor states, the actions they require, and a cost of 1.}
+
+\PYG{l+s+sd}{         As noted in search.py:}
+\PYG{l+s+sd}{            For a given state, this should return a list of triples, (successor,}
+\PYG{l+s+sd}{            action, stepCost), where \PYGZsq{}successor\PYGZsq{} is a successor to the current}
+\PYG{l+s+sd}{            state, \PYGZsq{}action\PYGZsq{} is the action required to get there, and \PYGZsq{}stepCost\PYGZsq{}}
+\PYG{l+s+sd}{            is the incremental cost of expanding to that successor}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+        \PYG{n}{successors} \PYG{o}{=} \PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{action} \PYG{o+ow}{in} \PYG{p}{[}\PYG{n}{Directions}\PYG{o}{.}\PYG{n}{NORTH}\PYG{p}{,} \PYG{n}{Directions}\PYG{o}{.}\PYG{n}{SOUTH}\PYG{p}{,} \PYG{n}{Directions}\PYG{o}{.}\PYG{n}{EAST}\PYG{p}{,} \PYG{n}{Directions}\PYG{o}{.}\PYG{n}{WEST}\PYG{p}{]:}
+            \PYG{c+c1}{\PYGZsh{} Add a successor state to the successor list if the action is legal}
+            \PYG{c+c1}{\PYGZsh{} Here\PYGZsq{}s a code snippet for figuring out whether a new position hits a wall:}
+            \PYG{c+c1}{\PYGZsh{}   x,y = currentPosition}
+            \PYG{c+c1}{\PYGZsh{}   dx, dy = Actions.directionToVector(action)}
+            \PYG{c+c1}{\PYGZsh{}   nextx, nexty = int(x + dx), int(y + dy)}
+            \PYG{c+c1}{\PYGZsh{}   hitsWall = self.walls[nextx][nexty]}
+
+            \PYG{l+s+s2}{\PYGZdq{}*** YOUR CODE HERE ***\PYGZdq{}}
+            \PYG{n}{x}\PYG{p}{,}\PYG{n}{y} \PYG{o}{=} \PYG{n}{state}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+            \PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy} \PYG{o}{=} \PYG{n}{Actions}\PYG{o}{.}\PYG{n}{directionToVector}\PYG{p}{(}\PYG{n}{action}\PYG{p}{)}
+            \PYG{n}{nextx}\PYG{p}{,} \PYG{n}{nexty} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{x} \PYG{o}{+} \PYG{n}{dx}\PYG{p}{),} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{y} \PYG{o}{+} \PYG{n}{dy}\PYG{p}{)}
+            \PYG{n}{hitsWall} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{walls}\PYG{p}{[}\PYG{n}{nextx}\PYG{p}{][}\PYG{n}{nexty}\PYG{p}{]}
+
+            \PYG{c+c1}{\PYGZsh{} 获得新的二进制数，表示四个角落的访问状态}
+            \PYG{n}{isCorner} \PYG{o}{=} \PYG{l+m+mi}{0}
+            \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{corners}\PYG{p}{)):}
+                \PYG{n}{corner} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{corners}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{nextx}\PYG{p}{,} \PYG{n}{nexty}\PYG{p}{)} \PYG{o}{==} \PYG{n}{corner}\PYG{p}{:}
+                    \PYG{n}{isCorner} \PYG{o}{|=} \PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}
+
+            \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{hitsWall}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{} 没有撞墙}
+                \PYG{n}{successors}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((((}\PYG{n}{nextx}\PYG{p}{,}\PYG{n}{nexty}\PYG{p}{),} \PYG{n}{state}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{|}\PYG{n}{isCorner}\PYG{p}{),} \PYG{n}{action}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{))}
+
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}expanded} \PYG{o}{+=} \PYG{l+m+mi}{1} \PYG{c+c1}{\PYGZsh{} DO NOT CHANGE}
+        \PYG{k}{return} \PYG{n}{successors}
+
+    \PYG{k}{def} \PYG{n+nf}{getCostOfActions}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{actions}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Returns the cost of a particular sequence of actions.  If those actions}
+\PYG{l+s+sd}{        include an illegal move, return 999999.  This is implemented for you.}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{k}{if} \PYG{n}{actions} \PYG{o}{==} \PYG{n+nb+bp}{None}\PYG{p}{:} \PYG{k}{return} \PYG{l+m+mi}{999999}
+        \PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{startingPosition}
+        \PYG{k}{for} \PYG{n}{action} \PYG{o+ow}{in} \PYG{n}{actions}\PYG{p}{:}
+            \PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy} \PYG{o}{=} \PYG{n}{Actions}\PYG{o}{.}\PYG{n}{directionToVector}\PYG{p}{(}\PYG{n}{action}\PYG{p}{)}
+            \PYG{n}{x}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{x} \PYG{o}{+} \PYG{n}{dx}\PYG{p}{),} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{y} \PYG{o}{+} \PYG{n}{dy}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{walls}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{n}{y}\PYG{p}{]:} \PYG{k}{return} \PYG{l+m+mi}{999999}
+        \PYG{k}{return} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{actions}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: report.aux
+The style file: abbrv.bst
+A level-1 auxiliary file: includefile/frontmatter.aux
+Database file #1: ref.bib
+Warning--to sort, need author, editor, or key in AI
+Warning--empty author and editor in AI
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            504 strings with 3808 characters,
+and the built_in function-call counts, 208 in all, are:
+= -- 19
+> -- 1
+< -- 0
++ -- 1
+- -- 0
+* -- 14
+:= -- 34
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 2
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 13
+empty$ -- 25
+format.name$ -- 0
+if$ -- 46
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 7
+num.names$ -- 0
+pop$ -- 5
+preamble$ -- 1
+purify$ -- 2
+quote$ -- 0
+skip$ -- 6
+stack$ -- 0
+substring$ -- 5
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2
+warning$ -- 2
+while$ -- 0
+width$ -- 2
+write$ -- 11
+(There were 2 warnings)

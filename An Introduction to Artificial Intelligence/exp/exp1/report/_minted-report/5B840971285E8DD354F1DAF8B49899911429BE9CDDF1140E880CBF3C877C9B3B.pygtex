@@ -1,0 +1,157 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}iostream\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}string.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{state\PYGZus{}set}\PYG{p}{[}\PYG{l+m+mi}{99999}\PYG{p}{];}\PYG{c+c1}{//记录综合数据库}
+\PYG{k+kt}{int} \PYG{n}{state\PYGZus{}father}\PYG{p}{[}\PYG{l+m+mi}{99999}\PYG{p}{];}\PYG{c+c1}{//记录产生该状态的父亲状态}
+\PYG{k+kt}{int} \PYG{n}{state\PYGZus{}son}\PYG{p}{[}\PYG{l+m+mi}{99999}\PYG{p}{];}\PYG{c+c1}{//记录产生正确结果的过程之中,某一个状态的后继状态}
+
+\PYG{k+kt}{int} \PYG{n}{next\PYGZus{}state}\PYG{p}{;}\PYG{c+c1}{//记录由状态和规则产生的下一个状态}
+
+\PYG{k}{const} \PYG{k+kt}{int} \PYG{n}{start\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{32200}\PYG{p}{;}\PYG{c+c1}{//用全局变量来表示开始的节点和结束的节点}
+\PYG{k}{const} \PYG{k+kt}{int} \PYG{n}{end\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{22211}\PYG{p}{;}
+
+
+\PYG{k+kt}{int} \PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{];}
+\PYG{k+kt}{int} \PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{];}
+\PYG{k+kt}{void} \PYG{n+nf}{get\PYGZus{}value}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{)}\PYG{c+c1}{//将输入的状态i存储到mat数组之中}
+\PYG{p}{\PYGZob{}}
+    \PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{=}\PYG{n}{i}\PYG{o}{/}\PYG{l+m+mi}{10000}\PYG{p}{;}
+    \PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{10000}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{1000}\PYG{p}{;}
+    \PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{100}\PYG{p}{;}
+    \PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{10}\PYG{p}{;}
+    \PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{10}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n+nf}{get\PYGZus{}value2}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{)}\PYG{c+c1}{//将输入的状态存储到mat2数组之中}
+\PYG{p}{\PYGZob{}}
+    \PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{=}\PYG{n}{i}\PYG{o}{/}\PYG{l+m+mi}{10000}\PYG{p}{;}
+    \PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{10000}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{1000}\PYG{p}{;}
+    \PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{100}\PYG{p}{;}
+    \PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{10}\PYG{p}{;}
+    \PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{10}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k+kt}{void} \PYG{n+nf}{print}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{a}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{b}\PYG{p}{)}\PYG{c+c1}{//打印从状态a到状态b需要执行的操作}
+\PYG{p}{\PYGZob{}}
+    \PYG{n}{get\PYGZus{}value}\PYG{p}{(}\PYG{n}{a}\PYG{p}{);}
+    \PYG{n}{get\PYGZus{}value2}\PYG{p}{(}\PYG{n}{b}\PYG{p}{);}
+    \PYG{c+c1}{//根据状态a与状态b的区别找到猴子需要执行什么操作}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{!=}\PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{])}
+    \PYG{p}{\PYGZob{}}
+       \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}猴子在\PYGZpc{}d抓到香蕉了}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]);}
+       \PYG{k}{return}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{!=}\PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{])}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}猴子在\PYGZpc{}d下箱子了}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]);}\PYG{k}{return}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+       \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+             \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}猴子在\PYGZpc{}d上箱子了}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]);}\PYG{k}{return}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{!=}\PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}
+    \PYG{p}{\PYGZob{}}
+      \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}猴子从\PYGZpc{}d把箱子推到了\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]);}\PYG{k}{return}\PYG{p}{;}
+
+    \PYG{p}{\PYGZcb{}}
+     \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{!=}\PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
+    \PYG{p}{\PYGZob{}}
+      \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}猴子从\PYGZpc{}d移动到了\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{n}{mat2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]);}\PYG{k}{return}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n+nf}{addadd}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{//printf(\PYGZdq{}next\PYGZus{}state=\PYGZpc{}d\PYGZbs{}n\PYGZdq{},next\PYGZus{}state);}
+        \PYG{k}{if}\PYG{p}{(} \PYG{n}{state\PYGZus{}set}\PYG{p}{[}\PYG{n}{next\PYGZus{}state}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{state\PYGZus{}set}\PYG{p}{[}\PYG{n}{next\PYGZus{}state}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{n}{state\PYGZus{}father}\PYG{p}{[}\PYG{n}{next\PYGZus{}state}\PYG{p}{]}\PYG{o}{=}\PYG{n}{i}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int} \PYG{n+nf}{main}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+    \PYG{n}{state\PYGZus{}set}\PYG{p}{[}\PYG{n}{start\PYGZus{}state}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{c+c1}{//将最初的状态加入到综合数据库}
+    \PYG{k}{while}\PYG{p}{(}\PYG{n}{state\PYGZus{}set}\PYG{p}{[}\PYG{n}{end\PYGZus{}state}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{c+c1}{//一直循环直到找到最终状态为止}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{99999}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}\PYG{c+c1}{// 遍历综合数据库中的每一个状态,}
+                                \PYG{c+c1}{// 并且用规则库之中的状态产生新的状态}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{state\PYGZus{}set}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+                \PYG{n}{get\PYGZus{}value}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}\PYG{c+c1}{//将状态进行解码}
+                \PYG{c+c1}{//IF (x, y, z, 0, 0) THEN (w, y, z, 0, 0)}
+                \PYG{c+c1}{//下面利用规则集合中的第一条规则进行状态扩展,后面的同理}
+                \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                     \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{o}{*}\PYG{l+m+mi}{10000}\PYG{o}{+}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{10000}\PYG{p}{;}
+                        \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+                       \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{10000}\PYG{o}{+}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{10000}\PYG{p}{;}
+                      \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+                       \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{3}\PYG{o}{*}\PYG{l+m+mi}{10000}\PYG{o}{+}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{10000}\PYG{p}{;}
+                     \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{c+c1}{//IF (x, y, x, 0, 0) THEN (z, y, z, 0, 0)}
+                 \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{==}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}
+                \PYG{p}{\PYGZob{}}
+                     \PYG{n}{Next\PYGZus{}state}\PYG{o}{=}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{l+m+mi}{1000}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{o}{*}\PYG{l+m+mi}{100}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{o}{*}\PYG{l+m+mi}{10000}\PYG{p}{;}
+                      \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+                       \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{l+m+mi}{1000}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{100}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{10000}\PYG{p}{;}
+                     \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+                        \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{l+m+mi}{1000}\PYG{o}{+}\PYG{l+m+mi}{3}\PYG{o}{*}\PYG{l+m+mi}{100}\PYG{o}{+}\PYG{l+m+mi}{3}\PYG{o}{*}\PYG{l+m+mi}{10000}\PYG{p}{;}
+                      \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{c+c1}{//IF (x, y, x, 0, 0) THEN (x, y, x, 1, 0)}
+                 \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{==}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}
+                \PYG{p}{\PYGZob{}}
+                     \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{/}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{o}{*}\PYG{l+m+mi}{100}\PYG{o}{+}\PYG{l+m+mi}{10}\PYG{p}{;}
+                       \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+
+                \PYG{p}{\PYGZcb{}}
+                \PYG{c+c1}{//IF (x, y, x, 1, 0) THEN (x, y, x, 0, 0)}
+                 \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{==}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{o}{/}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{o}{*}\PYG{l+m+mi}{100}\PYG{p}{;}
+                      \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{c+c1}{//: IF (x, x, x, 1, 0) THEN (x, x, x, 1, 1)}
+                \PYG{k}{if}\PYG{p}{(}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{==}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{==}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{mat}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{next\PYGZus{}state}\PYG{o}{=}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{;}
+                     \PYG{n}{addadd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{c+c1}{//当前状态已经扩展完成了,我们使用2来防止以后扩展该状态}
+                \PYG{n}{state\PYGZus{}set}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{//打印状态序列,利用state\PYGZus{}father中存储的信息,从终点逆序找到最初开始的节点.}
+    \PYG{c+c1}{//在打印正确结果的同时,我们也将信息存储于在state\PYGZus{}son之中,方便我们接下来顺序打印操作序列}
+    \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d\PYGZlt{}\PYGZhy{}\PYGZdq{}}\PYG{p}{,}\PYG{n}{end\PYGZus{}state}\PYG{p}{);}
+    \PYG{k+kt}{int} \PYG{n}{father}\PYG{o}{=}\PYG{n}{state\PYGZus{}father}\PYG{p}{[}\PYG{n}{end\PYGZus{}state}\PYG{p}{];}
+     \PYG{n}{state\PYGZus{}son}\PYG{p}{[}\PYG{n}{father}\PYG{p}{]}\PYG{o}{=}\PYG{n}{end\PYGZus{}state}\PYG{p}{;}
+    \PYG{k}{while}\PYG{p}{(}\PYG{n}{father}\PYG{o}{!=}\PYG{n}{start\PYGZus{}state}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d\PYGZlt{}\PYGZhy{}\PYGZdq{}}\PYG{p}{,}\PYG{n}{father}\PYG{p}{);}
+        \PYG{n}{state\PYGZus{}son}\PYG{p}{[}\PYG{n}{state\PYGZus{}father}\PYG{p}{[}\PYG{n}{father}\PYG{p}{]]}\PYG{o}{=}\PYG{n}{father}\PYG{p}{;}
+        \PYG{n}{father}\PYG{o}{=}\PYG{n}{state\PYGZus{}father}\PYG{p}{[}\PYG{n}{father}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+     \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{start\PYGZus{}state}\PYG{p}{);}
+    \PYG{c+c1}{//下面将猴子需要进行的操作逐行打印出来}
+    \PYG{k+kt}{int} \PYG{n}{index}\PYG{o}{=}\PYG{n}{start\PYGZus{}state}\PYG{p}{;}
+    \PYG{k}{while}\PYG{p}{(}\PYG{n}{index}\PYG{o}{!=}\PYG{n}{end\PYGZus{}state}\PYG{p}{)}
+    \PYG{p}{\PYGZob{}}
+         \PYG{n}{print}\PYG{p}{(}\PYG{n}{index}\PYG{p}{,}\PYG{n}{state\PYGZus{}son}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]);}\PYG{c+c1}{//打印从当前状态到下一个状态需要进行的操作}
+         \PYG{n}{index}\PYG{o}{=}\PYG{n}{state\PYGZus{}son}\PYG{p}{[}\PYG{n}{index}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

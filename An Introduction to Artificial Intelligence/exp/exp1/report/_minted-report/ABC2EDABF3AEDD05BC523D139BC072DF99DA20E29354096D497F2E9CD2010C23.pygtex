@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{ClosestDotSearchAgent}\PYG{p}{(}\PYG{n}{SearchAgent}\PYG{p}{):}
+    \PYG{l+s+s2}{\PYGZdq{}Search for all food using a sequence of searches\PYGZdq{}}
+    \PYG{k}{def} \PYG{n+nf}{registerInitialState}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{state}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{actions} \PYG{o}{=} \PYG{p}{[]}
+        \PYG{n}{currentState} \PYG{o}{=} \PYG{n}{state}
+        \PYG{k}{while}\PYG{p}{(}\PYG{n}{currentState}\PYG{o}{.}\PYG{n}{getFood}\PYG{p}{()}\PYG{o}{.}\PYG{n}{count}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{):}
+            \PYG{n}{nextPathSegment} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{findPathToClosestDot}\PYG{p}{(}\PYG{n}{currentState}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} The missing piece}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{actions} \PYG{o}{+=} \PYG{n}{nextPathSegment}
+            \PYG{k}{for} \PYG{n}{action} \PYG{o+ow}{in} \PYG{n}{nextPathSegment}\PYG{p}{:}
+                \PYG{n}{legal} \PYG{o}{=} \PYG{n}{currentState}\PYG{o}{.}\PYG{n}{getLegalActions}\PYG{p}{()}
+                \PYG{k}{if} \PYG{n}{action} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{legal}\PYG{p}{:}
+                    \PYG{n}{t} \PYG{o}{=} \PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{action}\PYG{p}{),} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{currentState}\PYG{p}{))}
+                    \PYG{k}{raise} \PYG{n+ne}{Exception}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}findPathToClosestDot returned an illegal move: }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s1}{!}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{\PYGZpc{}} \PYG{n}{t}
+                \PYG{n}{currentState} \PYG{o}{=} \PYG{n}{currentState}\PYG{o}{.}\PYG{n}{generateSuccessor}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{action}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{actionIndex} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{k}{print} \PYG{l+s+s1}{\PYGZsq{}Path found with cost }\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s1}{.\PYGZsq{}} \PYG{o}{\PYGZpc{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{actions}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{findPathToClosestDot}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{gameState}\PYG{p}{):}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Returns a path (a list of actions) to the closest dot, starting from}
+\PYG{l+s+sd}{        gameState.}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{c+c1}{\PYGZsh{} Here are some useful elements of the startState}
+        \PYG{n}{startPosition} \PYG{o}{=} \PYG{n}{gameState}\PYG{o}{.}\PYG{n}{getPacmanPosition}\PYG{p}{()}
+        \PYG{n}{food} \PYG{o}{=} \PYG{n}{gameState}\PYG{o}{.}\PYG{n}{getFood}\PYG{p}{()}
+        \PYG{n}{walls} \PYG{o}{=} \PYG{n}{gameState}\PYG{o}{.}\PYG{n}{getWalls}\PYG{p}{()}
+        \PYG{n}{problem} \PYG{o}{=} \PYG{n}{AnyFoodSearchProblem}\PYG{p}{(}\PYG{n}{gameState}\PYG{p}{)}
+
+        \PYG{l+s+s2}{\PYGZdq{}*** YOUR CODE HERE ***\PYGZdq{}}
+        \PYG{n}{path} \PYG{o}{=} \PYG{n}{search}\PYG{o}{.}\PYG{n}{bfs}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{path}
+\end{Verbatim}
