@@ -1,2 +1,6 @@
 all:
-	xelatex --shell-escape report.tex
+all:
+	xelatex --shell-escape report
+	bibtex report
+	xelatex --shell-escape report
+	xelatex --shell-escape report

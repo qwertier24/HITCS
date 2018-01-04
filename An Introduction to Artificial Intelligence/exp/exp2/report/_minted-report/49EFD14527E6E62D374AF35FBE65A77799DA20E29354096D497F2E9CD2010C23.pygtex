@@ -1,0 +1,41 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{itertools}
+\PYG{k}{def} \PYG{n+nf}{cornersHeuristic}\PYG{p}{(}\PYG{n}{state}\PYG{p}{,} \PYG{n}{problem}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    A heuristic for the CornersProblem that you defined.}
+
+\PYG{l+s+sd}{      state:   The current search state}
+\PYG{l+s+sd}{               (a data structure you chose in your search problem)}
+
+\PYG{l+s+sd}{      problem: The CornersProblem instance for this layout.}
+
+\PYG{l+s+sd}{    This function should always return a number that is a lower bound on the}
+\PYG{l+s+sd}{    shortest path from the state to a goal of the problem; i.e.  it should be}
+\PYG{l+s+sd}{    admissible (as well as consistent).}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{corners} \PYG{o}{=} \PYG{n}{problem}\PYG{o}{.}\PYG{n}{corners} \PYG{c+c1}{\PYGZsh{} These are the corner coordinates}
+    \PYG{n}{walls} \PYG{o}{=} \PYG{n}{problem}\PYG{o}{.}\PYG{n}{walls} \PYG{c+c1}{\PYGZsh{} These are the walls of the maze, as a Grid (game.py)}
+
+    \PYG{l+s+s2}{\PYGZdq{}*** YOUR CODE HERE ***\PYGZdq{}}
+    \PYG{k}{def} \PYG{n+nf}{manhattan}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{p2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])} \PYG{o}{+} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{p2}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])}
+    \PYG{n}{minDist} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+    \PYG{n}{cornerState} \PYG{o}{=} \PYG{n}{state}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+    \PYG{c+c1}{\PYGZsh{} 枚举4!=24中排列}
+    \PYG{k}{for} \PYG{n}{perm} \PYG{o+ow}{in} \PYG{n}{itertools}\PYG{o}{.}\PYG{n}{permutations}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{],} \PYG{l+m+mi}{4}\PYG{p}{):}
+        \PYG{n}{dist} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{n}{lastPos} \PYG{o}{=} \PYG{n}{state}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+
+        \PYG{c+c1}{\PYGZsh{} 计算按顺序遍历这四个角落需要的最少步数}
+        \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{perm}\PYG{p}{:}
+            \PYG{k}{if} \PYG{p}{((}\PYG{n}{cornerState} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{i}\PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+                \PYG{n}{dist} \PYG{o}{+=} \PYG{n}{manhattan}\PYG{p}{(}\PYG{n}{corners}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{lastPos}\PYG{p}{)}
+                \PYG{n}{lastPos} \PYG{o}{=} \PYG{n}{corners}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+                \PYG{c+c1}{\PYGZsh{}print corners, perm, cornerState, dist}
+        \PYG{k}{if} \PYG{n}{minDist} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{:}
+            \PYG{n}{minDist} \PYG{o}{=} \PYG{n}{dist}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{minDist} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{minDist}\PYG{p}{,} \PYG{n}{dist}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{minDist}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Default to trivial solution}
+\end{Verbatim}

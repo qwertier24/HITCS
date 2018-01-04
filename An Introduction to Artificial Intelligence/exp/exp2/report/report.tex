@@ -37,7 +37,7 @@
 
 \chapter{简介}
 
-吃豆人项目是加州大学伯克利分校为入门级人工智能课程开发的项目。通过一系列的AI技术来玩吃豆人。但是吃豆人项目不专注于为视频游戏构建AI，恰恰相反这些项目教授使用者AI基础概念，如知情的状态空间搜索，概率推理和强化学习。这些概念是真实世界的应用领域，如自然语言处理，计算机视觉和机器人。
+吃豆人项目\cite{berkeley}是加州大学伯克利分校为入门级人工智能课程开发的项目。通过一系列的AI技术来玩吃豆人。但是吃豆人项目不专注于为视频游戏构建AI，恰恰相反这些项目教授使用者AI基础概念，如知情的状态空间搜索，概率推理和强化学习。这些概念是真实世界的应用领域，如自然语言处理，计算机视觉和机器人。
 
 这些项目允许学生可视化实现的技术的结果。它们还包含代码示例和明确的指示，但不要强迫学生趟过过多的脚手架。最后，吃豆人提供了一个具有挑战性的问题环境，需要创造性的解决方案; 真实世界的AI问题是具有挑战性的，吃豆人也是。
 
@@ -294,22 +294,59 @@
 
 \chapter{算法实现}
 
-\section{实验环境与问题规模}
+\section{实验环境}
+
+\textbf{实验环境：}
+
+\begin{itemize}
+\item CPU:E3-1230 v5
+\item 操作系统：Arch Linux
+\item 内核版本：Linux version 4.14.11-1-ARCH
+\end{itemize}
 
 \section{数据结构}
 
+本实验使用了多种数据结构，包括：
+
+\begin{enumerate}
+\item 栈
+\item 队列
+\item 优先队列
+\item 字典（哈希表）
+\item 列表（线性表）
+\end{enumerate}
+
 \section{实验结果}
+
+实验证明，最终我们使用的方法非常出色，得到了26/25的总分数（满分25，在问题7中得到了1分加分）。
 
 \section{系统中间及最终输出结果}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{figures/result.png}
+  \caption{结果截图}\label{fig:result}
+\end{figure}
+
 \chapter{总结及讨论}
 
+在本次实验的8个问题中，我们明确分工，积极讨论，认真研读课上讲义，广泛查阅资料\cite{AI}。整个实验的难度并不高，因此我们完成得较为迅速。最终的成果令我们十分开心。
+
+令人印象深刻的是在问题7（评分标准如图\ref{fig:problem7}）中，当我们在猜想，实验，推倒，再猜想，再实验，再推倒的过程中，一系列启发式函数要么效果不佳（只能得部分分数），要么不满足可纳性，要么不满足一致性。当我们进行了很多次尝试之后，终于找到了现在这个效果好，且满足两个性质的启发式函数。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{figures/problem7.png}
+  \caption{问题7的评分标准}\label{fig:problem7}
+\end{figure}
+
+完成该实验之后，经过反思，我们首先认为这个实验过程十分有趣，通过补充编写吃豆人这个游戏，来学习人工智能导论的基础知识。加州伯克利分校\cite{berkeley}的这种寓教于乐的方式很值得我们学习。其次，我们对人工智能导论的学习也产生了更浓厚的兴趣，在接下来的时间中，我们会更认真学习人工智能导论课程的知识。
 
 %%%=== 参考文献 ========%%%
 \cleardoublepage\phantomsection
 \addcontentsline{toc}{chapter}{参考文献}
-\begin{thebibliography}{00}
-\end{thebibliography}
+%\bibliographystyle{agsm}
+\bibliography{ref}
 
 %%\include{includefile/backmatter} %%%致谢
 
@@ -317,9 +354,334 @@
 
 \appendix
 
-\chapter{测试}
+\chapter{实验代码}
 
-\section{第一个测试}
+\section{通用搜索算法}
+
+\begin{minted}[fontsize=\small]{Python}
+def unifiedSearch(problem, open, heuristic):
+    closed = set()
+    preDirection = dict()
+    prePosition = dict()
+    f = dict()
+    g = dict()
+    h = dict()
+
+    def getPath(dest, src):
+        # 获得从起点（src）到终点（dest）的路径，由dest向前遍历得到
+        state = dest
+        path = []
+        while state != src:
+            path.append(preDirection[state])
+            state = prePosition[state]
+        path.reverse()
+        return path
+
+    initialState = problem.getStartState()
+    g[initialState] = 0
+    h[initialState] = heuristic(initialState, problem)
+    f[initialState] = g[initialState] + h[initialState]
+    open.push((initialState, f[initialState], None, None))
+
+    while not open.isEmpty():
+        (state, _, prePositionTmp, preDirectionTmp) = open.pop()
+        if state in closed:
+            continue
+        preDirection[state] = preDirectionTmp  # 找到从父状态所转移来的方向
+        prePosition[state] = prePositionTmp  # 找到父状态
+        closed.add(state)
+        if problem.isGoalState(state):  # 到达终点
+            return getPath(state, problem.getStartState())
+        for childState in problem.getSuccessors(state):
+            if childState[0] not in g:  # 子状态的g函数未定义
+                g[childState[0]] = g[state] + childState[2]
+            else:
+                g[childState[0]] = min(g[childState[0]], g[state] + childState[2])
+            if childState[0] not in h:  # 子状态的h函数未定义
+                h[childState[0]] = heuristic(childState[0], problem)
+            if childState[0] not in f:
+                f[childState[0]] = g[childState[0]] + h[childState[0]]
+            else:
+                f[childState[0]] = min(f[childState[0]], g[childState[0]] +
+                                                         h[childState[0]])
+            open.push((childState[0], f[childState[0]], state, childState[1]))
+    return []
+
+def depthFirstSearch(problem):
+    """
+    Search the deepest nodes in the search tree first.
+
+    Your search algorithm needs to return a list of actions that reaches the
+    goal. Make sure to implement a graph search algorithm.
+
+    To get started, you might want to try some of these simple commands to
+    understand the search problem that is being passed in:
+    print "Start:", problem.getStartState()
+    print "Is the start a goal?", problem.isGoalState(problem.getStartState())
+    print "Start's successors:", problem.getSuccessors(problem.getStartState())
+    """
+    return unifiedSearch(problem, util.Stack(), nullHeuristic)
+    return []
+
+def breadthFirstSearch(problem):
+    """Search the shallowest nodes in the search tree first."""
+    return unifiedSearch(problem, util.Queue(), nullHeuristic)
+
+def uniformCostSearch(problem):
+    """Search the node of least total cost first."""
+    return unifiedSearch(problem, util.PriorityQueueWithFunction(lambda x: x[1]),
+                         nullHeuristic)
+
+def nullHeuristic(state, problem=None):
+    """
+    A heuristic function estimates the cost from the current state to the nearest
+    goal in the provided SearchProblem.  This heuristic is trivial.
+    """
+    return 0
+
+def aStarSearch(problem, heuristic=nullHeuristic):
+    """Search the node that has the lowest combined cost and heuristic first."""
+    return unifiedSearch(problem, util.PriorityQueueWithFunction(lambda x: x[1]),
+                         heuristic)
+
+
+# Abbreviations
+bfs = breadthFirstSearch
+dfs = depthFirstSearch
+astar = aStarSearch
+ucs = uniformCostSearch
+\end{minted}
+
+\section{角落问题}
+
+\begin{minted}[fontsize=\small]{Python}
+
+class CornersProblem(search.SearchProblem):
+    """
+    This search problem finds paths through all four corners of a layout.
+
+    You must select a suitable state space and successor function
+    """
+
+    def __init__(self, startingGameState):
+        """
+        Stores the walls, pacman's starting position and corners.
+        """
+        self.walls = startingGameState.getWalls()
+        self.startingPosition = startingGameState.getPacmanPosition()
+        top, right = self.walls.height-2, self.walls.width-2
+        self.corners = ((1,1), (1,top), (right, 1), (right, top))
+        for corner in self.corners:
+            if not startingGameState.hasFood(*corner):
+                print 'Warning: no food in corner ' + str(corner)
+        self._expanded = 0 # DO NOT CHANGE; Number of search nodes expanded
+        # Please add any code here which you would like to use
+        # in initializing the problem
+
+    def getStartState(self):
+        """
+        Returns the start state (in your state space, not the full Pacman state
+        space)
+        """
+        "*** YOUR CODE HERE ***"
+        return (self.startingPosition, 0)
+
+    def isGoalState(self, state):
+        """
+        Returns whether this search state is a goal state of the problem.
+        """
+        "*** YOUR CODE HERE ***"
+        if state[1] == 15:
+            return True
+        else:
+            return False
+
+    def getSuccessors(self, state):
+        """
+        Returns successor states, the actions they require, and a cost of 1.
+
+         As noted in search.py:
+            For a given state, this should return a list of triples, (successor,
+            action, stepCost), where 'successor' is a successor to the current
+            state, 'action' is the action required to get there, and 'stepCost'
+            is the incremental cost of expanding to that successor
+        """
+
+        successors = []
+        for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
+            # Add a successor state to the successor list if the action is legal
+            # Here's a code snippet for figuring out whether a new position hits a wall:
+            #   x,y = currentPosition
+            #   dx, dy = Actions.directionToVector(action)
+            #   nextx, nexty = int(x + dx), int(y + dy)
+            #   hitsWall = self.walls[nextx][nexty]
+
+            "*** YOUR CODE HERE ***"
+            x,y = state[0]
+            dx, dy = Actions.directionToVector(action)
+            nextx, nexty = int(x + dx), int(y + dy)
+            hitsWall = self.walls[nextx][nexty]
+
+            # 获得新的二进制数，表示四个角落的访问状态
+            isCorner = 0
+            for i in xrange(len(self.corners)):
+                corner = self.corners[i]
+                if (nextx, nexty) == corner:
+                    isCorner |= 1 << i
+
+            if not hitsWall: # 没有撞墙
+                successors.append((((nextx,nexty), state[1]|isCorner), action, 1))
+
+        self._expanded += 1 # DO NOT CHANGE
+        return successors
+
+    def getCostOfActions(self, actions):
+        """
+        Returns the cost of a particular sequence of actions.  If those actions
+        include an illegal move, return 999999.  This is implemented for you.
+        """
+        if actions == None: return 999999
+        x,y= self.startingPosition
+        for action in actions:
+            dx, dy = Actions.directionToVector(action)
+            x, y = int(x + dx), int(y + dy)
+            if self.walls[x][y]: return 999999
+        return len(actions)
+
+\end{minted}
+
+\section{角落问题（启发式）}
+
+\begin{minted}[fontsize=\small]{Python}
+
+import itertools
+def cornersHeuristic(state, problem):
+    """
+    A heuristic for the CornersProblem that you defined.
+
+      state:   The current search state
+               (a data structure you chose in your search problem)
+
+      problem: The CornersProblem instance for this layout.
+
+    This function should always return a number that is a lower bound on the
+    shortest path from the state to a goal of the problem; i.e.  it should be
+    admissible (as well as consistent).
+    """
+    corners = problem.corners # These are the corner coordinates
+    walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
+
+    "*** YOUR CODE HERE ***"
+    def manhattan(p1, p2):
+        return abs(p1[0]-p2[0]) + abs(p1[1]-p2[1])
+    minDist = -1
+    cornerState = state[1]
+
+    # 枚举4!=24中排列
+    for perm in itertools.permutations([0,1,2,3], 4):
+        dist = 0
+        lastPos = state[0]
+
+        # 计算按顺序遍历这四个角落需要的最少步数
+        for i in perm:
+            if ((cornerState >> i) & 1) == 0:
+                dist += manhattan(corners[i], lastPos)
+                lastPos = corners[i]
+                #print corners, perm, cornerState, dist
+        if minDist == -1:
+            minDist = dist
+        else:
+            minDist = min(minDist, dist)
+    return max(minDist, 0) # Default to trivial solution
+
+\end{minted}
+
+\section{吃掉所有的豆子}
+
+\begin{minted}[fontsize=\small]{Python}
+
+def foodHeuristic(state, problem):
+    """
+    Your heuristic for the FoodSearchProblem goes here.
+
+    This heuristic must be consistent to ensure correctness.  First, try to come
+    up with an admissible heuristic; almost all admissible heuristics will be
+    consistent as well.
+
+    If using A* ever finds a solution that is worse uniform cost search finds,
+    your heuristic is *not* consistent, and probably not admissible!  On the
+    other hand, inadmissible or inconsistent heuristics may find optimal
+    solutions, so be careful.
+
+    The state is a tuple ( pacmanPosition, foodGrid ) where foodGrid is a Grid
+    (see game.py) of either True or False. You can call foodGrid.asList() to get
+    a list of food coordinates instead.
+
+    If you want access to info like walls, capsules, etc., you can query the
+    problem.  For example, problem.walls gives you a Grid of where the walls
+    are.
+
+    If you want to *store* information to be reused in other calls to the
+    heuristic, there is a dictionary called problem.heuristicInfo that you can
+    use. For example, if you only want to count the walls once and store that
+    value, try: problem.heuristicInfo['wallCount'] = problem.walls.count()
+    Subsequent calls to this heuristic can access
+    problem.heuristicInfo['wallCount']
+    """
+    position, foodGrid = state
+    "*** YOUR CODE HERE ***"
+
+    def manhattan(p1, p2):
+        return abs(p1[0]-p2[0])+abs(p1[1]-p2[1])
+    foodList = foodGrid.asList()
+
+    if len(foodList) == 0:
+        return 0
+    else:
+        # 找到曼哈顿距离最近的
+        farest = max([(manhattan(food, position), food) for food in foodList])
+        # 然后返回准确的最短距离
+        return mazeDistance(position, farest[1], problem.startingGameState)
+
+\end{minted}
+
+\section{次最优搜索}
+
+\begin{minted}[fontsize=\small]{Python}
+
+class ClosestDotSearchAgent(SearchAgent):
+    "Search for all food using a sequence of searches"
+    def registerInitialState(self, state):
+        self.actions = []
+        currentState = state
+        while(currentState.getFood().count() > 0):
+            nextPathSegment = self.findPathToClosestDot(currentState) # The missing piece
+            self.actions += nextPathSegment
+            for action in nextPathSegment:
+                legal = currentState.getLegalActions()
+                if action not in legal:
+                    t = (str(action), str(currentState))
+                    raise Exception, 'findPathToClosestDot returned an illegal move: %s!\n%s' % t
+                currentState = currentState.generateSuccessor(0, action)
+        self.actionIndex = 0
+        print 'Path found with cost %d.' % len(self.actions)
+
+    def findPathToClosestDot(self, gameState):
+        """
+        Returns a path (a list of actions) to the closest dot, starting from
+        gameState.
+        """
+        # Here are some useful elements of the startState
+        startPosition = gameState.getPacmanPosition()
+        food = gameState.getFood()
+        walls = gameState.getWalls()
+        problem = AnyFoodSearchProblem(gameState)
+
+        "*** YOUR CODE HERE ***"
+        path = search.bfs(problem)
+        return path
+
+\end{minted}
 
 \cleardoublepage
 

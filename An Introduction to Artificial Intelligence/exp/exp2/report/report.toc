@@ -1,6 +1,6 @@
 \contentsline {chapter}{摘要}{I}{chapter*.1}
-\contentsline {chapter}{\numberline {\zihao {-2}1\hspace {0.3em}}简介}{1}{chapter.1}
-\contentsline {chapter}{\numberline {\zihao {-2}2\hspace {0.3em}}算法介绍}{3}{chapter.2}
+\contentsline {chapter}{\numberline {\zihao {-2}1\hspace {.3em}}简介}{1}{chapter.1}
+\contentsline {chapter}{\numberline {\zihao {-2}2\hspace {.3em}}算法介绍}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}编写通用搜索算法}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}待解决问题的解释}{3}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}问题的形式化描述}{3}{subsection.2.1.2}
@@ -16,7 +16,7 @@
 \contentsline {section}{\numberline {2.3}角落问题（启发式）}{6}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}待解决问题的解释}{6}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}问题的形式化描述}{6}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}解决方案介绍}{6}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}解决方案介绍}{7}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}所用方法的一般介绍}{7}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}算法伪代码}{7}{subsection.2.3.5}
 \contentsline {section}{\numberline {2.4}吃掉所有的豆子}{7}{section.2.4}
@@ -28,15 +28,19 @@
 \contentsline {section}{\numberline {2.5}次最优搜索}{8}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}待解决问题的解释}{8}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}问题的形式化描述}{8}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}解决方案介绍}{8}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.3}解决方案介绍}{9}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}所用方法的一般介绍}{9}{subsection.2.5.4}
 \contentsline {subsection}{\numberline {2.5.5}算法伪代码}{9}{subsection.2.5.5}
-\contentsline {chapter}{\numberline {\zihao {-2}3\hspace {0.3em}}算法实现}{10}{chapter.3}
-\contentsline {section}{\numberline {3.1}实验环境与问题规模}{10}{section.3.1}
+\contentsline {chapter}{\numberline {\zihao {-2}3\hspace {.3em}}算法实现}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}实验环境}{10}{section.3.1}
 \contentsline {section}{\numberline {3.2}数据结构}{10}{section.3.2}
 \contentsline {section}{\numberline {3.3}实验结果}{10}{section.3.3}
-\contentsline {section}{\numberline {3.4}系统中间及最终输出结果}{10}{section.3.4}
-\contentsline {chapter}{\numberline {\zihao {-2}4\hspace {0.3em}}总结及讨论}{11}{chapter.4}
-\contentsline {chapter}{参考文献}{12}{section*.2}
-\contentsline {chapter}{\numberline {附录 A\hspace {0.3em}}测试}{13}{appendix.A}
-\contentsline {section}{\numberline {A.1}第一个测试}{13}{section.A.1}
+\contentsline {section}{\numberline {3.4}系统中间及最终输出结果}{11}{section.3.4}
+\contentsline {chapter}{\numberline {\zihao {-2}4\hspace {.3em}}总结及讨论}{12}{chapter.4}
+\contentsline {chapter}{参考文献}{13}{section*.4}
+\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}实验代码}{14}{appendix.A}
+\contentsline {section}{\numberline {A.1}通用搜索算法}{14}{section.A.1}
+\contentsline {section}{\numberline {A.2}角落问题}{16}{section.A.2}
+\contentsline {section}{\numberline {A.3}角落问题（启发式）}{18}{section.A.3}
+\contentsline {section}{\numberline {A.4}吃掉所有的豆子}{19}{section.A.4}
+\contentsline {section}{\numberline {A.5}次最优搜索}{20}{section.A.5}

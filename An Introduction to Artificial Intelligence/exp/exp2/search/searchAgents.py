@@ -332,13 +332,14 @@ class CornersProblem(search.SearchProblem):
             nextx, nexty = int(x + dx), int(y + dy)
             hitsWall = self.walls[nextx][nexty]
 
+            # 获得新的二进制数，表示四个角落的访问状态
             isCorner = 0
             for i in xrange(len(self.corners)):
                 corner = self.corners[i]
                 if (nextx, nexty) == corner:
                     isCorner |= 1 << i
 
-            if not hitsWall:
+            if not hitsWall: # 没有撞墙
                 successors.append((((nextx,nexty), state[1]|isCorner), action, 1))
 
         self._expanded += 1 # DO NOT CHANGE
@@ -380,9 +381,13 @@ def cornersHeuristic(state, problem):
         return abs(p1[0]-p2[0]) + abs(p1[1]-p2[1])
     minDist = -1
     cornerState = state[1]
+
+    # 枚举4!=24中排列
     for perm in itertools.permutations([0,1,2,3], 4):
         dist = 0
         lastPos = state[0]
+
+        # 计算按顺序遍历这四个角落需要的最少步数
         for i in perm:
             if ((cornerState >> i) & 1) == 0:
                 dist += manhattan(corners[i], lastPos)
@@ -494,7 +499,9 @@ def foodHeuristic(state, problem):
     if len(foodList) == 0:
         return 0
     else:
+        # 找到曼哈顿距离最近的
         farest = max([(manhattan(food, position), food) for food in foodList])
+        # 然后返回准确的最短距离
         return mazeDistance(position, farest[1], problem.startingGameState)
 
 class ClosestDotSearchAgent(SearchAgent):

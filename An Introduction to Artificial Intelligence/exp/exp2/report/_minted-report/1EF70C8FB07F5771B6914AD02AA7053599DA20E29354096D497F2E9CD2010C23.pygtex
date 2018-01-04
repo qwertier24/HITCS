@@ -1,0 +1,44 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{foodHeuristic}\PYG{p}{(}\PYG{n}{state}\PYG{p}{,} \PYG{n}{problem}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    Your heuristic for the FoodSearchProblem goes here.}
+
+\PYG{l+s+sd}{    This heuristic must be consistent to ensure correctness.  First, try to come}
+\PYG{l+s+sd}{    up with an admissible heuristic; almost all admissible heuristics will be}
+\PYG{l+s+sd}{    consistent as well.}
+
+\PYG{l+s+sd}{    If using A* ever finds a solution that is worse uniform cost search finds,}
+\PYG{l+s+sd}{    your heuristic is *not* consistent, and probably not admissible!  On the}
+\PYG{l+s+sd}{    other hand, inadmissible or inconsistent heuristics may find optimal}
+\PYG{l+s+sd}{    solutions, so be careful.}
+
+\PYG{l+s+sd}{    The state is a tuple ( pacmanPosition, foodGrid ) where foodGrid is a Grid}
+\PYG{l+s+sd}{    (see game.py) of either True or False. You can call foodGrid.asList() to get}
+\PYG{l+s+sd}{    a list of food coordinates instead.}
+
+\PYG{l+s+sd}{    If you want access to info like walls, capsules, etc., you can query the}
+\PYG{l+s+sd}{    problem.  For example, problem.walls gives you a Grid of where the walls}
+\PYG{l+s+sd}{    are.}
+
+\PYG{l+s+sd}{    If you want to *store* information to be reused in other calls to the}
+\PYG{l+s+sd}{    heuristic, there is a dictionary called problem.heuristicInfo that you can}
+\PYG{l+s+sd}{    use. For example, if you only want to count the walls once and store that}
+\PYG{l+s+sd}{    value, try: problem.heuristicInfo[\PYGZsq{}wallCount\PYGZsq{}] = problem.walls.count()}
+\PYG{l+s+sd}{    Subsequent calls to this heuristic can access}
+\PYG{l+s+sd}{    problem.heuristicInfo[\PYGZsq{}wallCount\PYGZsq{}]}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{position}\PYG{p}{,} \PYG{n}{foodGrid} \PYG{o}{=} \PYG{n}{state}
+    \PYG{l+s+s2}{\PYGZdq{}*** YOUR CODE HERE ***\PYGZdq{}}
+
+    \PYG{k}{def} \PYG{n+nf}{manhattan}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{p2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}\PYG{o}{+}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{p2}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])}
+    \PYG{n}{foodList} \PYG{o}{=} \PYG{n}{foodGrid}\PYG{o}{.}\PYG{n}{asList}\PYG{p}{()}
+
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{foodList}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{return} \PYG{l+m+mi}{0}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} 找到曼哈顿距离最近的}
+        \PYG{n}{farest} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{([(}\PYG{n}{manhattan}\PYG{p}{(}\PYG{n}{food}\PYG{p}{,} \PYG{n}{position}\PYG{p}{),} \PYG{n}{food}\PYG{p}{)} \PYG{k}{for} \PYG{n}{food} \PYG{o+ow}{in} \PYG{n}{foodList}\PYG{p}{])}
+        \PYG{c+c1}{\PYGZsh{} 然后返回准确的最短距离}
+        \PYG{k}{return} \PYG{n}{mazeDistance}\PYG{p}{(}\PYG{n}{position}\PYG{p}{,} \PYG{n}{farest}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{problem}\PYG{o}{.}\PYG{n}{startingGameState}\PYG{p}{)}
+\end{Verbatim}
