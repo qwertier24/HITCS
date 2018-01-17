@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n+nf}{sys\PYGZus{}read}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{file} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{;}
+\PYG{k+kt}{char} \PYG{err}{∗}\PYG{n}{p}\PYG{p}{;}
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{argfd}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{f}\PYG{p}{)}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0}\PYG{o}{||}\PYG{n}{argint}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{n}\PYG{p}{)}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0}\PYG{o}{||}\PYG{n}{argptr}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{p}\PYG{p}{,}\PYG{n}{n}\PYG{p}{)}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{return} \PYG{err}{−}\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{k}{return} \PYG{n}{fileread}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{n}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

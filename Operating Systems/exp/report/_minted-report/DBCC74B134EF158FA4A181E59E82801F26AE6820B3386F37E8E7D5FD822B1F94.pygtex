@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int}
+\PYG{n+nf}{Mon\PYGZus{}backtrace}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{**}\PYG{n}{argv}\PYG{p}{,} \PYG{k}{struct} \PYG{n}{Trapframe} \PYG{o}{*}\PYG{n}{tf}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// Your code here.}
+        \PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{;}
+        \PYG{k+kt}{uint32\PYGZus{}t} \PYG{o}{*}\PYG{n}{ebp} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{o}{*}\PYG{p}{)}\PYG{n}{read\PYGZus{}ebp}\PYG{p}{();}
+        \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{eip}\PYG{p}{;}
+        \PYG{k}{struct} \PYG{n}{Eipdebuginfo} \PYG{n}{info}\PYG{p}{;}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Stack backtrace:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{while} \PYG{p}{(}\PYG{n}{ebp} \PYG{o}{!=} \PYG{n+nb}{NULL}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n}{eip} \PYG{o}{=} \PYG{n}{ebp}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{];}
+                \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}  ebp \PYGZpc{}08x  eip \PYGZpc{}08x  args\PYGZdq{}}\PYG{p}{,} \PYG{n}{ebp}\PYG{p}{,} \PYG{n}{eip}\PYG{p}{);}
+                \PYG{n}{debuginfo\PYGZus{}eip}\PYG{p}{(}\PYG{n}{eip}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{info}\PYG{p}{);}
+                \PYG{k+kt}{uint32\PYGZus{}t} \PYG{o}{*}\PYG{n}{args} \PYG{o}{=} \PYG{n}{ebp} \PYG{o}{+} \PYG{l+m+mi}{2}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5}\PYG{p}{;} \PYG{n}{j} \PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{} \PYGZpc{}08x\PYGZdq{}}\PYG{p}{,} \PYG{o}{*}\PYG{p}{(}\PYG{n}{args} \PYG{o}{+} \PYG{n}{j}\PYG{p}{));}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}         \PYGZpc{}s:\PYGZpc{}d: \PYGZdq{}}\PYG{p}{,} \PYG{n}{info}\PYG{p}{.}\PYG{n}{eip\PYGZus{}file}\PYG{p}{,} \PYG{n}{info}\PYG{p}{.}\PYG{n}{eip\PYGZus{}line}\PYG{p}{);}
+                \PYG{k}{for} \PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{info}\PYG{p}{.}\PYG{n}{eip\PYGZus{}fn\PYGZus{}namelen}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+                        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}c\PYGZdq{}}\PYG{p}{,} \PYG{n}{info}\PYG{p}{.}\PYG{n}{eip\PYGZus{}fn\PYGZus{}name}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+                \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}+\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{eip}\PYG{o}{\PYGZhy{}}\PYG{n}{info}\PYG{p}{.}\PYG{n}{eip\PYGZus{}fn\PYGZus{}addr}\PYG{p}{);}
+
+                \PYG{n}{ebp} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{o}{*}\PYG{p}{)(}\PYG{n}{ebp}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]);}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{fdalloc}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{file} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{)\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{fd}\PYG{p}{;}
+\PYG{k}{for}\PYG{p}{(}\PYG{n}{fd} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{fd} \PYG{o}{\PYGZlt{}} \PYG{n}{NOFILE}\PYG{p}{;} \PYG{n}{fd} \PYG{o}{++}\PYG{p}{)\PYGZob{}}
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{proc}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ofile}\PYG{p}{[}\PYG{n}{fd}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+\PYG{n}{proc}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ofile}\PYG{p}{[}\PYG{n}{fd}\PYG{p}{]} \PYG{o}{=} \PYG{n}{f}\PYG{p}{;}
+\PYG{k}{return} \PYG{n}{fd}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{err}{−}\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

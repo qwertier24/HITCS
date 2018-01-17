@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}
+\PYG{n+nf}{mem\PYGZus{}init\PYGZus{}mp}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// Map per\PYGZhy{}CPU stacks starting at KSTACKTOP, for up to \PYGZsq{}NCPU\PYGZsq{} CPUs.}
+    \PYG{c+c1}{//}
+    \PYG{c+c1}{// For CPU i, use the physical memory that \PYGZsq{}percpu\PYGZus{}kstacks[i]\PYGZsq{} refers}
+    \PYG{c+c1}{// to as its kernel stack. CPU i\PYGZsq{}s kernel stack grows down from virtual}
+    \PYG{c+c1}{// address kstacktop\PYGZus{}i = KSTACKTOP \PYGZhy{} i * (KSTKSIZE + KSTKGAP), and is}
+    \PYG{c+c1}{// divided into two pieces, just like the single stack you set up in}
+    \PYG{c+c1}{// mem\PYGZus{}init:}
+    \PYG{c+c1}{//     * [kstacktop\PYGZus{}i \PYGZhy{} KSTKSIZE, kstacktop\PYGZus{}i)}
+    \PYG{c+c1}{//          \PYGZhy{}\PYGZhy{} backed by physical memory}
+    \PYG{c+c1}{//     * [kstacktop\PYGZus{}i \PYGZhy{} (KSTKSIZE + KSTKGAP), kstacktop\PYGZus{}i \PYGZhy{} KSTKSIZE)}
+    \PYG{c+c1}{//          \PYGZhy{}\PYGZhy{} not backed; so if the kernel overflows its stack,}
+    \PYG{c+c1}{//             it will fault rather than overwrite another CPU\PYGZsq{}s stack.}
+    \PYG{c+c1}{//             Known as a \PYGZdq{}guard page\PYGZdq{}.}
+    \PYG{c+c1}{//     Permissions: kernel RW, user NONE}
+    \PYG{c+c1}{//}
+    \PYG{c+c1}{// LAB 4: Your code here:}
+
+    \PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{NCPU}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{boot\PYGZus{}map\PYGZus{}region}\PYG{p}{(}\PYG{n}{kern\PYGZus{}pgdir}\PYG{p}{,}
+                \PYG{n}{KSTACKTOP} \PYG{o}{\PYGZhy{}} \PYG{n}{i} \PYG{o}{*} \PYG{p}{(}\PYG{n}{KSTKSIZE} \PYG{o}{+} \PYG{n}{KSTKGAP}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{KSTKSIZE}\PYG{p}{,}
+                \PYG{n}{KSTKSIZE}\PYG{p}{,}
+                \PYG{n}{PADDR}\PYG{p}{(}\PYG{n}{percpu\PYGZus{}kstacks}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]),}
+                \PYG{n}{PTE\PYGZus{}W}\PYG{o}{|}\PYG{n}{PTE\PYGZus{}P}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

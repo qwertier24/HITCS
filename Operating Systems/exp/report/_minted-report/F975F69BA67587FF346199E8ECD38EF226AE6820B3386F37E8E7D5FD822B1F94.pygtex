@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{case} \PYG{n+nl}{EXEC}\PYG{p}{:}
+  \PYG{n}{ecmd} \PYG{o}{=} \PYG{p}{(}\PYG{k}{struct} \PYG{n}{execcmd}\PYG{o}{*}\PYG{p}{)}\PYG{n}{cmd}\PYG{p}{;}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{ecmd}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{argv}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{n}{exit}\PYG{p}{();}
+  \PYG{n}{exec}\PYG{p}{(}\PYG{n}{ecmd}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{argv}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{ecmd}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{argv}\PYG{p}{);}
+  \PYG{n}{printf}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}exec \PYGZpc{}s failed}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ecmd}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{argv}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]);}
+  \PYG{k}{break}\PYG{p}{;}
+\end{Verbatim}

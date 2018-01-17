@@ -1,0 +1,205 @@
+% !Mode:: "TeX:UTF-8"
+%% 请使用 XeLaTeX 编译本文.
+% \documentclass{WHUBachelor}% 选项 forprint: 交付打印时添加, 避免彩色链接字迹打印偏淡. 即使用下一行:
+\documentclass[forprint]{WHUBachelor}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{minted}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage[lastexercise]{exercise}
+\definecolor{bg}{rgb}{0.85,0.85,0.85}
+\setminted{fontsize=\small,linenos,frame=single,breaklines}
+\linespread{1.8}
+
+\includeonly{lab1, lab2, lab3, lab4, lab5, boot, process, file, struct, eg, io, mem}
+
+\begin{document}
+%%%%%%% 下面的内容, 据实填空.
+
+\title{{\Large 哈尔滨工业大学计算机科学与技术学院\\2017年秋季学期《操作系统》} \\ 实验报告}
+\author{马玉坤}                            % 作者名字
+\Cmajor{计算机科学与技术}                  % 专业中文名
+\Cschoolname{计算机科学与技术系}          % 学院名
+\date{二〇一八年一月}                    % 日期, 要注意和英文日期一致!!
+\teammates{李伟枫,许浩禹,张宁}
+\StudentNumber{1150310618}
+\Phone{18845895386}
+\Csupervisor{曲明成}
+\newcommand{\shell}[1]{\indent\indent\texttt{\footnotesize\# #1}\\}
+
+%-----------------------------------------------------------------------------
+\pdfbookmark[0]{封面}{title}         % 封面页加到 pdf 书签
+\maketitle
+\frontmatter
+\pagenumbering{Roman}              % 正文之前的页码用大写罗马字母编号.
+%-----------------------------------------------------------------------------
+\include{includefile/frontmatter}    % 加入摘要, 申明.
+%==========================把目录加入到书签==============================%%%%%%
+\pdfbookmark[0]{目录}{toc}
+\tableofcontents
+\mainmatter %% 以下是正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%--------main matter-------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{xv6实验系统简述}
+
+xv6\cite{xv6-doc}\cite{xv6-github}是由麻省理工学院(MIT)为操作系统工程的课程(代号6.828),开发的一个教学目的的操作系统。xv6是在x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6)。
+
+截至2017年12月，xv6的最新版本为rev10。
+
+xv6使用GNU C编译器编译，并支持ELF可执行文件格式。（由于OS X不支持ELF可执行文件，所以需要交叉编译器\footnote{cross-compiler}）。
+
+xv6总代码行数只有9299行\footnote{\url{https://pdos.csail.mit.edu/6.828/2017/xv6/xv6-rev10.pdf}}。但是麻雀虽小，五脏俱全，包括了Unix的重要概念和组织结构，因此我个人认为特别适用于本科的操作系统教学中。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{figures/xv6/show.png}
+  \caption{xv6运行截图}\label{fig:xv6:show}
+\end{figure}
+
+\chapter{xv6环境配置}
+
+\section{系统环境}
+
+建议使用32位Linux操作系统，64位Linux操作系统也可以。
+
+这里我在Windows上用Virtual Box安装了Ubuntu 14.04 32位版。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{figures/prep/vm.png}
+  \caption{Ubuntu虚拟机}\label{fig:prep:vm}
+\end{figure}
+
+\section{编译环境}
+
+先用以下命令检查编译环境是否装好。
+
+\shell{objdump -i}
+
+第二行应该是\textbf{elf32-i386}。
+
+\shell{gcc -m32 -print-libgcc-file-name}
+
+这个命令应该打印一些类似于\textbf{The command should print something like /usr/lib/gcc/i486-linux-gnu/version/libgcc.a or /usr/lib/gcc/x86\_64-linux-gnu/version/32/libgcc.a}的东西。
+
+还需要安装GCC（GNU C Compiler）。
+
+\shell{sudo apt-get install -y build-essential gdb}
+
+如果是64位系统，还需要：
+
+\shell{sudo apt-get install gcc-multilib}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{figures/prep/tools.png}
+  \caption{安装所需的软件}\label{fig:prep:tools}
+\end{figure}
+
+\section{安装QEMU}
+
+实验需要用到QEMU模拟器，但是普通的QEMU会出bug，所以需要修改版的。
+
+如图\ref{fig:prep:qemu}，先要使用git clone下修改版QEMU。
+
+\shell{git clone https://github.com/geofft/qemu.git}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{figures/prep/qemu.png}
+  \caption{git clone QEMU的过程}\label{fig:prep:qemu}
+\end{figure}
+
+如图\ref{fig:prep:qemu_config}，运行进入到qemu路径下，使用configure。
+
+\shell{./configure --disable-kvm --target-list="i386-softmmu x86\_64-softmmu"}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{figures/prep/qemu_config.png}
+  \caption{configure QEMU的过程}\label{fig:prep:qemu_config}
+\end{figure}
+
+如图\ref{fig:prep:qemu_make}，使用make命令编译qemu。
+
+\shell{sudo make \&\& sudo make install}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{figures/prep/qemu_make.png}
+  \caption{make QEMU的过程}\label{fig:prep:qemu_make}
+\end{figure}
+
+然后QEMU就安装成功了。
+
+\chapter{实验过程}
+
+\include{lab1}
+
+\include{lab2}
+
+\include{lab3}
+
+\include{lab4}
+
+\include{lab5}
+
+\chapter{xv6实验系统分析}
+
+\include{struct}
+
+\include{boot}
+
+\include{process}
+
+\include{mem}
+
+\include{file}
+
+\include{io}
+
+\include{eg}
+
+\chapter{总结与心得}
+
+个人认为MIT的操作系统实验诚意满满，寓教于乐，寓教于练。我在本实验中收获了很多东西，包括操作系统的原理，甚至也提高了编程和调试的能力。
+
+我认为本实验的优势在于：
+
+\begin{itemize}
+\item 环境配置简单，依赖少，只需要GCC和QEMU
+\item 实验过程精致，没有什么大坑
+\item 基于测试用例，检验自己的代码很简单
+\item 系统简单易读，但是短小精悍，五脏俱全
+\item 内容全面，能让学生对JOS从启动到执行再到调度等等步骤有比较清晰的认识
+\end{itemize}
+
+本实验有一些个人认为可以改进的地方：
+
+\begin{itemize}
+\item 可能由于教学目标的不一致，JOS实验的内容很丰富（相比于HIT的实验），但是所用的许多方法都比较简单暴力\footnote{这样也有好处，就是能让学生容易了解OS整个的运行机制，而不拘泥于某种实现}
+\item 在Windows平台上的配置较为繁琐
+\end{itemize}
+
+%%%=== 参考文献 ========%%%
+\cleardoublepage\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\bibliography{ref}
+
+%%\include{includefile/backmatter} %%%致谢
+
+%%%-------------- 附录. 不需要可以删除.-----------
+
+%% \appendix
+
+%% \chapter{实验代码}
+
+%% \section{通用搜索算法}
+
+%% asd
+
+\cleardoublepage
+\end{document}

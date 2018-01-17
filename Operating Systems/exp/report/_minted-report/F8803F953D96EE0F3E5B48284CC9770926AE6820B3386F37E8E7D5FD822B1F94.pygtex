@@ -1,0 +1,44 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}
+\PYG{n+nf}{sched\PYGZus{}yield}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{idle}\PYG{p}{;}
+
+        \PYG{c+c1}{// Implement simple round\PYGZhy{}robin scheduling.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// Search through \PYGZsq{}envs\PYGZsq{} for an ENV\PYGZus{}RUNNABLE environment in}
+        \PYG{c+c1}{// circular fashion starting just after the env this CPU was}
+        \PYG{c+c1}{// last running.  Switch to the first such environment found.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// If no envs are runnable, but the environment previously}
+        \PYG{c+c1}{// running on this CPU is still ENV\PYGZus{}RUNNING, it\PYGZsq{}s okay to}
+        \PYG{c+c1}{// choose that environment.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// Never choose an environment that\PYGZsq{}s currently running on}
+        \PYG{c+c1}{// another CPU (env\PYGZus{}status == ENV\PYGZus{}RUNNING). If there are}
+        \PYG{c+c1}{// no runnable environments, simply drop through to the code}
+        \PYG{c+c1}{// below to halt the cpu.}
+        \PYG{c+c1}{// LAB 4: Your code here.}
+        \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{envid} \PYG{o}{=} \PYG{n}{curenv}\PYG{o}{?} \PYG{n}{ENVX}\PYG{p}{(}\PYG{n}{thiscpu}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{cpu\PYGZus{}env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}id}\PYG{p}{)}\PYG{o}{:} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{first\PYGZus{}eid} \PYG{o}{=} \PYG{p}{(}\PYG{o}{++}\PYG{n}{envid}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{NENV}\PYG{p}{;}
+        \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{next\PYGZus{}envid}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{;}
+
+        \PYG{c+c1}{// case: 进程可运行}
+        \PYG{k}{for} \PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{NENV}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+          \PYG{n}{next\PYGZus{}envid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{first\PYGZus{}eid}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{NENV}\PYG{p}{;}
+          \PYG{k}{if} \PYG{p}{(}\PYG{n}{envs}\PYG{p}{[}\PYG{n}{next\PYGZus{}envid}\PYG{p}{].}\PYG{n}{env\PYGZus{}status} \PYG{o}{==} \PYG{n}{ENV\PYGZus{}RUNNABLE}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{env\PYGZus{}run}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{envs}\PYG{p}{[}\PYG{n}{next\PYGZus{}envid}\PYG{p}{]);}
+            \PYG{k}{break}\PYG{p}{;}
+          \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{// case: 进程在运行}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{curenv} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}status} \PYG{o}{==} \PYG{n}{ENV\PYGZus{}RUNNING}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+          \PYG{n}{env\PYGZus{}run}\PYG{p}{(}\PYG{n}{curenv}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{// sched\PYGZus{}halt never returns}
+        \PYG{n}{sched\PYGZus{}halt}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c}{\PYGZsh{} Set up the stack pointer and call into C.}
+  \PYG{n+nf}{movl}    \PYG{n+no}{\PYGZdl{}start}\PYG{p}{,} \PYG{n+nv}{\PYGZpc{}esp}
+  \PYG{n+nf}{call} \PYG{n+no}{bootmain}
+\end{Verbatim}

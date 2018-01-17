@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Commit to the user image.}
+  \PYG{n}{oldpgdir} \PYG{o}{=} \PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{pgdir}\PYG{p}{;}
+  \PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{pgdir} \PYG{o}{=} \PYG{n}{pgdir}\PYG{p}{;}
+  \PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{sz} \PYG{o}{=} \PYG{n}{sz}\PYG{p}{;}
+  \PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{eip} \PYG{o}{=} \PYG{n}{elf}\PYG{p}{.}\PYG{n}{entry}\PYG{p}{;}  \PYG{c+c1}{// main}
+  \PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{esp} \PYG{o}{=} \PYG{n}{sp}\PYG{p}{;}
+  \PYG{n}{switchuvm}\PYG{p}{(}\PYG{n}{curproc}\PYG{p}{);}
+  \PYG{n}{freevm}\PYG{p}{(}\PYG{n}{oldpgdir}\PYG{p}{);}
+  \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\end{Verbatim}

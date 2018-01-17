@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{void}
+\PYG{n+nf}{pgfault}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{UTrapframe} \PYG{o}{*}\PYG{n}{utf}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{addr} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)} \PYG{n}{utf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{utf\PYGZus{}fault\PYGZus{}va}\PYG{p}{;}
+    \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{err} \PYG{o}{=} \PYG{n}{utf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{utf\PYGZus{}err}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{;}
+    \PYG{n}{pte\PYGZus{}t} \PYG{n}{pte} \PYG{o}{=} \PYG{p}{((}\PYG{n}{pte\PYGZus{}t} \PYG{o}{*}\PYG{p}{)} \PYG{n}{uvpt}\PYG{p}{)[}\PYG{n}{PGNUM}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{)];}
+    \PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{p}{(} \PYG{p}{(}\PYG{n}{err} \PYG{o}{\PYGZam{}} \PYG{n}{FEC\PYGZus{}WR}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{pte} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}COW}\PYG{p}{)}\PYG{o}{!=}\PYG{l+m+mi}{0} \PYG{p}{))\PYGZob{}}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}pgfault: not write and not a COW page\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{addr} \PYG{o}{=} \PYG{n}{ROUNDDOWN}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{,} \PYG{n}{PGSIZE}\PYG{p}{);}
+    \PYG{n}{envid\PYGZus{}t} \PYG{n}{envid} \PYG{o}{=} \PYG{n}{sys\PYGZus{}getenvid}\PYG{p}{();}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}page\PYGZus{}alloc}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{n}{PFTEMP}\PYG{p}{,} \PYG{n}{PTE\PYGZus{}P} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}W}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}pgfault: \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+    \PYG{n}{memcpy}\PYG{p}{(}\PYG{n}{PFTEMP}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{,} \PYG{n}{PGSIZE}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}page\PYGZus{}map}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{n}{PFTEMP}\PYG{p}{,} \PYG{n}{envid}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{,} \PYG{n}{PTE\PYGZus{}P} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}W}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}pgfault: \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}page\PYGZus{}unmap}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{n}{PFTEMP}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}pgfault: \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+    \PYG{k}{return}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

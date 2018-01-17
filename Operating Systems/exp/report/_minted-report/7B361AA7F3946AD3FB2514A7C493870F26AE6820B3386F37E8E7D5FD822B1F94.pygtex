@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Close all open files.}
+  \PYG{k}{for}\PYG{p}{(}\PYG{n}{fd} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{fd} \PYG{o}{\PYGZlt{}} \PYG{n}{NOFILE}\PYG{p}{;} \PYG{n}{fd}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{ofile}\PYG{p}{[}\PYG{n}{fd}\PYG{p}{])\PYGZob{}}
+      \PYG{n}{fileclose}\PYG{p}{(}\PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{ofile}\PYG{p}{[}\PYG{n}{fd}\PYG{p}{]);}
+      \PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{ofile}\PYG{p}{[}\PYG{n}{fd}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

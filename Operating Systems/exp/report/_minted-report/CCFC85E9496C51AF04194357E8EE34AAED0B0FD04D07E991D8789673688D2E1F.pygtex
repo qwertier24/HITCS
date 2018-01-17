@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{\PYGZdl{}(OBJDIR)/boot/boot}\PYG{o}{:} \PYG{k}{\PYGZdl{}(}\PYG{n+nv}{BOOT\PYGZus{}OBJS}\PYG{k}{)}
+    @echo + ld boot/boot
+    \PYG{k}{\PYGZdl{}(}V\PYG{k}{)\PYGZdl{}(}LD\PYG{k}{)} \PYG{k}{\PYGZdl{}(}LDFLAGS\PYG{k}{)} \PYGZhy{}N \PYGZhy{}e start \PYGZhy{}Ttext 0x7C00 \PYGZhy{}o \PYG{n+nv}{\PYGZdl{}@}.out \PYGZdl{}\PYGZca{}
+    \PYG{k}{\PYGZdl{}(}V\PYG{k}{)\PYGZdl{}(}OBJDUMP\PYG{k}{)} \PYGZhy{}S \PYG{n+nv}{\PYGZdl{}@}.out \PYGZgt{}\PYG{n+nv}{\PYGZdl{}@}.asm
+    \PYG{k}{\PYGZdl{}(}V\PYG{k}{)\PYGZdl{}(}OBJCOPY\PYG{k}{)} \PYGZhy{}S \PYGZhy{}O binary \PYGZhy{}j .text \PYG{n+nv}{\PYGZdl{}@}.out \PYG{n+nv}{\PYGZdl{}@}
+    \PYG{k}{\PYGZdl{}(}V\PYG{k}{)}perl boot/sign.pl \PYG{k}{\PYGZdl{}(}OBJDIR\PYG{k}{)}/boot/boot
+\end{Verbatim}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k}{struct} \PYG{n}{cpu} \PYG{o}{*}\PYG{n}{c} \PYG{o}{=} \PYG{n}{mycpu}\PYG{p}{();}
+  \PYG{n}{c}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{proc} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\end{Verbatim}

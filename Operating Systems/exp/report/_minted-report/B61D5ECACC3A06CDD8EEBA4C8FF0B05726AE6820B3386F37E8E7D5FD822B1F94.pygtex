@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Check ELF header}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{readi}\PYG{p}{(}\PYG{n}{ip}\PYG{p}{,} \PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)}\PYG{o}{\PYGZam{}}\PYG{n}{elf}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{elf}\PYG{p}{))} \PYG{o}{!=} \PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{elf}\PYG{p}{))}
+    \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{elf}\PYG{p}{.}\PYG{n}{magic} \PYG{o}{!=} \PYG{n}{ELF\PYGZus{}MAGIC}\PYG{p}{)}
+    \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+\end{Verbatim}

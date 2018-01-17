@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{read} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{fd}\PYG{p}{,} \PYG{k+kt}{char}\PYG{o}{*} \PYG{n}{buf}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{len}\PYG{p}{);}
+\PYG{n}{write} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{fd}\PYG{p}{,} \PYG{k+kt}{char}\PYG{o}{*} \PYG{n}{buf}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{len}\PYG{p}{);}
+\PYG{n}{stat} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{fd}\PYG{p}{,} \PYG{k}{struct} \PYG{n}{stat} \PYG{o}{*} \PYG{p}{);}
+\PYG{n}{dup} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{fd}\PYG{p}{);}
+\PYG{n}{close} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{fd}\PYG{p}{);}
+\end{Verbatim}

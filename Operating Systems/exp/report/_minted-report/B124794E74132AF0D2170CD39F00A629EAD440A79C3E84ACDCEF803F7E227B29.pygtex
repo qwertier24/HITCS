@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{l+s+se}{\PYGZbs{}c}md\PYG{o}{\PYGZob{}}objdump \PYGZhy{}i\PYG{o}{\PYGZcb{}}
+  \PYG{l+s+se}{\PYGZbs{}c}md\PYG{o}{\PYGZob{}}gcc \PYGZhy{}m32 \PYGZhy{}print\PYGZhy{}libgcc\PYGZhy{}file\PYGZhy{}name\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

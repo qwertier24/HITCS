@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Parent might be sleeping in wait().}
+  \PYG{n}{wakeup1}\PYG{p}{(}\PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent}\PYG{p}{);}
+\end{Verbatim}

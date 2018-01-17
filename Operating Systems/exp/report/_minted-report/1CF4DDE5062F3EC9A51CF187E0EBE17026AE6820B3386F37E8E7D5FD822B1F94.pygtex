@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{state} \PYG{o}{=} \PYG{n}{EMBRYO}\PYG{p}{;}
+  \PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{pid} \PYG{o}{=} \PYG{n}{nextpid}\PYG{o}{++}\PYG{p}{;}
+\end{Verbatim}

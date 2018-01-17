@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Setup code for APs}
+\PYG{k+kt}{void}
+\PYG{n+nf}{mp\PYGZus{}main}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// We are in high EIP now, safe to switch to kern\PYGZus{}pgdir}
+    \PYG{n}{lcr3}\PYG{p}{(}\PYG{n}{PADDR}\PYG{p}{(}\PYG{n}{kern\PYGZus{}pgdir}\PYG{p}{));}
+    \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}SMP: CPU \PYGZpc{}d starting}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{cpunum}\PYG{p}{());}
+
+    \PYG{n}{lapic\PYGZus{}init}\PYG{p}{();}
+    \PYG{n}{env\PYGZus{}init\PYGZus{}percpu}\PYG{p}{();}
+    \PYG{n}{trap\PYGZus{}init\PYGZus{}percpu}\PYG{p}{();}
+    \PYG{n}{xchg}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{thiscpu}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{cpu\PYGZus{}status}\PYG{p}{,} \PYG{n}{CPU\PYGZus{}STARTED}\PYG{p}{);} \PYG{c+c1}{// tell boot\PYGZus{}aps() we\PYGZsq{}re up}
+
+    \PYG{c+c1}{// Now that we have finished some basic setup, call sched\PYGZus{}yield()}
+    \PYG{c+c1}{// to start running processes on this CPU.  But make sure that}
+    \PYG{c+c1}{// only one CPU can enter the scheduler at a time!}
+    \PYG{c+c1}{//}
+    \PYG{c+c1}{// Your code here:}
+
+    \PYG{n}{lock\PYGZus{}kernel}\PYG{p}{();}  \PYG{c+c1}{// 锁定内核}
+    \PYG{n}{sched\PYGZus{}yield}\PYG{p}{();}  \PYG{c+c1}{// 调用轮换调度算法}
+
+    \PYG{c+c1}{// Remove this after you finish Exercise 4}
+    \PYG{c+c1}{// for (;;);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

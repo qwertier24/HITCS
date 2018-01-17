@@ -1,0 +1,1 @@
+for /f "delims=" %%a in ('dir /b/s/a-d *.tmp') do rename "%%a" *.png

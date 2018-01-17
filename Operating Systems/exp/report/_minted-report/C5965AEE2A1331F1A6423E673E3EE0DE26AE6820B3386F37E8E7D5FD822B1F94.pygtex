@@ -1,0 +1,244 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Allocate a new environment.}
+\PYG{c+c1}{// Returns envid of new environment, or \PYGZlt{} 0 on error.  Errors are:}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}NO\PYGZus{}FREE\PYGZus{}ENV if no free environment is available.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}NO\PYGZus{}MEM on memory exhaustion.}
+\PYG{k}{static} \PYG{n}{envid\PYGZus{}t}
+\PYG{n+nf}{sys\PYGZus{}exofork}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// Create the new environment with env\PYGZus{}alloc(), from kern/env.c.}
+        \PYG{c+c1}{// It should be left as env\PYGZus{}alloc created it, except that}
+        \PYG{c+c1}{// status is set to ENV\PYGZus{}NOT\PYGZus{}RUNNABLE, and the register set is copied}
+        \PYG{c+c1}{// from the current environment \PYGZhy{}\PYGZhy{} but tweaked so sys\PYGZus{}exofork}
+        \PYG{c+c1}{// will appear to return 0.}
+
+        \PYG{c+c1}{// LAB 4: Your code here.}
+
+    \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{env}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{rtn} \PYG{o}{=} \PYG{n}{env\PYGZus{}alloc}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{env}\PYG{p}{,} \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}id}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{return} \PYG{n}{rtn}\PYG{p}{;}
+
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}status} \PYG{o}{=} \PYG{n}{ENV\PYGZus{}NOT\PYGZus{}RUNNABLE}\PYG{p}{;}
+    \PYG{n}{memmove}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}tf}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}tf}\PYG{p}{,} \PYG{k}{sizeof}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{Trapframe}\PYG{p}{));}
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}tf}\PYG{p}{.}\PYG{n}{tf\PYGZus{}regs}\PYG{p}{.}\PYG{n}{reg\PYGZus{}eax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+    \PYG{k}{return} \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}id}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// Set envid\PYGZsq{}s env\PYGZus{}status to status, which must be ENV\PYGZus{}RUNNABLE}
+\PYG{c+c1}{// or ENV\PYGZus{}NOT\PYGZus{}RUNNABLE.}
+\PYG{c+c1}{//}
+\PYG{c+c1}{// Returns 0 on success, \PYGZlt{} 0 on error.  Errors are:}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}BAD\PYGZus{}ENV if environment envid doesn\PYGZsq{}t currently exist,}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZca{}\PYGZca{}Ior the caller doesn\PYGZsq{}t have permission to change envid.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}INVAL if status is not a valid status for an environment.}
+\PYG{k}{static} \PYG{k+kt}{int}
+\PYG{n+nf}{sys\PYGZus{}env\PYGZus{}set\PYGZus{}status}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{n}{envid}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{status}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// Hint: Use the \PYGZsq{}envid2env\PYGZsq{} function from kern/env.c to translate an}
+        \PYG{c+c1}{// envid to a struct Env.}
+        \PYG{c+c1}{// You should set envid2env\PYGZsq{}s third argument to 1, which will}
+        \PYG{c+c1}{// check whether the current environment has permission to set}
+        \PYG{c+c1}{// envid\PYGZsq{}s status.}
+
+        \PYG{c+c1}{// LAB 4: Your code here.}
+
+    \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{env}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{rtn}\PYG{p}{;}
+
+    \PYG{n}{rtn} \PYG{o}{=} \PYG{n}{envid2env}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{env}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}env\PYGZus{}set\PYGZus{}status: envid2env}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{n}{rtn}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{status} \PYG{o}{!=} \PYG{n}{ENV\PYGZus{}RUNNABLE} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{status} \PYG{o}{!=} \PYG{n}{ENV\PYGZus{}NOT\PYGZus{}RUNNABLE}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}env\PYGZus{}set\PYGZus{}status: invalid status}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}status} \PYG{o}{=} \PYG{n}{status}\PYG{p}{;}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+        \PYG{c+c1}{//panic(\PYGZdq{}sys\PYGZus{}env\PYGZus{}set\PYGZus{}status not implemented\PYGZdq{});}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// Allocate a page of memory and map it at \PYGZsq{}va\PYGZsq{} with permission}
+\PYG{c+c1}{// \PYGZsq{}perm\PYGZsq{} in the address space of \PYGZsq{}envid\PYGZsq{}.}
+\PYG{c+c1}{// The page\PYGZsq{}s contents are set to 0.}
+\PYG{c+c1}{// If a page is already mapped at \PYGZsq{}va\PYGZsq{}, that page is unmapped as a}
+\PYG{c+c1}{// side effect.}
+\PYG{c+c1}{//}
+\PYG{c+c1}{// perm \PYGZhy{}\PYGZhy{} PTE\PYGZus{}U | PTE\PYGZus{}P must be set, PTE\PYGZus{}AVAIL | PTE\PYGZus{}W may or may not be set,}
+\PYG{c+c1}{//         but no other bits may be set.  See PTE\PYGZus{}SYSCALL in inc/mmu.h.}
+\PYG{c+c1}{//}
+\PYG{c+c1}{// Return 0 on success, \PYGZlt{} 0 on error.  Errors are:}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}BAD\PYGZus{}ENV if environment envid doesn\PYGZsq{}t currently exist,}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZca{}\PYGZca{}Ior the caller doesn\PYGZsq{}t have permission to change envid.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}INVAL if va \PYGZgt{}= UTOP, or va is not page\PYGZhy{}aligned.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}INVAL if perm is inappropriate (see above).}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}NO\PYGZus{}MEM if there\PYGZsq{}s no memory to allocate the new page,}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZca{}\PYGZca{}Ior to allocate any necessary page tables.}
+\PYG{k}{static} \PYG{k+kt}{int}
+\PYG{n+nf}{sys\PYGZus{}page\PYGZus{}alloc}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{n}{envid}\PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{va}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{perm}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// Hint: This function is a wrapper around page\PYGZus{}alloc() and}
+        \PYG{c+c1}{//   page\PYGZus{}insert() from kern/pmap.c.}
+        \PYG{c+c1}{//   Most of the new code you write should be to check the}
+        \PYG{c+c1}{//   parameters for correctness.}
+        \PYG{c+c1}{//   If page\PYGZus{}insert() fails, remember to free the page you}
+        \PYG{c+c1}{//   allocated!}
+
+        \PYG{c+c1}{// LAB 4: Your code here.}
+    \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{env}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{rtn}\PYG{p}{;}
+
+    \PYG{n}{rtn} \PYG{o}{=} \PYG{n}{envid2env}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{env}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}alloc: envid2env}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{n}{rtn}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{va} \PYG{o}{\PYGZgt{}=} \PYG{n}{UTOP} \PYG{o}{||} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{va} \PYG{o}{\PYGZpc{}} \PYG{n}{PGSIZE} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}alloc: invalid boundary}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{perm} \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}P}\PYG{p}{))} \PYG{o}{!=} \PYG{p}{(}\PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}P}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}alloc: PTE\PYGZus{}U | PTE\PYGZus{}P are not set}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{perm} \PYG{o}{\PYGZam{}} \PYG{o}{\PYGZti{}}\PYG{n}{PTE\PYGZus{}SYSCALL}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}alloc: invalid perm}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{struct} \PYG{n}{PageInfo} \PYG{o}{*}\PYG{n}{pp} \PYG{o}{=} \PYG{n}{page\PYGZus{}alloc}\PYG{p}{(}\PYG{n}{ALLOC\PYGZus{}ZERO}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{pp}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}alloc: page\PYGZus{}alloc}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}NO\PYGZus{}MEM}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{rtn} \PYG{o}{=} \PYG{n}{page\PYGZus{}insert}\PYG{p}{(}\PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgdir}\PYG{p}{,} \PYG{n}{pp}\PYG{p}{,} \PYG{n}{va}\PYG{p}{,} \PYG{n}{perm}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{page\PYGZus{}free}\PYG{p}{(}\PYG{n}{pp}\PYG{p}{);}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}alloc: page\PYGZus{}insert}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{n}{rtn}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{c+c1}{//panic(\PYGZdq{}sys\PYGZus{}page\PYGZus{}alloc not implemented\PYGZdq{});}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// Map the page of memory at \PYGZsq{}srcva\PYGZsq{} in srcenvid\PYGZsq{}s address space}
+\PYG{c+c1}{// at \PYGZsq{}dstva\PYGZsq{} in dstenvid\PYGZsq{}s address space with permission \PYGZsq{}perm\PYGZsq{}.}
+\PYG{c+c1}{// Perm has the same restrictions as in sys\PYGZus{}page\PYGZus{}alloc, except}
+\PYG{c+c1}{// that it also must not grant write access to a read\PYGZhy{}only}
+\PYG{c+c1}{// page.}
+\PYG{c+c1}{//}
+\PYG{c+c1}{// Return 0 on success, \PYGZlt{} 0 on error.  Errors are:}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}BAD\PYGZus{}ENV if srcenvid and/or dstenvid doesn\PYGZsq{}t currently exist,}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZca{}\PYGZca{}Ior the caller doesn\PYGZsq{}t have permission to change one of them.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}INVAL if srcva \PYGZgt{}= UTOP or srcva is not page\PYGZhy{}aligned,}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZca{}\PYGZca{}Ior dstva \PYGZgt{}= UTOP or dstva is not page\PYGZhy{}aligned.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}INVAL is srcva is not mapped in srcenvid\PYGZsq{}s address space.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}INVAL if perm is inappropriate (see sys\PYGZus{}page\PYGZus{}alloc).}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}INVAL if (perm \PYGZam{} PTE\PYGZus{}W), but srcva is read\PYGZhy{}only in srcenvid\PYGZsq{}s}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZca{}\PYGZca{}Iaddress space.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}NO\PYGZus{}MEM if there\PYGZsq{}s no memory to allocate any necessary page tables.}
+\PYG{k}{static} \PYG{k+kt}{int}
+\PYG{n+nf}{sys\PYGZus{}page\PYGZus{}map}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{n}{srcenvid}\PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{srcva}\PYG{p}{,}
+             \PYG{n}{envid\PYGZus{}t} \PYG{n}{dstenvid}\PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{dstva}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{perm}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// Hint: This function is a wrapper around page\PYGZus{}lookup() and}
+        \PYG{c+c1}{//   page\PYGZus{}insert() from kern/pmap.c.}
+        \PYG{c+c1}{//   Again, most of the new code you write should be to check the}
+        \PYG{c+c1}{//   parameters for correctness.}
+        \PYG{c+c1}{//   Use the third argument to page\PYGZus{}lookup() to}
+        \PYG{c+c1}{//   check the current permissions on the page.}
+
+        \PYG{c+c1}{// LAB 4: Your code here.}
+    \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{se}\PYG{p}{,} \PYG{o}{*}\PYG{n}{de}\PYG{p}{;}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{envid2env}\PYG{p}{(}\PYG{n}{srcenvid}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{se}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+            \PYG{o}{||} \PYG{n}{envid2env}\PYG{p}{(}\PYG{n}{dstenvid}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{de}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}map: E\PYGZus{}BAD\PYGZus{}ENV}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}BAD\PYGZus{}ENV}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{srcva} \PYG{o}{\PYGZgt{}=} \PYG{n}{UTOP}
+            \PYG{o}{||} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{dstva} \PYG{o}{\PYGZgt{}=} \PYG{n}{UTOP}
+            \PYG{o}{||} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{srcva} \PYG{o}{\PYGZpc{}} \PYG{n}{PGSIZE} \PYG{o}{!=} \PYG{l+m+mi}{0}
+            \PYG{o}{||} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{dstva} \PYG{o}{\PYGZpc{}} \PYG{n}{PGSIZE} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}map: invalid boundary or va size, \PYGZpc{}d, \PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{srcva}\PYG{p}{,} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{dstva}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{perm} \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}P}\PYG{p}{))} \PYG{o}{!=} \PYG{p}{(}\PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}P}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}map: PTE\PYGZus{}U | PTE\PYGZus{}P are not set}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+cm}{/*}
+\PYG{c+cm}{    if ((perm \PYGZam{} \PYGZti{}PTE\PYGZus{}SYSCALL) != 0) \PYGZob{}}
+\PYG{c+cm}{        cprintf(\PYGZdq{}sys\PYGZus{}page\PYGZus{}map: invalid perm\PYGZbs{}n\PYGZdq{});}
+\PYG{c+cm}{        return \PYGZhy{}E\PYGZus{}INVAL;}
+\PYG{c+cm}{    \PYGZcb{}}
+\PYG{c+cm}{    */}
+
+    \PYG{n}{pte\PYGZus{}t} \PYG{o}{*}\PYG{n}{pte}\PYG{p}{;}
+    \PYG{k}{struct} \PYG{n}{PageInfo} \PYG{o}{*}\PYG{n}{pp} \PYG{o}{=} \PYG{n}{page\PYGZus{}lookup}\PYG{p}{(}\PYG{n}{se}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgdir}\PYG{p}{,} \PYG{n}{srcva}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{pte}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{pp}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}map: map not found}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{perm} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}W}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{p}{(}\PYG{o}{*}\PYG{n}{pte} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}W}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}map: invalid PTE\PYGZus{}W}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k+kt}{int} \PYG{n}{rtn} \PYG{o}{=} \PYG{n}{page\PYGZus{}insert}\PYG{p}{(}\PYG{n}{de}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgdir}\PYG{p}{,} \PYG{n}{pp}\PYG{p}{,} \PYG{n}{dstva}\PYG{p}{,} \PYG{n}{perm}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}map: page\PYGZus{}insert}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{n}{rtn}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{c+c1}{// panic(\PYGZdq{}sys\PYGZus{}page\PYGZus{}map not implemented\PYGZdq{});}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// Unmap the page of memory at \PYGZsq{}va\PYGZsq{} in the address space of \PYGZsq{}envid\PYGZsq{}.}
+\PYG{c+c1}{// If no page is mapped, the function silently succeeds.}
+\PYG{c+c1}{//}
+\PYG{c+c1}{// Return 0 on success, \PYGZlt{} 0 on error.  Errors are:}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}BAD\PYGZus{}ENV if environment envid doesn\PYGZsq{}t currently exist,}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZca{}\PYGZca{}Ior the caller doesn\PYGZsq{}t have permission to change envid.}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}INVAL if va \PYGZgt{}= UTOP, or va is not page\PYGZhy{}aligned.}
+\PYG{k}{static} \PYG{k+kt}{int}
+\PYG{n+nf}{sys\PYGZus{}page\PYGZus{}unmap}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{n}{envid}\PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{va}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// Hint: This function is a wrapper around page\PYGZus{}remove().}
+
+        \PYG{c+c1}{// LAB 4: Your code here.}
+    \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{env}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{rtn}\PYG{p}{;}
+
+    \PYG{n}{rtn} \PYG{o}{=} \PYG{n}{envid2env}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{env}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}unmap: envid2env}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{n}{rtn}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{va} \PYG{o}{\PYGZgt{}=} \PYG{n}{UTOP} \PYG{o}{||} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{va} \PYG{o}{\PYGZpc{}} \PYG{n}{PGSIZE} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}page\PYGZus{}unmap: invalid boundary}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{page\PYGZus{}remove}\PYG{p}{(}\PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgdir}\PYG{p}{,} \PYG{n}{va}\PYG{p}{);}
+
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{c+c1}{// panic(\PYGZdq{}sys\PYGZus{}page\PYGZus{}unmap not implemented\PYGZdq{});}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

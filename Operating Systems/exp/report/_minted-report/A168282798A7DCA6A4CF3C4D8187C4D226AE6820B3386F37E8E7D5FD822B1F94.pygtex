@@ -1,0 +1,40 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{o}{*}
+\PYG{n+nf}{mmio\PYGZus{}map\PYGZus{}region}\PYG{p}{(}\PYG{n}{physaddr\PYGZus{}t} \PYG{n}{pa}\PYG{p}{,} \PYG{k+kt}{size\PYGZus{}t} \PYG{n}{size}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// Where to start the next region.  Initially, this is the}
+    \PYG{c+c1}{// beginning of the MMIO region.  Because this is static, its}
+    \PYG{c+c1}{// (just like nextfree in boot\PYGZus{}alloc).}
+    \PYG{k}{static} \PYG{k+kt}{uintptr\PYGZus{}t} \PYG{n}{base} \PYG{o}{=} \PYG{n}{MMIOBASE}\PYG{p}{;}
+
+    \PYG{c+c1}{// Reserve size bytes of virtual memory starting at base and}
+    \PYG{c+c1}{// map physical pages [pa,pa+size) to virtual addresses}
+    \PYG{c+c1}{// [base,base+size).  Since this is device memory and not}
+    \PYG{c+c1}{// regular DRAM, you\PYGZsq{}ll have to tell the CPU that it isn\PYGZsq{}t}
+    \PYG{c+c1}{// safe to cache access to this memory.  Luckily, the page}
+    \PYG{c+c1}{// tables provide bits for this purpose; simply create the}
+    \PYG{c+c1}{// mapping with PTE\PYGZus{}PCD|PTE\PYGZus{}PWT (cache\PYGZhy{}disable and}
+    \PYG{c+c1}{// write\PYGZhy{}through) in addition to PTE\PYGZus{}W.  (If you\PYGZsq{}re interested}
+    \PYG{c+c1}{// in more details on this, see section 10.5 of IA32 volume}
+    \PYG{c+c1}{// 3A.)}
+    \PYG{c+c1}{//}
+    \PYG{c+c1}{// Be sure to round size up to a multiple of PGSIZE and to}
+    \PYG{c+c1}{// handle if this reservation would overflow MMIOLIM (it\PYGZsq{}s}
+    \PYG{c+c1}{// okay to simply panic if this happens).}
+    \PYG{c+c1}{//}
+    \PYG{c+c1}{// Hint: The staff solution uses boot\PYGZus{}map\PYGZus{}region.}
+    \PYG{c+c1}{//}
+    \PYG{c+c1}{// Your code here:}
+    \PYG{k+kt}{int} \PYG{n}{nextbase} \PYG{o}{=} \PYG{n}{ROUNDUP}\PYG{p}{(}\PYG{n}{base} \PYG{o}{+} \PYG{n}{size}\PYG{p}{,} \PYG{n}{PGSIZE}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{nextbase} \PYG{o}{\PYGZgt{}=} \PYG{n}{MMIOLIM}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}nextbase \PYGZgt{}= MMIOLIM\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{boot\PYGZus{}map\PYGZus{}region}\PYG{p}{(}\PYG{n}{kern\PYGZus{}pgdir}\PYG{p}{,} \PYG{n}{base}\PYG{p}{,} \PYG{n}{size}\PYG{p}{,} \PYG{n}{pa}\PYG{p}{,} \PYG{n}{PTE\PYGZus{}PCD} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}PWT} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}W}\PYG{p}{);}
+
+    \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{ret} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)}\PYG{n}{base}\PYG{p}{;}
+    \PYG{n}{base} \PYG{o}{=} \PYG{n}{nextbase}\PYG{p}{;}
+
+    \PYG{k}{return} \PYG{n}{ret}\PYG{p}{;}
+    \PYG{c+c1}{// panic(\PYGZdq{}mmio\PYGZus{}map\PYGZus{}region not implemented\PYGZdq{});}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

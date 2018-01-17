@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{file\PYGZus{}close}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{file} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{)\PYGZob{}}
+  \PYG{n}{acquire}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ftable}\PYG{p}{.}\PYG{n}{lock}\PYG{p}{);}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ref}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{n}{panic}\PYG{p}{(}\PYG{err}{”}\PYG{n}{fileclose}\PYG{err}{”}\PYG{p}{);}
+  \PYG{k}{if}\PYG{p}{(}\PYG{err}{−−}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ref}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{release}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ftable}\PYG{p}{.}\PYG{n}{lock}\PYG{p}{);}
+    \PYG{k}{return}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n}{structff}\PYG{o}{=}\PYG{err}{∗}\PYG{n}{f}\PYG{p}{;}
+  \PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ref}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{type}\PYG{o}{=}\PYG{n}{FDNONE}\PYG{p}{;}
+  \PYG{n}{release}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ftable}\PYG{p}{.}\PYG{n}{lock}\PYG{p}{);}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{.}\PYG{n}{type}\PYG{o}{==}\PYG{n}{FDPIPE}\PYG{p}{)} \PYG{n}{pipeclose}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{.}\PYG{n}{pipe}\PYG{p}{,}\PYG{n}{ff}\PYG{p}{.}\PYG{n}{writable}\PYG{p}{);}
+  \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{.}\PYG{n}{type}\PYG{o}{==}\PYG{n}{FDINODE}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{begintrans}\PYG{p}{();}\PYG{n}{iput}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{.}\PYG{n}{ip}\PYG{p}{);}\PYG{n}{committrans}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,51 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}
+\PYG{n+nf}{i386\PYGZus{}init}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{k}{extern} \PYG{k+kt}{char} \PYG{n}{edata}\PYG{p}{[],} \PYG{n}{end}\PYG{p}{[];}
+
+        \PYG{c+c1}{// Before doing anything else, complete the ELF loading process.}
+        \PYG{c+c1}{// Clear the uninitialized global data (BSS) section of our program.}
+        \PYG{c+c1}{// This ensures that all static/global variables start out zero.}
+        \PYG{n}{memset}\PYG{p}{(}\PYG{n}{edata}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{end} \PYG{o}{\PYGZhy{}} \PYG{n}{edata}\PYG{p}{);}
+
+        \PYG{c+c1}{// Initialize the console.}
+        \PYG{c+c1}{// Can\PYGZsq{}t call cprintf until after we do this!}
+        \PYG{n}{cons\PYGZus{}init}\PYG{p}{();}
+
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}6828 decimal is \PYGZpc{}o octal!}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mi}{6828}\PYG{p}{);}
+
+        \PYG{c+c1}{// Lab 2 memory management initialization functions}
+        \PYG{n}{mem\PYGZus{}init}\PYG{p}{();}
+
+        \PYG{c+c1}{// Lab 3 user environment initialization functions}
+        \PYG{n}{env\PYGZus{}init}\PYG{p}{();}
+        \PYG{n}{trap\PYGZus{}init}\PYG{p}{();}
+
+        \PYG{c+c1}{// Lab 4 multiprocessor initialization functions}
+        \PYG{n}{mp\PYGZus{}init}\PYG{p}{();}
+        \PYG{n}{lapic\PYGZus{}init}\PYG{p}{();}
+
+        \PYG{c+c1}{// Lab 4 multitasking initialization functions}
+        \PYG{n}{pic\PYGZus{}init}\PYG{p}{();}
+
+        \PYG{c+c1}{// Acquire the big kernel lock before waking up APs}
+        \PYG{c+c1}{// Your code here:}
+    \PYG{n}{lock\PYGZus{}kernel}\PYG{p}{();}
+
+        \PYG{c+c1}{// Starting non\PYGZhy{}boot CPUs}
+        \PYG{n}{boot\PYGZus{}aps}\PYG{p}{();}
+
+\PYG{c+cp}{\PYGZsh{}if defined(TEST)}
+        \PYG{c+c1}{// Don\PYGZsq{}t touch \PYGZhy{}\PYGZhy{} used by grading script!}
+        \PYG{n}{ENV\PYGZus{}CREATE}\PYG{p}{(}\PYG{n}{TEST}\PYG{p}{,} \PYG{n}{ENV\PYGZus{}TYPE\PYGZus{}USER}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}else}
+        \PYG{c+c1}{// Touch all you want.}
+        \PYG{c+c1}{//ENV\PYGZus{}CREATE(user\PYGZus{}primes, ENV\PYGZus{}TYPE\PYGZus{}USER);}
+        \PYG{n}{ENV\PYGZus{}CREATE}\PYG{p}{(}\PYG{n}{user\PYGZus{}dumbfork}\PYG{p}{,} \PYG{n}{ENV\PYGZus{}TYPE\PYGZus{}USER}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif }\PYG{c+c1}{// TEST*}
+
+        \PYG{c+c1}{// Schedule and run the first user environment!}
+        \PYG{n}{sched\PYGZus{}yield}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

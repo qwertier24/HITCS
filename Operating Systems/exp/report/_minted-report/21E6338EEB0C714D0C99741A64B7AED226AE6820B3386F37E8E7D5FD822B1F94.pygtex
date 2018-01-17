@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{execcmd} \PYG{p}{\PYGZob{}}
+  \PYG{k+kt}{int} \PYG{n}{type}\PYG{p}{;}
+  \PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{argv}\PYG{p}{[}\PYG{n}{MAXARGS}\PYG{p}{];}
+  \PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{eargv}\PYG{p}{[}\PYG{n}{MAXARGS}\PYG{p}{];}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

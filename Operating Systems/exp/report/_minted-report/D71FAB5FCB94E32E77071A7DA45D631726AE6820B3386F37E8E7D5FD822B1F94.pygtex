@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Set up new context to start executing at forkret,}
+  \PYG{c+c1}{// which returns to trapret.}
+  \PYG{n}{sp} \PYG{o}{\PYGZhy{}=} \PYG{l+m+mi}{4}\PYG{p}{;}
+  \PYG{o}{*}\PYG{p}{(}\PYG{n}{uint}\PYG{o}{*}\PYG{p}{)}\PYG{n}{sp} \PYG{o}{=} \PYG{p}{(}\PYG{n}{uint}\PYG{p}{)}\PYG{n}{trapret}\PYG{p}{;}
+
+  \PYG{n}{sp} \PYG{o}{\PYGZhy{}=} \PYG{k}{sizeof} \PYG{o}{*}\PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{context}\PYG{p}{;}
+  \PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{context} \PYG{o}{=} \PYG{p}{(}\PYG{k}{struct} \PYG{n}{context}\PYG{o}{*}\PYG{p}{)}\PYG{n}{sp}\PYG{p}{;}
+  \PYG{n}{memset}\PYG{p}{(}\PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{context}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{o}{*}\PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{context}\PYG{p}{);}
+  \PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{context}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{eip} \PYG{o}{=} \PYG{p}{(}\PYG{n}{uint}\PYG{p}{)}\PYG{n}{forkret}\PYG{p}{;}
+\end{Verbatim}

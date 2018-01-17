@@ -1,0 +1,96 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}
+\PYG{n+nf}{page\PYGZus{}fault\PYGZus{}handler}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{Trapframe} \PYG{o}{*}\PYG{n}{tf}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{//cprintf(\PYGZdq{}in the page\PYGZus{}fault\PYGZus{}handler\PYGZbs{}n\PYGZdq{});}
+        \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{fault\PYGZus{}va}\PYG{p}{;}
+
+        \PYG{c+c1}{// Read processor\PYGZsq{}s CR2 register to find the faulting address}
+        \PYG{n}{fault\PYGZus{}va} \PYG{o}{=} \PYG{n}{rcr2}\PYG{p}{();}
+
+        \PYG{c+c1}{// Handle kernel\PYGZhy{}mode page faults.}
+
+        \PYG{c+c1}{// LAB 3: Your code here.}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}cs} \PYG{o}{\PYGZam{}} \PYG{l+m+mh}{0x03}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{print\PYGZus{}trapframe}\PYG{p}{(}\PYG{n}{tf}\PYG{p}{);}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}kernel page fault\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{// We\PYGZsq{}ve already handled kernel\PYGZhy{}mode exceptions, so if we get here,}
+        \PYG{c+c1}{// the page fault happened in user mode.}
+
+        \PYG{c+c1}{// Call the environment\PYGZsq{}s page fault upcall, if one exists.  Set up a}
+        \PYG{c+c1}{// page fault stack frame on the user exception stack (below}
+        \PYG{c+c1}{// UXSTACKTOP), then branch to curenv\PYGZhy{}\PYGZgt{}env\PYGZus{}pgfault\PYGZus{}upcall.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// The page fault upcall might cause another page fault, in which case}
+        \PYG{c+c1}{// we branch to the page fault upcall recursively, pushing another}
+        \PYG{c+c1}{// page fault stack frame on top of the user exception stack.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// The trap handler needs one word of scratch space at the top of the}
+        \PYG{c+c1}{// trap\PYGZhy{}time stack in order to return.  In the non\PYGZhy{}recursive case, we}
+        \PYG{c+c1}{// don\PYGZsq{}t have to worry about this because the top of the regular user}
+        \PYG{c+c1}{// stack is free.  In the recursive case, this means we have to leave}
+        \PYG{c+c1}{// an extra word between the current top of the exception stack and}
+        \PYG{c+c1}{// the new stack frame because the exception stack \PYGZus{}is\PYGZus{} the trap\PYGZhy{}time}
+        \PYG{c+c1}{// stack.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// If there\PYGZsq{}s no page fault upcall, the environment didn\PYGZsq{}t allocate a}
+        \PYG{c+c1}{// page for its exception stack or can\PYGZsq{}t write to it, or the exception}
+        \PYG{c+c1}{// stack overflows, then destroy the environment that caused the fault.}
+        \PYG{c+c1}{// Note that the grade script assumes you will first check for the page}
+        \PYG{c+c1}{// fault upcall and print the \PYGZdq{}user fault va\PYGZdq{} message below if there is}
+        \PYG{c+c1}{// none.  The remaining three checks can be combined into a single test.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// Hints:}
+        \PYG{c+c1}{//   user\PYGZus{}mem\PYGZus{}assert() and env\PYGZus{}run() are useful here.}
+        \PYG{c+c1}{//   To change what the user environment runs, modify \PYGZsq{}curenv\PYGZhy{}\PYGZgt{}env\PYGZus{}tf\PYGZsq{}}
+        \PYG{c+c1}{//   (the \PYGZsq{}tf\PYGZsq{} variable points at \PYGZsq{}curenv\PYGZhy{}\PYGZgt{}env\PYGZus{}tf\PYGZsq{}).}
+
+        \PYG{c+c1}{// LAB 4: Your code here.}
+
+    \PYG{k}{do} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgfault\PYGZus{}upcall}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}[\PYGZpc{}08x] not set env\PYGZus{}pgfault\PYGZus{}upcall}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}id}\PYG{p}{);}
+            \PYG{k}{break}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}esp} \PYG{o}{\PYGZgt{}} \PYG{n}{USTACKTOP} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}esp} \PYG{o}{\PYGZlt{}} \PYG{n}{UXSTACKTOP} \PYG{o}{\PYGZhy{}} \PYG{n}{PGSIZE}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}[\PYGZpc{}08x] exception stack overflow}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}id}\PYG{p}{);}
+            \PYG{k}{break}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{struct} \PYG{n}{UTrapframe} \PYG{n}{utf}\PYG{p}{;}
+        \PYG{n}{utf}\PYG{p}{.}\PYG{n}{utf\PYGZus{}fault\PYGZus{}va} \PYG{o}{=} \PYG{n}{fault\PYGZus{}va}\PYG{p}{;}
+        \PYG{n}{utf}\PYG{p}{.}\PYG{n}{utf\PYGZus{}err} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}err}\PYG{p}{;}
+        \PYG{n}{utf}\PYG{p}{.}\PYG{n}{utf\PYGZus{}regs} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}regs}\PYG{p}{;}
+        \PYG{n}{utf}\PYG{p}{.}\PYG{n}{utf\PYGZus{}eip} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}eip}\PYG{p}{;}
+        \PYG{n}{utf}\PYG{p}{.}\PYG{n}{utf\PYGZus{}eflags} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}eflags}\PYG{p}{;}
+        \PYG{n}{utf}\PYG{p}{.}\PYG{n}{utf\PYGZus{}esp} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}esp}\PYG{p}{;}
+
+        \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{dststack}\PYG{p}{;}
+
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}esp} \PYG{o}{\PYGZlt{}} \PYG{n}{UXSTACKTOP} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}esp} \PYG{o}{\PYGZgt{}=} \PYG{n}{UXSTACKTOP} \PYG{o}{\PYGZhy{}} \PYG{n}{PGSIZE}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{dststack} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)} \PYG{p}{(}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}esp} \PYG{o}{\PYGZhy{}} \PYG{k}{sizeof}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{UTrapframe}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+            \PYG{n}{dststack} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)} \PYG{p}{(}\PYG{n}{UXSTACKTOP} \PYG{o}{\PYGZhy{}} \PYG{k}{sizeof}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{UTrapframe}\PYG{p}{));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{n}{user\PYGZus{}mem\PYGZus{}assert}\PYG{p}{(}\PYG{n}{curenv}\PYG{p}{,} \PYG{n}{dststack}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}W} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}P}\PYG{p}{);}
+        \PYG{n}{memmove}\PYG{p}{(}\PYG{n}{dststack}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{utf}\PYG{p}{,} \PYG{k}{sizeof}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{UTrapframe}\PYG{p}{));}
+        \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}eip} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{uintptr\PYGZus{}t}\PYG{p}{)} \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgfault\PYGZus{}upcall}\PYG{p}{;}
+        \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}esp} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{uintptr\PYGZus{}t}\PYG{p}{)} \PYG{n}{dststack}\PYG{p}{;}
+
+        \PYG{n}{env\PYGZus{}run}\PYG{p}{(}\PYG{n}{curenv}\PYG{p}{);}
+
+    \PYG{p}{\PYGZcb{}} \PYG{k}{while}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+
+        \PYG{c+c1}{// Destroy the environment that caused the fault.}
+
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}[\PYGZpc{}08x] user fault va \PYGZpc{}08x ip \PYGZpc{}08x}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}
+                \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}id}\PYG{p}{,} \PYG{n}{fault\PYGZus{}va}\PYG{p}{,} \PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}eip}\PYG{p}{);}
+        \PYG{n}{print\PYGZus{}trapframe}\PYG{p}{(}\PYG{n}{tf}\PYG{p}{);}
+        \PYG{n}{env\PYGZus{}destroy}\PYG{p}{(}\PYG{n}{curenv}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

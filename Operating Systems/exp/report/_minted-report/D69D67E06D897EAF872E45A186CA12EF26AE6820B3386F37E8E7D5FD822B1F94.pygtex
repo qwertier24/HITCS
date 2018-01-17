@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{exec}\PYG{p}{(}\PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{path}\PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{**}\PYG{n}{argv}\PYG{p}{)}
+\end{Verbatim}

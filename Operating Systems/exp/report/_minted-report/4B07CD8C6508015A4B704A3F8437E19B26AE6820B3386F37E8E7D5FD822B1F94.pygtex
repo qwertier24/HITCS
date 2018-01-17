@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n+nf}{file\PYGZus{}stat}\PYG{p}{(}\PYG{n}{structfile} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{,}\PYG{n}{structstat} \PYG{err}{∗}\PYG{n}{st}\PYG{p}{)\PYGZob{}}
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{type}\PYG{o}{==}\PYG{n}{FDINODE}\PYG{p}{)\PYGZob{}}
+\PYG{n}{ilock}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ip}\PYG{p}{);}
+\PYG{n}{stati}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ip}\PYG{p}{,}\PYG{n}{st}\PYG{p}{);}
+\PYG{n}{iunlock}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ip}\PYG{p}{);}
+\PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{return} \PYG{err}{−}\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

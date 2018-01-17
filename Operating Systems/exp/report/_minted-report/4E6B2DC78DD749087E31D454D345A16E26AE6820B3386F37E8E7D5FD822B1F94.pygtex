@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Your code here.}
+\PYG{n}{stab\PYGZus{}binsearch}\PYG{p}{(}\PYG{n}{stabs}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{lline}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{rline}\PYG{p}{,} \PYG{n}{N\PYGZus{}SLINE}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{);}
+\PYG{k}{if} \PYG{p}{(}\PYG{n}{lline} \PYG{o}{\PYGZlt{}=} \PYG{n}{rline}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n}{info}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{eip\PYGZus{}line} \PYG{o}{=} \PYG{n}{stabs}\PYG{p}{[}\PYG{n}{lline}\PYG{p}{].}\PYG{n}{n\PYGZus{}desc}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+  \PYG{n}{info}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{eip\PYGZus{}line} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

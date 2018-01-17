@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{err}{00008}\PYG{n+nf}{c00} \PYG{err}{\PYGZlt{}}\PYG{n+no}{start}\PYG{err}{\PYGZgt{}}\PYG{p}{:}
+\PYG{n+na}{.set} \PYG{n+no}{CR0\PYGZus{}PE\PYGZus{}ON}\PYG{p}{,}      \PYG{l+m+mi}{0x1}         \PYG{c}{\PYGZsh{} protected mode enable flag}
+
+\PYG{n+na}{.globl} \PYG{n+no}{start}
+\PYG{n+nl}{start:}
+  \PYG{n+na}{.code16}                     \PYG{c}{\PYGZsh{} Assemble for 16\PYGZhy{}bit mode}
+  \PYG{n+no}{cli}                         \PYG{c}{\PYGZsh{} Disable interrupts}
+    \PYG{l+m+mi}{8}\PYG{n+no}{c00}\PYG{p}{:}    \PYG{n+no}{fa}                       \PYG{n+no}{cli}
+  \PYG{n+nf}{cld}                         \PYG{c}{\PYGZsh{} String operations increment}
+    \PYG{l+m+mi}{8}\PYG{n+no}{c01}\PYG{p}{:}    \PYG{n+no}{fc}                       \PYG{n+no}{cld}
+\end{Verbatim}

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{enum} \PYG{n}{proc\PYGZus{}state} \PYG{p}{\PYGZob{}} \PYG{n}{UNUSED}\PYG{p}{,} \PYG{n}{EMBRYO}\PYG{p}{,} \PYG{n}{SLEEPING}\PYG{p}{,} \PYG{n}{RUNNABLE}\PYG{p}{,} \PYG{n}{RUNNING}\PYG{p}{,} \PYG{n}{ZOMBIE} \PYG{p}{\PYGZcb{};}
+\end{Verbatim}

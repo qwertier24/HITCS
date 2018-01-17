@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{mit6828}
+M.~I. of~Technology.
+\newblock 6.828 / fall 2017.
+\newblock \url{https://pdos.csail.mit.edu/6.828/2017/}.
+\newblock Accessed December 25, 2017.
+
+\bibitem{xv6-doc}
+M.~I. of~Technology.
+\newblock Documentation of xv6.
+\newblock \url{https://pdos.csail.mit.edu/6.828/2017/xv6/book-rev10.pdf}.
+\newblock Accessed December 25, 2017.
+
+\bibitem{xv6-github}
+M.~I. of~Technology.
+\newblock mit-pdos/xv6-public: xv6 os.
+\newblock \url{https://github.com/mit-pdos/xv6-public}.
+\newblock Accessed December 25, 2017.
+
+\end{thebibliography}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Jump into the scheduler, never to return.}
+  \PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{state} \PYG{o}{=} \PYG{n}{ZOMBIE}\PYG{p}{;}
+  \PYG{n}{sched}\PYG{p}{();}
+\end{Verbatim}

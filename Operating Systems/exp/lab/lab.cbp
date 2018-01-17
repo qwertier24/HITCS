@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lab" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/lab" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/lab" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="boot/boot.S" />
+		<Unit filename="boot/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fs/bc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fs/fs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fs/fs.h" />
+		<Unit filename="fs/fsformat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fs/ide.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fs/serv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fs/test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="inc/args.h" />
+		<Unit filename="inc/assert.h" />
+		<Unit filename="inc/elf.h" />
+		<Unit filename="inc/env.h" />
+		<Unit filename="inc/error.h" />
+		<Unit filename="inc/fd.h" />
+		<Unit filename="inc/fs.h" />
+		<Unit filename="inc/kbdreg.h" />
+		<Unit filename="inc/lib.h" />
+		<Unit filename="inc/malloc.h" />
+		<Unit filename="inc/memlayout.h" />
+		<Unit filename="inc/mmu.h" />
+		<Unit filename="inc/ns.h" />
+		<Unit filename="inc/partition.h" />
+		<Unit filename="inc/stab.h" />
+		<Unit filename="inc/stdarg.h" />
+		<Unit filename="inc/stdio.h" />
+		<Unit filename="inc/string.h" />
+		<Unit filename="inc/syscall.h" />
+		<Unit filename="inc/trap.h" />
+		<Unit filename="inc/types.h" />
+		<Unit filename="inc/x86.h" />
+		<Unit filename="kern/console.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/console.h" />
+		<Unit filename="kern/cpu.h" />
+		<Unit filename="kern/e1000.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/e1000.h" />
+		<Unit filename="kern/entry.S" />
+		<Unit filename="kern/entrypgdir.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/env.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/env.h" />
+		<Unit filename="kern/init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/kclock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/kclock.h" />
+		<Unit filename="kern/kdebug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/kdebug.h" />
+		<Unit filename="kern/lapic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/monitor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/monitor.h" />
+		<Unit filename="kern/mpconfig.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/mpentry.S" />
+		<Unit filename="kern/pci.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/pci.h" />
+		<Unit filename="kern/pcireg.h" />
+		<Unit filename="kern/picirq.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/picirq.h" />
+		<Unit filename="kern/pmap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/pmap.h" />
+		<Unit filename="kern/printf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/sched.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/sched.h" />
+		<Unit filename="kern/spinlock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/spinlock.h" />
+		<Unit filename="kern/syscall.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/syscall.h" />
+		<Unit filename="kern/time.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/time.h" />
+		<Unit filename="kern/trap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kern/trap.h" />
+		<Unit filename="kern/trapentry.S" />
+		<Unit filename="lib/args.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/console.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/entry.S" />
+		<Unit filename="lib/exit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/fd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/fork.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/fprintf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/ipc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/libmain.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/malloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/nsipc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/pageref.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/panic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/pfentry.S" />
+		<Unit filename="lib/pgfault.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/pipe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/printf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/printfmt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/readline.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/sockets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/spawn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/syscall.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/wait.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/api/api_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/api/api_msg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/api/err.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/api/netbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/api/netdb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/api/netifapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/api/sockets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/api/tcpip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/dhcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/dns.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv4/autoip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv4/icmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv4/igmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv4/inet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv4/inet_chksum.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv4/ip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv4/ip_addr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv4/ip_frag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv6/icmp6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv6/inet6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv6/ip6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/ipv6/ip6_addr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/mem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/memp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/netif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/pbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/raw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/snmp/asn1_dec.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/snmp/asn1_enc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/snmp/mib2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/snmp/mib_structs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/snmp/msg_in.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/snmp/msg_out.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/stats.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/sys.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/tcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/tcp_in.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/tcp_out.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/core/udp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/include/ipv4/lwip/autoip.h" />
+		<Unit filename="net/lwip/include/ipv4/lwip/icmp.h" />
+		<Unit filename="net/lwip/include/ipv4/lwip/igmp.h" />
+		<Unit filename="net/lwip/include/ipv4/lwip/inet.h" />
+		<Unit filename="net/lwip/include/ipv4/lwip/inet_chksum.h" />
+		<Unit filename="net/lwip/include/ipv4/lwip/ip.h" />
+		<Unit filename="net/lwip/include/ipv4/lwip/ip_addr.h" />
+		<Unit filename="net/lwip/include/ipv4/lwip/ip_frag.h" />
+		<Unit filename="net/lwip/include/ipv6/lwip/icmp.h" />
+		<Unit filename="net/lwip/include/ipv6/lwip/inet.h" />
+		<Unit filename="net/lwip/include/ipv6/lwip/ip.h" />
+		<Unit filename="net/lwip/include/ipv6/lwip/ip_addr.h" />
+		<Unit filename="net/lwip/include/lwip/api.h" />
+		<Unit filename="net/lwip/include/lwip/api_msg.h" />
+		<Unit filename="net/lwip/include/lwip/arch.h" />
+		<Unit filename="net/lwip/include/lwip/debug.h" />
+		<Unit filename="net/lwip/include/lwip/def.h" />
+		<Unit filename="net/lwip/include/lwip/dhcp.h" />
+		<Unit filename="net/lwip/include/lwip/dns.h" />
+		<Unit filename="net/lwip/include/lwip/err.h" />
+		<Unit filename="net/lwip/include/lwip/init.h" />
+		<Unit filename="net/lwip/include/lwip/mem.h" />
+		<Unit filename="net/lwip/include/lwip/memp.h" />
+		<Unit filename="net/lwip/include/lwip/memp_std.h" />
+		<Unit filename="net/lwip/include/lwip/netbuf.h" />
+		<Unit filename="net/lwip/include/lwip/netdb.h" />
+		<Unit filename="net/lwip/include/lwip/netif.h" />
+		<Unit filename="net/lwip/include/lwip/netifapi.h" />
+		<Unit filename="net/lwip/include/lwip/opt.h" />
+		<Unit filename="net/lwip/include/lwip/pbuf.h" />
+		<Unit filename="net/lwip/include/lwip/raw.h" />
+		<Unit filename="net/lwip/include/lwip/sio.h" />
+		<Unit filename="net/lwip/include/lwip/snmp.h" />
+		<Unit filename="net/lwip/include/lwip/snmp_asn1.h" />
+		<Unit filename="net/lwip/include/lwip/snmp_msg.h" />
+		<Unit filename="net/lwip/include/lwip/snmp_structs.h" />
+		<Unit filename="net/lwip/include/lwip/sockets.h" />
+		<Unit filename="net/lwip/include/lwip/stats.h" />
+		<Unit filename="net/lwip/include/lwip/sys.h" />
+		<Unit filename="net/lwip/include/lwip/tcp.h" />
+		<Unit filename="net/lwip/include/lwip/tcpip.h" />
+		<Unit filename="net/lwip/include/lwip/udp.h" />
+		<Unit filename="net/lwip/include/netif/etharp.h" />
+		<Unit filename="net/lwip/include/netif/loopif.h" />
+		<Unit filename="net/lwip/include/netif/ppp_oe.h" />
+		<Unit filename="net/lwip/include/netif/slipif.h" />
+		<Unit filename="net/lwip/jos/arch/cc.h" />
+		<Unit filename="net/lwip/jos/arch/i386/setjmp.h" />
+		<Unit filename="net/lwip/jos/arch/longjmp.S" />
+		<Unit filename="net/lwip/jos/arch/perf.h" />
+		<Unit filename="net/lwip/jos/arch/perror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/jos/arch/perror.h" />
+		<Unit filename="net/lwip/jos/arch/queue.h" />
+		<Unit filename="net/lwip/jos/arch/setjmp.h" />
+		<Unit filename="net/lwip/jos/arch/sys_arch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/jos/arch/sys_arch.h" />
+		<Unit filename="net/lwip/jos/arch/thread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/jos/arch/thread.h" />
+		<Unit filename="net/lwip/jos/arch/threadq.h" />
+		<Unit filename="net/lwip/jos/jif/jif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/jos/jif/jif.h" />
+		<Unit filename="net/lwip/jos/lwipopts.h" />
+		<Unit filename="net/lwip/netif/etharp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ethernetif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/loopif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/auth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/auth.h" />
+		<Unit filename="net/lwip/netif/ppp/chap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/chap.h" />
+		<Unit filename="net/lwip/netif/ppp/chpms.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/chpms.h" />
+		<Unit filename="net/lwip/netif/ppp/fsm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/fsm.h" />
+		<Unit filename="net/lwip/netif/ppp/ipcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/ipcp.h" />
+		<Unit filename="net/lwip/netif/ppp/lcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/lcp.h" />
+		<Unit filename="net/lwip/netif/ppp/magic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/magic.h" />
+		<Unit filename="net/lwip/netif/ppp/md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/md5.h" />
+		<Unit filename="net/lwip/netif/ppp/pap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/pap.h" />
+		<Unit filename="net/lwip/netif/ppp/ppp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/ppp.h" />
+		<Unit filename="net/lwip/netif/ppp/ppp_oe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/pppdebug.h" />
+		<Unit filename="net/lwip/netif/ppp/randm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/randm.h" />
+		<Unit filename="net/lwip/netif/ppp/vj.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/lwip/netif/ppp/vj.h" />
+		<Unit filename="net/lwip/netif/ppp/vjbsdhdr.h" />
+		<Unit filename="net/lwip/netif/slipif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/ns.h" />
+		<Unit filename="net/output.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/serv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/testinput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/testoutput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="net/timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/badsegment.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/breakpoint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/buggyhello.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/buggyhello2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/cat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/divzero.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/dumbfork.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/echo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/echosrv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/echotest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/evilhello.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/fairness.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultalloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultallocbad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultbadhandler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultdie.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultevilhandler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultnostack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultreadkernel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultregs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultwrite.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/faultwritekernel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/forktree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/hello.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/httpd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/icode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/idle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/initsh.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/lsfd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/num.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/pingpong.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/pingpongs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/primes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/primespipe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/sendpage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/sh.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/softint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/spawnhello.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/spawninit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/spin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/stresssched.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testbss.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testfdsharing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testfile.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testkbd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testmalloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testpipe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testpiperace.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testpiperace2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testptelibrary.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testpteshare.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testshell.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/testtime.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/writemotd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/yield.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

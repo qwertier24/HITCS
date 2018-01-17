@@ -1,0 +1,45 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}types.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}stat.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}user.h\PYGZdq{}}
+
+\PYG{k+kt}{char} \PYG{n}{buf}\PYG{p}{[}\PYG{l+m+mi}{512}\PYG{p}{];}
+
+\PYG{k+kt}{void}
+\PYG{n+nf}{cat}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{fd}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+  \PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{;}
+
+  \PYG{k}{while}\PYG{p}{((}\PYG{n}{n} \PYG{o}{=} \PYG{n}{read}\PYG{p}{(}\PYG{n}{fd}\PYG{p}{,} \PYG{n}{buf}\PYG{p}{,} \PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{buf}\PYG{p}{)))} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{write}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{buf}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)} \PYG{o}{!=} \PYG{n}{n}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{printf}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}cat: write error}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+      \PYG{n}{exit}\PYG{p}{();}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{n} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{printf}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}cat: read error}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{exit}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{int}
+\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{argv}\PYG{p}{[])}
+\PYG{p}{\PYGZob{}}
+  \PYG{k+kt}{int} \PYG{n}{fd}\PYG{p}{,} \PYG{n}{i}\PYG{p}{;}
+
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{argc} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{cat}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{n}{exit}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{k}{for}\PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{argc}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+    \PYG{k}{if}\PYG{p}{((}\PYG{n}{fd} \PYG{o}{=} \PYG{n}{open}\PYG{p}{(}\PYG{n}{argv}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+      \PYG{n}{printf}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}cat: cannot open \PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{argv}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+      \PYG{n}{exit}\PYG{p}{();}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cat}\PYG{p}{(}\PYG{n}{fd}\PYG{p}{);}
+    \PYG{n}{close}\PYG{p}{(}\PYG{n}{fd}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n}{exit}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

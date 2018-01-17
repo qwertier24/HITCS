@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int}
+\PYG{n+nf}{fork1}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+  \PYG{k+kt}{int} \PYG{n}{pid}\PYG{p}{;}
+
+  \PYG{n}{pid} \PYG{o}{=} \PYG{n}{fork}\PYG{p}{();}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{pid} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}fork\PYGZdq{}}\PYG{p}{);}
+  \PYG{k}{return} \PYG{n}{pid}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{file} \PYG{err}{∗} \PYG{n}{filedup}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{file} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{)}
+\PYG{n}{fileclose}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{file} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{);}
+\PYG{n}{fileread}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{file} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{,} \PYG{k+kt}{char} \PYG{err}{∗}\PYG{n}{buf}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{len}\PYG{p}{);}
+\PYG{n}{filewrite}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{file} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{,}\PYG{k+kt}{char}\PYG{err}{∗} \PYG{n}{buf}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{len}\PYG{p}{);}
+\PYG{n}{filestat}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{file}\PYG{err}{∗}\PYG{n}{f}\PYG{p}{,} \PYG{k}{struct} \PYG{n}{stat}\PYG{err}{∗}\PYG{n}{s}\PYG{p}{);}
+\end{Verbatim}

@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{c}{\PYGZsh{} Restore the trap\PYGZhy{}time registers.  After you do this, you}
+    \PYG{c}{\PYGZsh{} can no longer modify any general\PYGZhy{}purpose registers.}
+    \PYG{c}{\PYGZsh{} LAB 4: Your code here.}
+    \PYG{n+nf}{movl} \PYG{l+m+mi}{48}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}esp}\PYG{p}{),} \PYG{n+nv}{\PYGZpc{}eax}
+    \PYG{n+nf}{subl} \PYG{n+no}{\PYGZdl{}4}\PYG{p}{,} \PYG{n+nv}{\PYGZpc{}eax}
+    \PYG{n+nf}{movl} \PYG{n+nv}{\PYGZpc{}eax}\PYG{p}{,} \PYG{l+m+mi}{48}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}esp}\PYG{p}{)}
+
+    \PYG{n+nf}{movl} \PYG{l+m+mi}{40}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}esp}\PYG{p}{),} \PYG{n+nv}{\PYGZpc{}ebx}
+    \PYG{n+nf}{movl} \PYG{n+nv}{\PYGZpc{}ebx}\PYG{p}{,} \PYG{p}{(}\PYG{n+nv}{\PYGZpc{}eax}\PYG{p}{)}
+
+    \PYG{n+nf}{addl} \PYG{n+no}{\PYGZdl{}8}\PYG{p}{,} \PYG{n+nv}{\PYGZpc{}esp}
+    \PYG{n+nf}{popal}
+    \PYG{n+nf}{addl} \PYG{n+no}{\PYGZdl{}4}\PYG{p}{,} \PYG{n+nv}{\PYGZpc{}esp}
+
+    \PYG{c}{\PYGZsh{} Restore eflags from the stack.  After you do this, you can}
+    \PYG{c}{\PYGZsh{} no longer use arithmetic operations or anything else that}
+    \PYG{c}{\PYGZsh{} modifies eflags.}
+    \PYG{c}{\PYGZsh{} LAB 4: Your code here.}
+    \PYG{n+nf}{popf}
+
+    \PYG{c}{\PYGZsh{} Switch back to the adjusted trap\PYGZhy{}time stack.}
+    \PYG{c}{\PYGZsh{} LAB 4: Your code here.}
+    \PYG{n+nf}{movl} \PYG{p}{(}\PYG{n+nv}{\PYGZpc{}esp}\PYG{p}{),} \PYG{n+nv}{\PYGZpc{}esp}
+    \PYG{c}{\PYGZsh{}popl \PYGZpc{}esp}
+
+    \PYG{c}{\PYGZsh{} Return to re\PYGZhy{}execute the instruction that faulted.}
+    \PYG{c}{\PYGZsh{} LAB 4: Your code here.}
+    \PYG{n+nf}{ret}
+\end{Verbatim}

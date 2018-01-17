@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c}{\PYGZsh{} Enable A20:}
+  \PYG{c}{\PYGZsh{}   For backwards compatibility with the earliest PCs, physical}
+  \PYG{c}{\PYGZsh{}   address line 20 is tied low, so that addresses higher than}
+  \PYG{c}{\PYGZsh{}   1MB wrap around to zero by default.  This code undoes this.}
+\PYG{n+nl}{seta20.1:}
+  \PYG{n+nf}{inb}     \PYG{n+no}{\PYGZdl{}0x64}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}al}               \PYG{c}{\PYGZsh{} Wait for not busy}
+  \PYG{n+no}{testb}   \PYG{n+no}{\PYGZdl{}0x2}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}al}
+  \PYG{n+nf}{jnz}     \PYG{n+no}{seta20.1}
+
+  \PYG{n+nf}{movb}    \PYG{n+no}{\PYGZdl{}0xd1}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}al}               \PYG{c}{\PYGZsh{} 0xd1 \PYGZhy{}\PYGZgt{} port 0x64}
+  \PYG{n+no}{outb}    \PYG{n+nv}{\PYGZpc{}al}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}0x64}
+
+\PYG{n+nl}{seta20.2:}
+  \PYG{n+nf}{inb}     \PYG{n+no}{\PYGZdl{}0x64}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}al}               \PYG{c}{\PYGZsh{} Wait for not busy}
+  \PYG{n+no}{testb}   \PYG{n+no}{\PYGZdl{}0x2}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}al}
+  \PYG{n+nf}{jnz}     \PYG{n+no}{seta20.2}
+
+  \PYG{n+nf}{movb}    \PYG{n+no}{\PYGZdl{}0xdf}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}al}               \PYG{c}{\PYGZsh{} 0xdf \PYGZhy{}\PYGZgt{} port 0x60}
+  \PYG{n+no}{outb}    \PYG{n+nv}{\PYGZpc{}al}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}0x60}
+\end{Verbatim}

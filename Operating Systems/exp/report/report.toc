@@ -1,0 +1,92 @@
+\contentsline {chapter}{摘要}{I}{chapter*.1}
+\contentsline {chapter}{\numberline {\zihao {-2}1\hspace {.3em}}xv6实验系统简述}{1}{chapter.1}
+\contentsline {chapter}{\numberline {\zihao {-2}2\hspace {.3em}}xv6环境配置}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}系统环境}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}编译环境}{2}{section.2.2}
+\contentsline {section}{\numberline {2.3}安装QEMU}{3}{section.2.3}
+\contentsline {chapter}{\numberline {\zihao {-2}3\hspace {.3em}}实验过程}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}Lab 1: Booting a PC}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}实验简介}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}实验目的}{7}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}实验内容}{7}{subsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.3.1}准备}{7}{subsubsection.3.1.3.1}
+\contentsline {subsubsection}{\numberline {3.1.3.2}第一部分：启动PC}{9}{subsubsection.3.1.3.2}
+\contentsline {subsubsection}{\numberline {3.1.3.3}第二部分：The Boot Loader}{10}{subsubsection.3.1.3.3}
+\contentsline {subsubsection}{\numberline {3.1.3.4}第三部分：内核}{16}{subsubsection.3.1.3.4}
+\contentsline {section}{\numberline {3.2}Lab 2: Memory Management}{23}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}实验目的}{23}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}实验内容}{23}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Lab 3: User Environments}{30}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}实验目的}{30}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}实验内容}{30}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Lab 4: Preemptive Multitasking}{45}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}实验简介}{45}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}实验目的}{45}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}实验内容}{45}{subsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.3.1}准备工作}{45}{subsubsection.3.4.3.1}
+\contentsline {subsubsection}{\numberline {3.4.3.2}第一部分: 多处理器支持及协作式多任务}{46}{subsubsection.3.4.3.2}
+\contentsline {subsubsection}{\numberline {3.4.3.3}第二部分: 写时拷贝}{67}{subsubsection.3.4.3.3}
+\contentsline {subsubsection}{\numberline {3.4.3.4}第三部分: 抢占式多任务及进程间通信}{79}{subsubsection.3.4.3.4}
+\contentsline {section}{\numberline {3.5}Lab 5: File system, Spawn and Shell}{88}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}实验目的}{88}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}实验过程}{88}{subsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.2.1}第一部分：文件系统实现}{88}{subsubsection.3.5.2.1}
+\contentsline {subsubsection}{\numberline {3.5.2.2}第二部分：Spawning过程}{96}{subsubsection.3.5.2.2}
+\contentsline {subsubsection}{\numberline {3.5.2.3}第三部分：Shell}{99}{subsubsection.3.5.2.3}
+\contentsline {chapter}{\numberline {\zihao {-2}4\hspace {.3em}}xv6实验系统分析}{102}{chapter.4}
+\contentsline {section}{\numberline {4.1}xv6的系统结构}{103}{section.4.1}
+\contentsline {section}{\numberline {4.2}引导}{107}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}开始}{107}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}xv6启动}{109}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}bootloader代码分析}{109}{subsubsection.4.2.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2.2}bootasm.S}{110}{subsubsection.4.2.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.3}bootmain.c}{112}{subsubsection.4.2.2.3}
+\contentsline {section}{\numberline {4.3}进程与调度分析}{117}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}进程的概念}{117}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}进程控制块}{118}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}进程的状态}{122}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Xv6对于进程的处理过程}{123}{subsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.4.1}进程管理初始化}{123}{subsubsection.4.3.4.1}
+\contentsline {subsubsection}{\numberline {4.3.4.2}初始化用户进程init}{123}{subsubsection.4.3.4.2}
+\contentsline {subsubsection}{\numberline {4.3.4.3}创建子进程}{124}{subsubsection.4.3.4.3}
+\contentsline {subsubsection}{\numberline {4.3.4.4}调度进程}{125}{subsubsection.4.3.4.4}
+\contentsline {subsubsection}{\numberline {4.3.4.5}设置用户进程返回}{128}{subsubsection.4.3.4.5}
+\contentsline {subsubsection}{\numberline {4.3.4.6}睡眠进程}{129}{subsubsection.4.3.4.6}
+\contentsline {subsubsection}{\numberline {4.3.4.7}唤醒进程}{131}{subsubsection.4.3.4.7}
+\contentsline {subsubsection}{\numberline {4.3.4.8}杀死进程}{131}{subsubsection.4.3.4.8}
+\contentsline {subsubsection}{\numberline {4.3.4.9}退出进程}{132}{subsubsection.4.3.4.9}
+\contentsline {subsubsection}{\numberline {4.3.4.10}等待进程结束}{132}{subsubsection.4.3.4.10}
+\contentsline {section}{\numberline {4.4}内存管理}{134}{section.4.4}
+\contentsline {section}{\numberline {4.5}文件系统}{143}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}磁盘结构}{144}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}文件元数据}{145}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}目录与普通文件}{146}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}块缓存}{147}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}磁盘ide驱动文件}{150}{subsection.4.5.5}
+\contentsline {subsection}{\numberline {4.5.6}文件操作}{151}{subsection.4.5.6}
+\contentsline {subsection}{\numberline {4.5.7}文件系统服务器}{151}{subsection.4.5.7}
+\contentsline {subsection}{\numberline {4.5.8}用户使用的fd文件描述符}{153}{subsection.4.5.8}
+\contentsline {section}{\numberline {4.6}I/O}{154}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}I/O 系统调用部分}{154}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}使用系统调用的文件描述符}{154}{subsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.2.1}命名服务}{155}{subsubsection.4.6.2.1}
+\contentsline {subsection}{\numberline {4.6.3}I/O 子系统}{156}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.4}I/O缓存Buf结构}{172}{subsection.4.6.4}
+\contentsline {chapter}{\numberline {\zihao {-2}5\hspace {.3em}}xv6实验系统实例分析——从命令cat讲起}{175}{chapter.5}
+\contentsline {section}{\numberline {5.1}准备阶段}{175}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}文件准备}{175}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}xv6当前的文件}{176}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}开始阶段}{176}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}用户输入命令过程}{176}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}创建cat进程}{186}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}拷贝子进程}{187}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}执行cat程序}{190}{subsubsection.5.2.2.2}
+\contentsline {section}{\numberline {5.3}执行阶段}{193}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}准备工作}{193}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}读入文件}{195}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}输出结果}{203}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}中间过程：程序调度}{204}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}中间过程：休眠唤醒}{205}{subsection.5.3.5}
+\contentsline {section}{\numberline {5.4}结束阶段}{206}{section.5.4}
+\contentsline {chapter}{\numberline {\zihao {-2}6\hspace {.3em}}总结与心得}{208}{chapter.6}
+\contentsline {chapter}{参考文献}{209}{section*.23}

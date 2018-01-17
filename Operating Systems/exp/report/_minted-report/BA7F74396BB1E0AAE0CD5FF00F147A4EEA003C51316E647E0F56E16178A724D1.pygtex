@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c}{\PYGZsh{} read 1st page off disk}
+  \PYG{n+nf}{readseg}\PYG{p}{((}\PYG{n+no}{uint32\PYGZus{}t}\PYG{p}{)} \PYG{n+no}{ELFHDR}\PYG{p}{,} \PYG{n+no}{SECTSIZE}\PYG{p}{*}\PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{c}{;}
+    \PYG{n+no}{push}   \PYG{n+no}{\PYGZdl{}0x0}
+    \PYG{n+nf}{push}   \PYG{n+no}{\PYGZdl{}0x1000}
+    \PYG{n+nf}{push}   \PYG{n+no}{\PYGZdl{}0x10000}
+    \PYG{n+nf}{call}   \PYG{l+m+mh}{7cdc} \PYG{p}{\PYGZlt{}}\PYG{n+no}{readseg}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Leave room for trap frame.}
+  \PYG{n}{sp} \PYG{o}{\PYGZhy{}=} \PYG{k}{sizeof} \PYG{o}{*}\PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf}\PYG{p}{;}
+  \PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf} \PYG{o}{=} \PYG{p}{(}\PYG{k}{struct} \PYG{n}{trapframe}\PYG{o}{*}\PYG{p}{)}\PYG{n}{sp}\PYG{p}{;}
+\end{Verbatim}

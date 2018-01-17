@@ -1,0 +1,155 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1D33DFE2127C2C32005F0B20 /* make */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1D33DFE5127C2C50005F0B20 /* Build configuration list for PBXAggregateTarget "make" */;
+			buildPhases = (
+				1D33DFE1127C2C32005F0B20 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = make;
+			productName = qemu;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXFileReference section */
+		1DE4B343127EFD0B0065B3F7 /* boot */ = {isa = PBXFileReference; lastKnownFileType = folder; name = boot; path = ../boot; sourceTree = SOURCE_ROOT; };
+		1DE4B344127EFD0B0065B3F7 /* conf */ = {isa = PBXFileReference; lastKnownFileType = folder; name = conf; path = ../conf; sourceTree = SOURCE_ROOT; };
+		1DE4B345127EFD0B0065B3F7 /* inc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = inc; path = ../inc; sourceTree = SOURCE_ROOT; };
+		1DE4B346127EFD0B0065B3F7 /* kern */ = {isa = PBXFileReference; lastKnownFileType = folder; name = kern; path = ../kern; sourceTree = SOURCE_ROOT; };
+		1DE4B347127EFD0B0065B3F7 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../lib; sourceTree = SOURCE_ROOT; };
+		1DE4B348127EFD0B0065B3F7 /* user */ = {isa = PBXFileReference; lastKnownFileType = folder; name = user; path = ../user; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* jos */ = {
+			isa = PBXGroup;
+			children = (
+				1DE4B343127EFD0B0065B3F7 /* boot */,
+				1DE4B344127EFD0B0065B3F7 /* conf */,
+				1DE4B345127EFD0B0065B3F7 /* inc */,
+				1DE4B346127EFD0B0065B3F7 /* kern */,
+				1DE4B347127EFD0B0065B3F7 /* lib */,
+				1DE4B348127EFD0B0065B3F7 /* user */,
+			);
+			name = jos;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "jos" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* jos */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D33DFE2127C2C32005F0B20 /* make */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D33DFE1127C2C32005F0B20 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\nexport PATH=/usr/local/jos/bin:$PATH\nPWD=`pwd`\ncd $(PWD)/../\nmake\nexit 0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D33DFE3127C2C32005F0B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = qemu;
+			};
+			name = Debug;
+		};
+		1D33DFE4127C2C32005F0B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = qemu;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		1DEB919408733D9F0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB919508733D9F0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D33DFE5127C2C50005F0B20 /* Build configuration list for PBXAggregateTarget "make" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D33DFE3127C2C32005F0B20 /* Debug */,
+				1D33DFE4127C2C32005F0B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "jos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919408733D9F0010E9CD /* Debug */,
+				1DEB919508733D9F0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

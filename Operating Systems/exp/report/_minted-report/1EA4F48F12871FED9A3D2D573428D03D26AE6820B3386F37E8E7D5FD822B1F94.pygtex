@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{duppage}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{n}{envid}\PYG{p}{,} \PYG{k+kt}{unsigned} \PYG{n}{pn}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{;}
+    \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{addr} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)(}\PYG{n}{pn} \PYG{o}{*} \PYG{n}{PGSIZE}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{uvpt}\PYG{p}{[}\PYG{n}{pn}\PYG{p}{]} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}W}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{uvpt}\PYG{p}{[}\PYG{n}{pn}\PYG{p}{]} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}COW}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}page\PYGZus{}map}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{,} \PYG{n}{envid}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{,} \PYG{n}{PTE\PYGZus{}P} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}COW}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+            \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}duppage: \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}page\PYGZus{}map}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{,} \PYG{n}{PTE\PYGZus{}P} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}COW}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+            \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}duppage: \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}page\PYGZus{}map}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{,} \PYG{n}{envid}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{,} \PYG{n}{PTE\PYGZus{}P} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}U}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}duppage: \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

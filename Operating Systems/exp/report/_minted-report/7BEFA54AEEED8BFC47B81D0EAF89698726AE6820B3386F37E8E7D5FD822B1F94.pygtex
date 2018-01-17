@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{fork1}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
+  \PYG{n}{runcmd}\PYG{p}{(}\PYG{n}{parsecmd}\PYG{p}{(}\PYG{n}{buf}\PYG{p}{));}
+\PYG{n}{wait}\PYG{p}{();}
+\end{Verbatim}

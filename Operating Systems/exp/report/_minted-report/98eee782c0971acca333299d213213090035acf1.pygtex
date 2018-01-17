@@ -1,0 +1,93 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{unifiedSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{,} \PYG{n+nb}{open}\PYG{p}{,} \PYG{n}{heuristic}\PYG{p}{):}
+    \PYG{n}{closed} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+    \PYG{n}{preDirection} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{()}
+    \PYG{n}{prePosition} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{()}
+    \PYG{n}{f} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{()}
+    \PYG{n}{g} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{()}
+    \PYG{n}{h} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{()}
+
+    \PYG{k}{def} \PYG{n+nf}{getPath}\PYG{p}{(}\PYG{n}{dest}\PYG{p}{,} \PYG{n}{src}\PYG{p}{):}
+        \PYG{c+c1}{\PYGZsh{} 获得从起点（src）到终点（dest）的路径，由dest向前遍历得到}
+        \PYG{n}{state} \PYG{o}{=} \PYG{n}{dest}
+        \PYG{n}{path} \PYG{o}{=} \PYG{p}{[]}
+        \PYG{k}{while} \PYG{n}{state} \PYG{o}{!=} \PYG{n}{src}\PYG{p}{:}
+            \PYG{n}{path}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{preDirection}\PYG{p}{[}\PYG{n}{state}\PYG{p}{])}
+            \PYG{n}{state} \PYG{o}{=} \PYG{n}{prePosition}\PYG{p}{[}\PYG{n}{state}\PYG{p}{]}
+        \PYG{n}{path}\PYG{o}{.}\PYG{n}{reverse}\PYG{p}{()}
+        \PYG{k}{return} \PYG{n}{path}
+
+    \PYG{n}{initialState} \PYG{o}{=} \PYG{n}{problem}\PYG{o}{.}\PYG{n}{getStartState}\PYG{p}{()}
+    \PYG{n}{g}\PYG{p}{[}\PYG{n}{initialState}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{h}\PYG{p}{[}\PYG{n}{initialState}\PYG{p}{]} \PYG{o}{=} \PYG{n}{heuristic}\PYG{p}{(}\PYG{n}{initialState}\PYG{p}{,} \PYG{n}{problem}\PYG{p}{)}
+    \PYG{n}{f}\PYG{p}{[}\PYG{n}{initialState}\PYG{p}{]} \PYG{o}{=} \PYG{n}{g}\PYG{p}{[}\PYG{n}{initialState}\PYG{p}{]} \PYG{o}{+} \PYG{n}{h}\PYG{p}{[}\PYG{n}{initialState}\PYG{p}{]}
+    \PYG{n+nb}{open}\PYG{o}{.}\PYG{n}{push}\PYG{p}{((}\PYG{n}{initialState}\PYG{p}{,} \PYG{n}{f}\PYG{p}{[}\PYG{n}{initialState}\PYG{p}{],} \PYG{n+nb+bp}{None}\PYG{p}{,} \PYG{n+nb+bp}{None}\PYG{p}{))}
+
+    \PYG{k}{while} \PYG{o+ow}{not} \PYG{n+nb}{open}\PYG{o}{.}\PYG{n}{isEmpty}\PYG{p}{():}
+        \PYG{p}{(}\PYG{n}{state}\PYG{p}{,} \PYG{n}{\PYGZus{}}\PYG{p}{,} \PYG{n}{prePositionTmp}\PYG{p}{,} \PYG{n}{preDirectionTmp}\PYG{p}{)} \PYG{o}{=} \PYG{n+nb}{open}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{()}
+        \PYG{k}{if} \PYG{n}{state} \PYG{o+ow}{in} \PYG{n}{closed}\PYG{p}{:}
+            \PYG{k}{continue}
+        \PYG{n}{preDirection}\PYG{p}{[}\PYG{n}{state}\PYG{p}{]} \PYG{o}{=} \PYG{n}{preDirectionTmp}  \PYG{c+c1}{\PYGZsh{} 找到从父状态所转移来的方向}
+        \PYG{n}{prePosition}\PYG{p}{[}\PYG{n}{state}\PYG{p}{]} \PYG{o}{=} \PYG{n}{prePositionTmp}  \PYG{c+c1}{\PYGZsh{} 找到父状态}
+        \PYG{n}{closed}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{state}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{problem}\PYG{o}{.}\PYG{n}{isGoalState}\PYG{p}{(}\PYG{n}{state}\PYG{p}{):}  \PYG{c+c1}{\PYGZsh{} 到达终点}
+            \PYG{k}{return} \PYG{n}{getPath}\PYG{p}{(}\PYG{n}{state}\PYG{p}{,} \PYG{n}{problem}\PYG{o}{.}\PYG{n}{getStartState}\PYG{p}{())}
+        \PYG{k}{for} \PYG{n}{childState} \PYG{o+ow}{in} \PYG{n}{problem}\PYG{o}{.}\PYG{n}{getSuccessors}\PYG{p}{(}\PYG{n}{state}\PYG{p}{):}
+            \PYG{k}{if} \PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{g}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} 子状态的g函数未定义}
+                \PYG{n}{g}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{g}\PYG{p}{[}\PYG{n}{state}\PYG{p}{]} \PYG{o}{+} \PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}
+            \PYG{k}{else}\PYG{p}{:}
+                \PYG{n}{g}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]]} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{g}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]],} \PYG{n}{g}\PYG{p}{[}\PYG{n}{state}\PYG{p}{]} \PYG{o}{+} \PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}
+            \PYG{k}{if} \PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{h}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} 子状态的h函数未定义}
+                \PYG{n}{h}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{heuristic}\PYG{p}{(}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{problem}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{f}\PYG{p}{:}
+                \PYG{n}{f}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{g}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]]} \PYG{o}{+} \PYG{n}{h}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]]}
+            \PYG{k}{else}\PYG{p}{:}
+                \PYG{n}{f}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]]} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{f}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]],} \PYG{n}{g}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]]} \PYG{o}{+}
+                                                         \PYG{n}{h}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]])}
+            \PYG{n+nb}{open}\PYG{o}{.}\PYG{n}{push}\PYG{p}{((}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{f}\PYG{p}{[}\PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]],} \PYG{n}{state}\PYG{p}{,} \PYG{n}{childState}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]))}
+    \PYG{k}{return} \PYG{p}{[]}
+
+\PYG{k}{def} \PYG{n+nf}{depthFirstSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    Search the deepest nodes in the search tree first.}
+
+\PYG{l+s+sd}{    Your search algorithm needs to return a list of actions that reaches the}
+\PYG{l+s+sd}{    goal. Make sure to implement a graph search algorithm.}
+
+\PYG{l+s+sd}{    To get started, you might want to try some of these simple commands to}
+\PYG{l+s+sd}{    understand the search problem that is being passed in:}
+\PYG{l+s+sd}{    print \PYGZdq{}Start:\PYGZdq{}, problem.getStartState()}
+\PYG{l+s+sd}{    print \PYGZdq{}Is the start a goal?\PYGZdq{}, problem.isGoalState(problem.getStartState())}
+\PYG{l+s+sd}{    print \PYGZdq{}Start\PYGZsq{}s successors:\PYGZdq{}, problem.getSuccessors(problem.getStartState())}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{n}{unifiedSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{,} \PYG{n}{util}\PYG{o}{.}\PYG{n}{Stack}\PYG{p}{(),} \PYG{n}{nullHeuristic}\PYG{p}{)}
+    \PYG{k}{return} \PYG{p}{[]}
+
+\PYG{k}{def} \PYG{n+nf}{breadthFirstSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Search the shallowest nodes in the search tree first.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{n}{unifiedSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{,} \PYG{n}{util}\PYG{o}{.}\PYG{n}{Queue}\PYG{p}{(),} \PYG{n}{nullHeuristic}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{uniformCostSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Search the node of least total cost first.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{n}{unifiedSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{,} \PYG{n}{util}\PYG{o}{.}\PYG{n}{PriorityQueueWithFunction}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]),}
+                         \PYG{n}{nullHeuristic}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{nullHeuristic}\PYG{p}{(}\PYG{n}{state}\PYG{p}{,} \PYG{n}{problem}\PYG{o}{=}\PYG{n+nb+bp}{None}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    A heuristic function estimates the cost from the current state to the nearest}
+\PYG{l+s+sd}{    goal in the provided SearchProblem.  This heuristic is trivial.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{l+m+mi}{0}
+
+\PYG{k}{def} \PYG{n+nf}{aStarSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{,} \PYG{n}{heuristic}\PYG{o}{=}\PYG{n}{nullHeuristic}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Search the node that has the lowest combined cost and heuristic first.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{n}{unifiedSearch}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{,} \PYG{n}{util}\PYG{o}{.}\PYG{n}{PriorityQueueWithFunction}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]),}
+                         \PYG{n}{heuristic}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Abbreviations}
+\PYG{n}{bfs} \PYG{o}{=} \PYG{n}{breadthFirstSearch}
+\PYG{n}{dfs} \PYG{o}{=} \PYG{n}{depthFirstSearch}
+\PYG{n}{astar} \PYG{o}{=} \PYG{n}{aStarSearch}
+\PYG{n}{ucs} \PYG{o}{=} \PYG{n}{uniformCostSearch}
+\end{Verbatim}

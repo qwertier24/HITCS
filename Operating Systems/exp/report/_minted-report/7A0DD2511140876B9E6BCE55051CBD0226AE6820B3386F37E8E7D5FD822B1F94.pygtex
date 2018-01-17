@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{file}\PYG{p}{\PYGZob{}}
+\PYG{k}{enum} \PYG{p}{\PYGZob{}}\PYG{n}{FD\PYGZus{}NONE}\PYG{p}{,} \PYG{n}{FD\PYGZus{}PIPE} \PYG{p}{,} \PYG{n}{FD\PYGZus{}INODE}\PYG{p}{\PYGZcb{}} \PYG{n}{type}\PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{ref}\PYG{p}{;} \PYG{c+c1}{// reference count}
+\PYG{k+kt}{char} \PYG{n}{readable}\PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{writeable}\PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{pipe}\PYG{err}{∗} \PYG{n}{pipe}\PYG{p}{;}
+\PYG{k}{struct} \PYG{n}{inode} \PYG{err}{∗} \PYG{n}{ip}\PYG{p}{;}
+\PYG{n}{uint} \PYG{n}{off}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

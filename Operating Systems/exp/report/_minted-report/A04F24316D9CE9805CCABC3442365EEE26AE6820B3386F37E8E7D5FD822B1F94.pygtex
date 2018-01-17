@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}
+\PYG{n+nf}{set\PYGZus{}pgfault\PYGZus{}handler}\PYG{p}{(}\PYG{k+kt}{void} \PYG{p}{(}\PYG{o}{*}\PYG{n}{handler}\PYG{p}{)(}\PYG{k}{struct} \PYG{n}{UTrapframe} \PYG{o}{*}\PYG{n}{utf}\PYG{p}{))}
+\PYG{p}{\PYGZob{}}
+        \PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{;}
+
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{\PYGZus{}pgfault\PYGZus{}handler} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{c+c1}{// First time through!}
+                \PYG{c+c1}{// LAB 4: Your code here.}
+
+            \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}page\PYGZus{}alloc}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)}\PYG{n}{ROUNDDOWN}\PYG{p}{(}\PYG{n}{UXSTACKTOP} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{PGSIZE}\PYG{p}{),} \PYG{n}{PTE\PYGZus{}P}\PYG{o}{|}\PYG{n}{PTE\PYGZus{}U}\PYG{o}{|}\PYG{n}{PTE\PYGZus{}W}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                    \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}set\PYGZus{}pgfault\PYGZus{}handler error: \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}env\PYGZus{}set\PYGZus{}pgfault\PYGZus{}upcall}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{\PYGZus{}pgfault\PYGZus{}upcall}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}env\PYGZus{}set\PYGZus{}pgfault\PYGZus{}upcall error: \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+                \PYG{c+c1}{//panic(\PYGZdq{}set\PYGZus{}pgfault\PYGZus{}handler not implemented\PYGZdq{});}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{// Save handler pointer for assembly to call.}
+        \PYG{n}{\PYGZus{}pgfault\PYGZus{}handler} \PYG{o}{=} \PYG{n}{handler}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

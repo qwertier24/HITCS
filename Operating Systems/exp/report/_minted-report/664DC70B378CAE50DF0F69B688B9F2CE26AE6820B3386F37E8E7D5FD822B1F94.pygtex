@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{sz} \PYG{o}{=} \PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{sz}\PYG{p}{;}
+  \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent} \PYG{o}{=} \PYG{n}{curproc}\PYG{p}{;}
+  \PYG{o}{*}\PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf} \PYG{o}{=} \PYG{o}{*}\PYG{n}{curproc}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf}\PYG{p}{;}
+  \PYG{c+c1}{// Clear \PYGZpc{}eax so that fork returns 0 in the child.}
+  \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{eax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{pid} \PYG{o}{=} \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{pid}\PYG{p}{;}
+\end{Verbatim}

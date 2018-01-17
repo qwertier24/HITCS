@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k}{struct} \PYG{n}{Command} \PYG{n}{commands}\PYG{p}{[]} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{p}{\PYGZob{}} \PYG{l+s}{\PYGZdq{}help\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Display this list of commands\PYGZdq{}}\PYG{p}{,} \PYG{n}{mon\PYGZus{}help} \PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}} \PYG{l+s}{\PYGZdq{}kerninfo\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Display information about the kernel\PYGZdq{}}\PYG{p}{,} \PYG{n}{mon\PYGZus{}kerninfo} \PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}} \PYG{l+s}{\PYGZdq{}backtrace\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Display a listing of function call frames\PYGZdq{}}\PYG{p}{,} \PYG{n}{mon\PYGZus{}backtrace}\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

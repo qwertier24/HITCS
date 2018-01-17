@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k}{for}\PYG{p}{(}\PYG{n}{p} \PYG{o}{=} \PYG{n}{ptable}\PYG{p}{.}\PYG{n}{proc}\PYG{p}{;} \PYG{n}{p} \PYG{o}{\PYGZlt{}} \PYG{o}{\PYGZam{}}\PYG{n}{ptable}\PYG{p}{.}\PYG{n}{proc}\PYG{p}{[}\PYG{n}{NPROC}\PYG{p}{];} \PYG{n}{p}\PYG{o}{++}\PYG{p}{)}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{state} \PYG{o}{==} \PYG{n}{UNUSED}\PYG{p}{)}
+      \PYG{k}{goto} \PYG{n}{found}\PYG{p}{;}
+\end{Verbatim}

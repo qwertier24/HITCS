@@ -1,0 +1,48 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}
+\PYG{n+nf}{trap\PYGZus{}init\PYGZus{}percpu}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// The example code here sets up the Task State Segment (TSS) and}
+        \PYG{c+c1}{// the TSS descriptor for CPU 0. But it is incorrect if we are}
+        \PYG{c+c1}{// running on other CPUs because each CPU has its own kernel stack.}
+        \PYG{c+c1}{// Fix the code so that it works for all CPUs.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// Hints:}
+        \PYG{c+c1}{//   \PYGZhy{} The macro \PYGZdq{}thiscpu\PYGZdq{} always refers to the current CPU\PYGZsq{}s}
+        \PYG{c+c1}{//     struct CpuInfo;}
+        \PYG{c+c1}{//   \PYGZhy{} The ID of the current CPU is given by cpunum() or}
+        \PYG{c+c1}{//     thiscpu\PYGZhy{}\PYGZgt{}cpu\PYGZus{}id;}
+        \PYG{c+c1}{//   \PYGZhy{} Use \PYGZdq{}thiscpu\PYGZhy{}\PYGZgt{}cpu\PYGZus{}ts\PYGZdq{} as the TSS for the current CPU,}
+        \PYG{c+c1}{//     rather than the global \PYGZdq{}ts\PYGZdq{} variable;}
+        \PYG{c+c1}{//   \PYGZhy{} Use gdt[(GD\PYGZus{}TSS0 \PYGZgt{}\PYGZgt{} 3) + i] for CPU i\PYGZsq{}s TSS descriptor;}
+        \PYG{c+c1}{//   \PYGZhy{} You mapped the per\PYGZhy{}CPU kernel stacks in mem\PYGZus{}init\PYGZus{}mp()}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// ltr sets a \PYGZsq{}busy\PYGZsq{} flag in the TSS selector, so if you}
+        \PYG{c+c1}{// accidentally load the same TSS on more than one CPU, you\PYGZsq{}ll}
+        \PYG{c+c1}{// get a triple fault.  If you set up an individual CPU\PYGZsq{}s TSS}
+        \PYG{c+c1}{// wrong, you may not get a fault until you try to return from}
+        \PYG{c+c1}{// user space on that CPU.}
+        \PYG{c+c1}{//}
+        \PYG{c+c1}{// LAB 4: Your code here:}
+
+        \PYG{c+c1}{// Setup a TSS so that we get the right stack}
+        \PYG{c+c1}{// when we trap to the kernel.}
+        \PYG{n}{thiscpu}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{cpu\PYGZus{}ts}\PYG{p}{.}\PYG{n}{ts\PYGZus{}esp0} \PYG{o}{=} \PYG{n}{KSTACKTOP} \PYG{o}{\PYGZhy{}} \PYG{n}{cpunum}\PYG{p}{()} \PYG{o}{*} \PYG{p}{(}\PYG{n}{KSTKSIZE} \PYG{o}{+} \PYG{n}{KSTKGAP}\PYG{p}{);}
+        \PYG{n}{thiscpu}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{cpu\PYGZus{}ts}\PYG{p}{.}\PYG{n}{ts\PYGZus{}ss0} \PYG{o}{=} \PYG{n}{GD\PYGZus{}KD}\PYG{p}{;}
+
+        \PYG{c+c1}{// Initialize the TSS slot of the gdt.}
+    \PYG{n}{gdt}\PYG{p}{[(}\PYG{n}{GD\PYGZus{}TSS0} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{+} \PYG{n}{cpunum}\PYG{p}{()]} \PYG{o}{=} \PYG{n}{SEG16}\PYG{p}{(}\PYG{n}{STS\PYGZus{}T32A}\PYG{p}{,}
+                                           \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)} \PYG{o}{\PYGZam{}}\PYG{n}{thiscpu}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{cpu\PYGZus{}ts}\PYG{p}{,}
+                                           \PYG{k}{sizeof}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{Taskstate}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,}
+                                           \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{n}{gdt}\PYG{p}{[(}\PYG{n}{GD\PYGZus{}TSS0} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{+} \PYG{n}{cpunum}\PYG{p}{()].}\PYG{n}{sd\PYGZus{}s} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+        \PYG{c+c1}{// Load the TSS selector (like other segment selectors, the}
+        \PYG{c+c1}{// bottom three bits are special; we leave them 0)}
+        \PYG{c+c1}{//ltr(GD\PYGZus{}TSS0 + cpunum()*sizeof(struct Segdesc));}
+    \PYG{n}{ltr}\PYG{p}{(((}\PYG{n}{GD\PYGZus{}TSS0} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{+} \PYG{n}{cpunum}\PYG{p}{())} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{3}\PYG{p}{);}
+
+        \PYG{c+c1}{// Load the IDT}
+    \PYG{n}{lidt}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{idt\PYGZus{}pd}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

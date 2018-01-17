@@ -1,0 +1,104 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{static} \PYG{k+kt}{int}
+\PYG{n+nf}{sys\PYGZus{}ipc\PYGZus{}recv}\PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{dstva}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// LAB 4: Your code here.}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{dstva} \PYG{o}{\PYGZlt{}} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)}\PYG{n}{UTOP} \PYG{o}{\PYGZam{}\PYGZam{}}
+            \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{dstva} \PYG{o}{\PYGZpc{}} \PYG{n}{PGSIZE}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// 地址错误}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}dstva} \PYG{o}{=} \PYG{n}{dstva}\PYG{p}{;}
+    \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}perm} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{c+c1}{//curenv\PYGZhy{}\PYGZgt{}env\PYGZus{}tf.tf\PYGZus{}regs.reg\PYGZus{}eax = 0;}
+    \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}recving} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}           \PYG{c+c1}{// 正在接收信息}
+    \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}status} \PYG{o}{=} \PYG{n}{ENV\PYGZus{}NOT\PYGZus{}RUNNABLE}\PYG{p}{;} \PYG{c+c1}{// 挂起进程直到接收到消息}
+
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{static} \PYG{k+kt}{int}
+\PYG{n+nf}{sys\PYGZus{}ipc\PYGZus{}try\PYGZus{}send}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{n}{envid}\PYG{p}{,} \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{value}\PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{srcva}\PYG{p}{,} \PYG{k+kt}{unsigned} \PYG{n}{perm}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// LAB 4: Your code here.}
+    \PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{;}
+    \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{env}\PYG{p}{;}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{envid2env}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{env}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n}{r}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}recving}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}IPC\PYGZus{}NOT\PYGZus{}RECV}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{srcva} \PYG{o}{\PYGZlt{}} \PYG{n}{UTOP} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{srcva} \PYG{o}{\PYGZpc{}} \PYG{n}{PGSIZE} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// 地址设置错误}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}ipc\PYGZus{}try\PYGZus{}send: invalid boundary}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{srcva} \PYG{o}{\PYGZlt{}} \PYG{n}{UTOP} \PYG{o}{\PYGZam{}\PYGZam{}}
+            \PYG{o}{!}\PYG{p}{(}\PYG{n}{perm} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}U}\PYG{p}{)}  \PYG{o}{\PYGZam{}\PYGZam{}}
+            \PYG{o}{!}\PYG{p}{(}\PYG{n}{perm} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}P}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+            \PYG{p}{(}\PYG{n}{perm} \PYG{o}{\PYGZam{}} \PYG{o}{\PYGZti{}}\PYG{n}{PTE\PYGZus{}SYSCALL}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}ipc\PYGZus{}try\PYGZus{}send: invalid perm}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{srcva} \PYG{o}{\PYGZlt{}} \PYG{n}{UTOP} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{k+kt}{uint32\PYGZus{}t}\PYG{p}{)}\PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}dstva} \PYG{o}{\PYGZlt{}} \PYG{n}{UTOP}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+
+        \PYG{k}{struct} \PYG{n}{PageInfo} \PYG{o}{*}\PYG{n}{pp} \PYG{o}{=} \PYG{n}{page\PYGZus{}lookup}\PYG{p}{(}\PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgdir}\PYG{p}{,} \PYG{n}{srcva}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{pp}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}INVAL}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{n}{r} \PYG{o}{=} \PYG{n}{page\PYGZus{}insert}\PYG{p}{(}\PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgdir}\PYG{p}{,} \PYG{n}{pp}\PYG{p}{,} \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}dstva}\PYG{p}{,} \PYG{n}{perm}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{r} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}ipc\PYGZus{}try\PYGZus{}send: page\PYGZus{}insert \PYGZpc{}d \PYGZpc{}e}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}perm} \PYG{o}{=} \PYG{n}{perm}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}from} \PYG{o}{=} \PYG{n}{curenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}id}\PYG{p}{;}
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}value} \PYG{o}{=} \PYG{n}{value}\PYG{p}{;}
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}recving} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}tf}\PYG{p}{.}\PYG{n}{tf\PYGZus{}regs}\PYG{p}{.}\PYG{n}{reg\PYGZus{}eax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}status} \PYG{o}{=} \PYG{n}{ENV\PYGZus{}RUNNABLE}\PYG{p}{;}
+
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{int32\PYGZus{}t}
+\PYG{n+nf}{ipc\PYGZus{}recv}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{o}{*}\PYG{n}{from\PYGZus{}env\PYGZus{}store}\PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{pg}\PYG{p}{,} \PYG{k+kt}{int} \PYG{o}{*}\PYG{n}{perm\PYGZus{}store}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// LAB 4: Your code here.}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{pg} \PYG{o}{==} \PYG{n+nb}{NULL}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{pg} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)}\PYG{n}{UTOP}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k+kt}{int} \PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}ipc\PYGZus{}recv}\PYG{p}{(}\PYG{n}{pg}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{from\PYGZus{}env\PYGZus{}store}\PYG{p}{)} \PYG{o}{*}\PYG{n}{from\PYGZus{}env\PYGZus{}store} \PYG{o}{=} \PYG{p}{(}\PYG{n}{r} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{o}{?} \PYG{n}{thisenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+nl}{env\PYGZus{}ipc\PYGZus{}from}\PYG{p}{:} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{perm\PYGZus{}store}\PYG{p}{)} \PYG{o}{*}\PYG{n}{perm\PYGZus{}store} \PYG{o}{=} \PYG{p}{(}\PYG{n}{r} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{o}{?} \PYG{n}{thisenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+nl}{env\PYGZus{}ipc\PYGZus{}perm}\PYG{p}{:} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{r}\PYG{p}{)} \PYG{k}{return} \PYG{n}{r}\PYG{p}{;}
+
+        \PYG{k}{return} \PYG{n}{thisenv}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}ipc\PYGZus{}value}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void}
+\PYG{n+nf}{ipc\PYGZus{}send}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{n}{to\PYGZus{}env}\PYG{p}{,} \PYG{k+kt}{uint32\PYGZus{}t} \PYG{n}{val}\PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{pg}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{perm}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// LAB 4: Your code here.}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{pg} \PYG{o}{==} \PYG{n+nb}{NULL}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{pg} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)}\PYG{n}{UTOP}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{;}
+    \PYG{k}{while} \PYG{p}{((}\PYG{n}{r} \PYG{o}{=} \PYG{n}{sys\PYGZus{}ipc\PYGZus{}try\PYGZus{}send}\PYG{p}{(}\PYG{n}{to\PYGZus{}env}\PYG{p}{,} \PYG{n}{val}\PYG{p}{,} \PYG{n}{pg}\PYG{p}{,} \PYG{n}{perm}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{r} \PYG{o}{!=} \PYG{o}{\PYGZhy{}}\PYG{n}{E\PYGZus{}IPC\PYGZus{}NOT\PYGZus{}RECV}\PYG{p}{)}
+            \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ipc\PYGZus{}send: sys\PYGZus{}ipc\PYGZus{}send, \PYGZpc{}d, \PYGZpc{}e\PYGZdq{}}\PYG{p}{,} \PYG{n}{r}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
+
+        \PYG{n}{sys\PYGZus{}yield}\PYG{p}{();}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

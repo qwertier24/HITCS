@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Set the page fault upcall for \PYGZsq{}envid\PYGZsq{} by modifying the corresponding struct}
+\PYG{c+c1}{// Env\PYGZsq{}s \PYGZsq{}env\PYGZus{}pgfault\PYGZus{}upcall\PYGZsq{} field.  When \PYGZsq{}envid\PYGZsq{} causes a page fault, the}
+\PYG{c+c1}{// kernel will push a fault record onto the exception stack, then branch to}
+\PYG{c+c1}{// \PYGZsq{}func\PYGZsq{}.}
+\PYG{c+c1}{//}
+\PYG{c+c1}{// Returns 0 on success, \PYGZlt{} 0 on error.  Errors are:}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZhy{}E\PYGZus{}BAD\PYGZus{}ENV if environment envid doesn\PYGZsq{}t currently exist,}
+\PYG{c+c1}{//\PYGZca{}\PYGZca{}I\PYGZca{}\PYGZca{}Ior the caller doesn\PYGZsq{}t have permission to change envid.}
+\PYG{k}{static} \PYG{k+kt}{int}
+\PYG{n+nf}{sys\PYGZus{}env\PYGZus{}set\PYGZus{}pgfault\PYGZus{}upcall}\PYG{p}{(}\PYG{n}{envid\PYGZus{}t} \PYG{n}{envid}\PYG{p}{,} \PYG{k+kt}{void} \PYG{o}{*}\PYG{n}{func}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// LAB 4: Your code here.}
+    \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{env}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{rtn}\PYG{p}{;}
+
+    \PYG{n}{rtn} \PYG{o}{=} \PYG{n}{envid2env}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{env}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{cprintf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sys\PYGZus{}env\PYGZus{}set\PYGZus{}status: envid2env}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{return} \PYG{n}{rtn}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{env}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{env\PYGZus{}pgfault\PYGZus{}upcall} \PYG{o}{=} \PYG{n}{func}\PYG{p}{;}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+        \PYG{c+c1}{// panic(\PYGZdq{}sys\PYGZus{}env\PYGZus{}set\PYGZus{}pgfault\PYGZus{}upcall not implemented\PYGZdq{});}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

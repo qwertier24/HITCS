@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{pipe}\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{spinlock} \PYG{n}{lock}\PYG{p}{;}
+\PYG{k+kt}{char} \PYG{n}{data}\PYG{p}{[}\PYG{n}{PIPESIZE}\PYG{p}{];}
+\PYG{n}{uint} \PYG{n}{nread}\PYG{p}{;}\PYG{c+c1}{//读取的字符数目}
+\PYG{n}{uint} \PYG{n}{nwrite}\PYG{p}{;}\PYG{c+c1}{//写入的字符数目}
+\PYG{n}{intreadopen}\PYG{p}{;}\PYG{c+c1}{//读取的文件仍然开启}
+\PYG{n}{intwriteopen}\PYG{p}{;}\PYG{o}{/}\PYG{err}{写入的文件仍然开启}
+\PYG{p}{\PYGZcb{};}
+  \PYG{err}{\PYGZbs{}}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+
+  \PYG{err}{还有}\PYG{n}{pipe的一些相关基本操作}
+
+  \PYG{n}{pipalloc}\PYG{p}{,} \PYG{n}{pipeclose}\PYG{p}{,} \PYG{n}{piperead}\PYG{p}{,} \PYG{n}{pipewrite}\PYG{p}{.}
+
+  \PYG{n}{FD}\PYG{err}{\PYGZbs{}}\PYG{n}{\PYGZus{}INODE模块}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{minted}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{C}\PYG{p}{\PYGZcb{}}
+\PYG{k}{struct} \PYG{n}{inode}\PYG{p}{\PYGZob{}}
+\PYG{n}{uint} \PYG{n}{dev}\PYG{p}{;}\PYG{c+c1}{//设备数字}
+\PYG{n}{uint} \PYG{n}{inum}\PYG{p}{;}\PYG{c+c1}{//Inode数字}
+\PYG{k+kt}{int} \PYG{n}{ref}\PYG{p}{;}\PYG{c+c1}{//Reference count}
+\PYG{k+kt}{int} \PYG{n}{flags}\PYG{p}{;}\PYG{c+c1}{//IBUSY,IVALID}
+\PYG{k+kt}{short} \PYG{n}{type}\PYG{p}{;}\PYG{c+c1}{// inode的磁盘镜像}
+\PYG{k+kt}{short} \PYG{n}{major}\PYG{p}{;}
+\PYG{k+kt}{short} \PYG{n}{minor}\PYG{p}{;}
+\PYG{k+kt}{short} \PYG{n}{nlink}\PYG{p}{;}
+\PYG{n}{uint} \PYG{n}{size}\PYG{p}{;}
+\PYG{n}{uint} \PYG{n}{addrs}\PYG{p}{[}\PYG{n}{NDIRECT}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{];}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

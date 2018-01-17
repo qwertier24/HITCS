@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Allocate two pages at the next page boundary.}
+  \PYG{c+c1}{// Make the first inaccessible.  Use the second as the user stack.}
+  \PYG{n}{sz} \PYG{o}{=} \PYG{n}{PGROUNDUP}\PYG{p}{(}\PYG{n}{sz}\PYG{p}{);}
+  \PYG{k}{if}\PYG{p}{((}\PYG{n}{sz} \PYG{o}{=} \PYG{n}{allocuvm}\PYG{p}{(}\PYG{n}{pgdir}\PYG{p}{,} \PYG{n}{sz}\PYG{p}{,} \PYG{n}{sz} \PYG{o}{+} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{PGSIZE}\PYG{p}{))} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+  \PYG{n}{clearpteu}\PYG{p}{(}\PYG{n}{pgdir}\PYG{p}{,} \PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)(}\PYG{n}{sz} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{PGSIZE}\PYG{p}{));}
+  \PYG{n}{sp} \PYG{o}{=} \PYG{n}{sz}\PYG{p}{;}
+\end{Verbatim}

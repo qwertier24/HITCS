@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{tf\PYGZus{}trapno} \PYG{o}{==} \PYG{n}{IRQ\PYGZus{}OFFSET} \PYG{o}{+} \PYG{n}{IRQ\PYGZus{}TIMER}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n}{lapic\PYGZus{}eoi}\PYG{p}{();}
+  \PYG{n}{sched\PYGZus{}yield}\PYG{p}{();}
+  \PYG{k}{return}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct} \PYG{n}{file}\PYG{err}{∗} \PYG{n}{file\PYGZus{}dup}\PYG{p}{(}\PYG{k}{struct} \PYG{n}{file}\PYG{err}{∗}\PYG{n}{f}\PYG{p}{)\PYGZob{}}
+\PYG{n}{acquire}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ftable}\PYG{p}{.}\PYG{n}{lock}\PYG{p}{);}
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ref}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{n}{panic}\PYG{p}{(}\PYG{err}{”}\PYG{n}{filedup}\PYG{err}{”}\PYG{p}{);}
+\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ref}\PYG{o}{++}\PYG{p}{;}
+\PYG{n}{release}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ftable}\PYG{p}{.}\PYG{n}{lock}\PYG{p}{);}
+\PYG{k}{return} \PYG{n}{f}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{n+nf}{mov}    \PYG{l+m+mi}{0x1001c}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}eax}
+    \PYG{n+nf}{movzwl} \PYG{l+m+mi}{0x1002c}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}esi}
+    \PYG{n+nf}{lea}    \PYG{l+m+mi}{0x10000}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}eax}\PYG{p}{),}\PYG{n+nv}{\PYGZpc{}ebx}
+    \PYG{n+nf}{shl}    \PYG{n+no}{\PYGZdl{}0x5}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}esi}
+    \PYG{n+nf}{add}    \PYG{n+nv}{\PYGZpc{}ebx}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}esi}
+\end{Verbatim}

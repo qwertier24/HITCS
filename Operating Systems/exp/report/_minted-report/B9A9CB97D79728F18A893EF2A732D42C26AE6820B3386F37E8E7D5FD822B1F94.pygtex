@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{link} \PYG{p}{(}\PYG{k+kt}{char} \PYG{err}{∗} \PYG{n}{oldpath} \PYG{p}{,} \PYG{k+kt}{char} \PYG{err}{∗} \PYG{n}{newpath}\PYG{p}{);}
+\PYG{n}{fd} \PYG{o}{=} \PYG{n}{open} \PYG{p}{(}\PYG{k+kt}{char} \PYG{err}{∗} \PYG{n}{path} \PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{flags}\PYG{p}{);}
+\PYG{n}{unlink} \PYG{p}{(}\PYG{k+kt}{char} \PYG{err}{∗} \PYG{n}{path}\PYG{p}{);}
+\PYG{n}{mkdir} \PYG{p}{(}\PYG{k+kt}{char} \PYG{err}{∗} \PYG{n}{path} \PYG{p}{);}
+\PYG{n}{rmdir} \PYG{p}{(}\PYG{k+kt}{char} \PYG{err}{∗} \PYG{n}{path} \PYG{p}{);}
+\end{Verbatim}

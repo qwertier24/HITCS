@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{envid\PYGZus{}t} \PYG{n+nf}{fork}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{envid\PYGZus{}t} \PYG{n}{envid}\PYG{p}{;}
+    \PYG{k+kt}{uintptr\PYGZus{}t} \PYG{n}{addr}\PYG{p}{;}
+    \PYG{n}{set\PYGZus{}pgfault\PYGZus{}handler}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{pgfault}\PYG{p}{);}
+    \PYG{n}{envid} \PYG{o}{=} \PYG{n}{sys\PYGZus{}exofork}\PYG{p}{();}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{envid} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}fork: sys\PYGZus{}exofork failed\PYGZdq{}}\PYG{p}{);}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{envid} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{thisenv} \PYG{o}{=} \PYG{o}{\PYGZam{}}\PYG{n}{envs}\PYG{p}{[}\PYG{n}{ENVX}\PYG{p}{(}\PYG{n}{sys\PYGZus{}getenvid}\PYG{p}{())];}
+        \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{addr} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{addr} \PYG{o}{\PYGZlt{}} \PYG{n}{USTACKTOP}\PYG{p}{;} \PYG{n}{addr} \PYG{o}{+=} \PYG{n}{PGSIZE}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{((}\PYG{n}{uvpd}\PYG{p}{[}\PYG{n}{PDX}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{)]} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}P}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{uvpt}\PYG{p}{[}\PYG{n}{PGNUM}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{)]} \PYG{o}{\PYGZam{}} \PYG{n}{PTE\PYGZus{}P}\PYG{p}{))}
+            \PYG{n}{duppage}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{n}{PGNUM}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{));}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{sys\PYGZus{}page\PYGZus{}alloc}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{p}{(}\PYG{k+kt}{void} \PYG{o}{*}\PYG{p}{)} \PYG{p}{(}\PYG{n}{UXSTACKTOP} \PYG{o}{\PYGZhy{}} \PYG{n}{PGSIZE}\PYG{p}{),}
+                    \PYG{n}{PTE\PYGZus{}P} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}U} \PYG{o}{|} \PYG{n}{PTE\PYGZus{}W}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}fork: sys\PYGZus{}page\PYGZus{}alloc failed\PYGZdq{}}\PYG{p}{);}
+    \PYG{k}{extern} \PYG{k+kt}{void} \PYG{n}{\PYGZus{}pgfault\PYGZus{}upcall}\PYG{p}{();}
+    \PYG{n}{sys\PYGZus{}env\PYGZus{}set\PYGZus{}pgfault\PYGZus{}upcall}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{n}{\PYGZus{}pgfault\PYGZus{}upcall}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{sys\PYGZus{}env\PYGZus{}set\PYGZus{}status}\PYG{p}{(}\PYG{n}{envid}\PYG{p}{,} \PYG{n}{ENV\PYGZus{}RUNNABLE}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{panic}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}fork: sys\PYGZus{}env\PYGZus{}set\PYGZus{}status\PYGZdq{}}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{envid}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

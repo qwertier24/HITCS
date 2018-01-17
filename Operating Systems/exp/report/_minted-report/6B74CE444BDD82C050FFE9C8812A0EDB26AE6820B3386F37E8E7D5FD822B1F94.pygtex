@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{// Load program into memory.}
+  \PYG{n}{sz} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{k}{for}\PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{off}\PYG{o}{=}\PYG{n}{elf}\PYG{p}{.}\PYG{n}{phoff}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{elf}\PYG{p}{.}\PYG{n}{phnum}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{,} \PYG{n}{off}\PYG{o}{+=}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{ph}\PYG{p}{))\PYGZob{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{readi}\PYG{p}{(}\PYG{n}{ip}\PYG{p}{,} \PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)}\PYG{o}{\PYGZam{}}\PYG{n}{ph}\PYG{p}{,} \PYG{n}{off}\PYG{p}{,} \PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{ph}\PYG{p}{))} \PYG{o}{!=} \PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{ph}\PYG{p}{))}
+      \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{ph}\PYG{p}{.}\PYG{n}{type} \PYG{o}{!=} \PYG{n}{ELF\PYGZus{}PROG\PYGZus{}LOAD}\PYG{p}{)}
+      \PYG{k}{continue}\PYG{p}{;}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{ph}\PYG{p}{.}\PYG{n}{memsz} \PYG{o}{\PYGZlt{}} \PYG{n}{ph}\PYG{p}{.}\PYG{n}{filesz}\PYG{p}{)}
+      \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{ph}\PYG{p}{.}\PYG{n}{vaddr} \PYG{o}{+} \PYG{n}{ph}\PYG{p}{.}\PYG{n}{memsz} \PYG{o}{\PYGZlt{}} \PYG{n}{ph}\PYG{p}{.}\PYG{n}{vaddr}\PYG{p}{)}
+      \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+    \PYG{k}{if}\PYG{p}{((}\PYG{n}{sz} \PYG{o}{=} \PYG{n}{allocuvm}\PYG{p}{(}\PYG{n}{pgdir}\PYG{p}{,} \PYG{n}{sz}\PYG{p}{,} \PYG{n}{ph}\PYG{p}{.}\PYG{n}{vaddr} \PYG{o}{+} \PYG{n}{ph}\PYG{p}{.}\PYG{n}{memsz}\PYG{p}{))} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
+      \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{ph}\PYG{p}{.}\PYG{n}{vaddr} \PYG{o}{\PYGZpc{}} \PYG{n}{PGSIZE} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)}
+      \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{loaduvm}\PYG{p}{(}\PYG{n}{pgdir}\PYG{p}{,} \PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)}\PYG{n}{ph}\PYG{p}{.}\PYG{n}{vaddr}\PYG{p}{,} \PYG{n}{ip}\PYG{p}{,} \PYG{n}{ph}\PYG{p}{.}\PYG{n}{off}\PYG{p}{,} \PYG{n}{ph}\PYG{p}{.}\PYG{n}{filesz}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+      \PYG{k}{goto} \PYG{n}{bad}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

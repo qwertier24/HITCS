@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}o\PYGZsq{}}\PYG{o}{:}
+    \PYG{n}{num} \PYG{o}{=} \PYG{n}{getuint}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ap}\PYG{p}{,} \PYG{n}{lflag}\PYG{p}{);}
+    \PYG{n}{base} \PYG{o}{=} \PYG{l+m+mi}{8}\PYG{p}{;}
+    \PYG{k}{goto} \PYG{n}{number}\PYG{p}{;}
+\end{Verbatim}

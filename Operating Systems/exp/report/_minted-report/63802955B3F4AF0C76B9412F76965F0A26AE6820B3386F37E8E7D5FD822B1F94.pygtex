@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{envs} \PYG{o}{=} \PYG{n+nb}{NULL}\PYG{p}{;}\PYG{c+c1}{//所有的 Env 结构体}
+  \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{curenv} \PYG{o}{=} \PYG{n+nb}{NULL}\PYG{p}{;} \PYG{c+c1}{//目前正在运行的用户环境}
+  \PYG{k}{static} \PYG{k}{struct} \PYG{n}{Env} \PYG{o}{*}\PYG{n}{env\PYGZus{}free\PYGZus{}list}\PYG{p}{;}
+  \PYG{c+c1}{//还没有被使用的 Env 结构体链表}
+\end{Verbatim}

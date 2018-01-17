@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nl}{start:}
+  \PYG{n+na}{.code16}
+  \PYG{n+nf}{cli}
+  \PYG{n+nf}{cld}                         \PYG{c}{\PYGZsh{} String operations increment}
+\end{Verbatim}

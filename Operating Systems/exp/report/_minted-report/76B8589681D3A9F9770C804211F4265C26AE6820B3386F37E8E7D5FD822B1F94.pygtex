@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Kernel stack.}
+\PYG{c+cp}{\PYGZsh{}define KSTACKTOP    KERNBASE}
+\PYG{c+cp}{\PYGZsh{}define KSTKSIZE    (8*PGSIZE)           }\PYG{c+c1}{// size of a kernel stack}
+\PYG{c+cp}{\PYGZsh{}define KSTKGAP        (8*PGSIZE)           }\PYG{c+c1}{// size of a kernel stack guard}
+\end{Verbatim}

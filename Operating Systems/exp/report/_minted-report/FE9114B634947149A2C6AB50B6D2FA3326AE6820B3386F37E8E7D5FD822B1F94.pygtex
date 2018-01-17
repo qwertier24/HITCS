@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{for}\PYG{p}{(}\PYG{n}{p} \PYG{o}{=} \PYG{n}{ptable}\PYG{p}{.}\PYG{n}{proc}\PYG{p}{;} \PYG{n}{p} \PYG{o}{\PYGZlt{}} \PYG{o}{\PYGZam{}}\PYG{n}{ptable}\PYG{p}{.}\PYG{n}{proc}\PYG{p}{[}\PYG{n}{NPROC}\PYG{p}{];} \PYG{n}{p}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+      \PYG{k}{if}\PYG{p}{(}\PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{state} \PYG{o}{!=} \PYG{n}{RUNNABLE}\PYG{p}{)}
+        \PYG{k}{continue}\PYG{p}{;}
+
+      \PYG{c+c1}{// Switch to chosen process.  It is the process\PYGZsq{}s job}
+      \PYG{c+c1}{// to release ptable.lock and then reacquire it}
+      \PYG{c+c1}{// before jumping back to us.}
+      \PYG{n}{c}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{proc} \PYG{o}{=} \PYG{n}{p}\PYG{p}{;}
+      \PYG{n}{switchuvm}\PYG{p}{(}\PYG{n}{p}\PYG{p}{);}
+      \PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{state} \PYG{o}{=} \PYG{n}{RUNNING}\PYG{p}{;}
+
+      \PYG{n}{swtch}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{p}{(}\PYG{n}{c}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{scheduler}\PYG{p}{),} \PYG{n}{p}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{context}\PYG{p}{);}
+      \PYG{n}{switchkvm}\PYG{p}{();}
+
+      \PYG{c+c1}{// Process is done running for now.}
+      \PYG{c+c1}{// It should have changed its p\PYGZhy{}\PYGZgt{}state before coming back.}
+      \PYG{n}{c}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{proc} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

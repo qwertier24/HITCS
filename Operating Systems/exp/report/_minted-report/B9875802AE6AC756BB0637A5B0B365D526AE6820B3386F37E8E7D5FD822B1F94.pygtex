@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n}{acquire}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ptable}\PYG{p}{.}\PYG{n}{lock}\PYG{p}{);}
+  \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{state} \PYG{o}{=} \PYG{n}{RUNNABLE}\PYG{p}{;}
+  \PYG{n}{release}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ptable}\PYG{p}{.}\PYG{n}{lock}\PYG{p}{);}
+\end{Verbatim}

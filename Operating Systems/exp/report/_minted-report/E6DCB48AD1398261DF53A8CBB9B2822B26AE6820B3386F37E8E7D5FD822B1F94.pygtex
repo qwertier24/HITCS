@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k}{switch}\PYG{p}{(}\PYG{n}{tf}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{trapno}\PYG{p}{)\PYGZob{}}
+  \PYG{k}{case} \PYG{n}{T\PYGZus{}IRQ0} \PYG{o}{+} \PYG{n+nl}{IRQ\PYGZus{}TIMER}\PYG{p}{:}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{cpuid}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+      \PYG{n}{acquire}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{tickslock}\PYG{p}{);}
+      \PYG{n}{ticks}\PYG{o}{++}\PYG{p}{;}
+      \PYG{n}{wakeup}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{ticks}\PYG{p}{);}
+      \PYG{n}{release}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{tickslock}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{lapiceoi}\PYG{p}{();}
+    \PYG{k}{break}\PYG{p}{;}
+\end{Verbatim}

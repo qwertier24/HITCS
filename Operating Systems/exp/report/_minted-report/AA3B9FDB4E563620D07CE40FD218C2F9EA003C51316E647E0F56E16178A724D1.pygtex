@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{c}{\PYGZsh{} Clear the frame pointer register (EBP)}
+    \PYG{c}{\PYGZsh{} so that once we get into debugging C code,}
+    \PYG{c}{\PYGZsh{} stack backtraces will be terminated properly.}
+    \PYG{n+nf}{movl}    \PYG{n+no}{\PYGZdl{}0x0}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}ebp}            \PYG{c}{\PYGZsh{} nuke frame pointer}
+
+    \PYG{c}{\PYGZsh{} Set the stack pointer}
+    \PYG{n+nf}{movl}    \PYG{n+no}{\PYGZdl{}}\PYG{p}{(}\PYG{n+no}{bootstacktop}\PYG{p}{),}\PYG{n+nv}{\PYGZpc{}esp}
+\end{Verbatim}

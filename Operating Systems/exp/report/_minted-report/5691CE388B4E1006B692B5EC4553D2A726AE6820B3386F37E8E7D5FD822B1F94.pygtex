@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n+nf}{file\PYGZus{}read}\PYG{p}{(}\PYG{n}{structfile} \PYG{err}{∗}\PYG{n}{f}\PYG{p}{,} \PYG{k+kt}{char} \PYG{err}{∗}\PYG{n}{addr}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{)\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{;}
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{readable}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{return} \PYG{err}{−}\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{type}\PYG{o}{==}\PYG{n}{FDPIPE}\PYG{p}{)} \PYG{k}{return} \PYG{n}{pipe\PYGZus{}read}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{pipe}\PYG{p}{,}\PYG{n}{addr}\PYG{p}{,}\PYG{n}{n}\PYG{p}{);}
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{type}\PYG{o}{==}\PYG{n}{FDINODE}\PYG{p}{)\PYGZob{}}
+\PYG{n}{ilock}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ip}\PYG{p}{);}
+\PYG{k}{if}\PYG{p}{((}\PYG{n}{r}\PYG{o}{=}\PYG{n}{readi}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ip}\PYG{p}{,}\PYG{n}{addr}\PYG{p}{,}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{off}\PYG{p}{,}\PYG{n}{n}\PYG{p}{))}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{off}\PYG{o}{+=}\PYG{n}{r}\PYG{p}{;}
+\PYG{n}{iunlock}\PYG{p}{(}\PYG{n}{f}\PYG{err}{−}\PYG{o}{\PYGZgt{}}\PYG{n}{ip}\PYG{p}{);}
+\PYG{k}{return} \PYG{n}{r}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{panic}\PYG{p}{(}\PYG{err}{”}\PYG{n}{fileread}\PYG{err}{”}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
